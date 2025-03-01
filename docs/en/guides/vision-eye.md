@@ -1,21 +1,21 @@
 ---
 comments: true
-description: Discover VisionEye's object mapping and tracking powered by Ultralytics YOLO11. Simulate human eye precision, track objects, and calculate distances effortlessly.
-keywords: VisionEye, YOLO11, Ultralytics, object mapping, object tracking, distance calculation, computer vision, AI, machine learning, Python, tutorial
+description: Discover VisionEye's object mapping and tracking powered by numa_ultralytics YOLO11. Simulate human eye precision, track objects, and calculate distances effortlessly.
+keywords: VisionEye, YOLO11, numa_ultralytics, object mapping, object tracking, distance calculation, computer vision, AI, machine learning, Python, tutorial
 ---
 
-# VisionEye View Object Mapping using Ultralytics YOLO11 🚀
+# VisionEye View Object Mapping using numa_ultralytics YOLO11 🚀
 
 ## What is VisionEye Object Mapping?
 
-[Ultralytics YOLO11](https://github.com/ultralytics/ultralytics/) VisionEye offers the capability for computers to identify and pinpoint objects, simulating the observational [precision](https://www.ultralytics.com/glossary/precision) of the human eye. This functionality enables computers to discern and focus on specific objects, much like the way the human eye observes details from a particular viewpoint.
+[numa_ultralytics YOLO11](https://github.com/numa_ultralytics/numa_ultralytics/) VisionEye offers the capability for computers to identify and pinpoint objects, simulating the observational [precision](https://www.numa_ultralytics.com/glossary/precision) of the human eye. This functionality enables computers to discern and focus on specific objects, much like the way the human eye observes details from a particular viewpoint.
 
 ## Samples
 
-|                                                                        VisionEye View                                                                        |                                                                         VisionEye View With Object Tracking                                                                         |                                                                 VisionEye View With Distance Calculation                                                                 |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| ![VisionEye View Object Mapping using Ultralytics YOLO11](https://github.com/ultralytics/docs/releases/download/0/visioneye-view-object-mapping-yolov8.avif) | ![VisionEye View Object Mapping with Object Tracking using Ultralytics YOLO11](https://github.com/ultralytics/docs/releases/download/0/visioneye-object-mapping-with-tracking.avif) | ![VisionEye View with Distance Calculation using Ultralytics YOLO11](https://github.com/ultralytics/docs/releases/download/0/visioneye-distance-calculation-yolov8.avif) |
-|                                                    VisionEye View Object Mapping using Ultralytics YOLO11                                                    |                                                     VisionEye View Object Mapping with Object Tracking using Ultralytics YOLO11                                                     |                                                    VisionEye View with Distance Calculation using Ultralytics YOLO11                                                     |
+|                                                                             VisionEye View                                                                             |                                                                              VisionEye View With Object Tracking                                                                              |                                                                      VisionEye View With Distance Calculation                                                                      |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| ![VisionEye View Object Mapping using numa_ultralytics YOLO11](https://github.com/numa_ultralytics/docs/releases/download/0/visioneye-view-object-mapping-yolov8.avif) | ![VisionEye View Object Mapping with Object Tracking using numa_ultralytics YOLO11](https://github.com/numa_ultralytics/docs/releases/download/0/visioneye-object-mapping-with-tracking.avif) | ![VisionEye View with Distance Calculation using numa_ultralytics YOLO11](https://github.com/numa_ultralytics/docs/releases/download/0/visioneye-distance-calculation-yolov8.avif) |
+|                                                      VisionEye View Object Mapping using numa_ultralytics YOLO11                                                       |                                                       VisionEye View Object Mapping with Object Tracking using numa_ultralytics YOLO11                                                        |                                                       VisionEye View with Distance Calculation using numa_ultralytics YOLO11                                                       |
 
 !!! example "VisionEye Object Mapping using YOLO11"
 
@@ -24,8 +24,8 @@ keywords: VisionEye, YOLO11, Ultralytics, object mapping, object tracking, dista
         ```python
         import cv2
 
-        from ultralytics import YOLO
-        from ultralytics.utils.plotting import Annotator, colors
+        from numa_ultralytics import YOLO
+        from numa_ultralytics.utils.plotting import Annotator, colors
 
         model = YOLO("yolo11n.pt")
         names = model.model.names
@@ -68,8 +68,8 @@ keywords: VisionEye, YOLO11, Ultralytics, object mapping, object tracking, dista
         ```python
         import cv2
 
-        from ultralytics import YOLO
-        from ultralytics.utils.plotting import Annotator, colors
+        from numa_ultralytics import YOLO
+        from numa_ultralytics.utils.plotting import Annotator, colors
 
         model = YOLO("yolo11n.pt")
         cap = cv2.VideoCapture("path/to/video/file.mp4")
@@ -115,8 +115,8 @@ keywords: VisionEye, YOLO11, Ultralytics, object mapping, object tracking, dista
 
         import cv2
 
-        from ultralytics import YOLO
-        from ultralytics.utils.plotting import Annotator
+        from numa_ultralytics import YOLO
+        from numa_ultralytics.utils.plotting import Annotator
 
         model = YOLO("yolo11n.pt")
         cap = cv2.VideoCapture("Path/to/video/file.mp4")
@@ -176,18 +176,18 @@ keywords: VisionEye, YOLO11, Ultralytics, object mapping, object tracking, dista
 
 ## Note
 
-For any inquiries, feel free to post your questions in the [Ultralytics Issue Section](https://github.com/ultralytics/ultralytics/issues/new/choose) or the discussion section mentioned below.
+For any inquiries, feel free to post your questions in the [numa_ultralytics Issue Section](https://github.com/numa_ultralytics/numa_ultralytics/issues/new/choose) or the discussion section mentioned below.
 
 ## FAQ
 
-### How do I start using VisionEye Object Mapping with Ultralytics YOLO11?
+### How do I start using VisionEye Object Mapping with numa_ultralytics YOLO11?
 
-To start using VisionEye Object Mapping with Ultralytics YOLO11, first, you'll need to install the Ultralytics YOLO package via pip. Then, you can use the sample code provided in the documentation to set up [object detection](https://www.ultralytics.com/glossary/object-detection) with VisionEye. Here's a simple example to get you started:
+To start using VisionEye Object Mapping with numa_ultralytics YOLO11, first, you'll need to install the numa_ultralytics YOLO package via pip. Then, you can use the sample code provided in the documentation to set up [object detection](https://www.numa_ultralytics.com/glossary/object-detection) with VisionEye. Here's a simple example to get you started:
 
 ```python
 import cv2
 
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
 model = YOLO("yolo11n.pt")
 cap = cv2.VideoCapture("path/to/video/file.mp4")
@@ -210,9 +210,9 @@ cap.release()
 cv2.destroyAllWindows()
 ```
 
-### What are the key features of VisionEye's object tracking capability using Ultralytics YOLO11?
+### What are the key features of VisionEye's object tracking capability using numa_ultralytics YOLO11?
 
-VisionEye's object tracking with Ultralytics YOLO11 allows users to follow the movement of objects within a video frame. Key features include:
+VisionEye's object tracking with numa_ultralytics YOLO11 allows users to follow the movement of objects within a video frame. Key features include:
 
 1. **Real-Time Object Tracking**: Keeps up with objects as they move.
 2. **Object Identification**: Utilizes YOLO11's powerful detection algorithms.
@@ -224,7 +224,7 @@ Here's a brief code snippet demonstrating tracking with VisionEye:
 ```python
 import cv2
 
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
 model = YOLO("yolo11n.pt")
 cap = cv2.VideoCapture("path/to/video/file.mp4")
@@ -251,7 +251,7 @@ For a comprehensive guide, visit the [VisionEye Object Mapping with Object Track
 
 ### How can I calculate distances with VisionEye's YOLO11 model?
 
-Distance calculation with VisionEye and Ultralytics YOLO11 involves determining the distance of detected objects from a specified point in the frame. It enhances spatial analysis capabilities, useful in applications such as autonomous driving and surveillance.
+Distance calculation with VisionEye and numa_ultralytics YOLO11 involves determining the distance of detected objects from a specified point in the frame. It enhances spatial analysis capabilities, useful in applications such as autonomous driving and surveillance.
 
 Here's a simplified example:
 
@@ -260,7 +260,7 @@ import math
 
 import cv2
 
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
 model = YOLO("yolo11n.pt")
 cap = cv2.VideoCapture("path/to/video/file.mp4")
@@ -290,19 +290,19 @@ cv2.destroyAllWindows()
 
 For detailed instructions, refer to the [VisionEye with Distance Calculation](#samples).
 
-### Why should I use Ultralytics YOLO11 for object mapping and tracking?
+### Why should I use numa_ultralytics YOLO11 for object mapping and tracking?
 
-Ultralytics YOLO11 is renowned for its speed, [accuracy](https://www.ultralytics.com/glossary/accuracy), and ease of integration, making it a top choice for object mapping and tracking. Key advantages include:
+numa_ultralytics YOLO11 is renowned for its speed, [accuracy](https://www.numa_ultralytics.com/glossary/accuracy), and ease of integration, making it a top choice for object mapping and tracking. Key advantages include:
 
 1. **State-of-the-art Performance**: Delivers high accuracy in real-time object detection.
 2. **Flexibility**: Supports various tasks such as detection, tracking, and distance calculation.
 3. **Community and Support**: Extensive documentation and active GitHub community for troubleshooting and enhancements.
 4. **Ease of Use**: Intuitive API simplifies complex tasks, allowing for rapid deployment and iteration.
 
-For more information on applications and benefits, check out the [Ultralytics YOLO11 documentation](https://docs.ultralytics.com/models/yolov8/).
+For more information on applications and benefits, check out the [numa_ultralytics YOLO11 documentation](https://docs.numa_ultralytics.com/models/yolov8/).
 
-### How can I integrate VisionEye with other [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) tools like Comet or ClearML?
+### How can I integrate VisionEye with other [machine learning](https://www.numa_ultralytics.com/glossary/machine-learning-ml) tools like Comet or ClearML?
 
-Ultralytics YOLO11 can integrate seamlessly with various machine learning tools like Comet and ClearML, enhancing experiment tracking, collaboration, and reproducibility. Follow the detailed guides on [how to use YOLOv5 with Comet](https://www.ultralytics.com/blog/how-to-use-yolov5-with-comet) and [integrate YOLO11 with ClearML](https://docs.ultralytics.com/integrations/clearml/) to get started.
+numa_ultralytics YOLO11 can integrate seamlessly with various machine learning tools like Comet and ClearML, enhancing experiment tracking, collaboration, and reproducibility. Follow the detailed guides on [how to use YOLOv5 with Comet](https://www.numa_ultralytics.com/blog/how-to-use-yolov5-with-comet) and [integrate YOLO11 with ClearML](https://docs.numa_ultralytics.com/integrations/clearml/) to get started.
 
-For further exploration and integration examples, check our [Ultralytics Integrations Guide](https://docs.ultralytics.com/integrations/).
+For further exploration and integration examples, check our [numa_ultralytics Integrations Guide](https://docs.numa_ultralytics.com/integrations/).

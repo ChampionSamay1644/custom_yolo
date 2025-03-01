@@ -1,4 +1,4 @@
-# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+# numa_ultralytics 🚀 AGPL-3.0 License - https://numa_ultralytics.com/license
 
 import argparse
 from collections import defaultdict
@@ -9,9 +9,9 @@ import numpy as np
 from shapely.geometry import Polygon
 from shapely.geometry.point import Point
 
-from ultralytics import YOLO
-from ultralytics.utils.files import increment_path
-from ultralytics.utils.plotting import Annotator, colors
+from numa_ultralytics import YOLO
+from numa_ultralytics.utils.files import increment_path
+from numa_ultralytics.utils.plotting import Annotator, colors
 
 track_history = defaultdict(list)
 
@@ -142,7 +142,7 @@ def run(
     fourcc = cv2.VideoWriter_fourcc(*"mp4v")
 
     # Output setup
-    save_dir = increment_path(Path("ultralytics_rc_output") / "exp", exist_ok)
+    save_dir = increment_path(Path("numa_ultralytics_rc_output") / "exp", exist_ok)
     save_dir.mkdir(parents=True, exist_ok=True)
     video_writer = cv2.VideoWriter(str(save_dir / f"{Path(source).stem}.avi"), fourcc, fps, (frame_width, frame_height))
 
@@ -207,9 +207,9 @@ def run(
 
         if view_img:
             if vid_frame_count == 1:
-                cv2.namedWindow("Ultralytics YOLOv8 Region Counter Movable")
-                cv2.setMouseCallback("Ultralytics YOLOv8 Region Counter Movable", mouse_callback)
-            cv2.imshow("Ultralytics YOLOv8 Region Counter Movable", frame)
+                cv2.namedWindow("numa_ultralytics YOLOv8 Region Counter Movable")
+                cv2.setMouseCallback("numa_ultralytics YOLOv8 Region Counter Movable", mouse_callback)
+            cv2.imshow("numa_ultralytics YOLOv8 Region Counter Movable", frame)
 
         if save_img:
             video_writer.write(frame)

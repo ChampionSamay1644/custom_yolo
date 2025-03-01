@@ -1,9 +1,9 @@
-# Ultralytics YOLO 🚀, AGPL-3.0 license
-# Builds ultralytics/ultralytics:latest-jupyter image on DockerHub https://hub.docker.com/r/ultralytics/ultralytics
+# numa_ultralytics YOLO 🚀, AGPL-3.0 license
+# Builds numa_ultralytics/numa_ultralytics:latest-jupyter image on DockerHub https://hub.docker.com/r/numa_ultralytics/numa_ultralytics
 # Image provides JupyterLab interface for interactive YOLO development and includes tutorial notebooks
 
-# Start from Python-based Ultralytics image for full Python environment
-FROM ultralytics/ultralytics:latest-python
+# Start from Python-based numa_ultralytics image for full Python environment
+FROM numa_ultralytics/numa_ultralytics:latest-python
 
 # Install JupyterLab for interactive development
 RUN uv pip install --system jupyterlab
@@ -16,18 +16,18 @@ RUN mkdir /data/{datasets,weights,runs} && \
     yolo settings datasets_dir="/data/datasets" weights_dir="/data/weights" runs_dir="/data/runs"
 
 # Start JupyterLab with tutorial notebook
-ENTRYPOINT ["/usr/local/bin/jupyter", "lab", "--allow-root", "--ip=*", "/ultralytics/examples/tutorial.ipynb"]
+ENTRYPOINT ["/usr/local/bin/jupyter", "lab", "--allow-root", "--ip=*", "/numa_ultralytics/examples/tutorial.ipynb"]
 
 # Usage Examples -------------------------------------------------------------------------------------------------------
 
 # Build and Push
-# t=ultralytics/ultralytics:latest-jupyter && sudo docker build -f docker/Dockerfile-jupyter -t $t . && sudo docker push $t
+# t=numa_ultralytics/numa_ultralytics:latest-jupyter && sudo docker build -f docker/Dockerfile-jupyter -t $t . && sudo docker push $t
 
 # Run
-# t=ultralytics/ultralytics:latest-jupyter && sudo docker run -it --ipc=host -p 8888:8888 $t
+# t=numa_ultralytics/numa_ultralytics:latest-jupyter && sudo docker run -it --ipc=host -p 8888:8888 $t
 
 # Pull and Run
-# t=ultralytics/ultralytics:latest-jupyter && sudo docker pull $t && sudo docker run -it --ipc=host -p 8888:8888 $t
+# t=numa_ultralytics/numa_ultralytics:latest-jupyter && sudo docker pull $t && sudo docker run -it --ipc=host -p 8888:8888 $t
 
 # Pull and Run with local volume mounted
-# t=ultralytics/ultralytics:latest-jupyter && sudo docker pull $t && sudo docker run -it --ipc=host -p 8888:8888 -v "$(pwd)"/datasets:/data/datasets $t
+# t=numa_ultralytics/numa_ultralytics:latest-jupyter && sudo docker pull $t && sudo docker run -it --ipc=host -p 8888:8888 -v "$(pwd)"/datasets:/data/datasets $t

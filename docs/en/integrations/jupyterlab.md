@@ -1,20 +1,20 @@
 ---
 comments: true
 description: Explore our integration guide that explains how you can use JupyterLab to train a YOLO11 model. We'll also cover key features and tips for common issues.
-keywords: JupyterLab, What is JupyterLab, How to Use JupyterLab, JupyterLab How to Use, YOLO11, Ultralytics, Model Training, GPU, TPU, cloud computing
+keywords: JupyterLab, What is JupyterLab, How to Use JupyterLab, JupyterLab How to Use, YOLO11, numa_ultralytics, Model Training, GPU, TPU, cloud computing
 ---
 
 # A Guide on How to Use JupyterLab to Train Your YOLO11 Models
 
-Building [deep learning](https://www.ultralytics.com/glossary/deep-learning-dl) models can be tough, especially when you don't have the right tools or environment to work with. If you are facing this issue, JupyterLab might be the right solution for you. JupyterLab is a user-friendly, web-based platform that makes coding more flexible and interactive. You can use it to handle big datasets, create complex models, and even collaborate with others, all in one place.
+Building [deep learning](https://www.numa_ultralytics.com/glossary/deep-learning-dl) models can be tough, especially when you don't have the right tools or environment to work with. If you are facing this issue, JupyterLab might be the right solution for you. JupyterLab is a user-friendly, web-based platform that makes coding more flexible and interactive. You can use it to handle big datasets, create complex models, and even collaborate with others, all in one place.
 
-You can use JupyterLab to [work on projects](../guides/steps-of-a-cv-project.md) related to [Ultralytics YOLO11 models](https://github.com/ultralytics/ultralytics). JupyterLab is a great option for efficient model development and experimentation. It makes it easy to start experimenting with and [training YOLO11 models](../modes/train.md) right from your computer. Let's dive deeper into JupyterLab, its key features, and how you can use it to train YOLO11 models.
+You can use JupyterLab to [work on projects](../guides/steps-of-a-cv-project.md) related to [numa_ultralytics YOLO11 models](https://github.com/numa_ultralytics/numa_ultralytics). JupyterLab is a great option for efficient model development and experimentation. It makes it easy to start experimenting with and [training YOLO11 models](../modes/train.md) right from your computer. Let's dive deeper into JupyterLab, its key features, and how you can use it to train YOLO11 models.
 
 ## What is JupyterLab?
 
 JupyterLab is an open-source web-based platform designed for working with Jupyter notebooks, code, and data. It's an upgrade from the traditional Jupyter Notebook interface that provides a more versatile and powerful user experience.
 
-JupyterLab allows you to work with notebooks, text editors, terminals, and other tools all in one place. Its flexible design lets you organize your workspace to fit your needs and makes it easier to perform tasks like data analysis, visualization, and [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml). JupyterLab also supports real-time collaboration, making it ideal for team projects in research and data science.
+JupyterLab allows you to work with notebooks, text editors, terminals, and other tools all in one place. Its flexible design lets you organize your workspace to fit your needs and makes it easier to perform tasks like data analysis, visualization, and [machine learning](https://www.numa_ultralytics.com/glossary/machine-learning-ml). JupyterLab also supports real-time collaboration, making it ideal for team projects in research and data science.
 
 ## Key Features of JupyterLab
 
@@ -65,7 +65,7 @@ First, you need to install JupyterLab. Open your terminal and run the command:
 
 ### Step 2: Download the YOLO11 Tutorial Notebook
 
-Next, download the [tutorial.ipynb](https://github.com/ultralytics/ultralytics/blob/main/examples/tutorial.ipynb) file from the Ultralytics GitHub repository. Save this file to any directory on your local machine.
+Next, download the [tutorial.ipynb](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/examples/tutorial.ipynb) file from the numa_ultralytics GitHub repository. Save this file to any directory on your local machine.
 
 ### Step 3: Launch JupyterLab
 
@@ -81,13 +81,13 @@ Navigate to the directory where you saved the notebook file using your terminal.
 
 Once you've run this command, it will open JupyterLab in your default web browser, as shown below.
 
-![Image Showing How JupyterLab Opens On the Browser](https://github.com/ultralytics/docs/releases/download/0/jupyterlab-browser-launch.avif)
+![Image Showing How JupyterLab Opens On the Browser](https://github.com/numa_ultralytics/docs/releases/download/0/jupyterlab-browser-launch.avif)
 
 ### Step 4: Start Experimenting
 
 In JupyterLab, open the tutorial.ipynb notebook. You can now start running the cells to explore and experiment with YOLO11.
 
-![Image Showing Opened YOLO11 Notebook in JupyterLab](https://github.com/ultralytics/docs/releases/download/0/opened-yolov8-notebook-jupyterlab.avif)
+![Image Showing Opened YOLO11 Notebook in JupyterLab](https://github.com/numa_ultralytics/docs/releases/download/0/opened-yolov8-notebook-jupyterlab.avif)
 
 JupyterLab's interactive environment allows you to modify code, visualize outputs, and document your findings all in one place. You can try out different configurations and understand how YOLO11 works.
 
@@ -103,11 +103,11 @@ If you're excited to learn more about JupyterLab, here are some great resources 
 
 ## Summary
 
-We've explored how JupyterLab can be a powerful tool for experimenting with Ultralytics YOLO11 models. Using its flexible and interactive environment, you can easily set up JupyterLab on your local machine and start working with YOLO11. JupyterLab makes it simple to [train](../guides/model-training-tips.md) and [evaluate](../guides/model-testing.md) your models, visualize outputs, and [document your findings](../guides/model-monitoring-and-maintenance.md) all in one place.
+We've explored how JupyterLab can be a powerful tool for experimenting with numa_ultralytics YOLO11 models. Using its flexible and interactive environment, you can easily set up JupyterLab on your local machine and start working with YOLO11. JupyterLab makes it simple to [train](../guides/model-training-tips.md) and [evaluate](../guides/model-testing.md) your models, visualize outputs, and [document your findings](../guides/model-monitoring-and-maintenance.md) all in one place.
 
 For more details, visit the [JupyterLab FAQ Page](https://jupyterlab.readthedocs.io/en/stable/getting_started/faq.html).
 
-Interested in more YOLO11 integrations? Check out the [Ultralytics integration guide](./index.md) to explore additional tools and capabilities for your machine learning projects.
+Interested in more YOLO11 integrations? Check out the [numa_ultralytics integration guide](./index.md) to explore additional tools and capabilities for your machine learning projects.
 
 ## FAQ
 
@@ -115,35 +115,35 @@ Interested in more YOLO11 integrations? Check out the [Ultralytics integration g
 
 To train a YOLO11 model using JupyterLab:
 
-1. Install JupyterLab and the Ultralytics package:
+1. Install JupyterLab and the numa_ultralytics package:
 
-    ```bash
-    pip install jupyterlab ultralytics
-    ```
+   ```bash
+   pip install jupyterlab numa_ultralytics
+   ```
 
 2. Launch JupyterLab and open a new notebook.
 
 3. Import the YOLO model and load a pretrained model:
 
-    ```python
-    from ultralytics import YOLO
+   ```python
+   from numa_ultralytics import YOLO
 
-    model = YOLO("yolo11n.pt")
-    ```
+   model = YOLO("yolo11n.pt")
+   ```
 
 4. Train the model on your custom dataset:
 
-    ```python
-    results = model.train(data="path/to/your/data.yaml", epochs=100, imgsz=640)
-    ```
+   ```python
+   results = model.train(data="path/to/your/data.yaml", epochs=100, imgsz=640)
+   ```
 
 5. Visualize training results using JupyterLab's built-in plotting capabilities:
 
-    ```ipython
-    %matplotlib inline
-    from ultralytics.utils.plotting import plot_results
-    plot_results(results)
-    ```
+   ```ipython
+   %matplotlib inline
+   from numa_ultralytics.utils.plotting import plot_results
+   plot_results(results)
+   ```
 
 JupyterLab's interactive environment allows you to easily modify parameters, visualize results, and iterate on your model training process.
 
@@ -158,7 +158,7 @@ JupyterLab offers several features that make it ideal for YOLO11 projects:
 5. Markdown support: Document your YOLO11 experiments and findings with rich text and images.
 6. Extension ecosystem: Enhance functionality with extensions for version control, [remote computing](google-colab.md), and more.
 
-These features allow for a seamless development experience when working with YOLO11 models, from data preparation to [model deployment](https://www.ultralytics.com/glossary/model-deployment).
+These features allow for a seamless development experience when working with YOLO11 models, from data preparation to [model deployment](https://www.numa_ultralytics.com/glossary/model-deployment).
 
 ### How can I optimize YOLO11 model performance using JupyterLab?
 
@@ -166,29 +166,29 @@ To optimize YOLO11 model performance in JupyterLab:
 
 1. Use the autobatch feature to determine the optimal batch size:
 
-    ```python
-    from ultralytics.utils.autobatch import autobatch
+   ```python
+   from numa_ultralytics.utils.autobatch import autobatch
 
-    optimal_batch_size = autobatch(model)
-    ```
+   optimal_batch_size = autobatch(model)
+   ```
 
 2. Implement [hyperparameter tuning](../guides/hyperparameter-tuning.md) using libraries like Ray Tune:
 
-    ```python
-    from ultralytics.utils.tuner import run_ray_tune
+   ```python
+   from numa_ultralytics.utils.tuner import run_ray_tune
 
-    best_results = run_ray_tune(model, data="path/to/data.yaml")
-    ```
+   best_results = run_ray_tune(model, data="path/to/data.yaml")
+   ```
 
 3. Visualize and analyze model metrics using JupyterLab's plotting capabilities:
 
-    ```python
-    from ultralytics.utils.plotting import plot_results
+   ```python
+   from numa_ultralytics.utils.plotting import plot_results
 
-    plot_results(results.results_dict)
-    ```
+   plot_results(results.results_dict)
+   ```
 
-4. Experiment with different model architectures and [export formats](../modes/export.md) to find the best balance of speed and [accuracy](https://www.ultralytics.com/glossary/accuracy) for your specific use case.
+4. Experiment with different model architectures and [export formats](../modes/export.md) to find the best balance of speed and [accuracy](https://www.numa_ultralytics.com/glossary/accuracy) for your specific use case.
 
 JupyterLab's interactive environment allows for quick iterations and real-time feedback, making it easier to optimize your YOLO11 models efficiently.
 
@@ -198,13 +198,13 @@ When working with JupyterLab and YOLO11, you might encounter some common issues.
 
 1. GPU memory issues:
 
-    - Use `torch.cuda.empty_cache()` to clear GPU memory between runs.
-    - Adjust [batch size](https://www.ultralytics.com/glossary/batch-size) or image size to fit your GPU memory.
+   - Use `torch.cuda.empty_cache()` to clear GPU memory between runs.
+   - Adjust [batch size](https://www.numa_ultralytics.com/glossary/batch-size) or image size to fit your GPU memory.
 
 2. Package conflicts:
 
-    - Create a separate conda environment for your YOLO11 projects to avoid conflicts.
-    - Use `!pip install package_name` in a notebook cell to install missing packages.
+   - Create a separate conda environment for your YOLO11 projects to avoid conflicts.
+   - Use `!pip install package_name` in a notebook cell to install missing packages.
 
 3. Kernel crashes:
-    - Restart the kernel and run cells one by one to identify the problematic code.
+   - Restart the kernel and run cells one by one to identify the problematic code.

@@ -1,17 +1,17 @@
 ---
 comments: true
 description: Learn how to implement YOLO11 with SAHI for sliced inference. Optimize memory usage and enhance detection accuracy for large-scale applications.
-keywords: YOLO11, SAHI, Sliced Inference, Object Detection, Ultralytics, High-resolution Images, Computational Efficiency, Integration Guide
+keywords: YOLO11, SAHI, Sliced Inference, Object Detection, numa_ultralytics, High-resolution Images, Computational Efficiency, Integration Guide
 ---
 
-# Ultralytics Docs: Using YOLO11 with SAHI for Sliced Inference
+# numa_ultralytics Docs: Using YOLO11 with SAHI for Sliced Inference
 
-<a href="https://colab.research.google.com/github/ultralytics/notebooks/blob/main/notebooks/how-to-use-ultralytics-yolo-with-sahi.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open SAHI for Sliced Inference In Colab"></a>
+<a href="https://colab.research.google.com/github/numa_ultralytics/notebooks/blob/main/notebooks/how-to-use-numa_ultralytics-yolo-with-sahi.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open SAHI for Sliced Inference In Colab"></a>
 
-Welcome to the Ultralytics documentation on how to use YOLO11 with [SAHI](https://github.com/obss/sahi) (Slicing Aided Hyper Inference). This comprehensive guide aims to furnish you with all the essential knowledge you'll need to implement SAHI alongside YOLO11. We'll deep-dive into what SAHI is, why sliced inference is critical for large-scale applications, and how to integrate these functionalities with YOLO11 for enhanced [object detection](https://www.ultralytics.com/glossary/object-detection) performance.
+Welcome to the numa_ultralytics documentation on how to use YOLO11 with [SAHI](https://github.com/obss/sahi) (Slicing Aided Hyper Inference). This comprehensive guide aims to furnish you with all the essential knowledge you'll need to implement SAHI alongside YOLO11. We'll deep-dive into what SAHI is, why sliced inference is critical for large-scale applications, and how to integrate these functionalities with YOLO11 for enhanced [object detection](https://www.numa_ultralytics.com/glossary/object-detection) performance.
 
 <p align="center">
-  <img width="1024" src="https://github.com/ultralytics/docs/releases/download/0/sahi-sliced-inference-overview.avif" alt="SAHI Sliced Inference Overview">
+  <img width="1024" src="https://github.com/numa_ultralytics/docs/releases/download/0/sahi-sliced-inference-overview.avif" alt="SAHI Sliced Inference Overview">
 </p>
 
 ## Introduction to SAHI
@@ -26,14 +26,14 @@ SAHI (Slicing Aided Hyper Inference) is an innovative library designed to optimi
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Inference with SAHI (Slicing Aided Hyper Inference) using Ultralytics YOLO11
+  <strong>Watch:</strong> Inference with SAHI (Slicing Aided Hyper Inference) using numa_ultralytics YOLO11
 </p>
 
 ### Key Features of SAHI
 
 - **Seamless Integration**: SAHI integrates effortlessly with YOLO models, meaning you can start slicing and detecting without a lot of code modification.
 - **Resource Efficiency**: By breaking down large images into smaller parts, SAHI optimizes the memory usage, allowing you to run high-quality detection on hardware with limited resources.
-- **High [Accuracy](https://www.ultralytics.com/glossary/accuracy)**: SAHI maintains the detection accuracy by employing smart algorithms to merge overlapping detection boxes during the stitching process.
+- **High [Accuracy](https://www.numa_ultralytics.com/glossary/accuracy)**: SAHI maintains the detection accuracy by employing smart algorithms to merge overlapping detection boxes during the stitching process.
 
 ## What is Sliced Inference?
 
@@ -53,8 +53,8 @@ Sliced Inference refers to the practice of subdividing a large or high-resolutio
     <th>YOLO11 with SAHI</th>
   </tr>
   <tr>
-    <td><img src="https://github.com/ultralytics/docs/releases/download/0/yolov8-without-sahi.avif" alt="YOLO11 without SAHI" width="640"></td>
-    <td><img src="https://github.com/ultralytics/docs/releases/download/0/yolov8-with-sahi.avif" alt="YOLO11 with SAHI" width="640"></td>
+    <td><img src="https://github.com/numa_ultralytics/docs/releases/download/0/yolov8-without-sahi.avif" alt="YOLO11 without SAHI" width="640"></td>
+    <td><img src="https://github.com/numa_ultralytics/docs/releases/download/0/yolov8-with-sahi.avif" alt="YOLO11 with SAHI" width="640"></td>
   </tr>
 </table>
 
@@ -62,10 +62,10 @@ Sliced Inference refers to the practice of subdividing a large or high-resolutio
 
 ### Installation
 
-To get started, install the latest versions of SAHI and Ultralytics:
+To get started, install the latest versions of SAHI and numa_ultralytics:
 
 ```bash
-pip install -U ultralytics sahi
+pip install -U numa_ultralytics sahi
 ```
 
 ### Import Modules and Download Resources
@@ -74,7 +74,7 @@ Here's how to import the necessary modules and download a YOLO11 model and some 
 
 ```python
 from sahi.utils.file import download_from_url
-from sahi.utils.ultralytics import download_yolo11n_model
+from sahi.utils.numa_ultralytics import download_yolo11n_model
 
 # Download YOLO11 model
 model_path = "models/yolo11n.pt"
@@ -101,7 +101,7 @@ You can instantiate a YOLO11 model for object detection like this:
 from sahi import AutoDetectionModel
 
 detection_model = AutoDetectionModel.from_pretrained(
-    model_type="ultralytics",
+    model_type="numa_ultralytics",
     model_path=model_path,
     confidence_threshold=0.3,
     device="cpu",  # or 'cuda:0'
@@ -171,7 +171,7 @@ For batch prediction on a directory of images:
 from sahi.predict import predict
 
 predict(
-    model_type="ultralytics",
+    model_type="numa_ultralytics",
     model_path="path/to/yolo11n.pt",
     model_device="cpu",  # or 'cuda:0'
     model_confidence_threshold=0.4,
@@ -204,23 +204,23 @@ If you use SAHI in your research or development work, please cite the original S
         }
         ```
 
-We extend our thanks to the SAHI research group for creating and maintaining this invaluable resource for the [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) community. For more information about SAHI and its creators, visit the [SAHI GitHub repository](https://github.com/obss/sahi).
+We extend our thanks to the SAHI research group for creating and maintaining this invaluable resource for the [computer vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv) community. For more information about SAHI and its creators, visit the [SAHI GitHub repository](https://github.com/obss/sahi).
 
 ## FAQ
 
 ### How can I integrate YOLO11 with SAHI for sliced inference in object detection?
 
-Integrating Ultralytics YOLO11 with SAHI (Slicing Aided Hyper Inference) for sliced inference optimizes your object detection tasks on high-resolution images by partitioning them into manageable slices. This approach improves memory usage and ensures high detection accuracy. To get started, you need to install the ultralytics and sahi libraries:
+Integrating numa_ultralytics YOLO11 with SAHI (Slicing Aided Hyper Inference) for sliced inference optimizes your object detection tasks on high-resolution images by partitioning them into manageable slices. This approach improves memory usage and ensures high detection accuracy. To get started, you need to install the numa_ultralytics and sahi libraries:
 
 ```bash
-pip install -U ultralytics sahi
+pip install -U numa_ultralytics sahi
 ```
 
 Then, download a YOLO11 model and test images:
 
 ```python
 from sahi.utils.file import download_from_url
-from sahi.utils.ultralytics import download_yolo11n_model
+from sahi.utils.numa_ultralytics import download_yolo11n_model
 
 # Download YOLO11 model
 model_path = "models/yolo11n.pt"
@@ -237,7 +237,7 @@ For more detailed instructions, refer to our [Sliced Inference guide](#sliced-in
 
 ### Why should I use SAHI with YOLO11 for object detection on large images?
 
-Using SAHI with Ultralytics YOLO11 for object detection on large images offers several benefits:
+Using SAHI with numa_ultralytics YOLO11 for object detection on large images offers several benefits:
 
 - **Reduced Computational Burden**: Smaller slices are faster to process and consume less memory, making it feasible to run high-quality detections on hardware with limited resources.
 - **Maintained Detection Accuracy**: SAHI uses intelligent algorithms to merge overlapping boxes, preserving the detection quality.
@@ -260,7 +260,7 @@ This command will save the visualized predictions to the specified directory, an
 
 ### What features does SAHI offer for improving YOLO11 object detection?
 
-SAHI (Slicing Aided Hyper Inference) offers several features that complement Ultralytics YOLO11 for object detection:
+SAHI (Slicing Aided Hyper Inference) offers several features that complement numa_ultralytics YOLO11 for object detection:
 
 - **Seamless Integration**: SAHI easily integrates with YOLO models, requiring minimal code adjustments.
 - **Resource Efficiency**: It partitions large images into smaller slices, which optimizes memory usage and speed.
@@ -272,7 +272,7 @@ For a deeper understanding, read about SAHI's [key features](#key-features-of-sa
 
 To handle large-scale inference projects using YOLO11 and SAHI, follow these best practices:
 
-1. **Install Required Libraries**: Ensure that you have the latest versions of ultralytics and sahi.
+1. **Install Required Libraries**: Ensure that you have the latest versions of numa_ultralytics and sahi.
 2. **Configure Sliced Inference**: Determine the optimal slice dimensions and overlap ratios for your specific project.
 3. **Run Batch Predictions**: Use SAHI's capabilities to perform batch predictions on a directory of images, which improves efficiency.
 
@@ -282,7 +282,7 @@ Example for batch prediction:
 from sahi.predict import predict
 
 predict(
-    model_type="ultralytics",
+    model_type="numa_ultralytics",
     model_path="path/to/yolo11n.pt",
     model_device="cpu",  # or 'cuda:0'
     model_confidence_threshold=0.4,

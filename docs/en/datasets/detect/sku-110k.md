@@ -6,7 +6,7 @@ keywords: SKU-110k, dataset, object detection, retail shelf images, deep learnin
 
 # SKU-110k Dataset
 
-The [SKU-110k](https://github.com/eg4000/SKU110K_CVPR19) dataset is a collection of densely packed retail shelf images, designed to support research in [object detection](https://www.ultralytics.com/glossary/object-detection) tasks. Developed by Eran Goldman et al., the dataset contains over 110,000 unique store keeping unit (SKU) categories with densely packed objects, often looking similar or even identical, positioned in proximity.
+The [SKU-110k](https://github.com/eg4000/SKU110K_CVPR19) dataset is a collection of densely packed retail shelf images, designed to support research in [object detection](https://www.numa_ultralytics.com/glossary/object-detection) tasks. Developed by Eran Goldman et al., the dataset contains over 110,000 unique store keeping unit (SKU) categories with densely packed objects, often looking similar or even identical, positioned in proximity.
 
 <p align="center">
   <br>
@@ -16,10 +16,10 @@ The [SKU-110k](https://github.com/eg4000/SKU110K_CVPR19) dataset is a collection
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> How to Train YOLOv10 on SKU-110k Dataset using Ultralytics | Retail Dataset
+  <strong>Watch:</strong> How to Train YOLOv10 on SKU-110k Dataset using numa_ultralytics | Retail Dataset
 </p>
 
-![Dataset sample image](https://github.com/ultralytics/docs/releases/download/0/densely-packed-retail-shelf.avif)
+![Dataset sample image](https://github.com/numa_ultralytics/docs/releases/download/0/densely-packed-retail-shelf.avif)
 
 ## Key Features
 
@@ -37,28 +37,28 @@ The SKU-110k dataset is organized into three main subsets:
 
 ## Applications
 
-The SKU-110k dataset is widely used for training and evaluating deep learning models in object detection tasks, especially in densely packed scenes such as retail shelf displays. The dataset's diverse set of SKU categories and densely packed object arrangements make it a valuable resource for researchers and practitioners in the field of [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv).
+The SKU-110k dataset is widely used for training and evaluating deep learning models in object detection tasks, especially in densely packed scenes such as retail shelf displays. The dataset's diverse set of SKU categories and densely packed object arrangements make it a valuable resource for researchers and practitioners in the field of [computer vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv).
 
 ## Dataset YAML
 
-A YAML (Yet Another Markup Language) file is used to define the dataset configuration. It contains information about the dataset's paths, classes, and other relevant information. For the case of the SKU-110K dataset, the `SKU-110K.yaml` file is maintained at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/SKU-110K.yaml](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/SKU-110K.yaml).
+A YAML (Yet Another Markup Language) file is used to define the dataset configuration. It contains information about the dataset's paths, classes, and other relevant information. For the case of the SKU-110K dataset, the `SKU-110K.yaml` file is maintained at [https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/SKU-110K.yaml](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/SKU-110K.yaml).
 
-!!! example "ultralytics/cfg/datasets/SKU-110K.yaml"
+!!! example "numa_ultralytics/cfg/datasets/SKU-110K.yaml"
 
     ```yaml
-    --8<-- "ultralytics/cfg/datasets/SKU-110K.yaml"
+    --8<-- "numa_ultralytics/cfg/datasets/SKU-110K.yaml"
     ```
 
 ## Usage
 
-To train a YOLO11n model on the SKU-110K dataset for 100 [epochs](https://www.ultralytics.com/glossary/epoch) with an image size of 640, you can use the following code snippets. For a comprehensive list of available arguments, refer to the model [Training](../../modes/train.md) page.
+To train a YOLO11n model on the SKU-110K dataset for 100 [epochs](https://www.numa_ultralytics.com/glossary/epoch) with an image size of 640, you can use the following code snippets. For a comprehensive list of available arguments, refer to the model [Training](../../modes/train.md) page.
 
 !!! example "Train Example"
 
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n.pt")  # load a pretrained model (recommended for training)
@@ -78,7 +78,7 @@ To train a YOLO11n model on the SKU-110K dataset for 100 [epochs](https://www.ul
 
 The SKU-110k dataset contains a diverse set of retail shelf images with densely packed objects, providing rich context for object detection tasks. Here are some examples of data from the dataset, along with their corresponding annotations:
 
-![Dataset sample image](https://github.com/ultralytics/docs/releases/download/0/densely-packed-retail-shelf-1.avif)
+![Dataset sample image](https://github.com/numa_ultralytics/docs/releases/download/0/densely-packed-retail-shelf-1.avif)
 
 - **Densely packed retail shelf image**: This image demonstrates an example of densely packed objects in a retail shelf setting. Objects are annotated with bounding boxes and SKU category labels.
 
@@ -118,7 +118,7 @@ Training a YOLO11 model on the SKU-110k dataset is straightforward. Here's an ex
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n.pt")  # load a pretrained model (recommended for training)
@@ -149,9 +149,9 @@ Refer to the [Dataset Structure](#dataset-structure) section for more details.
 
 ### How do I configure the SKU-110k dataset for training?
 
-The SKU-110k dataset configuration is defined in a YAML file, which includes details about the dataset's paths, classes, and other relevant information. The `SKU-110K.yaml` file is maintained at [SKU-110K.yaml](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/SKU-110K.yaml). For example, you can train a model using this configuration as shown in our [Usage](#usage) section.
+The SKU-110k dataset configuration is defined in a YAML file, which includes details about the dataset's paths, classes, and other relevant information. The `SKU-110K.yaml` file is maintained at [SKU-110K.yaml](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/SKU-110K.yaml). For example, you can train a model using this configuration as shown in our [Usage](#usage) section.
 
-### What are the key features of the SKU-110k dataset in the context of [deep learning](https://www.ultralytics.com/glossary/deep-learning-dl)?
+### What are the key features of the SKU-110k dataset in the context of [deep learning](https://www.numa_ultralytics.com/glossary/deep-learning-dl)?
 
 The SKU-110k dataset features images of store shelves from around the world, showcasing densely packed objects that pose significant challenges for object detectors:
 

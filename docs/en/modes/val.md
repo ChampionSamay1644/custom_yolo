@@ -1,16 +1,16 @@
 ---
 comments: true
 description: Learn how to validate your YOLO11 model with precise metrics, easy-to-use tools, and custom settings for optimal performance.
-keywords: Ultralytics, YOLO11, model validation, machine learning, object detection, mAP metrics, Python API, CLI
+keywords: numa_ultralytics, YOLO11, model validation, machine learning, object detection, mAP metrics, Python API, CLI
 ---
 
-# Model Validation with Ultralytics YOLO
+# Model Validation with numa_ultralytics YOLO
 
-<img width="1024" src="https://github.com/ultralytics/docs/releases/download/0/ultralytics-yolov8-ecosystem-integrations.avif" alt="Ultralytics YOLO ecosystem and integrations">
+<img width="1024" src="https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-yolov8-ecosystem-integrations.avif" alt="numa_ultralytics YOLO ecosystem and integrations">
 
 ## Introduction
 
-Validation is a critical step in the [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) pipeline, allowing you to assess the quality of your trained models. Val mode in Ultralytics YOLO11 provides a robust suite of tools and metrics for evaluating the performance of your [object detection](https://www.ultralytics.com/glossary/object-detection) models. This guide serves as a complete resource for understanding how to effectively use the Val mode to ensure that your models are both accurate and reliable.
+Validation is a critical step in the [machine learning](https://www.numa_ultralytics.com/glossary/machine-learning-ml) pipeline, allowing you to assess the quality of your trained models. Val mode in numa_ultralytics YOLO11 provides a robust suite of tools and metrics for evaluating the performance of your [object detection](https://www.numa_ultralytics.com/glossary/object-detection) models. This guide serves as a complete resource for understanding how to effectively use the Val mode to ensure that your models are both accurate and reliable.
 
 <p align="center">
   <br>
@@ -20,17 +20,17 @@ Validation is a critical step in the [machine learning](https://www.ultralytics.
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Ultralytics Modes Tutorial: Validation
+  <strong>Watch:</strong> numa_ultralytics Modes Tutorial: Validation
 </p>
 
-## Why Validate with Ultralytics YOLO?
+## Why Validate with numa_ultralytics YOLO?
 
 Here's why using YOLO11's Val mode is advantageous:
 
 - **Precision:** Get accurate metrics like mAP50, mAP75, and mAP50-95 to comprehensively evaluate your model.
 - **Convenience:** Utilize built-in features that remember training settings, simplifying the validation process.
 - **Flexibility:** Validate your model with the same or different datasets and image sizes.
-- **[Hyperparameter Tuning](https://www.ultralytics.com/glossary/hyperparameter-tuning):** Use validation metrics to fine-tune your model for better performance.
+- **[Hyperparameter Tuning](https://www.numa_ultralytics.com/glossary/hyperparameter-tuning):** Use validation metrics to fine-tune your model for better performance.
 
 ### Key Features of Val Mode
 
@@ -47,14 +47,14 @@ These are the notable functionalities offered by YOLO11's Val mode:
 
 ## Usage Examples
 
-Validate trained YOLO11n model [accuracy](https://www.ultralytics.com/glossary/accuracy) on the COCO8 dataset. No arguments are needed as the `model` retains its training `data` and arguments as model attributes. See Arguments section below for a full list of validation arguments.
+Validate trained YOLO11n model [accuracy](https://www.numa_ultralytics.com/glossary/accuracy) on the COCO8 dataset. No arguments are needed as the `model` retains its training `data` and arguments as model attributes. See Arguments section below for a full list of validation arguments.
 
 !!! example
 
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n.pt")  # load an official model
@@ -92,7 +92,7 @@ The below examples showcase YOLO model validation with custom arguments in Pytho
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n.pt")
@@ -109,12 +109,12 @@ The below examples showcase YOLO model validation with custom arguments in Pytho
 
 ## FAQ
 
-### How do I validate my YOLO11 model with Ultralytics?
+### How do I validate my YOLO11 model with numa_ultralytics?
 
-To validate your YOLO11 model, you can use the Val mode provided by Ultralytics. For example, using the Python API, you can load a model and run validation with:
+To validate your YOLO11 model, you can use the Val mode provided by numa_ultralytics. For example, using the Python API, you can load a model and run validation with:
 
 ```python
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
 # Load a model
 model = YOLO("yolo11n.pt")
@@ -152,25 +152,25 @@ print(metrics.box.maps)  # list of mAP50-95 for each category
 
 For a complete performance evaluation, it's crucial to review all these metrics. For more details, refer to the [Key Features of Val Mode](#key-features-of-val-mode).
 
-### What are the advantages of using Ultralytics YOLO for validation?
+### What are the advantages of using numa_ultralytics YOLO for validation?
 
-Using Ultralytics YOLO for validation provides several advantages:
+Using numa_ultralytics YOLO for validation provides several advantages:
 
-- **[Precision](https://www.ultralytics.com/glossary/precision):** YOLO11 offers accurate performance metrics including mAP50, mAP75, and mAP50-95.
+- **[Precision](https://www.numa_ultralytics.com/glossary/precision):** YOLO11 offers accurate performance metrics including mAP50, mAP75, and mAP50-95.
 - **Convenience:** The models remember their training settings, making validation straightforward.
 - **Flexibility:** You can validate against the same or different datasets and image sizes.
 - **Hyperparameter Tuning:** Validation metrics help in fine-tuning models for better performance.
 
-These benefits ensure that your models are evaluated thoroughly and can be optimized for superior results. Learn more about these advantages in the [Why Validate with Ultralytics YOLO](#why-validate-with-ultralytics-yolo) section.
+These benefits ensure that your models are evaluated thoroughly and can be optimized for superior results. Learn more about these advantages in the [Why Validate with numa_ultralytics YOLO](#why-validate-with-numa_ultralytics-yolo) section.
 
 ### Can I validate my YOLO11 model using a custom dataset?
 
-Yes, you can validate your YOLO11 model using a [custom dataset](https://docs.ultralytics.com/datasets/). Specify the `data` argument with the path to your dataset configuration file. This file should include paths to the [validation data](https://www.ultralytics.com/glossary/validation-data), class names, and other relevant details.
+Yes, you can validate your YOLO11 model using a [custom dataset](https://docs.numa_ultralytics.com/datasets/). Specify the `data` argument with the path to your dataset configuration file. This file should include paths to the [validation data](https://www.numa_ultralytics.com/glossary/validation-data), class names, and other relevant details.
 
 Example in Python:
 
 ```python
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
 # Load a model
 model = YOLO("yolo11n.pt")
@@ -195,7 +195,7 @@ To save the validation results to a JSON file, you can set the `save_json` argum
 Example in Python:
 
 ```python
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
 # Load a model
 model = YOLO("yolo11n.pt")

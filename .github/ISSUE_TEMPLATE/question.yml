@@ -1,23 +1,23 @@
-# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+# numa_ultralytics 🚀 AGPL-3.0 License - https://numa_ultralytics.com/license
 
 name: ❓ Question
-description: Ask an Ultralytics YOLO question
+description: Ask an numa_ultralytics YOLO question
 # title: " "
 labels: [question]
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for asking an Ultralytics YOLO ❓ Question!
+        Thank you for asking an numa_ultralytics YOLO ❓ Question!
 
   - type: checkboxes
     attributes:
       label: Search before asking
       description: >
-        Please search the Ultralytics [Docs](https://docs.ultralytics.com/), [issues](https://github.com/ultralytics/ultralytics/issues) and [discussions](https://github.com/orgs/ultralytics/discussions) to see if a similar question already exists.
+        Please search the numa_ultralytics [Docs](https://docs.numa_ultralytics.com/), [issues](https://github.com/numa_ultralytics/numa_ultralytics/issues) and [discussions](https://github.com/orgs/numa_ultralytics/discussions) to see if a similar question already exists.
       options:
         - label: >
-            I have searched the Ultralytics YOLO [issues](https://github.com/ultralytics/ultralytics/issues) and [discussions](https://github.com/orgs/ultralytics/discussions) and found no similar questions.
+            I have searched the numa_ultralytics YOLO [issues](https://github.com/numa_ultralytics/numa_ultralytics/issues) and [discussions](https://github.com/orgs/numa_ultralytics/discussions) and found no similar questions.
           required: true
 
   - type: textarea

@@ -1,26 +1,26 @@
 # Regions Counting Using YOLOv8 (Inference on Video)
 
-> **Region Counter** is now part of **[Ultralytics Solutions](https://docs.ultralytics.com/solutions/)**, offering improved features and regular updates. Enjoy improved features and regular updates!
+> **Region Counter** is now part of **[numa_ultralytics Solutions](https://docs.numa_ultralytics.com/solutions/)**, offering improved features and regular updates. Enjoy improved features and regular updates!
 
-🔗 **[Explore Object Counting in Regions Here](https://docs.ultralytics.com/guides/region-counting/)**
+🔗 **[Explore Object Counting in Regions Here](https://docs.numa_ultralytics.com/guides/region-counting/)**
 
 > 🔔 **Notice:**
 
-> The GitHub example will remain available but **will no longer be actively maintained**. For the latest updates and improvements, please use the official [link](https://docs.ultralytics.com/guides/region-counting/). Thank you!
+> The GitHub example will remain available but **will no longer be actively maintained**. For the latest updates and improvements, please use the official [link](https://docs.numa_ultralytics.com/guides/region-counting/). Thank you!
 
 Region counting is a method employed to tally the objects within a specified area, allowing for more sophisticated analyses when multiple regions are considered. These regions can be adjusted interactively using a Left Mouse Click, and the counting process occurs in real time. Regions can be adjusted to suit the user's preferences and requirements.
 
 <div>
 <p align="center">
-  <img src="https://github.com/RizwanMunawar/ultralytics/assets/62513924/5ab3bbd7-fd12-4849-928e-5f294d6c3fcf" width="45%" alt="YOLOv8 region counting visual 1">
-  <img src="https://github.com/RizwanMunawar/ultralytics/assets/62513924/e7c1aea7-474d-4d78-8d48-b50854ffe1ca" width="45%" alt="YOLOv8 region counting visual 2">
+  <img src="https://github.com/RizwanMunawar/numa_ultralytics/assets/62513924/5ab3bbd7-fd12-4849-928e-5f294d6c3fcf" width="45%" alt="YOLOv8 region counting visual 1">
+  <img src="https://github.com/RizwanMunawar/numa_ultralytics/assets/62513924/e7c1aea7-474d-4d78-8d48-b50854ffe1ca" width="45%" alt="YOLOv8 region counting visual 2">
 </p>
 </div>
 
 ## Table of Contents
 
 - [Step 1: Install the Required Libraries](#step-1-install-the-required-libraries)
-- [Step 2: Run the Region Counting Using Ultralytics YOLOv8](#step-2-run-the-region-counting-using-ultralytics-yolov8)
+- [Step 2: Run the Region Counting Using numa_ultralytics YOLOv8](#step-2-run-the-region-counting-using-numa_ultralytics-yolov8)
 - [Usage Options](#usage-options)
 - [FAQ](#faq)
 
@@ -29,14 +29,14 @@ Region counting is a method employed to tally the objects within a specified are
 Clone the repository, install dependencies and `cd` to this local directory for commands in Step 2.
 
 ```bash
-# Clone ultralytics repo
-git clone https://github.com/ultralytics/ultralytics
+# Clone numa_ultralytics repo
+git clone https://github.com/numa_ultralytics/numa_ultralytics
 
 # cd to local directory
-cd ultralytics/examples/YOLOv8-Region-Counter
+cd numa_ultralytics/examples/YOLOv8-Region-Counter
 ```
 
-## Step 2: Run the Region Counting Using Ultralytics YOLOv8
+## Step 2: Run the Region Counting Using numa_ultralytics YOLOv8
 
 Here are the basic commands for running the inference:
 
@@ -125,4 +125,4 @@ Certainly, you have the flexibility to specify different YOLO model weights usin
 
 **6. Where Can I Access Additional Information?**
 
-For a comprehensive guide on using YOLOv8 with Object Tracking, please refer to [Multi-Object Tracking with Ultralytics YOLO](https://docs.ultralytics.com/modes/track/).
+For a comprehensive guide on using YOLOv8 with Object Tracking, please refer to [Multi-Object Tracking with numa_ultralytics YOLO](https://docs.numa_ultralytics.com/modes/track/).

@@ -1,12 +1,12 @@
 ---
 comments: true
-description: Explore Ultralytics' diverse datasets for vision tasks like detection, segmentation, classification, and more. Enhance your projects with high-quality annotated data.
-keywords: Ultralytics, datasets, computer vision, object detection, instance segmentation, pose estimation, image classification, multi-object tracking
+description: Explore numa_ultralytics' diverse datasets for vision tasks like detection, segmentation, classification, and more. Enhance your projects with high-quality annotated data.
+keywords: numa_ultralytics, datasets, computer vision, object detection, instance segmentation, pose estimation, image classification, multi-object tracking
 ---
 
 # Datasets Overview
 
-Ultralytics provides support for various datasets to facilitate computer vision tasks such as detection, [instance segmentation](https://www.ultralytics.com/glossary/instance-segmentation), pose estimation, classification, and multi-object tracking. Below is a list of the main Ultralytics datasets, followed by a summary of each computer vision task and the respective datasets.
+numa_ultralytics provides support for various datasets to facilitate computer vision tasks such as detection, [instance segmentation](https://www.numa_ultralytics.com/glossary/instance-segmentation), pose estimation, classification, and multi-object tracking. Below is a list of the main numa_ultralytics datasets, followed by a summary of each computer vision task and the respective datasets.
 
 <p align="center">
   <br>
@@ -16,19 +16,19 @@ Ultralytics provides support for various datasets to facilitate computer vision 
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Ultralytics Datasets Overview
+  <strong>Watch:</strong> numa_ultralytics Datasets Overview
 </p>
 
-## Ultralytics Explorer
+## numa_ultralytics Explorer
 
 !!! warning "Community Note ⚠️"
 
-    As of **`ultralytics>=8.3.10`**, Ultralytics explorer support has been deprecated. But don't worry! You can now access similar and even enhanced functionality through [Ultralytics HUB](https://hub.ultralytics.com/), our intuitive no-code platform designed to streamline your workflow. With Ultralytics HUB, you can continue exploring, visualizing, and managing your data effortlessly, all without writing a single line of code. Make sure to check it out and take advantage of its powerful features!🚀
+    As of **`numa_ultralytics>=8.3.10`**, numa_ultralytics explorer support has been deprecated. But don't worry! You can now access similar and even enhanced functionality through [numa_ultralytics HUB](https://hub.numa_ultralytics.com/), our intuitive no-code platform designed to streamline your workflow. With numa_ultralytics HUB, you can continue exploring, visualizing, and managing your data effortlessly, all without writing a single line of code. Make sure to check it out and take advantage of its powerful features!🚀
 
-Create [embeddings](https://www.ultralytics.com/glossary/embeddings) for your dataset, search for similar images, run SQL queries, perform semantic search and even search using natural language! You can get started with our GUI app or build your own using the API. Learn more [here](explorer/index.md).
+Create [embeddings](https://www.numa_ultralytics.com/glossary/embeddings) for your dataset, search for similar images, run SQL queries, perform semantic search and even search using natural language! You can get started with our GUI app or build your own using the API. Learn more [here](explorer/index.md).
 
 <p>
-<img alt="Ultralytics Explorer Screenshot" src="https://github.com/ultralytics/docs/releases/download/0/ultralytics-explorer-screenshot.avif">
+<img alt="numa_ultralytics Explorer Screenshot" src="https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-explorer-screenshot.avif">
 </p>
 
 - Try the [GUI Demo](explorer/index.md)
@@ -36,7 +36,7 @@ Create [embeddings](https://www.ultralytics.com/glossary/embeddings) for your da
 
 ## [Object Detection](detect/index.md)
 
-[Bounding box](https://www.ultralytics.com/glossary/bounding-box) object detection is a computer vision technique that involves detecting and localizing objects in an image by drawing a bounding box around each object.
+[Bounding box](https://www.numa_ultralytics.com/glossary/bounding-box) object detection is a computer vision technique that involves detecting and localizing objects in an image by drawing a bounding box around each object.
 
 - [Argoverse](detect/argoverse.md): A dataset containing 3D tracking and motion forecasting data from urban environments with rich annotations.
 - [COCO](detect/coco.md): Common Objects in Context (COCO) is a large-scale object detection, segmentation, and captioning dataset with 80 object categories.
@@ -79,7 +79,7 @@ Pose estimation is a technique used to determine the pose of the object relative
 
 ## [Classification](classify/index.md)
 
-[Image classification](https://www.ultralytics.com/glossary/image-classification) is a computer vision task that involves categorizing an image into one or more predefined classes or categories based on its visual content.
+[Image classification](https://www.numa_ultralytics.com/glossary/image-classification) is a computer vision task that involves categorizing an image into one or more predefined classes or categories based on its visual content.
 
 - [Caltech 101](classify/caltech101.md): A dataset containing images of 101 object categories for image classification tasks.
 - [Caltech 256](classify/caltech256.md): An extended version of Caltech 101 with 256 object categories and more challenging images.
@@ -119,30 +119,30 @@ Contributing a new dataset involves several steps to ensure that it aligns well 
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> How to Contribute to Ultralytics Datasets 🚀
+  <strong>Watch:</strong> How to Contribute to numa_ultralytics Datasets 🚀
 </p>
 
 ### Steps to Contribute a New Dataset
 
 1. **Collect Images**: Gather the images that belong to the dataset. These could be collected from various sources, such as public databases or your own collection.
 2. **Annotate Images**: Annotate these images with bounding boxes, segments, or keypoints, depending on the task.
-3. **Export Annotations**: Convert these annotations into the YOLO `*.txt` file format which Ultralytics supports.
+3. **Export Annotations**: Convert these annotations into the YOLO `*.txt` file format which numa_ultralytics supports.
 4. **Organize Dataset**: Arrange your dataset into the correct folder structure. You should have `train/` and `val/` top-level directories, and within each, an `images/` and `labels/` subdirectory.
 
-    ```
-    dataset/
-    ├── train/
-    │   ├── images/
-    │   └── labels/
-    └── val/
-        ├── images/
-        └── labels/
-    ```
+   ```
+   dataset/
+   ├── train/
+   │   ├── images/
+   │   └── labels/
+   └── val/
+       ├── images/
+       └── labels/
+   ```
 
 5. **Create a `data.yaml` File**: In your dataset's root directory, create a `data.yaml` file that describes the dataset, classes, and other necessary information.
 6. **Optimize Images (Optional)**: If you want to reduce the size of the dataset for more efficient processing, you can optimize the images using the code below. This is not required, but recommended for smaller dataset sizes and faster download speeds.
 7. **Zip Dataset**: Compress the entire dataset folder into a zip file.
-8. **Document and PR**: Create a documentation page describing your dataset and how it fits into the existing framework. After that, submit a Pull Request (PR). Refer to [Ultralytics Contribution Guidelines](https://docs.ultralytics.com/help/contributing/) for more details on how to submit a PR.
+8. **Document and PR**: Create a documentation page describing your dataset and how it fits into the existing framework. After that, submit a Pull Request (PR). Refer to [numa_ultralytics Contribution Guidelines](https://docs.numa_ultralytics.com/help/contributing/) for more details on how to submit a PR.
 
 ### Example Code to Optimize and Zip a Dataset
 
@@ -153,8 +153,8 @@ Contributing a new dataset involves several steps to ensure that it aligns well 
        ```python
        from pathlib import Path
 
-       from ultralytics.data.utils import compress_one_image
-       from ultralytics.utils.downloads import zip_directory
+       from numa_ultralytics.data.utils import compress_one_image
+       from numa_ultralytics.utils.downloads import zip_directory
 
        # Define dataset directory
        path = Path("path/to/dataset")
@@ -167,13 +167,13 @@ Contributing a new dataset involves several steps to ensure that it aligns well 
        zip_directory(path)
        ```
 
-By following these steps, you can contribute a new dataset that integrates well with Ultralytics' existing structure.
+By following these steps, you can contribute a new dataset that integrates well with numa_ultralytics' existing structure.
 
 ## FAQ
 
-### What datasets does Ultralytics support for [object detection](https://www.ultralytics.com/glossary/object-detection)?
+### What datasets does numa_ultralytics support for [object detection](https://www.numa_ultralytics.com/glossary/object-detection)?
 
-Ultralytics supports a wide variety of datasets for object detection, including:
+numa_ultralytics supports a wide variety of datasets for object detection, including:
 
 - [COCO](detect/coco.md): A large-scale object detection, segmentation, and captioning dataset with 80 object categories.
 - [LVIS](detect/lvis.md): An extensive dataset with 1203 object categories, designed for more fine-grained object detection and segmentation.
@@ -183,7 +183,7 @@ Ultralytics supports a wide variety of datasets for object detection, including:
 
 These datasets facilitate training robust models for various object detection applications.
 
-### How do I contribute a new dataset to Ultralytics?
+### How do I contribute a new dataset to numa_ultralytics?
 
 Contributing a new dataset involves several steps:
 
@@ -194,35 +194,35 @@ Contributing a new dataset involves several steps:
 5. **Create a `data.yaml` File**: Include dataset descriptions, classes, and other relevant information.
 6. **Optimize Images (Optional)**: Reduce dataset size for efficiency.
 7. **Zip Dataset**: Compress the dataset into a zip file.
-8. **Document and PR**: Describe your dataset and submit a Pull Request following [Ultralytics Contribution Guidelines](https://docs.ultralytics.com/help/contributing/).
+8. **Document and PR**: Describe your dataset and submit a Pull Request following [numa_ultralytics Contribution Guidelines](https://docs.numa_ultralytics.com/help/contributing/).
 
 Visit [Contribute New Datasets](#contribute-new-datasets) for a comprehensive guide.
 
-### Why should I use Ultralytics Explorer for my dataset?
+### Why should I use numa_ultralytics Explorer for my dataset?
 
-Ultralytics Explorer offers powerful features for dataset analysis, including:
+numa_ultralytics Explorer offers powerful features for dataset analysis, including:
 
 - **Embeddings Generation**: Create vector embeddings for images.
 - **Semantic Search**: Search for similar images using embeddings or AI.
 - **SQL Queries**: Run advanced SQL queries for detailed data analysis.
 - **Natural Language Search**: Search using plain language queries for ease of use.
 
-Explore the [Ultralytics Explorer](explorer/index.md) for more information and to try the [GUI Demo](explorer/index.md).
+Explore the [numa_ultralytics Explorer](explorer/index.md) for more information and to try the [GUI Demo](explorer/index.md).
 
-### What are the unique features of Ultralytics YOLO models for [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv)?
+### What are the unique features of numa_ultralytics YOLO models for [computer vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv)?
 
-Ultralytics YOLO models provide several unique features:
+numa_ultralytics YOLO models provide several unique features:
 
 - **Real-time Performance**: High-speed inference and training.
 - **Versatility**: Suitable for detection, segmentation, classification, and pose estimation tasks.
 - **Pretrained Models**: Access to high-performing, pretrained models for various applications.
 - **Extensive Community Support**: Active community and comprehensive documentation for troubleshooting and development.
 
-Discover more about YOLO on the [Ultralytics YOLO](https://www.ultralytics.com/yolo) page.
+Discover more about YOLO on the [numa_ultralytics YOLO](https://www.numa_ultralytics.com/yolo) page.
 
-### How can I optimize and zip a dataset using Ultralytics tools?
+### How can I optimize and zip a dataset using numa_ultralytics tools?
 
-To optimize and zip a dataset using Ultralytics tools, follow this example code:
+To optimize and zip a dataset using numa_ultralytics tools, follow this example code:
 
 !!! example "Optimize and Zip a Dataset"
 
@@ -231,8 +231,8 @@ To optimize and zip a dataset using Ultralytics tools, follow this example code:
         ```python
         from pathlib import Path
 
-        from ultralytics.data.utils import compress_one_image
-        from ultralytics.utils.downloads import zip_directory
+        from numa_ultralytics.data.utils import compress_one_image
+        from numa_ultralytics.utils.downloads import zip_directory
 
         # Define dataset directory
         path = Path("path/to/dataset")

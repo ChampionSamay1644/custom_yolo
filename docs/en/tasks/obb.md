@@ -1,11 +1,11 @@
 ---
 comments: true
 description: Discover how to detect objects with rotation for higher precision using YOLO11 OBB models. Learn, train, validate, and export OBB models effortlessly.
-keywords: Oriented Bounding Boxes, OBB, Object Detection, YOLO11, Ultralytics, DOTAv1, Model Training, Model Export, AI, Machine Learning
+keywords: Oriented Bounding Boxes, OBB, Object Detection, YOLO11, numa_ultralytics, DOTAv1, Model Training, Model Export, AI, Machine Learning
 model_name: yolo11n-obb
 ---
 
-# Oriented Bounding Boxes [Object Detection](https://www.ultralytics.com/glossary/object-detection)
+# Oriented Bounding Boxes [Object Detection](https://www.numa_ultralytics.com/glossary/object-detection)
 
 <!-- obb task poster -->
 
@@ -17,7 +17,7 @@ The output of an oriented object detector is a set of rotated bounding boxes tha
 
 !!! tip
 
-    YOLO11 OBB models use the `-obb` suffix, i.e. `yolo11n-obb.pt` and are pretrained on [DOTAv1](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/DOTAv1.yaml).
+    YOLO11 OBB models use the `-obb` suffix, i.e. `yolo11n-obb.pt` and are pretrained on [DOTAv1](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/DOTAv1.yaml).
 
 <p align="center">
   <br>
@@ -27,20 +27,20 @@ The output of an oriented object detector is a set of rotated bounding boxes tha
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Object Detection using Ultralytics YOLO Oriented Bounding Boxes (YOLO-OBB)
+  <strong>Watch:</strong> Object Detection using numa_ultralytics YOLO Oriented Bounding Boxes (YOLO-OBB)
 </p>
 
 ## Visual Samples
 
-|                                              Ships Detection using OBB                                               |                                               Vehicle Detection using OBB                                                |
-| :------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------: |
-| ![Ships Detection using OBB](https://github.com/ultralytics/docs/releases/download/0/ships-detection-using-obb.avif) | ![Vehicle Detection using OBB](https://github.com/ultralytics/docs/releases/download/0/vehicle-detection-using-obb.avif) |
+|                                                 Ships Detection using OBB                                                 |                                                  Vehicle Detection using OBB                                                  |
+| :-----------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |
+| ![Ships Detection using OBB](https://github.com/numa_ultralytics/docs/releases/download/0/ships-detection-using-obb.avif) | ![Vehicle Detection using OBB](https://github.com/numa_ultralytics/docs/releases/download/0/vehicle-detection-using-obb.avif) |
 
-## [Models](https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/models/11)
+## [Models](https://github.com/numa_ultralytics/numa_ultralytics/tree/main/numa_ultralytics/cfg/models/11)
 
-YOLO11 pretrained OBB models are shown here, which are pretrained on the [DOTAv1](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/DOTAv1.yaml) dataset.
+YOLO11 pretrained OBB models are shown here, which are pretrained on the [DOTAv1](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/DOTAv1.yaml) dataset.
 
-[Models](https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/models) download automatically from the latest Ultralytics [release](https://github.com/ultralytics/assets/releases) on first use.
+[Models](https://github.com/numa_ultralytics/numa_ultralytics/tree/main/numa_ultralytics/cfg/models) download automatically from the latest numa_ultralytics [release](https://github.com/numa_ultralytics/assets/releases) on first use.
 
 {% include "macros/yolo-obb-perf.md" %}
 
@@ -49,14 +49,14 @@ YOLO11 pretrained OBB models are shown here, which are pretrained on the [DOTAv1
 
 ## Train
 
-Train YOLO11n-obb on the DOTA8 dataset for 100 [epochs](https://www.ultralytics.com/glossary/epoch) at image size 640. For a full list of available arguments see the [Configuration](../usage/cfg.md) page.
+Train YOLO11n-obb on the DOTA8 dataset for 100 [epochs](https://www.numa_ultralytics.com/glossary/epoch) at image size 640. For a full list of available arguments see the [Configuration](../usage/cfg.md) page.
 
 !!! example
 
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n-obb.yaml")  # build a new model from YAML
@@ -88,7 +88,7 @@ Train YOLO11n-obb on the DOTA8 dataset for 100 [epochs](https://www.ultralytics.
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> How to Train Ultralytics YOLO-OBB (Oriented Bounding Boxes) Models on DOTA Dataset using Ultralytics HUB
+  <strong>Watch:</strong> How to Train numa_ultralytics YOLO-OBB (Oriented Bounding Boxes) Models on DOTA Dataset using numa_ultralytics HUB
 </p>
 
 ### Dataset format
@@ -97,14 +97,14 @@ OBB dataset format can be found in detail in the [Dataset Guide](../datasets/obb
 
 ## Val
 
-Validate trained YOLO11n-obb model [accuracy](https://www.ultralytics.com/glossary/accuracy) on the DOTA8 dataset. No arguments are needed as the `model` retains its training `data` and arguments as model attributes.
+Validate trained YOLO11n-obb model [accuracy](https://www.numa_ultralytics.com/glossary/accuracy) on the DOTA8 dataset. No arguments are needed as the `model` retains its training `data` and arguments as model attributes.
 
 !!! example
 
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n-obb.pt")  # load an official model
@@ -134,14 +134,14 @@ Use a trained YOLO11n-obb model to run predictions on images.
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n-obb.pt")  # load an official model
         model = YOLO("path/to/best.pt")  # load a custom model
 
         # Predict with the model
-        results = model("https://ultralytics.com/images/boats.jpg")  # predict on an image
+        results = model("https://numa_ultralytics.com/images/boats.jpg")  # predict on an image
 
         # Access the results
         for result in results:
@@ -154,8 +154,8 @@ Use a trained YOLO11n-obb model to run predictions on images.
     === "CLI"
 
         ```bash
-        yolo obb predict model=yolo11n-obb.pt source='https://ultralytics.com/images/boats.jpg'  # predict with official model
-        yolo obb predict model=path/to/best.pt source='https://ultralytics.com/images/boats.jpg'  # predict with custom model
+        yolo obb predict model=yolo11n-obb.pt source='https://numa_ultralytics.com/images/boats.jpg'  # predict with official model
+        yolo obb predict model=path/to/best.pt source='https://numa_ultralytics.com/images/boats.jpg'  # predict with custom model
         ```
 
 <p align="center">
@@ -166,7 +166,7 @@ Use a trained YOLO11n-obb model to run predictions on images.
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> How to Detect and Track Storage Tanks using Ultralytics YOLO-OBB | Oriented Bounding Boxes | DOTA
+  <strong>Watch:</strong> How to Detect and Track Storage Tanks using numa_ultralytics YOLO-OBB | Oriented Bounding Boxes | DOTA
 </p>
 
 See full `predict` mode details in the [Predict](../modes/predict.md) page.
@@ -180,7 +180,7 @@ Export a YOLO11n-obb model to a different format like ONNX, CoreML, etc.
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n-obb.pt")  # load an official model
@@ -218,7 +218,7 @@ To train a YOLO11n-obb model with a custom dataset, follow the example below usi
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a pretrained model
         model = YOLO("yolo11n-obb.pt")
@@ -237,7 +237,7 @@ For more training arguments, check the [Configuration](../usage/cfg.md) section.
 
 ### What datasets can I use for training YOLO11-OBB models?
 
-YOLO11-OBB models are pretrained on datasets like [DOTAv1](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/DOTAv1.yaml) but you can use any dataset formatted for OBB. Detailed information on OBB dataset formats can be found in the [Dataset Guide](../datasets/obb/index.md).
+YOLO11-OBB models are pretrained on datasets like [DOTAv1](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/DOTAv1.yaml) but you can use any dataset formatted for OBB. Detailed information on OBB dataset formats can be found in the [Dataset Guide](../datasets/obb/index.md).
 
 ### How can I export a YOLO11-OBB model to ONNX format?
 
@@ -248,7 +248,7 @@ Exporting a YOLO11-OBB model to ONNX format is straightforward using either Pyth
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n-obb.pt")
@@ -274,7 +274,7 @@ To validate a YOLO11n-obb model, you can use Python or CLI commands as shown bel
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n-obb.pt")

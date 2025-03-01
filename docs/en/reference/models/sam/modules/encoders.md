@@ -1,36 +1,36 @@
 ---
-description: Explore detailed documentation of various SAM encoder modules such as ImageEncoderViT, PromptEncoder, and more, available in Ultralytics' repository.
-keywords: Ultralytics, SAM encoder, ImageEncoderViT, PromptEncoder, PositionEmbeddingRandom, Block, Attention, PatchEmbed
+description: Explore detailed documentation of various SAM encoder modules such as ImageEncoderViT, PromptEncoder, and more, available in numa_ultralytics' repository.
+keywords: numa_ultralytics, SAM encoder, ImageEncoderViT, PromptEncoder, PositionEmbeddingRandom, Block, Attention, PatchEmbed
 ---
 
-# Reference for `ultralytics/models/sam/modules/encoders.py`
+# Reference for `numa_ultralytics/models/sam/modules/encoders.py`
 
 !!! note
 
-    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/sam/modules/encoders.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/sam/modules/encoders.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/sam/modules/encoders.py) 🛠️. Thank you 🙏!
+    This file is available at [https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/models/sam/modules/encoders.py](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/models/sam/modules/encoders.py). If you spot a problem please help fix it by [contributing](https://docs.numa_ultralytics.com/help/contributing/) a [Pull Request](https://github.com/numa_ultralytics/numa_ultralytics/edit/main/numa_ultralytics/models/sam/modules/encoders.py) 🛠️. Thank you 🙏!
 
 <br>
 
-## ::: ultralytics.models.sam.modules.encoders.ImageEncoderViT
+## ::: numa_ultralytics.models.sam.modules.encoders.ImageEncoderViT
 
 <br><br><hr><br>
 
-## ::: ultralytics.models.sam.modules.encoders.PromptEncoder
+## ::: numa_ultralytics.models.sam.modules.encoders.PromptEncoder
 
 <br><br><hr><br>
 
-## ::: ultralytics.models.sam.modules.encoders.MemoryEncoder
+## ::: numa_ultralytics.models.sam.modules.encoders.MemoryEncoder
 
 <br><br><hr><br>
 
-## ::: ultralytics.models.sam.modules.encoders.ImageEncoder
+## ::: numa_ultralytics.models.sam.modules.encoders.ImageEncoder
 
 <br><br><hr><br>
 
-## ::: ultralytics.models.sam.modules.encoders.FpnNeck
+## ::: numa_ultralytics.models.sam.modules.encoders.FpnNeck
 
 <br><br><hr><br>
 
-## ::: ultralytics.models.sam.modules.encoders.Hiera
+## ::: numa_ultralytics.models.sam.modules.encoders.Hiera
 
 <br><br>

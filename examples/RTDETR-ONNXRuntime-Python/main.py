@@ -1,4 +1,4 @@
-# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+# numa_ultralytics 🚀 AGPL-3.0 License - https://numa_ultralytics.com/license
 
 import argparse
 
@@ -7,8 +7,8 @@ import numpy as np
 import onnxruntime as ort
 import torch
 
-from ultralytics.utils import ASSETS, yaml_load
-from ultralytics.utils.checks import check_requirements, check_yaml
+from numa_ultralytics.utils import ASSETS, yaml_load
+from numa_ultralytics.utils.checks import check_requirements, check_yaml
 
 
 class RTDETR:

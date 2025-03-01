@@ -1,40 +1,40 @@
 ---
-description: Explore the details of Ultralytics engine results including classes like BaseTensor, Results, Boxes, Masks, Keypoints, Probs, and OBB to handle inference results efficiently.
-keywords: Ultralytics, engine results, BaseTensor, Results class, Boxes, Masks, Keypoints, Probs, OBB, inference results, machine learning, PyTorch
+description: Explore the details of numa_ultralytics engine results including classes like BaseTensor, Results, Boxes, Masks, Keypoints, Probs, and OBB to handle inference results efficiently.
+keywords: numa_ultralytics, engine results, BaseTensor, Results class, Boxes, Masks, Keypoints, Probs, OBB, inference results, machine learning, PyTorch
 ---
 
-# Reference for `ultralytics/engine/results.py`
+# Reference for `numa_ultralytics/engine/results.py`
 
 !!! note
 
-    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/engine/results.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/engine/results.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/engine/results.py) 🛠️. Thank you 🙏!
+    This file is available at [https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/engine/results.py](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/engine/results.py). If you spot a problem please help fix it by [contributing](https://docs.numa_ultralytics.com/help/contributing/) a [Pull Request](https://github.com/numa_ultralytics/numa_ultralytics/edit/main/numa_ultralytics/engine/results.py) 🛠️. Thank you 🙏!
 
 <br>
 
-## ::: ultralytics.engine.results.BaseTensor
+## ::: numa_ultralytics.engine.results.BaseTensor
 
 <br><br><hr><br>
 
-## ::: ultralytics.engine.results.Results
+## ::: numa_ultralytics.engine.results.Results
 
 <br><br><hr><br>
 
-## ::: ultralytics.engine.results.Boxes
+## ::: numa_ultralytics.engine.results.Boxes
 
 <br><br><hr><br>
 
-## ::: ultralytics.engine.results.Masks
+## ::: numa_ultralytics.engine.results.Masks
 
 <br><br><hr><br>
 
-## ::: ultralytics.engine.results.Keypoints
+## ::: numa_ultralytics.engine.results.Keypoints
 
 <br><br><hr><br>
 
-## ::: ultralytics.engine.results.Probs
+## ::: numa_ultralytics.engine.results.Probs
 
 <br><br><hr><br>
 
-## ::: ultralytics.engine.results.OBB
+## ::: numa_ultralytics.engine.results.OBB
 
 <br><br>

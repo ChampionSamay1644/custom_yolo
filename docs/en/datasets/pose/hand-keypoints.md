@@ -8,7 +8,7 @@ keywords: Hand KeyPoints, pose estimation, dataset, keypoints, MediaPipe, YOLO, 
 
 ## Introduction
 
-The hand-keypoints dataset contains 26,768 images of hands annotated with keypoints, making it suitable for training models like Ultralytics YOLO for pose estimation tasks. The annotations were generated using the Google MediaPipe library, ensuring high [accuracy](https://www.ultralytics.com/glossary/accuracy) and consistency, and the dataset is compatible [Ultralytics YOLO11](https://github.com/ultralytics/ultralytics) formats.
+The hand-keypoints dataset contains 26,768 images of hands annotated with keypoints, making it suitable for training models like numa_ultralytics YOLO for pose estimation tasks. The annotations were generated using the Google MediaPipe library, ensuring high [accuracy](https://www.numa_ultralytics.com/glossary/accuracy) and consistency, and the dataset is compatible [numa_ultralytics YOLO11](https://github.com/numa_ultralytics/numa_ultralytics) formats.
 
 <p align="center">
   <br>
@@ -18,12 +18,12 @@ The hand-keypoints dataset contains 26,768 images of hands annotated with keypoi
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Hand Keypoints Estimation with Ultralytics YOLO11 | Human Hand Pose Estimation Tutorial
+  <strong>Watch:</strong> Hand Keypoints Estimation with numa_ultralytics YOLO11 | Human Hand Pose Estimation Tutorial
 </p>
 
 ## Hand Landmarks
 
-![Hand Landmarks](https://github.com/ultralytics/docs/releases/download/0/hand_landmarks.jpg)
+![Hand Landmarks](https://github.com/numa_ultralytics/docs/releases/download/0/hand_landmarks.jpg)
 
 ## KeyPoints
 
@@ -57,24 +57,24 @@ Hand keypoints can be used for gesture recognition, AR/VR controls, robotic mani
 
 ## Dataset YAML
 
-A YAML (Yet Another Markup Language) file is used to define the dataset configuration. It contains information about the dataset's paths, classes, and other relevant information. In the case of the Hand Keypoints dataset, the `hand-keypoints.yaml` file is maintained at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/hand-keypoints.yaml](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/hand-keypoints.yaml).
+A YAML (Yet Another Markup Language) file is used to define the dataset configuration. It contains information about the dataset's paths, classes, and other relevant information. In the case of the Hand Keypoints dataset, the `hand-keypoints.yaml` file is maintained at [https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/hand-keypoints.yaml](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/hand-keypoints.yaml).
 
-!!! example "ultralytics/cfg/datasets/hand-keypoints.yaml"
+!!! example "numa_ultralytics/cfg/datasets/hand-keypoints.yaml"
 
     ```yaml
-    --8<-- "ultralytics/cfg/datasets/hand-keypoints.yaml"
+    --8<-- "numa_ultralytics/cfg/datasets/hand-keypoints.yaml"
     ```
 
 ## Usage
 
-To train a YOLO11n-pose model on the Hand Keypoints dataset for 100 [epochs](https://www.ultralytics.com/glossary/epoch) with an image size of 640, you can use the following code snippets. For a comprehensive list of available arguments, refer to the model [Training](../../modes/train.md) page.
+To train a YOLO11n-pose model on the Hand Keypoints dataset for 100 [epochs](https://www.numa_ultralytics.com/glossary/epoch) with an image size of 640, you can use the following code snippets. For a comprehensive list of available arguments, refer to the model [Training](../../modes/train.md) page.
 
 !!! example "Train Example"
 
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n-pose.pt")  # load a pretrained model (recommended for training)
@@ -94,7 +94,7 @@ To train a YOLO11n-pose model on the Hand Keypoints dataset for 100 [epochs](htt
 
 The Hand keypoints dataset contains a diverse set of images with human hands annotated with keypoints. Here are some examples of images from the dataset, along with their corresponding annotations:
 
-![Dataset sample image](https://github.com/ultralytics/docs/releases/download/0/human-hand-pose.jpg)
+![Dataset sample image](https://github.com/numa_ultralytics/docs/releases/download/0/human-hand-pose.jpg)
 
 - **Mosaiced Image**: This image demonstrates a training batch composed of mosaiced dataset images. Mosaicing is a technique used during training that combines multiple images into a single image to increase the variety of objects and scenes within each training batch. This helps improve the model's ability to generalize to different object sizes, aspect ratios, and contexts.
 
@@ -129,7 +129,7 @@ To train a YOLO11 model on the Hand Keypoints dataset, you can use either Python
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n-pose.pt")  # load a pretrained model (recommended for training)
@@ -181,6 +181,6 @@ This structure ensures a comprehensive training and validation process. For more
 
 ### How do I use the dataset YAML file for training?
 
-The dataset configuration is defined in a YAML file, which includes paths, classes, and other relevant information. The `hand-keypoints.yaml` file can be found at [hand-keypoints.yaml](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/hand-keypoints.yaml).
+The dataset configuration is defined in a YAML file, which includes paths, classes, and other relevant information. The `hand-keypoints.yaml` file can be found at [hand-keypoints.yaml](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/hand-keypoints.yaml).
 
 To use this YAML file for training, specify it in your training script or CLI command as shown in the training example above. For more details, refer to the [Dataset YAML](#dataset-yaml) section.

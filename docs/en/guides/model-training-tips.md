@@ -18,22 +18,22 @@ One of the most important steps when working on a [computer vision project](./st
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Model Training Tips | How to Handle Large Datasets | Batch Size, GPU Utilization and <a href="https://www.ultralytics.com/glossary/mixed-precision">Mixed Precision</a>
+  <strong>Watch:</strong> Model Training Tips | How to Handle Large Datasets | Batch Size, GPU Utilization and <a href="https://www.numa_ultralytics.com/glossary/mixed-precision">Mixed Precision</a>
 </p>
 
 So, what is [model training](../modes/train.md)? Model training is the process of teaching your model to recognize visual patterns and make predictions based on your data. It directly impacts the performance and accuracy of your application. In this guide, we'll cover best practices, optimization techniques, and troubleshooting tips to help you train your computer vision models effectively.
 
-## How to Train a [Machine Learning](https://www.ultralytics.com/glossary/machine-learning-ml) Model
+## How to Train a [Machine Learning](https://www.numa_ultralytics.com/glossary/machine-learning-ml) Model
 
 A computer vision model is trained by adjusting its internal parameters to minimize errors. Initially, the model is fed a large set of labeled images. It makes predictions about what is in these images, and the predictions are compared to the actual labels or contents to calculate errors. These errors show how far off the model's predictions are from the true values.
 
-During training, the model iteratively makes predictions, calculates errors, and updates its parameters through a process called [backpropagation](https://www.ultralytics.com/glossary/backpropagation). In this process, the model adjusts its internal parameters (weights and biases) to reduce the errors. By repeating this cycle many times, the model gradually improves its accuracy. Over time, it learns to recognize complex patterns such as shapes, colors, and textures.
+During training, the model iteratively makes predictions, calculates errors, and updates its parameters through a process called [backpropagation](https://www.numa_ultralytics.com/glossary/backpropagation). In this process, the model adjusts its internal parameters (weights and biases) to reduce the errors. By repeating this cycle many times, the model gradually improves its accuracy. Over time, it learns to recognize complex patterns such as shapes, colors, and textures.
 
 <p align="center">
-  <img width="100%" src="https://github.com/ultralytics/docs/releases/download/0/backpropagation-diagram.avif" alt="What is Backpropagation?">
+  <img width="100%" src="https://github.com/numa_ultralytics/docs/releases/download/0/backpropagation-diagram.avif" alt="What is Backpropagation?">
 </p>
 
-This learning process makes it possible for the [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) model to perform various [tasks](../tasks/index.md), including [object detection](../tasks/detect.md), [instance segmentation](../tasks/segment.md), and [image classification](../tasks/classify.md). The ultimate goal is to create a model that can generalize its learning to new, unseen images so that it can accurately understand visual data in real-world applications.
+This learning process makes it possible for the [computer vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv) model to perform various [tasks](../tasks/index.md), including [object detection](../tasks/detect.md), [instance segmentation](../tasks/segment.md), and [image classification](../tasks/classify.md). The ultimate goal is to create a model that can generalize its learning to new, unseen images so that it can accurately understand visual data in real-world applications.
 
 Now that we know what is happening behind the scenes when we train a model, let's look at points to consider when training a model.
 
@@ -46,7 +46,7 @@ There are a few different aspects to think about when you are planning on using 
 When training models on large datasets, efficiently utilizing your GPU is key. Batch size is an important factor. It is the number of data samples that a machine learning model processes in a single training iteration.
 Using the maximum batch size supported by your GPU, you can fully take advantage of its capabilities and reduce the time model training takes. However, you want to avoid running out of GPU memory. If you encounter memory errors, reduce the batch size incrementally until the model trains smoothly.
 
-With respect to YOLO11, you can set the `batch_size` parameter in the [training configuration](../modes/train.md) to match your GPU capacity. Also, setting `batch=-1` in your training script will automatically determine the [batch size](https://www.ultralytics.com/glossary/batch-size) that can be efficiently processed based on your device's capabilities. By fine-tuning the batch size, you can make the most of your GPU resources and improve the overall training process.
+With respect to YOLO11, you can set the `batch_size` parameter in the [training configuration](../modes/train.md) to match your GPU capacity. Also, setting `batch=-1` in your training script will automatically determine the [batch size](https://www.numa_ultralytics.com/glossary/batch-size) that can be efficiently processed based on your device's capabilities. By fine-tuning the batch size, you can make the most of your GPU resources and improve the overall training process.
 
 ### Subset Training
 
@@ -72,19 +72,19 @@ Caching can be controlled when training YOLO11 using the `cache` parameter:
 
 ### Mixed Precision Training
 
-Mixed precision training uses both 16-bit (FP16) and 32-bit (FP32) floating-point types. The strengths of both FP16 and FP32 are leveraged by using FP16 for faster computation and FP32 to maintain precision where needed. Most of the [neural network](https://www.ultralytics.com/glossary/neural-network-nn)'s operations are done in FP16 to benefit from faster computation and lower memory usage. However, a master copy of the model's weights is kept in FP32 to ensure accuracy during the weight update steps. You can handle larger models or larger batch sizes within the same hardware constraints.
+Mixed precision training uses both 16-bit (FP16) and 32-bit (FP32) floating-point types. The strengths of both FP16 and FP32 are leveraged by using FP16 for faster computation and FP32 to maintain precision where needed. Most of the [neural network](https://www.numa_ultralytics.com/glossary/neural-network-nn)'s operations are done in FP16 to benefit from faster computation and lower memory usage. However, a master copy of the model's weights is kept in FP32 to ensure accuracy during the weight update steps. You can handle larger models or larger batch sizes within the same hardware constraints.
 
 <p align="center">
-  <img width="100%" src="https://github.com/ultralytics/docs/releases/download/0/mixed-precision-training-overview.avif" alt="Mixed Precision Training Overview">
+  <img width="100%" src="https://github.com/numa_ultralytics/docs/releases/download/0/mixed-precision-training-overview.avif" alt="Mixed Precision Training Overview">
 </p>
 
-To implement mixed precision training, you'll need to modify your training scripts and ensure your hardware (like GPUs) supports it. Many modern [deep learning](https://www.ultralytics.com/glossary/deep-learning-dl) frameworks, such as [Tensorflow](https://www.ultralytics.com/glossary/tensorflow), offer built-in support for mixed precision.
+To implement mixed precision training, you'll need to modify your training scripts and ensure your hardware (like GPUs) supports it. Many modern [deep learning](https://www.numa_ultralytics.com/glossary/deep-learning-dl) frameworks, such as [Tensorflow](https://www.numa_ultralytics.com/glossary/tensorflow), offer built-in support for mixed precision.
 
 Mixed precision training is straightforward when working with YOLO11. You can use the `amp` flag in your training configuration. Setting `amp=True` enables Automatic Mixed Precision (AMP) training. Mixed precision training is a simple yet effective way to optimize your model training process.
 
 ### Pre-trained Weights
 
-Using pretrained weights is a smart way to speed up your model's training process. Pretrained weights come from models already trained on large datasets, giving your model a head start. [Transfer learning](https://www.ultralytics.com/glossary/transfer-learning) adapts pretrained models to new, related tasks. Fine-tuning a pre-trained model involves starting with these weights and then continuing training on your specific dataset. This method of training results in faster training times and often better performance because the model starts with a solid understanding of basic features.
+Using pretrained weights is a smart way to speed up your model's training process. Pretrained weights come from models already trained on large datasets, giving your model a head start. [Transfer learning](https://www.numa_ultralytics.com/glossary/transfer-learning) adapts pretrained models to new, related tasks. Fine-tuning a pre-trained model involves starting with these weights and then continuing training on your specific dataset. This method of training results in faster training times and often better performance because the model starts with a solid understanding of basic features.
 
 The `pretrained` parameter makes transfer learning easy with YOLO11. Setting `pretrained=True` will use default pre-trained weights, or you can specify a path to a custom pre-trained model. Using pre-trained weights and transfer learning effectively boosts your model's capabilities and reduces training costs.
 
@@ -92,14 +92,14 @@ The `pretrained` parameter makes transfer learning easy with YOLO11. Setting `pr
 
 There are a couple of other techniques to consider when handling a large dataset:
 
-- **[Learning Rate](https://www.ultralytics.com/glossary/learning-rate) Schedulers**: Implementing learning rate schedulers dynamically adjusts the learning rate during training. A well-tuned learning rate can prevent the model from overshooting minima and improve stability. When training YOLO11, the `lrf` parameter helps manage learning rate scheduling by setting the final learning rate as a fraction of the initial rate.
+- **[Learning Rate](https://www.numa_ultralytics.com/glossary/learning-rate) Schedulers**: Implementing learning rate schedulers dynamically adjusts the learning rate during training. A well-tuned learning rate can prevent the model from overshooting minima and improve stability. When training YOLO11, the `lrf` parameter helps manage learning rate scheduling by setting the final learning rate as a fraction of the initial rate.
 - **Distributed Training**: For handling large datasets, distributed training can be a game-changer. You can reduce the training time by spreading the training workload across multiple GPUs or machines.
 
 ## The Number of Epochs To Train For
 
 When training a model, an epoch refers to one complete pass through the entire training dataset. During an epoch, the model processes each example in the training set once and updates its parameters based on the learning algorithm. Multiple epochs are usually needed to allow the model to learn and refine its parameters over time.
 
-A common question that comes up is how to determine the number of epochs to train the model for. A good starting point is 300 epochs. If the model overfits early, you can reduce the number of epochs. If [overfitting](https://www.ultralytics.com/glossary/overfitting) does not occur after 300 epochs, you can extend the training to 600, 1200, or more epochs.
+A common question that comes up is how to determine the number of epochs to train the model for. A good starting point is 300 epochs. If the model overfits early, you can reduce the number of epochs. If [overfitting](https://www.numa_ultralytics.com/glossary/overfitting) does not occur after 300 epochs, you can extend the training to 600, 1200, or more epochs.
 
 However, the ideal number of epochs can vary based on your dataset's size and project goals. Larger datasets might require more epochs for the model to learn effectively, while smaller datasets might need fewer epochs to avoid overfitting. With respect to YOLO11, you can set the `epochs` parameter in your training script.
 
@@ -107,10 +107,10 @@ However, the ideal number of epochs can vary based on your dataset's size and pr
 
 Early stopping is a valuable technique for optimizing model training. By monitoring validation performance, you can halt training once the model stops improving. You can save computational resources and prevent overfitting.
 
-The process involves setting a patience parameter that determines how many [epochs](https://www.ultralytics.com/glossary/epoch) to wait for an improvement in validation metrics before stopping training. If the model's performance does not improve within these epochs, training is stopped to avoid wasting time and resources.
+The process involves setting a patience parameter that determines how many [epochs](https://www.numa_ultralytics.com/glossary/epoch) to wait for an improvement in validation metrics before stopping training. If the model's performance does not improve within these epochs, training is stopped to avoid wasting time and resources.
 
 <p align="center">
-  <img width="100%" src="https://github.com/ultralytics/docs/releases/download/0/early-stopping-overview.avif" alt="Early Stopping Overview">
+  <img width="100%" src="https://github.com/numa_ultralytics/docs/releases/download/0/early-stopping-overview.avif" alt="Early Stopping Overview">
 </p>
 
 For YOLO11, you can enable early stopping by setting the patience parameter in your training configuration. For example, `patience=5` means training will stop if there's no improvement in validation metrics for 5 consecutive epochs. Using this method ensures the training process remains efficient and achieves optimal performance without excessive computation.
@@ -125,7 +125,7 @@ Local training provides greater control and customization, letting you tailor yo
 
 ## Selecting an Optimizer
 
-An optimizer is an algorithm that adjusts the weights of your neural network to minimize the [loss function](https://www.ultralytics.com/glossary/loss-function), which measures how well the model is performing. In simpler terms, the optimizer helps the model learn by tweaking its parameters to reduce errors. Choosing the right optimizer directly affects how quickly and accurately the model learns.
+An optimizer is an algorithm that adjusts the weights of your neural network to minimize the [loss function](https://www.numa_ultralytics.com/glossary/loss-function), which measures how well the model is performing. In simpler terms, the optimizer helps the model learn by tweaking its parameters to reduce errors. Choosing the right optimizer directly affects how quickly and accurately the model learns.
 
 You can also fine-tune optimizer parameters to improve model performance. Adjusting the learning rate sets the size of the steps when updating parameters. For stability, you might start with a moderate learning rate and gradually decrease it over time to improve long-term learning. Additionally, setting the momentum determines how much influence past updates have on current updates. A common value for momentum is around 0.9. It generally provides a good balance.
 
@@ -135,19 +135,19 @@ Different optimizers have various strengths and weaknesses. Let's take a glimpse
 
 - **SGD (Stochastic Gradient Descent)**:
 
-    - Updates model parameters using the gradient of the loss function with respect to the parameters.
-    - Simple and efficient but can be slow to converge and might get stuck in local minima.
+  - Updates model parameters using the gradient of the loss function with respect to the parameters.
+  - Simple and efficient but can be slow to converge and might get stuck in local minima.
 
 - **Adam (Adaptive Moment Estimation)**:
 
-    - Combines the benefits of both SGD with momentum and RMSProp.
-    - Adjusts the learning rate for each parameter based on estimates of the first and second moments of the gradients.
-    - Well-suited for noisy data and sparse gradients.
-    - Efficient and generally requires less tuning, making it a recommended optimizer for YOLO11.
+  - Combines the benefits of both SGD with momentum and RMSProp.
+  - Adjusts the learning rate for each parameter based on estimates of the first and second moments of the gradients.
+  - Well-suited for noisy data and sparse gradients.
+  - Efficient and generally requires less tuning, making it a recommended optimizer for YOLO11.
 
 - **RMSProp (Root Mean Square Propagation)**:
-    - Adjusts the learning rate for each parameter by dividing the gradient by a running average of the magnitudes of recent gradients.
-    - Helps in handling the vanishing gradient problem and is effective for [recurrent neural networks](https://www.ultralytics.com/glossary/recurrent-neural-network-rnn).
+  - Adjusts the learning rate for each parameter by dividing the gradient by a running average of the magnitudes of recent gradients.
+  - Helps in handling the vanishing gradient problem and is effective for [recurrent neural networks](https://www.numa_ultralytics.com/glossary/recurrent-neural-network-rnn).
 
 For YOLO11, the `optimizer` parameter lets you choose from various optimizers, including SGD, Adam, AdamW, NAdam, RAdam, and RMSProp, or you can set it to `auto` for automatic selection based on model configuration.
 
@@ -157,28 +157,28 @@ Being part of a community of computer vision enthusiasts can help you solve prob
 
 ### Community Resources
 
-- **GitHub Issues:** Visit the [YOLO11 GitHub repository](https://github.com/ultralytics/ultralytics/issues) and use the Issues tab to ask questions, report bugs, and suggest new features. The community and maintainers are very active and ready to help.
-- **Ultralytics Discord Server:** Join the [Ultralytics Discord server](https://discord.com/invite/ultralytics) to chat with other users and developers, get support, and share your experiences.
+- **GitHub Issues:** Visit the [YOLO11 GitHub repository](https://github.com/numa_ultralytics/numa_ultralytics/issues) and use the Issues tab to ask questions, report bugs, and suggest new features. The community and maintainers are very active and ready to help.
+- **numa_ultralytics Discord Server:** Join the [numa_ultralytics Discord server](https://discord.com/invite/numa_ultralytics) to chat with other users and developers, get support, and share your experiences.
 
 ### Official Documentation
 
-- **Ultralytics YOLO11 Documentation:** Check out the [official YOLO11 documentation](./index.md) for detailed guides and helpful tips on various computer vision projects.
+- **numa_ultralytics YOLO11 Documentation:** Check out the [official YOLO11 documentation](./index.md) for detailed guides and helpful tips on various computer vision projects.
 
 Using these resources will help you solve challenges and stay up-to-date with the latest trends and practices in the computer vision community.
 
 ## Key Takeaways
 
-Training computer vision models involves following good practices, optimizing your strategies, and solving problems as they arise. Techniques like adjusting batch sizes, mixed [precision](https://www.ultralytics.com/glossary/precision) training, and starting with pre-trained weights can make your models work better and train faster. Methods like subset training and early stopping help you save time and resources. Staying connected with the community and keeping up with new trends will help you keep improving your model training skills.
+Training computer vision models involves following good practices, optimizing your strategies, and solving problems as they arise. Techniques like adjusting batch sizes, mixed [precision](https://www.numa_ultralytics.com/glossary/precision) training, and starting with pre-trained weights can make your models work better and train faster. Methods like subset training and early stopping help you save time and resources. Staying connected with the community and keeping up with new trends will help you keep improving your model training skills.
 
 ## FAQ
 
-### How can I improve GPU utilization when training a large dataset with Ultralytics YOLO?
+### How can I improve GPU utilization when training a large dataset with numa_ultralytics YOLO?
 
 To improve GPU utilization, set the `batch_size` parameter in your training configuration to the maximum size supported by your GPU. This ensures that you make full use of the GPU's capabilities, reducing training time. If you encounter memory errors, incrementally reduce the batch size until training runs smoothly. For YOLO11, setting `batch=-1` in your training script will automatically determine the optimal batch size for efficient processing. For further information, refer to the [training configuration](../modes/train.md).
 
 ### What is mixed precision training, and how do I enable it in YOLO11?
 
-Mixed precision training utilizes both 16-bit (FP16) and 32-bit (FP32) floating-point types to balance computational speed and precision. This approach speeds up training and reduces memory usage without sacrificing model [accuracy](https://www.ultralytics.com/glossary/accuracy). To enable mixed precision training in YOLO11, set the `amp` parameter to `True` in your training configuration. This activates Automatic Mixed Precision (AMP) training. For more details on this optimization technique, see the [training configuration](../modes/train.md).
+Mixed precision training utilizes both 16-bit (FP16) and 32-bit (FP32) floating-point types to balance computational speed and precision. This approach speeds up training and reduces memory usage without sacrificing model [accuracy](https://www.numa_ultralytics.com/glossary/accuracy). To enable mixed precision training in YOLO11, set the `amp` parameter to `True` in your training configuration. This activates Automatic Mixed Precision (AMP) training. For more details on this optimization technique, see the [training configuration](../modes/train.md).
 
 ### How does multiscale training enhance YOLO11 model performance?
 

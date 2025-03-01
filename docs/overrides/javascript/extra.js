@@ -2,11 +2,11 @@
 const applyTheme = (isDark) => {
   document.body.setAttribute(
     "data-md-color-scheme",
-    isDark ? "slate" : "default",
+    isDark ? "slate" : "default"
   );
   document.body.setAttribute(
     "data-md-color-primary",
-    isDark ? "black" : "indigo",
+    isDark ? "black" : "indigo"
   );
 };
 
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("__palette_1")
     ?.addEventListener(
       "change",
-      (e) => e.target.checked && setTimeout(checkTheme),
+      (e) => e.target.checked && setTimeout(checkTheme)
     );
   // Initial theme check
   checkTheme();
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
           integrationId: "cm1shscmm00y26sj83lgxzvkw",
           organizationId: "org_e3869az6hQZ0mXdF",
           primaryBrandColor: "#E1FF25",
-          organizationDisplayName: "Ultralytics",
+          organizationDisplayName: "numa_ultralytics",
           theme: {
             stylesheetUrls: ["/stylesheets/style.css"],
           },
@@ -101,32 +101,32 @@ document.addEventListener("DOMContentLoaded", () => {
           placeholder: "Search",
         },
         aiChatSettings: {
-          chatSubjectName: "Ultralytics",
+          chatSubjectName: "numa_ultralytics",
           botAvatarSrcUrl:
-            "https://storage.googleapis.com/organization-image-assets/ultralytics-botAvatarSrcUrl-1729379860806.svg",
+            "https://storage.googleapis.com/organization-image-assets/numa_ultralytics-botAvatarSrcUrl-1729379860806.svg",
           quickQuestions: [
-            "What's new in Ultralytics YOLO11?",
-            "How can I get started with Ultralytics HUB?",
-            "How does Ultralytics Enterprise Licensing work?",
+            "What's new in numa_ultralytics YOLO11?",
+            "How can I get started with numa_ultralytics HUB?",
+            "How does numa_ultralytics Enterprise Licensing work?",
           ],
           getHelpCallToActions: [
             {
-              name: "Ask on Ultralytics GitHub",
-              url: "https://github.com/ultralytics/ultralytics",
+              name: "Ask on numa_ultralytics GitHub",
+              url: "https://github.com/numa_ultralytics/numa_ultralytics",
               icon: {
                 builtIn: "FaGithub",
               },
             },
             {
-              name: "Ask on Ultralytics Discourse",
-              url: "https://community.ultralytics.com/",
+              name: "Ask on numa_ultralytics Discourse",
+              url: "https://community.numa_ultralytics.com/",
               icon: {
                 builtIn: "FaDiscourse",
               },
             },
             {
-              name: "Ask on Ultralytics Discord",
-              url: "https://discord.com/invite/ultralytics",
+              name: "Ask on numa_ultralytics Discord",
+              url: "https://discord.com/invite/numa_ultralytics",
               icon: {
                 builtIn: "FaDiscord",
               },

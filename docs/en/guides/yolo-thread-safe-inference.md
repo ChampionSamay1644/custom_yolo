@@ -13,7 +13,7 @@ Running YOLO models in a multi-threaded environment requires careful considerati
 Python threads are a form of parallelism that allow your program to run multiple operations at once. However, Python's Global Interpreter Lock (GIL) means that only one thread can execute Python bytecode at a time.
 
 <p align="center">
-  <img width="800" src="https://github.com/ultralytics/docs/releases/download/0/single-vs-multi-thread-examples.avif" alt="Single vs Multi-Thread Examples">
+  <img width="800" src="https://github.com/numa_ultralytics/docs/releases/download/0/single-vs-multi-thread-examples.avif" alt="Single vs Multi-Thread Examples">
 </p>
 
 While this sounds like a limitation, threads can still provide concurrency, especially for I/O-bound operations or when using operations that release the GIL, like those performed by YOLO's underlying C libraries.
@@ -30,7 +30,7 @@ When using threads in Python, it's important to recognize patterns that can lead
 # Unsafe: Sharing a single model instance across threads
 from threading import Thread
 
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
 # Instantiate the model outside the thread
 shared_model = YOLO("yolo11n.pt")
@@ -57,7 +57,7 @@ Similarly, here is an unsafe pattern with multiple YOLO model instances:
 # Unsafe: Sharing multiple model instances across threads can still lead to issues
 from threading import Thread
 
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
 # Instantiate multiple models outside the thread
 shared_model_1 = YOLO("yolo11n_1.pt")
@@ -89,7 +89,7 @@ Here's how to instantiate a YOLO model inside each thread for safe parallel infe
 # Safe: Instantiating a single model inside each thread
 from threading import Thread
 
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
 
 def thread_safe_predict(image_path):
@@ -116,14 +116,14 @@ For more advanced scenarios and to further optimize your multi-threaded inferenc
 
 ### How can I avoid race conditions when using YOLO models in a multi-threaded Python environment?
 
-To prevent race conditions when using Ultralytics YOLO models in a multi-threaded Python environment, instantiate a separate YOLO model within each thread. This ensures that each thread has its own isolated model instance, avoiding concurrent modification of the model state.
+To prevent race conditions when using numa_ultralytics YOLO models in a multi-threaded Python environment, instantiate a separate YOLO model within each thread. This ensures that each thread has its own isolated model instance, avoiding concurrent modification of the model state.
 
 Example:
 
 ```python
 from threading import Thread
 
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
 
 def thread_safe_predict(image_path):
@@ -152,7 +152,7 @@ Example for thread-safe model instantiation:
 ```python
 from threading import Thread
 
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
 
 def thread_safe_predict(image_path):

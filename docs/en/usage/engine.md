@@ -1,10 +1,10 @@
 ---
 comments: true
 description: Learn to customize the YOLO11 Trainer for specific tasks. Step-by-step instructions with Python examples for maximum model performance.
-keywords: Ultralytics, YOLO11, Trainer Customization, Python, Machine Learning, AI, Model Training, DetectionTrainer, Custom Models
+keywords: numa_ultralytics, YOLO11, Trainer Customization, Python, Machine Learning, AI, Model Training, DetectionTrainer, Custom Models
 ---
 
-Both the Ultralytics YOLO command-line and Python interfaces are simply a high-level abstraction on the base engine executors. Let's take a look at the Trainer engine.
+Both the numa_ultralytics YOLO command-line and Python interfaces are simply a high-level abstraction on the base engine executors. Let's take a look at the Trainer engine.
 
 <p align="center">
   <br>
@@ -14,7 +14,7 @@ Both the Ultralytics YOLO command-line and Python interfaces are simply a high-l
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Mastering Ultralytics YOLO: Advanced Customization
+  <strong>Watch:</strong> Mastering numa_ultralytics YOLO: Advanced Customization
 </p>
 
 ## BaseTrainer
@@ -29,7 +29,7 @@ BaseTrainer contains the generic boilerplate training routine. It can be customi
 Here's how you can use the YOLO11 `DetectionTrainer` and customize it.
 
 ```python
-from ultralytics.models.yolo.detect import DetectionTrainer
+from numa_ultralytics.models.yolo.detect import DetectionTrainer
 
 trainer = DetectionTrainer(overrides={...})
 trainer.train()
@@ -41,7 +41,7 @@ trained_model = trainer.best  # get best model
 Let's customize the trainer **to train a custom detection model** that is not supported directly. You can do this by simply overloading the existing the `get_model` functionality:
 
 ```python
-from ultralytics.models.yolo.detect import DetectionTrainer
+from numa_ultralytics.models.yolo.detect import DetectionTrainer
 
 
 class CustomTrainer(DetectionTrainer):
@@ -60,8 +60,8 @@ You now realize that you need to customize the trainer further to:
 - Add `callback` that uploads model to your Google Drive after every 10 `epochs` Here's how you can do it:
 
 ```python
-from ultralytics.models.yolo.detect import DetectionTrainer
-from ultralytics.nn.tasks import DetectionModel
+from numa_ultralytics.models.yolo.detect import DetectionTrainer
+from numa_ultralytics.nn.tasks import DetectionModel
 
 
 class MyCustomModel(DetectionModel):
@@ -96,12 +96,12 @@ There are other components that can be customized similarly like `Validators` an
 
 ## FAQ
 
-### How do I customize the Ultralytics YOLO11 DetectionTrainer for specific tasks?
+### How do I customize the numa_ultralytics YOLO11 DetectionTrainer for specific tasks?
 
-To customize the Ultralytics YOLO11 `DetectionTrainer` for a specific task, you can override its methods to adapt to your custom model and dataloader. Start by inheriting from `DetectionTrainer` and then redefine methods like `get_model` to implement your custom functionalities. Here's an example:
+To customize the numa_ultralytics YOLO11 `DetectionTrainer` for a specific task, you can override its methods to adapt to your custom model and dataloader. Start by inheriting from `DetectionTrainer` and then redefine methods like `get_model` to implement your custom functionalities. Here's an example:
 
 ```python
-from ultralytics.models.yolo.detect import DetectionTrainer
+from numa_ultralytics.models.yolo.detect import DetectionTrainer
 
 
 class CustomTrainer(DetectionTrainer):
@@ -117,21 +117,21 @@ trained_model = trainer.best  # get best model
 
 For further customization like changing the `loss function` or adding a `callback`, you can reference our [Callbacks Guide](../usage/callbacks.md).
 
-### What are the key components of the BaseTrainer in Ultralytics YOLO11?
+### What are the key components of the BaseTrainer in numa_ultralytics YOLO11?
 
-The `BaseTrainer` in Ultralytics YOLO11 serves as the foundation for training routines and can be customized for various tasks by overriding its generic methods. Key components include:
+The `BaseTrainer` in numa_ultralytics YOLO11 serves as the foundation for training routines and can be customized for various tasks by overriding its generic methods. Key components include:
 
 - `get_model(cfg, weights)` to build the model to be trained.
 - `get_dataloader()` to build the dataloader.
 
 For more details on the customization and source code, see the [`BaseTrainer` Reference](../reference/engine/trainer.md).
 
-### How can I add a callback to the Ultralytics YOLO11 DetectionTrainer?
+### How can I add a callback to the numa_ultralytics YOLO11 DetectionTrainer?
 
-You can add callbacks to monitor and modify the training process in Ultralytics YOLO11 `DetectionTrainer`. For instance, here's how you can add a callback to log model weights after every training [epoch](https://www.ultralytics.com/glossary/epoch):
+You can add callbacks to monitor and modify the training process in numa_ultralytics YOLO11 `DetectionTrainer`. For instance, here's how you can add a callback to log model weights after every training [epoch](https://www.numa_ultralytics.com/glossary/epoch):
 
 ```python
-from ultralytics.models.yolo.detect import DetectionTrainer
+from numa_ultralytics.models.yolo.detect import DetectionTrainer
 
 
 # callback to upload model weights
@@ -148,22 +148,22 @@ trainer.train()
 
 For further details on callback events and entry points, refer to our [Callbacks Guide](../usage/callbacks.md).
 
-### Why should I use Ultralytics YOLO11 for model training?
+### Why should I use numa_ultralytics YOLO11 for model training?
 
-Ultralytics YOLO11 offers a high-level abstraction on powerful engine executors, making it ideal for rapid development and customization. Key benefits include:
+numa_ultralytics YOLO11 offers a high-level abstraction on powerful engine executors, making it ideal for rapid development and customization. Key benefits include:
 
 - **Ease of Use**: Both command-line and Python interfaces simplify complex tasks.
-- **Performance**: Optimized for real-time [object detection](https://www.ultralytics.com/glossary/object-detection) and various vision AI applications.
-- **Customization**: Easily extendable for custom models, [loss functions](https://www.ultralytics.com/glossary/loss-function), and dataloaders.
+- **Performance**: Optimized for real-time [object detection](https://www.numa_ultralytics.com/glossary/object-detection) and various vision AI applications.
+- **Customization**: Easily extendable for custom models, [loss functions](https://www.numa_ultralytics.com/glossary/loss-function), and dataloaders.
 
-Learn more about YOLO11's capabilities by visiting [Ultralytics YOLO](https://www.ultralytics.com/yolo).
+Learn more about YOLO11's capabilities by visiting [numa_ultralytics YOLO](https://www.numa_ultralytics.com/yolo).
 
-### Can I use the Ultralytics YOLO11 DetectionTrainer for non-standard models?
+### Can I use the numa_ultralytics YOLO11 DetectionTrainer for non-standard models?
 
-Yes, Ultralytics YOLO11 `DetectionTrainer` is highly flexible and can be customized for non-standard models. By inheriting from `DetectionTrainer`, you can overload different methods to support your specific model's needs. Here's a simple example:
+Yes, numa_ultralytics YOLO11 `DetectionTrainer` is highly flexible and can be customized for non-standard models. By inheriting from `DetectionTrainer`, you can overload different methods to support your specific model's needs. Here's a simple example:
 
 ```python
-from ultralytics.models.yolo.detect import DetectionTrainer
+from numa_ultralytics.models.yolo.detect import DetectionTrainer
 
 
 class CustomDetectionTrainer(DetectionTrainer):

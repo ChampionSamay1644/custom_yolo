@@ -1,22 +1,22 @@
 ---
 comments: true
 description: Learn how to export YOLO11 models to CoreML for optimized, on-device machine learning on iOS and macOS. Follow step-by-step instructions.
-keywords: CoreML export, YOLO11 models, CoreML conversion, Ultralytics, iOS object detection, macOS machine learning, AI deployment, machine learning integration
+keywords: CoreML export, YOLO11 models, CoreML conversion, numa_ultralytics, iOS object detection, macOS machine learning, AI deployment, machine learning integration
 ---
 
 # CoreML Export for YOLO11 Models
 
-Deploying [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) models on Apple devices like iPhones and Macs requires a format that ensures seamless performance.
+Deploying [computer vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv) models on Apple devices like iPhones and Macs requires a format that ensures seamless performance.
 
-The CoreML export format allows you to optimize your [Ultralytics YOLO11](https://github.com/ultralytics/ultralytics) models for efficient [object detection](https://www.ultralytics.com/glossary/object-detection) in iOS and macOS applications. In this guide, we'll walk you through the steps for converting your models to the CoreML format, making it easier for your models to perform well on Apple devices.
+The CoreML export format allows you to optimize your [numa_ultralytics YOLO11](https://github.com/numa_ultralytics/numa_ultralytics) models for efficient [object detection](https://www.numa_ultralytics.com/glossary/object-detection) in iOS and macOS applications. In this guide, we'll walk you through the steps for converting your models to the CoreML format, making it easier for your models to perform well on Apple devices.
 
 ## CoreML
 
 <p align="center">
-  <img width="100%" src="https://github.com/ultralytics/docs/releases/download/0/coreml-overview.avif" alt="CoreML Overview">
+  <img width="100%" src="https://github.com/numa_ultralytics/docs/releases/download/0/coreml-overview.avif" alt="CoreML Overview">
 </p>
 
-[CoreML](https://developer.apple.com/documentation/coreml) is Apple's foundational machine learning framework that builds upon Accelerate, BNNS, and Metal Performance Shaders. It provides a machine-learning model format that seamlessly integrates into iOS applications and supports tasks such as image analysis, [natural language processing](https://www.ultralytics.com/glossary/natural-language-processing-nlp), audio-to-text conversion, and sound analysis.
+[CoreML](https://developer.apple.com/documentation/coreml) is Apple's foundational machine learning framework that builds upon Accelerate, BNNS, and Metal Performance Shaders. It provides a machine-learning model format that seamlessly integrates into iOS applications and supports tasks such as image analysis, [natural language processing](https://www.numa_ultralytics.com/glossary/natural-language-processing-nlp), audio-to-text conversion, and sound analysis.
 
 Applications can take advantage of Core ML without the need to have a network connection or API calls because the Core ML framework works using on-device computing. This means model inference can be performed locally on the user's device.
 
@@ -24,15 +24,15 @@ Applications can take advantage of Core ML without the need to have a network co
 
 Apple's CoreML framework offers robust features for on-device machine learning. Here are the key features that make CoreML a powerful tool for developers:
 
-- **Comprehensive Model Support**: Converts and runs models from popular frameworks like TensorFlow, [PyTorch](https://www.ultralytics.com/glossary/pytorch), scikit-learn, XGBoost, and LibSVM.
+- **Comprehensive Model Support**: Converts and runs models from popular frameworks like TensorFlow, [PyTorch](https://www.numa_ultralytics.com/glossary/pytorch), scikit-learn, XGBoost, and LibSVM.
 
 <p align="center">
-  <img width="100%" src="https://github.com/ultralytics/docs/releases/download/0/coreml-supported-models.avif" alt="CoreML Supported Models">
+  <img width="100%" src="https://github.com/numa_ultralytics/docs/releases/download/0/coreml-supported-models.avif" alt="CoreML Supported Models">
 </p>
 
-- **On-device [Machine Learning](https://www.ultralytics.com/glossary/machine-learning-ml)**: Ensures data privacy and swift processing by executing models directly on the user's device, eliminating the need for network connectivity.
+- **On-device [Machine Learning](https://www.numa_ultralytics.com/glossary/machine-learning-ml)**: Ensures data privacy and swift processing by executing models directly on the user's device, eliminating the need for network connectivity.
 
-- **Performance and Optimization**: Uses the device's CPU, GPU, and Neural Engine for optimal performance with minimal power and memory usage. Offers tools for model compression and optimization while maintaining [accuracy](https://www.ultralytics.com/glossary/accuracy).
+- **Performance and Optimization**: Uses the device's CPU, GPU, and Neural Engine for optimal performance with minimal power and memory usage. Offers tools for model compression and optimization while maintaining [accuracy](https://www.numa_ultralytics.com/glossary/accuracy).
 
 - **Ease of Integration**: Provides a unified format for various model types and a user-friendly API for seamless integration into apps. Supports domain-specific tasks through frameworks like Vision and Natural Language.
 
@@ -46,9 +46,9 @@ CoreML offers various deployment options for machine learning models, including:
 
 - **On-Device Deployment**: This method directly integrates CoreML models into your iOS app. It's particularly advantageous for ensuring low latency, enhanced privacy (since data remains on the device), and offline functionality. This approach, however, may be limited by the device's hardware capabilities, especially for larger and more complex models. On-device deployment can be executed in the following two ways.
 
-    - **Embedded Models**: These models are included in the app bundle and are immediately accessible. They are ideal for small models that do not require frequent updates.
+  - **Embedded Models**: These models are included in the app bundle and are immediately accessible. They are ideal for small models that do not require frequent updates.
 
-    - **Downloaded Models**: These models are fetched from a server as needed. This approach is suitable for larger models or those needing regular updates. It helps keep the app bundle size smaller.
+  - **Downloaded Models**: These models are fetched from a server as needed. This approach is suitable for larger models or those needing regular updates. It helps keep the app bundle size smaller.
 
 - **Cloud-Based Deployment**: CoreML models are hosted on servers and accessed by the iOS app through API requests. This scalable and flexible option enables easy model updates without app revisions. It's ideal for complex models or large-scale apps requiring regular updates. However, it does require an internet connection and may pose latency and security issues.
 
@@ -66,21 +66,21 @@ To install the required package, run:
 
         ```bash
         # Install the required package for YOLO11
-        pip install ultralytics
+        pip install numa_ultralytics
         ```
 
 For detailed instructions and best practices related to the installation process, check our [YOLO11 Installation guide](../quickstart.md). While installing the required packages for YOLO11, if you encounter any difficulties, consult our [Common Issues guide](../guides/yolo-common-issues.md) for solutions and tips.
 
 ### Usage
 
-Before diving into the usage instructions, be sure to check out the range of [YOLO11 models offered by Ultralytics](../models/index.md). This will help you choose the most appropriate model for your project requirements.
+Before diving into the usage instructions, be sure to check out the range of [YOLO11 models offered by numa_ultralytics](../models/index.md). This will help you choose the most appropriate model for your project requirements.
 
 !!! example "Usage"
 
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load the YOLO11 model
         model = YOLO("yolo11n.pt")
@@ -92,7 +92,7 @@ Before diving into the usage instructions, be sure to check out the range of [YO
         coreml_model = YOLO("yolo11n.mlpackage")
 
         # Run inference
-        results = coreml_model("https://ultralytics.com/images/bus.jpg")
+        results = coreml_model("https://numa_ultralytics.com/images/bus.jpg")
         ```
 
     === "CLI"
@@ -102,27 +102,27 @@ Before diving into the usage instructions, be sure to check out the range of [YO
         yolo export model=yolo11n.pt format=coreml  # creates 'yolo11n.mlpackage''
 
         # Run inference with the exported model
-        yolo predict model=yolo11n.mlpackage source='https://ultralytics.com/images/bus.jpg'
+        yolo predict model=yolo11n.mlpackage source='https://numa_ultralytics.com/images/bus.jpg'
         ```
 
 ### Export Arguments
 
-| Argument | Type             | Default    | Description                                                                                                                                                                                   |
-| -------- | ---------------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `format` | `str`            | `'coreml'` | Target format for the exported model, defining compatibility with various deployment environments.                                                                                            |
-| `imgsz`  | `int` or `tuple` | `640`      | Desired image size for the model input. Can be an integer for square images or a tuple `(height, width)` for specific dimensions.                                                             |
-| `half`   | `bool`           | `False`    | Enables FP16 (half-precision) quantization, reducing model size and potentially speeding up inference on supported hardware.                                                                  |
-| `int8`   | `bool`           | `False`    | Activates INT8 quantization, further compressing the model and speeding up inference with minimal [accuracy](https://www.ultralytics.com/glossary/accuracy) loss, primarily for edge devices. |
-| `nms`    | `bool`           | `False`    | Adds Non-Maximum Suppression (NMS), essential for accurate and efficient detection post-processing.                                                                                           |
-| `batch`  | `int`            | `1`        | Specifies export model batch inference size or the max number of images the exported model will process concurrently in `predict` mode.                                                       |
+| Argument | Type             | Default    | Description                                                                                                                                                                                        |
+| -------- | ---------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `format` | `str`            | `'coreml'` | Target format for the exported model, defining compatibility with various deployment environments.                                                                                                 |
+| `imgsz`  | `int` or `tuple` | `640`      | Desired image size for the model input. Can be an integer for square images or a tuple `(height, width)` for specific dimensions.                                                                  |
+| `half`   | `bool`           | `False`    | Enables FP16 (half-precision) quantization, reducing model size and potentially speeding up inference on supported hardware.                                                                       |
+| `int8`   | `bool`           | `False`    | Activates INT8 quantization, further compressing the model and speeding up inference with minimal [accuracy](https://www.numa_ultralytics.com/glossary/accuracy) loss, primarily for edge devices. |
+| `nms`    | `bool`           | `False`    | Adds Non-Maximum Suppression (NMS), essential for accurate and efficient detection post-processing.                                                                                                |
+| `batch`  | `int`            | `1`        | Specifies export model batch inference size or the max number of images the exported model will process concurrently in `predict` mode.                                                            |
 
-For more details about the export process, visit the [Ultralytics documentation page on exporting](../modes/export.md).
+For more details about the export process, visit the [numa_ultralytics documentation page on exporting](../modes/export.md).
 
 ## Deploying Exported YOLO11 CoreML Models
 
-Having successfully exported your Ultralytics YOLO11 models to CoreML, the next critical phase is deploying these models effectively. For detailed guidance on deploying CoreML models in various environments, check out these resources:
+Having successfully exported your numa_ultralytics YOLO11 models to CoreML, the next critical phase is deploying these models effectively. For detailed guidance on deploying CoreML models in various environments, check out these resources:
 
-- **[CoreML Tools](https://apple.github.io/coremltools/docs-guides/)**: This guide includes instructions and examples to convert models from [TensorFlow](https://www.ultralytics.com/glossary/tensorflow), PyTorch, and other libraries to Core ML.
+- **[CoreML Tools](https://apple.github.io/coremltools/docs-guides/)**: This guide includes instructions and examples to convert models from [TensorFlow](https://www.numa_ultralytics.com/glossary/tensorflow), PyTorch, and other libraries to Core ML.
 
 - **[ML and Vision](https://developer.apple.com/videos/)**: A collection of comprehensive videos that cover various aspects of using and implementing CoreML models.
 
@@ -130,24 +130,24 @@ Having successfully exported your Ultralytics YOLO11 models to CoreML, the next 
 
 ## Summary
 
-In this guide, we went over how to export Ultralytics YOLO11 models to CoreML format. By following the steps outlined in this guide, you can ensure maximum compatibility and performance when exporting YOLO11 models to CoreML.
+In this guide, we went over how to export numa_ultralytics YOLO11 models to CoreML format. By following the steps outlined in this guide, you can ensure maximum compatibility and performance when exporting YOLO11 models to CoreML.
 
 For further details on usage, visit the [CoreML official documentation](https://developer.apple.com/documentation/coreml).
 
-Also, if you'd like to know more about other Ultralytics YOLO11 integrations, visit our [integration guide page](../integrations/index.md). You'll find plenty of valuable resources and insights there.
+Also, if you'd like to know more about other numa_ultralytics YOLO11 integrations, visit our [integration guide page](../integrations/index.md). You'll find plenty of valuable resources and insights there.
 
 ## FAQ
 
 ### How do I export YOLO11 models to CoreML format?
 
-To export your [Ultralytics YOLO11](https://github.com/ultralytics/ultralytics) models to CoreML format, you'll first need to ensure you have the `ultralytics` package installed. You can install it using:
+To export your [numa_ultralytics YOLO11](https://github.com/numa_ultralytics/numa_ultralytics) models to CoreML format, you'll first need to ensure you have the `numa_ultralytics` package installed. You can install it using:
 
 !!! example "Installation"
 
     === "CLI"
 
         ```bash
-        pip install ultralytics
+        pip install numa_ultralytics
         ```
 
 Next, you can export the model using the following Python or CLI commands:
@@ -157,7 +157,7 @@ Next, you can export the model using the following Python or CLI commands:
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         model = YOLO("yolo11n.pt")
         model.export(format="coreml")
@@ -173,9 +173,9 @@ For further details, refer to the [Exporting YOLO11 Models to CoreML](../modes/e
 
 ### What are the benefits of using CoreML for deploying YOLO11 models?
 
-CoreML provides numerous advantages for deploying [Ultralytics YOLO11](https://github.com/ultralytics/ultralytics) models on Apple devices:
+CoreML provides numerous advantages for deploying [numa_ultralytics YOLO11](https://github.com/numa_ultralytics/numa_ultralytics) models on Apple devices:
 
-- **On-device Processing**: Enables local model inference on devices, ensuring [data privacy](https://www.ultralytics.com/glossary/data-privacy) and minimizing latency.
+- **On-device Processing**: Enables local model inference on devices, ensuring [data privacy](https://www.numa_ultralytics.com/glossary/data-privacy) and minimizing latency.
 - **Performance Optimization**: Leverages the full potential of the device's CPU, GPU, and Neural Engine, optimizing both speed and efficiency.
 - **Ease of Integration**: Offers a seamless integration experience with Apple's ecosystems, including iOS, macOS, watchOS, and tvOS.
 - **Versatility**: Supports a wide range of machine learning tasks such as image analysis, audio processing, and natural language processing using the CoreML framework.
@@ -188,8 +188,8 @@ Once you export your YOLO11 model to CoreML format, you have multiple deployment
 
 1. **On-Device Deployment**: Directly integrate CoreML models into your app for enhanced privacy and offline functionality. This can be done as:
 
-    - **Embedded Models**: Included in the app bundle, accessible immediately.
-    - **Downloaded Models**: Fetched from a server as needed, keeping the app bundle size smaller.
+   - **Embedded Models**: Included in the app bundle, accessible immediately.
+   - **Downloaded Models**: Fetched from a server as needed, keeping the app bundle size smaller.
 
 2. **Cloud-Based Deployment**: Host CoreML models on servers and access them via API requests. This approach supports easier updates and can handle more complex models.
 
@@ -197,7 +197,7 @@ For detailed guidance on deploying CoreML models, refer to [CoreML Deployment Op
 
 ### How does CoreML ensure optimized performance for YOLO11 models?
 
-CoreML ensures optimized performance for [Ultralytics YOLO11](https://github.com/ultralytics/ultralytics) models by utilizing various optimization techniques:
+CoreML ensures optimized performance for [numa_ultralytics YOLO11](https://github.com/numa_ultralytics/numa_ultralytics) models by utilizing various optimization techniques:
 
 - **Hardware Acceleration**: Uses the device's CPU, GPU, and Neural Engine for efficient computation.
 - **Model Compression**: Provides tools for compressing models to reduce their footprint without compromising accuracy.
@@ -214,16 +214,16 @@ Yes, you can run inference directly using the exported CoreML model. Below are t
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         coreml_model = YOLO("yolo11n.mlpackage")
-        results = coreml_model("https://ultralytics.com/images/bus.jpg")
+        results = coreml_model("https://numa_ultralytics.com/images/bus.jpg")
         ```
 
     === "CLI"
 
         ```bash
-        yolo predict model=yolo11n.mlpackage source='https://ultralytics.com/images/bus.jpg'
+        yolo predict model=yolo11n.mlpackage source='https://numa_ultralytics.com/images/bus.jpg'
         ```
 
 For additional information, refer to the [Usage section](#usage) of the CoreML export guide.

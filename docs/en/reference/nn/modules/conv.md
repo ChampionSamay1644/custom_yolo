@@ -1,72 +1,72 @@
 ---
-description: Explore detailed documentation on convolution modules like Conv, LightConv, GhostConv, and more used in Ultralytics models.
-keywords: Ultralytics, convolution modules, Conv, LightConv, GhostConv, YOLO, deep learning, neural networks
+description: Explore detailed documentation on convolution modules like Conv, LightConv, GhostConv, and more used in numa_ultralytics models.
+keywords: numa_ultralytics, convolution modules, Conv, LightConv, GhostConv, YOLO, deep learning, neural networks
 ---
 
-# Reference for `ultralytics/nn/modules/conv.py`
+# Reference for `numa_ultralytics/nn/modules/conv.py`
 
 !!! note
 
-    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/nn/modules/conv.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/nn/modules/conv.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/nn/modules/conv.py) 🛠️. Thank you 🙏!
+    This file is available at [https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/nn/modules/conv.py](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/nn/modules/conv.py). If you spot a problem please help fix it by [contributing](https://docs.numa_ultralytics.com/help/contributing/) a [Pull Request](https://github.com/numa_ultralytics/numa_ultralytics/edit/main/numa_ultralytics/nn/modules/conv.py) 🛠️. Thank you 🙏!
 
 <br>
 
-## ::: ultralytics.nn.modules.conv.Conv
+## ::: numa_ultralytics.nn.modules.conv.Conv
 
 <br><br><hr><br>
 
-## ::: ultralytics.nn.modules.conv.Conv2
+## ::: numa_ultralytics.nn.modules.conv.Conv2
 
 <br><br><hr><br>
 
-## ::: ultralytics.nn.modules.conv.LightConv
+## ::: numa_ultralytics.nn.modules.conv.LightConv
 
 <br><br><hr><br>
 
-## ::: ultralytics.nn.modules.conv.DWConv
+## ::: numa_ultralytics.nn.modules.conv.DWConv
 
 <br><br><hr><br>
 
-## ::: ultralytics.nn.modules.conv.DWConvTranspose2d
+## ::: numa_ultralytics.nn.modules.conv.DWConvTranspose2d
 
 <br><br><hr><br>
 
-## ::: ultralytics.nn.modules.conv.ConvTranspose
+## ::: numa_ultralytics.nn.modules.conv.ConvTranspose
 
 <br><br><hr><br>
 
-## ::: ultralytics.nn.modules.conv.Focus
+## ::: numa_ultralytics.nn.modules.conv.Focus
 
 <br><br><hr><br>
 
-## ::: ultralytics.nn.modules.conv.GhostConv
+## ::: numa_ultralytics.nn.modules.conv.GhostConv
 
 <br><br><hr><br>
 
-## ::: ultralytics.nn.modules.conv.RepConv
+## ::: numa_ultralytics.nn.modules.conv.RepConv
 
 <br><br><hr><br>
 
-## ::: ultralytics.nn.modules.conv.ChannelAttention
+## ::: numa_ultralytics.nn.modules.conv.ChannelAttention
 
 <br><br><hr><br>
 
-## ::: ultralytics.nn.modules.conv.SpatialAttention
+## ::: numa_ultralytics.nn.modules.conv.SpatialAttention
 
 <br><br><hr><br>
 
-## ::: ultralytics.nn.modules.conv.CBAM
+## ::: numa_ultralytics.nn.modules.conv.CBAM
 
 <br><br><hr><br>
 
-## ::: ultralytics.nn.modules.conv.Concat
+## ::: numa_ultralytics.nn.modules.conv.Concat
 
 <br><br><hr><br>
 
-## ::: ultralytics.nn.modules.conv.Index
+## ::: numa_ultralytics.nn.modules.conv.Index
 
 <br><br><hr><br>
 
-## ::: ultralytics.nn.modules.conv.autopad
+## ::: numa_ultralytics.nn.modules.conv.autopad
 
 <br><br>

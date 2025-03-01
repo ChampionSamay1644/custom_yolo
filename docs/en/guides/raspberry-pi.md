@@ -1,13 +1,13 @@
 ---
 comments: true
-description: Learn how to deploy Ultralytics YOLO11 on Raspberry Pi with our comprehensive guide. Get performance benchmarks, setup instructions, and best practices.
-keywords: Ultralytics, YOLO11, Raspberry Pi, setup, guide, benchmarks, computer vision, object detection, NCNN, Docker, camera modules
+description: Learn how to deploy numa_ultralytics YOLO11 on Raspberry Pi with our comprehensive guide. Get performance benchmarks, setup instructions, and best practices.
+keywords: numa_ultralytics, YOLO11, Raspberry Pi, setup, guide, benchmarks, computer vision, object detection, NCNN, Docker, camera modules
 benchmark_version: 8.3.39
 ---
 
-# Quick Start Guide: Raspberry Pi with Ultralytics YOLO11
+# Quick Start Guide: Raspberry Pi with numa_ultralytics YOLO11
 
-This comprehensive guide provides a detailed walkthrough for deploying Ultralytics YOLO11 on [Raspberry Pi](https://www.raspberrypi.com/) devices. Additionally, it showcases performance benchmarks to demonstrate the capabilities of YOLO11 on these small and powerful devices.
+This comprehensive guide provides a detailed walkthrough for deploying numa_ultralytics YOLO11 on [Raspberry Pi](https://www.raspberrypi.com/) devices. Additionally, it showcases performance benchmarks to demonstrate the capabilities of YOLO11 on these small and powerful devices.
 
 <p align="center">
   <br>
@@ -48,54 +48,54 @@ Raspberry Pi is a small, affordable, single-board computer. It has become popula
 
 The first thing to do after getting your hands on a Raspberry Pi is to flash a micro-SD card with Raspberry Pi OS, insert into the device and boot into the OS. Follow along with detailed [Getting Started Documentation by Raspberry Pi](https://www.raspberrypi.com/documentation/computers/getting-started.html) to prepare your device for first use.
 
-## Set Up Ultralytics
+## Set Up numa_ultralytics
 
-There are two ways of setting up Ultralytics package on Raspberry Pi to build your next [Computer Vision](https://www.ultralytics.com/glossary/computer-vision-cv) project. You can use either of them.
+There are two ways of setting up numa_ultralytics package on Raspberry Pi to build your next [Computer Vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv) project. You can use either of them.
 
 - [Start with Docker](#start-with-docker)
 - [Start without Docker](#start-without-docker)
 
 ### Start with Docker
 
-The fastest way to get started with Ultralytics YOLO11 on Raspberry Pi is to run with pre-built docker image for Raspberry Pi.
+The fastest way to get started with numa_ultralytics YOLO11 on Raspberry Pi is to run with pre-built docker image for Raspberry Pi.
 
 Execute the below command to pull the Docker container and run on Raspberry Pi. This is based on [arm64v8/debian](https://hub.docker.com/r/arm64v8/debian) docker image which contains Debian 12 (Bookworm) in a Python3 environment.
 
 ```bash
-t=ultralytics/ultralytics:latest-arm64 && sudo docker pull $t && sudo docker run -it --ipc=host $t
+t=numa_ultralytics/numa_ultralytics:latest-arm64 && sudo docker pull $t && sudo docker run -it --ipc=host $t
 ```
 
 After this is done, skip to [Use NCNN on Raspberry Pi section](#use-ncnn-on-raspberry-pi).
 
 ### Start without Docker
 
-#### Install Ultralytics Package
+#### Install numa_ultralytics Package
 
-Here we will install Ultralytics package on the Raspberry Pi with optional dependencies so that we can export the [PyTorch](https://www.ultralytics.com/glossary/pytorch) models to other different formats.
+Here we will install numa_ultralytics package on the Raspberry Pi with optional dependencies so that we can export the [PyTorch](https://www.numa_ultralytics.com/glossary/pytorch) models to other different formats.
 
 1. Update packages list, install pip and upgrade to latest
 
-    ```bash
-    sudo apt update
-    sudo apt install python3-pip -y
-    pip install -U pip
-    ```
+   ```bash
+   sudo apt update
+   sudo apt install python3-pip -y
+   pip install -U pip
+   ```
 
-2. Install `ultralytics` pip package with optional dependencies
+2. Install `numa_ultralytics` pip package with optional dependencies
 
-    ```bash
-    pip install ultralytics[export]
-    ```
+   ```bash
+   pip install numa_ultralytics[export]
+   ```
 
 3. Reboot the device
 
-    ```bash
-    sudo reboot
-    ```
+   ```bash
+   sudo reboot
+   ```
 
 ## Use NCNN on Raspberry Pi
 
-Out of all the model export formats supported by Ultralytics, [NCNN](https://docs.ultralytics.com/integrations/ncnn/) delivers the best inference performance when working with Raspberry Pi devices because NCNN is highly optimized for mobile/ embedded platforms (such as ARM architecture).
+Out of all the model export formats supported by numa_ultralytics, [NCNN](https://docs.numa_ultralytics.com/integrations/ncnn/) delivers the best inference performance when working with Raspberry Pi devices because NCNN is highly optimized for mobile/ embedded platforms (such as ARM architecture).
 
 ## Convert Model to NCNN and Run Inference
 
@@ -106,7 +106,7 @@ The YOLO11n model in PyTorch format is converted to NCNN to run inference with t
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a YOLO11n PyTorch model
         model = YOLO("yolo11n.pt")
@@ -118,7 +118,7 @@ The YOLO11n model in PyTorch format is converted to NCNN to run inference with t
         ncnn_model = YOLO("yolo11n_ncnn_model")
 
         # Run inference
-        results = ncnn_model("https://ultralytics.com/images/bus.jpg")
+        results = ncnn_model("https://numa_ultralytics.com/images/bus.jpg")
         ```
 
     === "CLI"
@@ -128,24 +128,24 @@ The YOLO11n model in PyTorch format is converted to NCNN to run inference with t
         yolo export model=yolo11n.pt format=ncnn  # creates 'yolo11n_ncnn_model'
 
         # Run inference with the exported model
-        yolo predict model='yolo11n_ncnn_model' source='https://ultralytics.com/images/bus.jpg'
+        yolo predict model='yolo11n_ncnn_model' source='https://numa_ultralytics.com/images/bus.jpg'
         ```
 
 !!! tip
 
-    For more details about supported export options, visit the [Ultralytics documentation page on deployment options](https://docs.ultralytics.com/guides/model-deployment-options/).
+    For more details about supported export options, visit the [numa_ultralytics documentation page on deployment options](https://docs.numa_ultralytics.com/guides/model-deployment-options/).
 
 ## Raspberry Pi 5 YOLO11 Benchmarks
 
-YOLO11 benchmarks were run by the Ultralytics team on nine different model formats measuring speed and [accuracy](https://www.ultralytics.com/glossary/accuracy): PyTorch, TorchScript, ONNX, OpenVINO, TF SavedModel, TF GraphDef, TF Lite, PaddlePaddle, NCNN. Benchmarks were run on a Raspberry Pi 5 at FP32 [precision](https://www.ultralytics.com/glossary/precision) with default input image size of 640.
+YOLO11 benchmarks were run by the numa_ultralytics team on nine different model formats measuring speed and [accuracy](https://www.numa_ultralytics.com/glossary/accuracy): PyTorch, TorchScript, ONNX, OpenVINO, TF SavedModel, TF GraphDef, TF Lite, PaddlePaddle, NCNN. Benchmarks were run on a Raspberry Pi 5 at FP32 [precision](https://www.numa_ultralytics.com/glossary/precision) with default input image size of 640.
 
 ### Comparison Chart
 
 We have only included benchmarks for YOLO11n and YOLO11s models because other models sizes are too big to run on the Raspberry Pis and does not offer decent performance.
 
 <figure style="text-align: center;">
-    <img width="800" src="https://github.com/ultralytics/assets/releases/download/v0.0.0/rpi-yolo11-benchmarks.avif" alt="YOLO11 benchmarks on RPi 5">
-    <figcaption style="font-style: italic; color: gray;">Benchmarked with Ultralytics {{ benchmark_version }}</figcaption>
+    <img width="800" src="https://github.com/numa_ultralytics/assets/releases/download/v0.0.0/rpi-yolo11-benchmarks.avif" alt="YOLO11 benchmarks on RPi 5">
+    <figcaption style="font-style: italic; color: gray;">Benchmarked with numa_ultralytics {{ benchmark_version }}</figcaption>
 </figure>
 
 ### Detailed Comparison Table
@@ -184,18 +184,18 @@ The below table represents the benchmark results for two different models (YOLO1
         | MNN           | ✅      | 36.2              | 0.7409      | 273.032                |
         | NCNN          | ✅      | 36.2              | 0.7419      | 194.858                |
 
-    Benchmarked with Ultralytics {{ benchmark_version }}
+    Benchmarked with numa_ultralytics {{ benchmark_version }}
 
 ## Reproduce Our Results
 
-To reproduce the above Ultralytics benchmarks on all [export formats](../modes/export.md), run this code:
+To reproduce the above numa_ultralytics benchmarks on all [export formats](../modes/export.md), run this code:
 
 !!! example
 
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a YOLO11n PyTorch model
         model = YOLO("yolo11n.pt")
@@ -255,7 +255,7 @@ There are 2 methods of using the Raspberry Pi Camera to inference YOLO11 models.
                 import cv2
                 from picamera2 import Picamera2
 
-                from ultralytics import YOLO
+                from numa_ultralytics import YOLO
 
                 # Initialize the Picamera2
                 picam2 = Picamera2()
@@ -304,7 +304,7 @@ There are 2 methods of using the Raspberry Pi Camera to inference YOLO11 models.
             === "Python"
 
                 ```python
-                from ultralytics import YOLO
+                from numa_ultralytics import YOLO
 
                 # Load a YOLO11n PyTorch model
                 model = YOLO("yolo11n.pt")
@@ -321,7 +321,7 @@ There are 2 methods of using the Raspberry Pi Camera to inference YOLO11 models.
 
 !!! tip
 
-    Check our document on [Inference Sources](https://docs.ultralytics.com/modes/predict/#inference-sources) if you want to change the image/ video input type
+    Check our document on [Inference Sources](https://docs.numa_ultralytics.com/modes/predict/#inference-sources) if you want to change the image/ video input type
 
 ## Best Practices when using Raspberry Pi
 
@@ -329,15 +329,15 @@ There are a couple of best practices to follow in order to enable maximum perfor
 
 1. Use an SSD
 
-    When using Raspberry Pi for 24x7 continued usage, it is recommended to use an SSD for the system because an SD card will not be able to withstand continuous writes and might get broken. With the onboard PCIe connector on the Raspberry Pi 5, now you can connect SSDs using an adapter such as the [NVMe Base for Raspberry Pi 5](https://shop.pimoroni.com/products/nvme-base).
+   When using Raspberry Pi for 24x7 continued usage, it is recommended to use an SSD for the system because an SD card will not be able to withstand continuous writes and might get broken. With the onboard PCIe connector on the Raspberry Pi 5, now you can connect SSDs using an adapter such as the [NVMe Base for Raspberry Pi 5](https://shop.pimoroni.com/products/nvme-base).
 
 2. Flash without GUI
 
-    When flashing Raspberry Pi OS, you can choose to not install the Desktop environment (Raspberry Pi OS Lite) and this can save a bit of RAM on the device, leaving more space for computer vision processing.
+   When flashing Raspberry Pi OS, you can choose to not install the Desktop environment (Raspberry Pi OS Lite) and this can save a bit of RAM on the device, leaving more space for computer vision processing.
 
 ## Next Steps
 
-Congratulations on successfully setting up YOLO on your Raspberry Pi! For further learning and support, visit [Ultralytics YOLO11 Docs](../index.md) and [Kashmir World Foundation](https://www.kashmirworldfoundation.org/).
+Congratulations on successfully setting up YOLO on your Raspberry Pi! For further learning and support, visit [numa_ultralytics YOLO11 Docs](../index.md) and [Kashmir World Foundation](https://www.kashmirworldfoundation.org/).
 
 ## Acknowledgements and Citations
 
@@ -347,30 +347,30 @@ For more information about Kashmir World Foundation's activities, you can visit 
 
 ## FAQ
 
-### How do I set up Ultralytics YOLO11 on a Raspberry Pi without using Docker?
+### How do I set up numa_ultralytics YOLO11 on a Raspberry Pi without using Docker?
 
-To set up Ultralytics YOLO11 on a Raspberry Pi without Docker, follow these steps:
+To set up numa_ultralytics YOLO11 on a Raspberry Pi without Docker, follow these steps:
 
 1. Update the package list and install `pip`:
-    ```bash
-    sudo apt update
-    sudo apt install python3-pip -y
-    pip install -U pip
-    ```
-2. Install the Ultralytics package with optional dependencies:
-    ```bash
-    pip install ultralytics[export]
-    ```
+   ```bash
+   sudo apt update
+   sudo apt install python3-pip -y
+   pip install -U pip
+   ```
+2. Install the numa_ultralytics package with optional dependencies:
+   ```bash
+   pip install numa_ultralytics[export]
+   ```
 3. Reboot the device to apply changes:
-    ```bash
-    sudo reboot
-    ```
+   ```bash
+   sudo reboot
+   ```
 
 For detailed instructions, refer to the [Start without Docker](#start-without-docker) section.
 
-### Why should I use Ultralytics YOLO11's NCNN format on Raspberry Pi for AI tasks?
+### Why should I use numa_ultralytics YOLO11's NCNN format on Raspberry Pi for AI tasks?
 
-Ultralytics YOLO11's NCNN format is highly optimized for mobile and embedded platforms, making it ideal for running AI tasks on Raspberry Pi devices. NCNN maximizes inference performance by leveraging ARM architecture, providing faster and more efficient processing compared to other formats. For more details on supported export options, visit the [Ultralytics documentation page on deployment options](../modes/export.md).
+numa_ultralytics YOLO11's NCNN format is highly optimized for mobile and embedded platforms, making it ideal for running AI tasks on Raspberry Pi devices. NCNN maximizes inference performance by leveraging ARM architecture, providing faster and more efficient processing compared to other formats. For more details on supported export options, visit the [numa_ultralytics documentation page on deployment options](../modes/export.md).
 
 ### How can I convert a YOLO11 model to NCNN format for use on Raspberry Pi?
 
@@ -381,7 +381,7 @@ You can convert a PyTorch YOLO11 model to NCNN format using either Python or CLI
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a YOLO11n PyTorch model
         model = YOLO("yolo11n.pt")
@@ -393,7 +393,7 @@ You can convert a PyTorch YOLO11 model to NCNN format using either Python or CLI
         ncnn_model = YOLO("yolo11n_ncnn_model")
 
         # Run inference
-        results = ncnn_model("https://ultralytics.com/images/bus.jpg")
+        results = ncnn_model("https://numa_ultralytics.com/images/bus.jpg")
         ```
 
     === "CLI"
@@ -403,7 +403,7 @@ You can convert a PyTorch YOLO11 model to NCNN format using either Python or CLI
         yolo export model=yolo11n.pt format=ncnn  # creates 'yolo11n_ncnn_model'
 
         # Run inference with the exported model
-        yolo predict model='yolo11n_ncnn_model' source='https://ultralytics.com/images/bus.jpg'
+        yolo predict model='yolo11n_ncnn_model' source='https://numa_ultralytics.com/images/bus.jpg'
         ```
 
 For more details, see the [Use NCNN on Raspberry Pi](#use-ncnn-on-raspberry-pi) section.
@@ -418,50 +418,50 @@ Key differences include:
 
 These enhancements contribute to better performance benchmarks for YOLO11 models on Raspberry Pi 5 compared to Raspberry Pi 4. Refer to the [Raspberry Pi Series Comparison](#raspberry-pi-series-comparison) table for more details.
 
-### How can I set up a Raspberry Pi Camera Module to work with Ultralytics YOLO11?
+### How can I set up a Raspberry Pi Camera Module to work with numa_ultralytics YOLO11?
 
 There are two methods to set up a Raspberry Pi Camera for YOLO11 inference:
 
 1. **Using `picamera2`**:
 
-    ```python
-    import cv2
-    from picamera2 import Picamera2
+   ```python
+   import cv2
+   from picamera2 import Picamera2
 
-    from ultralytics import YOLO
+   from numa_ultralytics import YOLO
 
-    picam2 = Picamera2()
-    picam2.preview_configuration.main.size = (1280, 720)
-    picam2.preview_configuration.main.format = "RGB888"
-    picam2.preview_configuration.align()
-    picam2.configure("preview")
-    picam2.start()
+   picam2 = Picamera2()
+   picam2.preview_configuration.main.size = (1280, 720)
+   picam2.preview_configuration.main.format = "RGB888"
+   picam2.preview_configuration.align()
+   picam2.configure("preview")
+   picam2.start()
 
-    model = YOLO("yolo11n.pt")
+   model = YOLO("yolo11n.pt")
 
-    while True:
-        frame = picam2.capture_array()
-        results = model(frame)
-        annotated_frame = results[0].plot()
-        cv2.imshow("Camera", annotated_frame)
+   while True:
+       frame = picam2.capture_array()
+       results = model(frame)
+       annotated_frame = results[0].plot()
+       cv2.imshow("Camera", annotated_frame)
 
-        if cv2.waitKey(1) == ord("q"):
-            break
+       if cv2.waitKey(1) == ord("q"):
+           break
 
-    cv2.destroyAllWindows()
-    ```
+   cv2.destroyAllWindows()
+   ```
 
 2. **Using a TCP Stream**:
 
-    ```bash
-    rpicam-vid -n -t 0 --inline --listen -o tcp://127.0.0.1:8888
-    ```
+   ```bash
+   rpicam-vid -n -t 0 --inline --listen -o tcp://127.0.0.1:8888
+   ```
 
-    ```python
-    from ultralytics import YOLO
+   ```python
+   from numa_ultralytics import YOLO
 
-    model = YOLO("yolo11n.pt")
-    results = model("tcp://127.0.0.1:8888")
-    ```
+   model = YOLO("yolo11n.pt")
+   results = model("tcp://127.0.0.1:8888")
+   ```
 
 For detailed setup instructions, visit the [Inference with Camera](#inference-with-camera) section.

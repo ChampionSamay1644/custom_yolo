@@ -1,16 +1,16 @@
 ---
 comments: true
-description: Discover how TrackZone leverages Ultralytics YOLO11 to precisely track objects within specific zones, enabling real-time insights for crowd analysis, surveillance, and targeted monitoring.
-keywords: TrackZone, object tracking, YOLO11, Ultralytics, real-time object detection, AI, deep learning, crowd analysis, surveillance, zone-based tracking, resource optimization
+description: Discover how TrackZone leverages numa_ultralytics YOLO11 to precisely track objects within specific zones, enabling real-time insights for crowd analysis, surveillance, and targeted monitoring.
+keywords: TrackZone, object tracking, YOLO11, numa_ultralytics, real-time object detection, AI, deep learning, crowd analysis, surveillance, zone-based tracking, resource optimization
 ---
 
-# TrackZone using Ultralytics YOLO11
+# TrackZone using numa_ultralytics YOLO11
 
-<a href="https://colab.research.google.com/github/ultralytics/notebooks/blob/main/notebooks/how-to-track-the-objects-in-zone-using-ultralytics-yolo.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open TrackZone In Colab"></a>
+<a href="https://colab.research.google.com/github/numa_ultralytics/notebooks/blob/main/notebooks/how-to-track-the-objects-in-zone-using-numa_ultralytics-yolo.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open TrackZone In Colab"></a>
 
 ## What is TrackZone?
 
-TrackZone specializes in monitoring objects within designated areas of a frame instead of the whole frame. Built on [Ultralytics YOLO11](https://github.com/ultralytics/ultralytics/), it integrates object detection and tracking specifically within zones for videos and live camera feeds. YOLO11's advanced algorithms and [deep learning](https://www.ultralytics.com/glossary/deep-learning-dl) technologies make it a perfect choice for real-time use cases, offering precise and efficient object tracking in applications like crowd monitoring and surveillance.
+TrackZone specializes in monitoring objects within designated areas of a frame instead of the whole frame. Built on [numa_ultralytics YOLO11](https://github.com/numa_ultralytics/numa_ultralytics/), it integrates object detection and tracking specifically within zones for videos and live camera feeds. YOLO11's advanced algorithms and [deep learning](https://www.numa_ultralytics.com/glossary/deep-learning-dl) technologies make it a perfect choice for real-time use cases, offering precise and efficient object tracking in applications like crowd monitoring and surveillance.
 
 <p align="center">
   <br>
@@ -20,7 +20,7 @@ TrackZone specializes in monitoring objects within designated areas of a frame i
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> How to Track Objects in Region using Ultralytics YOLO11 | TrackZone 🚀
+  <strong>Watch:</strong> How to Track Objects in Region using numa_ultralytics YOLO11 | TrackZone 🚀
 </p>
 
 ## Advantages of Object Tracking in Zones (TrackZone)
@@ -32,10 +32,10 @@ TrackZone specializes in monitoring objects within designated areas of a frame i
 
 ## Real World Applications
 
-|                                                                             Agriculture                                                                             |                                                                            Transportation                                                                             |
-| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| ![Plants Tracking in Field Using Ultralytics YOLO11](https://github.com/ultralytics/docs/releases/download/0/plants-tracking-in-zone-using-ultralytics-yolo11.avif) | ![Vehicles Tracking on Road using Ultralytics YOLO11](https://github.com/ultralytics/docs/releases/download/0/vehicle-tracking-in-zone-using-ultralytics-yolo11.avif) |
-|                                                          Plants Tracking in Field Using Ultralytics YOLO11                                                          |                                                          Vehicles Tracking on Road using Ultralytics YOLO11                                                           |
+|                                                                                    Agriculture                                                                                     |                                                                                    Transportation                                                                                    |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| ![Plants Tracking in Field Using numa_ultralytics YOLO11](https://github.com/numa_ultralytics/docs/releases/download/0/plants-tracking-in-zone-using-numa_ultralytics-yolo11.avif) | ![Vehicles Tracking on Road using numa_ultralytics YOLO11](https://github.com/numa_ultralytics/docs/releases/download/0/vehicle-tracking-in-zone-using-numa_ultralytics-yolo11.avif) |
+|                                                               Plants Tracking in Field Using numa_ultralytics YOLO11                                                               |                                                               Vehicles Tracking on Road using numa_ultralytics YOLO11                                                                |
 
 !!! example "TrackZone using YOLO11 Example"
 
@@ -57,7 +57,7 @@ TrackZone specializes in monitoring objects within designated areas of a frame i
         ```python
         import cv2
 
-        from ultralytics import solutions
+        from numa_ultralytics import solutions
 
         cap = cv2.VideoCapture("path/to/video/file.mp4")
         assert cap.isOpened(), "Error reading video file"
@@ -73,7 +73,7 @@ TrackZone specializes in monitoring objects within designated areas of a frame i
         trackzone = solutions.TrackZone(
             show=True,  # Display the output
             region=region_points,  # Pass region points
-            model="yolo11n.pt",  # You can use any model that Ultralytics support, i.e. YOLOv9, YOLOv10
+            model="yolo11n.pt",  # You can use any model that numa_ultralytics support, i.e. YOLOv9, YOLOv10
             # line_width=2,  # Adjust the line width for bounding boxes and text display
             # classes=[0, 2],  # If you want to count specific classes i.e. person and car with COCO pretrained model.
         )
@@ -98,7 +98,7 @@ Here's a table with the `TrackZone` arguments:
 
 | Name         | Type   | Default                                              | Description                                          |
 | ------------ | ------ | ---------------------------------------------------- | ---------------------------------------------------- |
-| `model`      | `str`  | `None`                                               | Path to Ultralytics YOLO Model File                  |
+| `model`      | `str`  | `None`                                               | Path to numa_ultralytics YOLO Model File             |
 | `region`     | `list` | `[(150, 150), (1130, 150), (1130, 570), (150, 570)]` | List of points defining the object tracking region.  |
 | `line_width` | `int`  | `2`                                                  | Line thickness for bounding boxes.                   |
 | `show`       | `bool` | `False`                                              | Flag to control whether to display the video stream. |
@@ -109,22 +109,22 @@ Here's a table with the `TrackZone` arguments:
 
 ## FAQ
 
-### How do I track objects in a specific area or zone of a video frame using Ultralytics YOLO11?
+### How do I track objects in a specific area or zone of a video frame using numa_ultralytics YOLO11?
 
-Tracking objects in a defined area or zone of a video frame is straightforward with Ultralytics YOLO11. Simply use the command provided below to initiate tracking. This approach ensures efficient analysis and accurate results, making it ideal for applications like surveillance, crowd management, or any scenario requiring zonal tracking.
+Tracking objects in a defined area or zone of a video frame is straightforward with numa_ultralytics YOLO11. Simply use the command provided below to initiate tracking. This approach ensures efficient analysis and accurate results, making it ideal for applications like surveillance, crowd management, or any scenario requiring zonal tracking.
 
 ```bash
 yolo solutions trackzone source="path/to/video/file.mp4" show=True
 ```
 
-### How can I use TrackZone in Python with Ultralytics YOLO11?
+### How can I use TrackZone in Python with numa_ultralytics YOLO11?
 
 With just a few lines of code, you can set up object tracking in specific zones, making it easy to integrate into your projects.
 
 ```python
 import cv2
 
-from ultralytics import solutions
+from numa_ultralytics import solutions
 
 cap = cv2.VideoCapture("path/to/video/file.mp4")
 assert cap.isOpened(), "Error reading video file"
@@ -157,9 +157,9 @@ video_writer.release()
 cv2.destroyAllWindows()
 ```
 
-### How do I configure the zone points for video processing using Ultralytics TrackZone?
+### How do I configure the zone points for video processing using numa_ultralytics TrackZone?
 
-Configuring zone points for video processing with Ultralytics TrackZone is simple and customizable. You can directly define and adjust the zones through a Python script, allowing precise control over the areas you want to monitor.
+Configuring zone points for video processing with numa_ultralytics TrackZone is simple and customizable. You can directly define and adjust the zones through a Python script, allowing precise control over the areas you want to monitor.
 
 ```python
 # Define region points

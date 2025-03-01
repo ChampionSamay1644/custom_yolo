@@ -1,14 +1,14 @@
 ---
 comments: true
-description: Learn how to calculate distances between objects using Ultralytics YOLO11 for accurate spatial positioning and scene understanding.
-keywords: Ultralytics, YOLO11, distance calculation, computer vision, object tracking, spatial positioning
+description: Learn how to calculate distances between objects using numa_ultralytics YOLO11 for accurate spatial positioning and scene understanding.
+keywords: numa_ultralytics, YOLO11, distance calculation, computer vision, object tracking, spatial positioning
 ---
 
-# Distance Calculation using Ultralytics YOLO11
+# Distance Calculation using numa_ultralytics YOLO11
 
 ## What is Distance Calculation?
 
-Measuring the gap between two objects is known as distance calculation within a specified space. In the case of [Ultralytics YOLO11](https://github.com/ultralytics/ultralytics), the [bounding box](https://www.ultralytics.com/glossary/bounding-box) centroid is employed to calculate the distance for bounding boxes highlighted by the user.
+Measuring the gap between two objects is known as distance calculation within a specified space. In the case of [numa_ultralytics YOLO11](https://github.com/numa_ultralytics/numa_ultralytics), the [bounding box](https://www.numa_ultralytics.com/glossary/bounding-box) centroid is employed to calculate the distance for bounding boxes highlighted by the user.
 
 <p align="center">
   <br>
@@ -18,18 +18,18 @@ Measuring the gap between two objects is known as distance calculation within a 
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Distance Calculation using Ultralytics YOLO11
+  <strong>Watch:</strong> Distance Calculation using numa_ultralytics YOLO11
 </p>
 
 ## Visuals
 
-|                                         Distance Calculation using Ultralytics YOLO11                                         |
-| :---------------------------------------------------------------------------------------------------------------------------: |
-| ![Ultralytics YOLO11 Distance Calculation](https://github.com/ultralytics/docs/releases/download/0/distance-calculation.avif) |
+|                                           Distance Calculation using numa_ultralytics YOLO11                                            |
+| :-------------------------------------------------------------------------------------------------------------------------------------: |
+| ![numa_ultralytics YOLO11 Distance Calculation](https://github.com/numa_ultralytics/docs/releases/download/0/distance-calculation.avif) |
 
 ## Advantages of Distance Calculation?
 
-- **Localization [Precision](https://www.ultralytics.com/glossary/precision):** Enhances accurate spatial positioning in [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) tasks.
+- **Localization [Precision](https://www.numa_ultralytics.com/glossary/precision):** Enhances accurate spatial positioning in [computer vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv) tasks.
 - **Size Estimation:** Allows estimation of object size for better contextual understanding.
 
 ???+ tip "Distance Calculation"
@@ -43,7 +43,7 @@ Measuring the gap between two objects is known as distance calculation within a 
         ```python
         import cv2
 
-        from ultralytics import solutions
+        from numa_ultralytics import solutions
 
         cap = cv2.VideoCapture("Path/to/video/file.mp4")
         assert cap.isOpened(), "Error reading video file"
@@ -82,7 +82,7 @@ Measuring the gap between two objects is known as distance calculation within a 
 
 | `Name`       | `Type` | `Default` | Description                                          |
 | ------------ | ------ | --------- | ---------------------------------------------------- |
-| `model`      | `str`  | `None`    | Path to Ultralytics YOLO Model File                  |
+| `model`      | `str`  | `None`    | Path to numa_ultralytics YOLO Model File             |
 | `line_width` | `int`  | `2`       | Line thickness for bounding boxes.                   |
 | `show`       | `bool` | `False`   | Flag to control whether to display the video stream. |
 
@@ -92,29 +92,29 @@ Measuring the gap between two objects is known as distance calculation within a 
 
 ## FAQ
 
-### How do I calculate distances between objects using Ultralytics YOLO11?
+### How do I calculate distances between objects using numa_ultralytics YOLO11?
 
-To calculate distances between objects using [Ultralytics YOLO11](https://github.com/ultralytics/ultralytics), you need to identify the bounding box centroids of the detected objects. This process involves initializing the `DistanceCalculation` class from Ultralytics' `solutions` module and using the model's tracking outputs to calculate the distances. You can refer to the implementation in the [distance calculation example](#distance-calculation-using-ultralytics-yolo11).
+To calculate distances between objects using [numa_ultralytics YOLO11](https://github.com/numa_ultralytics/numa_ultralytics), you need to identify the bounding box centroids of the detected objects. This process involves initializing the `DistanceCalculation` class from numa_ultralytics' `solutions` module and using the model's tracking outputs to calculate the distances. You can refer to the implementation in the [distance calculation example](#distance-calculation-using-numa_ultralytics-yolo11).
 
-### What are the advantages of using distance calculation with Ultralytics YOLO11?
+### What are the advantages of using distance calculation with numa_ultralytics YOLO11?
 
-Using distance calculation with Ultralytics YOLO11 offers several advantages:
+Using distance calculation with numa_ultralytics YOLO11 offers several advantages:
 
 - **Localization Precision:** Provides accurate spatial positioning for objects.
 - **Size Estimation:** Helps estimate physical sizes, contributing to better contextual understanding.
 - **Scene Understanding:** Enhances 3D scene comprehension, aiding improved decision-making in applications like autonomous driving and surveillance.
 
-### Can I perform distance calculation in real-time video streams with Ultralytics YOLO11?
+### Can I perform distance calculation in real-time video streams with numa_ultralytics YOLO11?
 
-Yes, you can perform distance calculation in real-time video streams with Ultralytics YOLO11. The process involves capturing video frames using [OpenCV](https://www.ultralytics.com/glossary/opencv), running YOLO11 [object detection](https://www.ultralytics.com/glossary/object-detection), and using the `DistanceCalculation` class to calculate distances between objects in successive frames. For a detailed implementation, see the [video stream example](#distance-calculation-using-ultralytics-yolo11).
+Yes, you can perform distance calculation in real-time video streams with numa_ultralytics YOLO11. The process involves capturing video frames using [OpenCV](https://www.numa_ultralytics.com/glossary/opencv), running YOLO11 [object detection](https://www.numa_ultralytics.com/glossary/object-detection), and using the `DistanceCalculation` class to calculate distances between objects in successive frames. For a detailed implementation, see the [video stream example](#distance-calculation-using-numa_ultralytics-yolo11).
 
-### How do I delete points drawn during distance calculation using Ultralytics YOLO11?
+### How do I delete points drawn during distance calculation using numa_ultralytics YOLO11?
 
-To delete points drawn during distance calculation with Ultralytics YOLO11, you can use a right mouse click. This action will clear all the points you have drawn. For more details, refer to the note section under the [distance calculation example](#distance-calculation-using-ultralytics-yolo11).
+To delete points drawn during distance calculation with numa_ultralytics YOLO11, you can use a right mouse click. This action will clear all the points you have drawn. For more details, refer to the note section under the [distance calculation example](#distance-calculation-using-numa_ultralytics-yolo11).
 
-### What are the key arguments for initializing the DistanceCalculation class in Ultralytics YOLO11?
+### What are the key arguments for initializing the DistanceCalculation class in numa_ultralytics YOLO11?
 
-The key arguments for initializing the `DistanceCalculation` class in Ultralytics YOLO11 include:
+The key arguments for initializing the `DistanceCalculation` class in numa_ultralytics YOLO11 include:
 
 - `model`: Model file path.
 - `show`: Flag to indicate if the video stream should be displayed.
