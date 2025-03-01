@@ -21,7 +21,7 @@ from ultralytics.data.loaders import (
     autocast_list,
 )
 from ultralytics.data.utils import IMG_FORMATS, PIN_MEMORY, VID_FORMATS
-from ultralytics.utils import LOGGER, RANK, colorstr
+from ultralytics.utils import RANK, colorstr
 from ultralytics.utils.checks import check_file
 
 
@@ -135,59 +135,12 @@ def build_grounding(cfg, img_path, json_file, batch, mode="train", rect=False, s
         fraction=cfg.fraction if mode == "train" else 1.0,
     )
 
-def numa_worker_init_fn(worker_id):
-    """Initialize worker with optimized CPU affinity for NUMA architecture"""
-    import os
-    try:
-        import psutil
-        p = psutil.Process()
-        
-        # Detect AMD EPYC with NUMA architecture
-        if 'AMD EPYC' in open('/proc/cpuinfo').read() if os.path.exists('/proc/cpuinfo') else '':
-            # Map workers evenly across NUMA nodes
-            numa_nodes = 2  # Assuming 2 NUMA nodes
-            cpus_per_node = os.cpu_count() // numa_nodes if os.cpu_count() else 10
-            
-            # Calculate worker's NUMA node and core
-            numa_node = worker_id % numa_nodes
-            local_core = (worker_id // numa_nodes) % cpus_per_node
-            core_id = numa_node * cpus_per_node + local_core
-            
-            # Pin worker to specific core
-            p.cpu_affinity([core_id])
-            
-            # Set thread count for this worker
-            os.environ['OMP_NUM_THREADS'] = '1'
-            os.environ['MKL_NUM_THREADS'] = '1'
-            os.environ['OMP_PROC_BIND'] = 'close'
-            
-            # Force the setting with taskset for reliability
-            os.system(f"taskset -pc {core_id} {os.getpid()} >/dev/null 2>&1")
-            
-            LOGGER.info(f"NUMA: Worker {worker_id} pinned to core {core_id} (NUMA node {numa_node})")
-        else:
-            # Generic affinity setting for non-NUMA systems
-            cores = list(range(os.cpu_count() or 1))
-            core_id = cores[worker_id % len(cores)]
-            p.cpu_affinity([core_id])
-            LOGGER.info(f"Worker {worker_id} pinned to core {core_id}")
-            
-    except Exception as e:
-        LOGGER.warning(f"Worker {worker_id} affinity setup failed: {e}")
-
 
 def build_dataloader(dataset, batch, workers, shuffle=True, rank=-1):
     """Return an InfiniteDataLoader or DataLoader for training or validation set."""
     batch = min(batch, len(dataset))
     nd = torch.cuda.device_count()  # number of CUDA devices
-    
-    # Calculate number of workers with NUMA architecture and environment variable support
-    if os.getenv('ULTRALYTICS_WORKERS'):
-        nw = int(os.getenv('ULTRALYTICS_WORKERS'))
-        print(f"Using environment-specified worker count: {nw}")
-    else:
-        nw = min(os.cpu_count() // max(nd, 1), workers)  # default calculation
-    
+    nw = min(os.cpu_count() // max(nd, 1), workers)  # number of workers
     sampler = None if rank == -1 else distributed.DistributedSampler(dataset, shuffle=shuffle)
     generator = torch.Generator()
     generator.manual_seed(6148914691236517205 + RANK)
@@ -199,7 +152,7 @@ def build_dataloader(dataset, batch, workers, shuffle=True, rank=-1):
         sampler=sampler,
         pin_memory=PIN_MEMORY,
         collate_fn=getattr(dataset, "collate_fn", None),
-        worker_init_fn=numa_worker_init_fn if os.getenv('ENABLE_NUMA_OPTIMIZATION') else None,
+        worker_init_fn=seed_worker,
         generator=generator,
     )
 

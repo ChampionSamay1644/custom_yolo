@@ -170,21 +170,6 @@ class BaseTrainer:
 
     def train(self):
         """Allow device='', device=None on Multi-GPU systems to default to device=0."""
-
-        # Add at the beginning of the train() method
-        def override_worker_count(args):
-            """Override worker count from environment if set."""
-            if 'ULTRALYTICS_WORKERS' in os.environ:
-                env_workers = int(os.environ['ULTRALYTICS_WORKERS'])
-                if env_workers != args.workers:
-                    LOGGER.info(f"Overriding worker count from {args.workers} to {env_workers}")
-                    args.workers = env_workers
-            return args
-        
-        # Then inside the train() method, add this line before setting up DataLoaders
-        self.args = override_worker_count(self.args)
-
-        
         if isinstance(self.args.device, str) and len(self.args.device):  # i.e. device='0' or device='0,1,2,3'
             world_size = len(self.args.device.split(","))
         elif isinstance(self.args.device, (tuple, list)):  # i.e. device=[0, 1, 2, 3] (multi-GPU from CLI is list)
