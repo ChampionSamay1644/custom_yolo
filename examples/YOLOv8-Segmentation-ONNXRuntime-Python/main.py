@@ -9,10 +9,10 @@ import onnxruntime as ort
 import torch
 import torch.nn.functional as F
 
-import numa_ultralytics.utils.ops as ops
-from numa_ultralytics.engine.results import Results
-from numa_ultralytics.utils import ASSETS, yaml_load
-from numa_ultralytics.utils.checks import check_yaml
+import ultralytics.utils.ops as ops
+from ultralytics.engine.results import Results
+from ultralytics.utils import ASSETS, yaml_load
+from ultralytics.utils.checks import check_yaml
 
 
 class YOLOv8Seg:
