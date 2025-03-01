@@ -1,26 +1,26 @@
 ---
 comments: true
-description: Learn to effortlessly set up numa_ultralytics in Docker, from installation to running with CPU/GPU support. Follow our comprehensive guide for seamless container experience.
-keywords: numa_ultralytics, Docker, Quickstart Guide, CPU support, GPU support, NVIDIA Docker, container setup, Docker environment, Docker Hub, numa_ultralytics projects
+description: Learn to effortlessly set up Ultralytics in Docker, from installation to running with CPU/GPU support. Follow our comprehensive guide for seamless container experience.
+keywords: Ultralytics, Docker, Quickstart Guide, CPU support, GPU support, NVIDIA Docker, container setup, Docker environment, Docker Hub, Ultralytics projects
 ---
 
-# Docker Quickstart Guide for numa_ultralytics
+# Docker Quickstart Guide for Ultralytics
 
 <p align="center">
-  <img width="800" src="https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-docker-package-visual.avif" alt="numa_ultralytics Docker Package Visual">
+  <img width="800" src="https://github.com/ultralytics/docs/releases/download/0/ultralytics-docker-package-visual.avif" alt="Ultralytics Docker Package Visual">
 </p>
 
-This guide serves as a comprehensive introduction to setting up a Docker environment for your numa_ultralytics projects. [Docker](https://www.docker.com/) is a platform for developing, shipping, and running applications in containers. It is particularly beneficial for ensuring that the software will always run the same, regardless of where it's deployed. For more details, visit the numa_ultralytics Docker repository on [Docker Hub](https://hub.docker.com/r/numa_ultralytics/numa_ultralytics).
+This guide serves as a comprehensive introduction to setting up a Docker environment for your Ultralytics projects. [Docker](https://www.docker.com/) is a platform for developing, shipping, and running applications in containers. It is particularly beneficial for ensuring that the software will always run the same, regardless of where it's deployed. For more details, visit the Ultralytics Docker repository on [Docker Hub](https://hub.docker.com/r/ultralytics/ultralytics).
 
-[![Docker Image Version](https://img.shields.io/docker/v/numa_ultralytics/numa_ultralytics?sort=semver&logo=docker)](https://hub.docker.com/r/numa_ultralytics/numa_ultralytics)
-[![Docker Pulls](https://img.shields.io/docker/pulls/numa_ultralytics/numa_ultralytics)](https://hub.docker.com/r/numa_ultralytics/numa_ultralytics)
+[![Docker Image Version](https://img.shields.io/docker/v/ultralytics/ultralytics?sort=semver&logo=docker)](https://hub.docker.com/r/ultralytics/ultralytics)
+[![Docker Pulls](https://img.shields.io/docker/pulls/ultralytics/ultralytics)](https://hub.docker.com/r/ultralytics/ultralytics)
 
 ## What You Will Learn
 
 - Setting up Docker with NVIDIA support
-- Installing numa_ultralytics Docker images
-- Running numa_ultralytics in a Docker container with CPU or GPU support
-- Using a Display Server with Docker to Show numa_ultralytics Detection Results
+- Installing Ultralytics Docker images
+- Running Ultralytics in a Docker container with CPU or GPU support
+- Using a Display Server with Docker to Show Ultralytics Detection Results
 - Mounting local directories into the container
 
 ---
@@ -68,32 +68,32 @@ docker info | grep -i runtime
 
 ---
 
-## Installing numa_ultralytics Docker Images
+## Installing Ultralytics Docker Images
 
-numa_ultralytics offers several Docker images optimized for various platforms and use-cases:
+Ultralytics offers several Docker images optimized for various platforms and use-cases:
 
 - **Dockerfile:** GPU image, ideal for training.
 - **Dockerfile-arm64:** For ARM64 architecture, suitable for devices like [Raspberry Pi](raspberry-pi.md).
 - **Dockerfile-cpu:** CPU-only version for inference and non-GPU environments.
 - **Dockerfile-jetson:** Optimized for NVIDIA Jetson devices.
 - **Dockerfile-python:** Minimal Python environment for lightweight applications.
-- **Dockerfile-conda:** Includes [Miniconda3](https://docs.conda.io/projects/miniconda/en/latest/) and numa_ultralytics package installed via Conda.
+- **Dockerfile-conda:** Includes [Miniconda3](https://docs.conda.io/projects/miniconda/en/latest/) and Ultralytics package installed via Conda.
 
 To pull the latest image:
 
 ```bash
 # Set image name as a variable
-t=numa_ultralytics/numa_ultralytics:latest
+t=ultralytics/ultralytics:latest
 
-# Pull the latest numa_ultralytics image from Docker Hub
+# Pull the latest Ultralytics image from Docker Hub
 sudo docker pull $t
 ```
 
 ---
 
-## Running numa_ultralytics in Docker Container
+## Running Ultralytics in Docker Container
 
-Here's how to execute the numa_ultralytics Docker container:
+Here's how to execute the Ultralytics Docker container:
 
 ### Using only the CPU
 
@@ -114,9 +114,9 @@ sudo docker run -it --ipc=host --gpus '"device=2,3"' $t
 
 The `-it` flag assigns a pseudo-TTY and keeps stdin open, allowing you to interact with the container. The `--ipc=host` flag enables sharing of host's IPC namespace, essential for sharing memory between processes. The `--gpus` flag allows the container to access the host's GPUs.
 
-## Running numa_ultralytics in Docker Container
+## Running Ultralytics in Docker Container
 
-Here's how to execute the numa_ultralytics Docker container:
+Here's how to execute the Ultralytics Docker container:
 
 ### Using only the CPU
 
@@ -205,7 +205,7 @@ yolo predict model=yolo11n.pt show=True
 
 ??? info "Testing"
 
-    A simple way to validate that the Docker group has access to the X11 server is to run a container with a GUI program like [`xclock`](https://www.x.org/archive/X11R6.8.1/doc/xclock.1.html) or [`xeyes`](https://www.x.org/releases/X11R7.5/doc/man/man1/xeyes.1.html). Alternatively, you can also install these programs in the numa_ultralytics Docker container to test the access to the X11 server of your GNU-Linux display server. If you run into any problems, consider setting the environment variable `-e QT_DEBUG_PLUGINS=1`. Setting this environment variable enables the output of debugging information, aiding in the troubleshooting process.
+    A simple way to validate that the Docker group has access to the X11 server is to run a container with a GUI program like [`xclock`](https://www.x.org/archive/X11R6.8.1/doc/xclock.1.html) or [`xeyes`](https://www.x.org/releases/X11R7.5/doc/man/man1/xeyes.1.html). Alternatively, you can also install these programs in the Ultralytics Docker container to test the access to the X11 server of your GNU-Linux display server. If you run into any problems, consider setting the environment variable `-e QT_DEBUG_PLUGINS=1`. Setting this environment variable enables the output of debugging information, aiding in the troubleshooting process.
 
 ### When finished with Docker GUI
 
@@ -223,30 +223,30 @@ yolo predict model=yolo11n.pt show=True
 
 ---
 
-Congratulations! You're now set up to use numa_ultralytics with Docker and ready to take advantage of its powerful capabilities. For alternate installation methods, feel free to explore the [numa_ultralytics quickstart documentation](../quickstart.md).
+Congratulations! You're now set up to use Ultralytics with Docker and ready to take advantage of its powerful capabilities. For alternate installation methods, feel free to explore the [Ultralytics quickstart documentation](../quickstart.md).
 
 ## FAQ
 
-### How do I set up numa_ultralytics with Docker?
+### How do I set up Ultralytics with Docker?
 
-To set up numa_ultralytics with Docker, first ensure that Docker is installed on your system. If you have an NVIDIA GPU, install the NVIDIA Docker runtime to enable GPU support. Then, pull the latest numa_ultralytics Docker image from Docker Hub using the following command:
+To set up Ultralytics with Docker, first ensure that Docker is installed on your system. If you have an NVIDIA GPU, install the NVIDIA Docker runtime to enable GPU support. Then, pull the latest Ultralytics Docker image from Docker Hub using the following command:
 
 ```bash
-sudo docker pull numa_ultralytics/numa_ultralytics:latest
+sudo docker pull ultralytics/ultralytics:latest
 ```
 
 For detailed steps, refer to our [Docker Quickstart Guide](../quickstart.md).
 
-### What are the benefits of using numa_ultralytics Docker images for [machine learning](https://www.numa_ultralytics.com/glossary/machine-learning-ml) projects?
+### What are the benefits of using Ultralytics Docker images for [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) projects?
 
-Using numa_ultralytics Docker images ensures a consistent environment across different machines, replicating the same software and dependencies. This is particularly useful for collaborating across teams, running models on various hardware, and maintaining reproducibility. For GPU-based training, numa_ultralytics provides optimized Docker images such as `Dockerfile` for general GPU usage and `Dockerfile-jetson` for NVIDIA Jetson devices. Explore [numa_ultralytics Docker Hub](https://hub.docker.com/r/numa_ultralytics/numa_ultralytics) for more details.
+Using Ultralytics Docker images ensures a consistent environment across different machines, replicating the same software and dependencies. This is particularly useful for collaborating across teams, running models on various hardware, and maintaining reproducibility. For GPU-based training, Ultralytics provides optimized Docker images such as `Dockerfile` for general GPU usage and `Dockerfile-jetson` for NVIDIA Jetson devices. Explore [Ultralytics Docker Hub](https://hub.docker.com/r/ultralytics/ultralytics) for more details.
 
-### How can I run numa_ultralytics YOLO in a Docker container with GPU support?
+### How can I run Ultralytics YOLO in a Docker container with GPU support?
 
-First, ensure that the NVIDIA Docker runtime is installed and configured. Then, use the following command to run numa_ultralytics YOLO with GPU support:
+First, ensure that the NVIDIA Docker runtime is installed and configured. Then, use the following command to run Ultralytics YOLO with GPU support:
 
 ```bash
-sudo docker run -it --ipc=host --gpus all numa_ultralytics/numa_ultralytics:latest
+sudo docker run -it --ipc=host --gpus all ultralytics/ultralytics:latest
 ```
 
 This command sets up a Docker container with GPU access. For additional details, see the [Docker Quickstart Guide](../quickstart.md).
@@ -259,7 +259,7 @@ To visualize YOLO prediction results with a GUI in a Docker container, you need 
 xhost +local:docker && docker run -e DISPLAY=$DISPLAY \
 -v /tmp/.X11-unix:/tmp/.X11-unix \
 -v ~/.Xauthority:/root/.Xauthority \
--it --ipc=host numa_ultralytics/numa_ultralytics:latest
+-it --ipc=host ultralytics/ultralytics:latest
 ```
 
 For systems running Wayland, use:
@@ -267,17 +267,17 @@ For systems running Wayland, use:
 ```bash
 xhost +local:docker && docker run -e DISPLAY=$DISPLAY \
 -v $XDG_RUNTIME_DIR/$WAYLAND_DISPLAY:/tmp/$WAYLAND_DISPLAY \
---net=host -it --ipc=host numa_ultralytics/numa_ultralytics:latest
+--net=host -it --ipc=host ultralytics/ultralytics:latest
 ```
 
 More information can be found in the [Run graphical user interface (GUI) applications in a Docker Container](#run-graphical-user-interface-gui-applications-in-a-docker-container) section.
 
-### Can I mount local directories into the numa_ultralytics Docker container?
+### Can I mount local directories into the Ultralytics Docker container?
 
-Yes, you can mount local directories into the numa_ultralytics Docker container using the `-v` flag:
+Yes, you can mount local directories into the Ultralytics Docker container using the `-v` flag:
 
 ```bash
-sudo docker run -it --ipc=host --gpus all -v /path/on/host:/path/in/container numa_ultralytics/numa_ultralytics:latest
+sudo docker run -it --ipc=host --gpus all -v /path/on/host:/path/in/container ultralytics/ultralytics:latest
 ```
 
 Replace `/path/on/host` with the directory on your local machine and `/path/in/container` with the desired path inside the container. This setup allows you to work with your local files within the container. For more information, refer to the relevant section on [mounting local directories](../usage/python.md).

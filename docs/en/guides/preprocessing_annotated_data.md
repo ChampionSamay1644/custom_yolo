@@ -4,7 +4,7 @@ description: Learn essential data preprocessing techniques for annotated compute
 keywords: data preprocessing, computer vision, image resizing, normalization, data augmentation, training dataset, validation dataset, test dataset, YOLO11
 ---
 
-# Data Preprocessing Techniques for Annotated [Computer Vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv) Data
+# Data Preprocessing Techniques for Annotated [Computer Vision](https://www.ultralytics.com/glossary/computer-vision-cv) Data
 
 ## Introduction
 
@@ -33,7 +33,7 @@ You can resize your images using the following methods:
 
 To make resizing a simpler task, you can use the following tools:
 
-- **[OpenCV](https://www.numa_ultralytics.com/glossary/opencv)**: A popular computer vision library with extensive functions for image processing.
+- **[OpenCV](https://www.ultralytics.com/glossary/opencv)**: A popular computer vision library with extensive functions for image processing.
 - **PIL (Pillow)**: A Python Imaging Library for opening, manipulating, and saving image files.
 
 With respect to YOLO11, the 'imgsz' parameter during [model training](../modes/train.md) allows for flexible input sizes. When set to a specific size, such as 640, the model will resize input images so their largest dimension is 640 pixels while maintaining the original aspect ratio.
@@ -65,7 +65,7 @@ The most commonly discussed data preprocessing step is data augmentation. Data a
 Here are some other benefits of data augmentation:
 
 - **Creates a More Robust Dataset**: Data augmentation can make the model more robust to variations and distortions in the input data. This includes changes in lighting, orientation, and scale.
-- **Cost-Effective**: Data augmentation is a cost-effective way to increase the amount of [training data](https://www.numa_ultralytics.com/glossary/training-data) without collecting and labeling new data.
+- **Cost-Effective**: Data augmentation is a cost-effective way to increase the amount of [training data](https://www.ultralytics.com/glossary/training-data) without collecting and labeling new data.
 - **Better Use of Data**: Every available data point is used to its maximum potential by creating new variations
 
 #### Data Augmentation Methods
@@ -73,12 +73,12 @@ Here are some other benefits of data augmentation:
 Common augmentation techniques include flipping, rotation, scaling, and color adjustments. Several libraries, such as Albumentations, Imgaug, and TensorFlow's ImageDataGenerator, can generate these augmentations.
 
 <p align="center">
-  <img width="100%" src="https://github.com/numa_ultralytics/docs/releases/download/0/overview-of-data-augmentations.avif" alt="Overview of Data Augmentations">
+  <img width="100%" src="https://github.com/ultralytics/docs/releases/download/0/overview-of-data-augmentations.avif" alt="Overview of Data Augmentations">
 </p>
 
 With respect to YOLO11, you can [augment your custom dataset](../modes/train.md) by modifying the dataset configuration file, a .yaml file. In this file, you can add an augmentation section with parameters that specify how you want to augment your data.
 
-The [numa_ultralytics YOLO11 repository](https://github.com/numa_ultralytics/numa_ultralytics/tree/main) supports a wide range of data augmentations. You can apply various transformations such as:
+The [Ultralytics YOLO11 repository](https://github.com/ultralytics/ultralytics/tree/main) supports a wide range of data augmentations. You can apply various transformations such as:
 
 - Random Crops
 - Flipping: Images can be flipped horizontally or vertically.
@@ -96,7 +96,7 @@ Here's what each step of preprocessing would look like for this project:
 - Resizing Images: Since YOLO11 handles flexible input sizes and performs resizing automatically, manual resizing is not required. The model will adjust the image size according to the specified 'imgsz' parameter during training.
 - Normalizing Pixel Values: YOLO11 automatically normalizes pixel values to a range of 0 to 1 during preprocessing, so it's not required.
 - Splitting the Dataset: Divide the dataset into training (70%), validation (20%), and test (10%) sets using tools like scikit-learn.
-- [Data Augmentation](https://www.numa_ultralytics.com/glossary/data-augmentation): Modify the dataset configuration file (.yaml) to include data augmentation techniques such as random crops, horizontal flips, and brightness adjustments.
+- [Data Augmentation](https://www.ultralytics.com/glossary/data-augmentation): Modify the dataset configuration file (.yaml) to include data augmentation techniques such as random crops, horizontal flips, and brightness adjustments.
 
 These steps make sure the dataset is prepared without any potential issues and is ready for Exploratory Data Analysis (EDA).
 
@@ -118,16 +118,16 @@ Common tools for visualizations include:
 - Scatter Plots: Helpful for exploring relationships between image features or annotations.
 - Heatmaps: Effective for visualizing the distribution of pixel intensities or the spatial distribution of annotated features within images.
 
-### Using numa_ultralytics Explorer for EDA
+### Using Ultralytics Explorer for EDA
 
 !!! warning "Community Note ⚠️"
 
-    As of **`numa_ultralytics>=8.3.10`**, numa_ultralytics explorer support has been deprecated. But don't worry! You can now access similar and even enhanced functionality through [numa_ultralytics HUB](https://hub.numa_ultralytics.com/), our intuitive no-code platform designed to streamline your workflow. With numa_ultralytics HUB, you can continue exploring, visualizing, and managing your data effortlessly, all without writing a single line of code. Make sure to check it out and take advantage of its powerful features!🚀
+    As of **`ultralytics>=8.3.10`**, Ultralytics explorer support has been deprecated. But don't worry! You can now access similar and even enhanced functionality through [Ultralytics HUB](https://hub.ultralytics.com/), our intuitive no-code platform designed to streamline your workflow. With Ultralytics HUB, you can continue exploring, visualizing, and managing your data effortlessly, all without writing a single line of code. Make sure to check it out and take advantage of its powerful features!🚀
 
-For a more advanced approach to EDA, you can use the numa_ultralytics Explorer tool. It offers robust capabilities for exploring computer vision datasets. By supporting semantic search, SQL queries, and vector similarity search, the tool makes it easy to analyze and understand your data. With numa_ultralytics Explorer, you can create [embeddings](https://www.numa_ultralytics.com/glossary/embeddings) for your dataset to find similar images, run SQL queries for detailed analysis, and perform semantic searches, all through a user-friendly graphical interface.
+For a more advanced approach to EDA, you can use the Ultralytics Explorer tool. It offers robust capabilities for exploring computer vision datasets. By supporting semantic search, SQL queries, and vector similarity search, the tool makes it easy to analyze and understand your data. With Ultralytics Explorer, you can create [embeddings](https://www.ultralytics.com/glossary/embeddings) for your dataset to find similar images, run SQL queries for detailed analysis, and perform semantic searches, all through a user-friendly graphical interface.
 
 <p align="center">
-  <img width="100%" src="https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-explorer-openai-integration.avif" alt="Overview of numa_ultralytics Explorer">
+  <img width="100%" src="https://github.com/ultralytics/docs/releases/download/0/ultralytics-explorer-openai-integration.avif" alt="Overview of Ultralytics Explorer">
 </p>
 
 ## Reach Out and Connect
@@ -136,12 +136,12 @@ Having discussions about your project with other computer vision enthusiasts can
 
 ### Channels to Connect with the Community
 
-- **GitHub Issues:** Visit the YOLO11 GitHub repository and use the [Issues tab](https://github.com/numa_ultralytics/numa_ultralytics/issues) to raise questions, report bugs, and suggest features. The community and maintainers are there to help with any issues you face.
-- **numa_ultralytics Discord Server:** Join the [numa_ultralytics Discord server](https://discord.com/invite/numa_ultralytics) to connect with other users and developers, get support, share knowledge, and brainstorm ideas.
+- **GitHub Issues:** Visit the YOLO11 GitHub repository and use the [Issues tab](https://github.com/ultralytics/ultralytics/issues) to raise questions, report bugs, and suggest features. The community and maintainers are there to help with any issues you face.
+- **Ultralytics Discord Server:** Join the [Ultralytics Discord server](https://discord.com/invite/ultralytics) to connect with other users and developers, get support, share knowledge, and brainstorm ideas.
 
 ### Official Documentation
 
-- **numa_ultralytics YOLO11 Documentation:** Refer to the [official YOLO11 documentation](./index.md) for thorough guides and valuable insights on numerous computer vision tasks and projects.
+- **Ultralytics YOLO11 Documentation:** Refer to the [official YOLO11 documentation](./index.md) for thorough guides and valuable insights on numerous computer vision tasks and projects.
 
 ## Your Dataset Is Ready!
 
@@ -153,9 +153,9 @@ Properly resized, normalized, and augmented data improves model performance by r
 
 Data preprocessing is essential in computer vision projects because it ensures that the data is clean, consistent, and in a format that is optimal for model training. By addressing issues such as noise, inconsistency, and imbalance in raw data, preprocessing steps like resizing, normalization, augmentation, and dataset splitting help reduce computational load and improve model performance. For more details, visit the [steps of a computer vision project](../guides/steps-of-a-cv-project.md).
 
-### How can I use numa_ultralytics YOLO for data augmentation?
+### How can I use Ultralytics YOLO for data augmentation?
 
-For data augmentation with numa_ultralytics YOLO11, you need to modify the dataset configuration file (.yaml). In this file, you can specify various augmentation techniques such as random crops, horizontal flips, and brightness adjustments. This can be effectively done using the training configurations [explained here](../modes/train.md). Data augmentation helps create a more robust dataset, reduce [overfitting](https://www.numa_ultralytics.com/glossary/overfitting), and improve model generalization.
+For data augmentation with Ultralytics YOLO11, you need to modify the dataset configuration file (.yaml). In this file, you can specify various augmentation techniques such as random crops, horizontal flips, and brightness adjustments. This can be effectively done using the training configurations [explained here](../modes/train.md). Data augmentation helps create a more robust dataset, reduce [overfitting](https://www.ultralytics.com/glossary/overfitting), and improve model generalization.
 
 ### What are the best data normalization techniques for computer vision data?
 
@@ -168,8 +168,8 @@ For YOLO11, normalization is handled automatically, including conversion to RGB 
 
 ### How should I split my annotated dataset for training?
 
-To split your dataset, a common practice is to divide it into 70% for training, 20% for validation, and 10% for testing. It is important to maintain the data distribution of classes across these splits and avoid data leakage by performing augmentation only on the training set. Use tools like scikit-learn or [TensorFlow](https://www.numa_ultralytics.com/glossary/tensorflow) for efficient dataset splitting. See the detailed guide on [dataset preparation](../guides/data-collection-and-annotation.md).
+To split your dataset, a common practice is to divide it into 70% for training, 20% for validation, and 10% for testing. It is important to maintain the data distribution of classes across these splits and avoid data leakage by performing augmentation only on the training set. Use tools like scikit-learn or [TensorFlow](https://www.ultralytics.com/glossary/tensorflow) for efficient dataset splitting. See the detailed guide on [dataset preparation](../guides/data-collection-and-annotation.md).
 
 ### Can I handle varying image sizes in YOLO11 without manual resizing?
 
-Yes, numa_ultralytics YOLO11 can handle varying image sizes through the 'imgsz' parameter during model training. This parameter ensures that images are resized so their largest dimension matches the specified size (e.g., 640 pixels), while maintaining the aspect ratio. For more flexible input handling and automatic adjustments, check the [model training section](../modes/train.md).
+Yes, Ultralytics YOLO11 can handle varying image sizes through the 'imgsz' parameter during model training. This parameter ensures that images are resized so their largest dimension matches the specified size (e.g., 640 pixels), while maintaining the aspect ratio. For more flexible input handling and automatic adjustments, check the [model training section](../modes/train.md).

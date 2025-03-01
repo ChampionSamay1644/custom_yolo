@@ -1,12 +1,12 @@
 ---
 comments: true
 description: Learn how to evaluate your YOLO11 model's performance in real-world scenarios using benchmark mode. Optimize speed, accuracy, and resource allocation across export formats.
-keywords: model benchmarking, YOLO11, numa_ultralytics, performance evaluation, export formats, ONNX, TensorRT, OpenVINO, CoreML, TensorFlow, optimization, mAP50-95, inference time
+keywords: model benchmarking, YOLO11, Ultralytics, performance evaluation, export formats, ONNX, TensorRT, OpenVINO, CoreML, TensorFlow, optimization, mAP50-95, inference time
 ---
 
-# Model Benchmarking with numa_ultralytics YOLO
+# Model Benchmarking with Ultralytics YOLO
 
-<img width="1024" src="https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-yolov8-ecosystem-integrations.avif" alt="numa_ultralytics YOLO ecosystem and integrations">
+<img width="1024" src="https://github.com/ultralytics/docs/releases/download/0/ultralytics-yolov8-ecosystem-integrations.avif" alt="Ultralytics YOLO ecosystem and integrations">
 
 ## Benchmark Visualization
 
@@ -21,7 +21,7 @@ keywords: model benchmarking, YOLO11, numa_ultralytics, performance evaluation, 
 
 ## Introduction
 
-Once your model is trained and validated, the next logical step is to evaluate its performance in various real-world scenarios. Benchmark mode in numa_ultralytics YOLO11 serves this purpose by providing a robust framework for assessing the speed and [accuracy](https://www.numa_ultralytics.com/glossary/accuracy) of your model across a range of export formats.
+Once your model is trained and validated, the next logical step is to evaluate its performance in various real-world scenarios. Benchmark mode in Ultralytics YOLO11 serves this purpose by providing a robust framework for assessing the speed and [accuracy](https://www.ultralytics.com/glossary/accuracy) of your model across a range of export formats.
 
 <p align="center">
   <br>
@@ -31,7 +31,7 @@ Once your model is trained and validated, the next logical step is to evaluate i
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Benchmark numa_ultralytics YOLO11 Models | How to Compare Model Performance on Different Hardware?
+  <strong>Watch:</strong> Benchmark Ultralytics YOLO11 Models | How to Compare Model Performance on Different Hardware?
 </p>
 
 ## Why Is Benchmarking Crucial?
@@ -43,8 +43,8 @@ Once your model is trained and validated, the next logical step is to evaluate i
 
 ### Key Metrics in Benchmark Mode
 
-- **mAP50-95:** For [object detection](https://www.numa_ultralytics.com/glossary/object-detection), segmentation, and pose estimation.
-- **accuracy_top5:** For [image classification](https://www.numa_ultralytics.com/glossary/image-classification).
+- **mAP50-95:** For [object detection](https://www.ultralytics.com/glossary/object-detection), segmentation, and pose estimation.
+- **accuracy_top5:** For [image classification](https://www.ultralytics.com/glossary/image-classification).
 - **Inference Time:** Time taken for each image in milliseconds.
 
 ### Supported Export Formats
@@ -68,7 +68,7 @@ Run YOLO11n benchmarks on all supported export formats including ONNX, TensorRT 
     === "Python"
 
         ```python
-        from numa_ultralytics.utils.benchmarks import benchmark
+        from ultralytics.utils.benchmarks import benchmark
 
         # Benchmark on GPU
         benchmark(model="yolo11n.pt", data="coco8.yaml", imgsz=640, half=False, device=0)
@@ -90,16 +90,16 @@ Run YOLO11n benchmarks on all supported export formats including ONNX, TensorRT 
 
 Arguments such as `model`, `data`, `imgsz`, `half`, `device`, `verbose` and `format` provide users with the flexibility to fine-tune the benchmarks to their specific needs and compare the performance of different export formats with ease.
 
-| Key       | Default Value | Description                                                                                                                                                                                                  |
-| --------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `model`   | `None`        | Specifies the path to the model file. Accepts both `.pt` and `.yaml` formats, e.g., `"yolo11n.pt"` for pre-trained models or configuration files.                                                            |
-| `data`    | `None`        | Path to a YAML file defining the dataset for benchmarking, typically including paths and settings for [validation data](https://www.numa_ultralytics.com/glossary/validation-data). Example: `"coco8.yaml"`. |
-| `imgsz`   | `640`         | The input image size for the model. Can be a single integer for square images or a tuple `(width, height)` for non-square, e.g., `(640, 480)`.                                                               |
-| `half`    | `False`       | Enables FP16 (half-precision) inference, reducing memory usage and possibly increasing speed on compatible hardware. Use `half=True` to enable.                                                              |
-| `int8`    | `False`       | Activates INT8 quantization for further optimized performance on supported devices, especially useful for edge devices. Set `int8=True` to use.                                                              |
-| `device`  | `None`        | Defines the computation device(s) for benchmarking, such as `"cpu"` or `"cuda:0"`.                                                                                                                           |
-| `verbose` | `False`       | Controls the level of detail in logging output. A boolean value; set `verbose=True` for detailed logs or a float for thresholding errors.                                                                    |
-| `format`  | `''`          | Benchmark the model on a single export format. i.e `format=onnx`                                                                                                                                             |
+| Key       | Default Value | Description                                                                                                                                                                                             |
+| --------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `model`   | `None`        | Specifies the path to the model file. Accepts both `.pt` and `.yaml` formats, e.g., `"yolo11n.pt"` for pre-trained models or configuration files.                                                       |
+| `data`    | `None`        | Path to a YAML file defining the dataset for benchmarking, typically including paths and settings for [validation data](https://www.ultralytics.com/glossary/validation-data). Example: `"coco8.yaml"`. |
+| `imgsz`   | `640`         | The input image size for the model. Can be a single integer for square images or a tuple `(width, height)` for non-square, e.g., `(640, 480)`.                                                          |
+| `half`    | `False`       | Enables FP16 (half-precision) inference, reducing memory usage and possibly increasing speed on compatible hardware. Use `half=True` to enable.                                                         |
+| `int8`    | `False`       | Activates INT8 quantization for further optimized performance on supported devices, especially useful for edge devices. Set `int8=True` to use.                                                         |
+| `device`  | `None`        | Defines the computation device(s) for benchmarking, such as `"cpu"` or `"cuda:0"`.                                                                                                                      |
+| `verbose` | `False`       | Controls the level of detail in logging output. A boolean value; set `verbose=True` for detailed logs or a float for thresholding errors.                                                               |
+| `format`  | `''`          | Benchmark the model on a single export format. i.e `format=onnx`                                                                                                                                        |
 
 ## Export Formats
 
@@ -111,16 +111,16 @@ See full `export` details in the [Export](../modes/export.md) page.
 
 ## FAQ
 
-### How do I benchmark my YOLO11 model's performance using numa_ultralytics?
+### How do I benchmark my YOLO11 model's performance using Ultralytics?
 
-numa_ultralytics YOLO11 offers a Benchmark mode to assess your model's performance across different export formats. This mode provides insights into key metrics such as [mean Average Precision](https://www.numa_ultralytics.com/glossary/mean-average-precision-map) (mAP50-95), accuracy, and inference time in milliseconds. To run benchmarks, you can use either Python or CLI commands. For example, to benchmark on a GPU:
+Ultralytics YOLO11 offers a Benchmark mode to assess your model's performance across different export formats. This mode provides insights into key metrics such as [mean Average Precision](https://www.ultralytics.com/glossary/mean-average-precision-map) (mAP50-95), accuracy, and inference time in milliseconds. To run benchmarks, you can use either Python or CLI commands. For example, to benchmark on a GPU:
 
 !!! example
 
     === "Python"
 
         ```python
-        from numa_ultralytics.utils.benchmarks import benchmark
+        from ultralytics.utils.benchmarks import benchmark
 
         # Benchmark on GPU
         benchmark(model="yolo11n.pt", data="coco8.yaml", imgsz=640, half=False, device=0)
@@ -162,7 +162,7 @@ YOLO11 supports a variety of export formats, each tailored for specific hardware
 - **ONNX:** Best for CPU performance.
 - **TensorRT:** Ideal for GPU efficiency.
 - **OpenVINO:** Optimized for Intel hardware.
-- **CoreML & [TensorFlow](https://www.numa_ultralytics.com/glossary/tensorflow):** Useful for iOS and general ML applications.
+- **CoreML & [TensorFlow](https://www.ultralytics.com/glossary/tensorflow):** Useful for iOS and general ML applications.
 
 For a complete list of supported formats and their respective advantages, check out the [Supported Export Formats](#supported-export-formats) section.
 

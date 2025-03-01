@@ -1,14 +1,14 @@
 ---
 comments: true
-description: Learn how to set up a real-time object detection application using Streamlit and numa_ultralytics YOLO11. Follow this step-by-step guide to implement webcam-based object detection.
+description: Learn how to set up a real-time object detection application using Streamlit and Ultralytics YOLO11. Follow this step-by-step guide to implement webcam-based object detection.
 keywords: Streamlit, YOLO11, Real-time Object Detection, Streamlit Application, YOLO11 Streamlit Tutorial, Webcam Object Detection
 ---
 
-# Live Inference with Streamlit Application using numa_ultralytics YOLO11
+# Live Inference with Streamlit Application using Ultralytics YOLO11
 
 ## Introduction
 
-Streamlit makes it simple to build and deploy interactive web applications. Combining this with numa_ultralytics YOLO11 allows for real-time [object detection](https://www.numa_ultralytics.com/glossary/object-detection) and analysis directly in your browser. YOLO11 high accuracy and speed ensure seamless performance for live video streams, making it ideal for applications in security, retail, and beyond.
+Streamlit makes it simple to build and deploy interactive web applications. Combining this with Ultralytics YOLO11 allows for real-time [object detection](https://www.ultralytics.com/glossary/object-detection) and analysis directly in your browser. YOLO11 high accuracy and speed ensure seamless performance for live video streams, making it ideal for applications in security, retail, and beyond.
 
 <p align="center">
   <br>
@@ -18,13 +18,13 @@ Streamlit makes it simple to build and deploy interactive web applications. Comb
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> How to Use Streamlit with numa_ultralytics for Real-Time <a href="https://www.numa_ultralytics.com/glossary/computer-vision-cv">Computer Vision</a> in Your Browser
+  <strong>Watch:</strong> How to Use Streamlit with Ultralytics for Real-Time <a href="https://www.ultralytics.com/glossary/computer-vision-cv">Computer Vision</a> in Your Browser
 </p>
 
-|                                                                        Aquaculture                                                                        |                                                               Animals husbandry                                                                |
-| :-------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------: |
-| ![Fish Detection using numa_ultralytics YOLO11](https://github.com/numa_ultralytics/docs/releases/download/0/fish-detection-numa_ultralytics-yolov8.avif) | ![Animals Detection using numa_ultralytics YOLO11](https://github.com/numa_ultralytics/docs/releases/download/0/animals-detection-yolov8.avif) |
-|                                                       Fish Detection using numa_ultralytics YOLO11                                                        |                                                Animals Detection using numa_ultralytics YOLO11                                                 |
+|                                                                Aquaculture                                                                 |                                                          Animals husbandry                                                           |
+| :----------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------: |
+| ![Fish Detection using Ultralytics YOLO11](https://github.com/ultralytics/docs/releases/download/0/fish-detection-ultralytics-yolov8.avif) | ![Animals Detection using Ultralytics YOLO11](https://github.com/ultralytics/docs/releases/download/0/animals-detection-yolov8.avif) |
+|                                                  Fish Detection using Ultralytics YOLO11                                                   |                                              Animals Detection using Ultralytics YOLO11                                              |
 
 ## Advantages of Live Inference
 
@@ -34,9 +34,9 @@ Streamlit makes it simple to build and deploy interactive web applications. Comb
 
 ## Streamlit Application Code
 
-!!! tip "numa_ultralytics Installation"
+!!! tip "Ultralytics Installation"
 
-    Before you start building the application, ensure you have the numa_ultralytics Python Package installed. You can install it using the command **pip install numa_ultralytics**
+    Before you start building the application, ensure you have the Ultralytics Python Package installed. You can install it using the command **pip install ultralytics**
 
 !!! example "Streamlit Application"
 
@@ -51,10 +51,10 @@ Streamlit makes it simple to build and deploy interactive web applications. Comb
     === "Python"
 
         ```python
-        from numa_ultralytics import solutions
+        from ultralytics import solutions
 
         inf = solutions.Inference(
-            model="yolo11n.pt",  # You can use any model that numa_ultralytics support, i.e. YOLO11, or custom trained model
+            model="yolo11n.pt",  # You can use any model that Ultralytics support, i.e. YOLO11, or custom trained model
         )
 
         inf.inference()
@@ -71,10 +71,10 @@ You can optionally supply a specific model in Python:
     === "Python"
 
         ```python
-        from numa_ultralytics import solutions
+        from ultralytics import solutions
 
         inf = solutions.Inference(
-            model="yolo11n.pt",  # You can use any model that numa_ultralytics support, i.e. YOLO11, YOLOv10
+            model="yolo11n.pt",  # You can use any model that Ultralytics support, i.e. YOLO11, YOLOv10
         )
 
         inf.inference()
@@ -84,7 +84,7 @@ You can optionally supply a specific model in Python:
 
 ## Conclusion
 
-By following this guide, you have successfully created a real-time object detection application using Streamlit and numa_ultralytics YOLO11. This application allows you to experience the power of YOLO11 in detecting objects through your webcam, with a user-friendly interface and the ability to stop the video stream at any time.
+By following this guide, you have successfully created a real-time object detection application using Streamlit and Ultralytics YOLO11. This application allows you to experience the power of YOLO11 in detecting objects through your webcam, with a user-friendly interface and the ability to stop the video stream at any time.
 
 For further enhancements, you can explore adding more features such as recording the video stream, saving the annotated frames, or integrating with other computer vision libraries.
 
@@ -94,21 +94,21 @@ Engage with the community to learn more, troubleshoot issues, and share your pro
 
 ### Where to Find Help and Support
 
-- **GitHub Issues:** Visit the [numa_ultralytics GitHub repository](https://github.com/numa_ultralytics/numa_ultralytics/issues) to raise questions, report bugs, and suggest features.
-- **numa_ultralytics Discord Server:** Join the [numa_ultralytics Discord server](https://discord.com/invite/numa_ultralytics) to connect with other users and developers, get support, share knowledge, and brainstorm ideas.
+- **GitHub Issues:** Visit the [Ultralytics GitHub repository](https://github.com/ultralytics/ultralytics/issues) to raise questions, report bugs, and suggest features.
+- **Ultralytics Discord Server:** Join the [Ultralytics Discord server](https://discord.com/invite/ultralytics) to connect with other users and developers, get support, share knowledge, and brainstorm ideas.
 
 ### Official Documentation
 
-- **numa_ultralytics YOLO11 Documentation:** Refer to the [official YOLO11 documentation](https://docs.numa_ultralytics.com/) for comprehensive guides and insights on various computer vision tasks and projects.
+- **Ultralytics YOLO11 Documentation:** Refer to the [official YOLO11 documentation](https://docs.ultralytics.com/) for comprehensive guides and insights on various computer vision tasks and projects.
 
 ## FAQ
 
-### How can I set up a real-time object detection application using Streamlit and numa_ultralytics YOLO11?
+### How can I set up a real-time object detection application using Streamlit and Ultralytics YOLO11?
 
-Setting up a real-time object detection application with Streamlit and numa_ultralytics YOLO11 is straightforward. First, ensure you have the numa_ultralytics Python package installed using:
+Setting up a real-time object detection application with Streamlit and Ultralytics YOLO11 is straightforward. First, ensure you have the Ultralytics Python package installed using:
 
 ```bash
-pip install numa_ultralytics
+pip install ultralytics
 ```
 
 Then, you can create a basic Streamlit application to run live inference:
@@ -118,10 +118,10 @@ Then, you can create a basic Streamlit application to run live inference:
     === "Python"
 
         ```python
-        from numa_ultralytics import solutions
+        from ultralytics import solutions
 
         inf = solutions.Inference(
-            model="yolo11n.pt",  # You can use any model that numa_ultralytics support, i.e. YOLO11, YOLOv10
+            model="yolo11n.pt",  # You can use any model that Ultralytics support, i.e. YOLO11, YOLOv10
         )
 
         inf.inference()
@@ -137,11 +137,11 @@ Then, you can create a basic Streamlit application to run live inference:
 
 For more details on the practical setup, refer to the [Streamlit Application Code section](#streamlit-application-code) of the documentation.
 
-### What are the main advantages of using numa_ultralytics YOLO11 with Streamlit for real-time object detection?
+### What are the main advantages of using Ultralytics YOLO11 with Streamlit for real-time object detection?
 
-Using numa_ultralytics YOLO11 with Streamlit for real-time object detection offers several advantages:
+Using Ultralytics YOLO11 with Streamlit for real-time object detection offers several advantages:
 
-- **Seamless Real-Time Detection**: Achieve high-[accuracy](https://www.numa_ultralytics.com/glossary/accuracy), real-time object detection directly from webcam feeds.
+- **Seamless Real-Time Detection**: Achieve high-[accuracy](https://www.ultralytics.com/glossary/accuracy), real-time object detection directly from webcam feeds.
 - **User-Friendly Interface**: Streamlit's intuitive interface allows easy use and deployment without extensive technical knowledge.
 - **Resource Efficiency**: YOLO11's optimized algorithms ensure high-speed processing with minimal computational resources.
 
@@ -149,7 +149,7 @@ Discover more about these advantages [here](#advantages-of-live-inference).
 
 ### How do I deploy a Streamlit object detection application in my web browser?
 
-After coding your Streamlit application integrating numa_ultralytics YOLO11, you can deploy it by running:
+After coding your Streamlit application integrating Ultralytics YOLO11, you can deploy it by running:
 
 ```bash
 streamlit run <file-name.py>
@@ -157,22 +157,22 @@ streamlit run <file-name.py>
 
 This command will launch the application in your default web browser, enabling you to select YOLO11 models, set confidence, and NMS thresholds, and start real-time object detection with a simple click. For a detailed guide, refer to the [Streamlit Application Code](#streamlit-application-code) section.
 
-### What are some use cases for real-time object detection using Streamlit and numa_ultralytics YOLO11?
+### What are some use cases for real-time object detection using Streamlit and Ultralytics YOLO11?
 
-Real-time object detection using Streamlit and numa_ultralytics YOLO11 can be applied in various sectors:
+Real-time object detection using Streamlit and Ultralytics YOLO11 can be applied in various sectors:
 
 - **Security**: Real-time monitoring for unauthorized access.
 - **Retail**: Customer counting, shelf management, and more.
 - **Wildlife and Agriculture**: Monitoring animals and crop conditions.
 
-For more in-depth use cases and examples, explore [numa_ultralytics Solutions](https://docs.numa_ultralytics.com/solutions/).
+For more in-depth use cases and examples, explore [Ultralytics Solutions](https://docs.ultralytics.com/solutions/).
 
-### How does numa_ultralytics YOLO11 compare to other object detection models like YOLOv5 and RCNNs?
+### How does Ultralytics YOLO11 compare to other object detection models like YOLOv5 and RCNNs?
 
-numa_ultralytics YOLO11 provides several enhancements over prior models like YOLOv5 and RCNNs:
+Ultralytics YOLO11 provides several enhancements over prior models like YOLOv5 and RCNNs:
 
 - **Higher Speed and Accuracy**: Improved performance for real-time applications.
 - **Ease of Use**: Simplified interfaces and deployment.
 - **Resource Efficiency**: Optimized for better speed with minimal computational requirements.
 
-For a comprehensive comparison, check [numa_ultralytics YOLO11 Documentation](https://docs.numa_ultralytics.com/models/yolov8/) and related blog posts discussing model performance.
+For a comprehensive comparison, check [Ultralytics YOLO11 Documentation](https://docs.ultralytics.com/models/yolov8/) and related blog posts discussing model performance.

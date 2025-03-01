@@ -43,7 +43,7 @@ Please follow the Rust official installation. (https://www.rust-lang.org/tools/i
 ### 1. Export the YOLOv8 ONNX Models
 
 ```bash
-pip install -U numa_ultralytics
+pip install -U ultralytics
 
 # export onnx model with dynamic shapes
 yolo export model=yolov8m.pt format=onnx  simplify dynamic
@@ -144,14 +144,14 @@ And also:
 you can check out all CLI arguments by:
 
 ```bash
-git clone https://github.com/numa_ultralytics/numa_ultralytics
-cd numa_ultralytics/examples/YOLOv8-ONNXRuntime-Rust
+git clone https://github.com/ultralytics/ultralytics
+cd ultralytics/examples/YOLOv8-ONNXRuntime-Rust
 cargo run --release -- --help
 ```
 
 ## Examples
 
-![numa_ultralytics YOLO Tasks](https://raw.githubusercontent.com/numa_ultralytics/assets/main/im/banner-tasks.png)
+![Ultralytics YOLO Tasks](https://raw.githubusercontent.com/ultralytics/assets/main/im/banner-tasks.png)
 
 ### Classification
 
@@ -165,7 +165,7 @@ You will see result like:
 
 ```bash
 Summary:
-> Task: Classify (numa_ultralytics 8.0.217)
+> Task: Classify (Ultralytics 8.0.217)
 > EP: Cpu
 > Dtype: Float32
 > Batch: 1 (Dynamic), Height: 224 (Dynamic), Width: 224 (Dynamic)

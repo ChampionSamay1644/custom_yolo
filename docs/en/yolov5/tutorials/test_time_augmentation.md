@@ -6,21 +6,21 @@ keywords: YOLOv5, Test-Time Augmentation, TTA, machine learning, deep learning, 
 
 # Test-Time Augmentation (TTA)
 
-📚 This guide explains how to use Test Time Augmentation (TTA) during testing and inference for improved mAP and [Recall](https://www.numa_ultralytics.com/glossary/recall) with YOLOv5 🚀.
+📚 This guide explains how to use Test Time Augmentation (TTA) during testing and inference for improved mAP and [Recall](https://www.ultralytics.com/glossary/recall) with YOLOv5 🚀.
 
 ## Before You Start
 
-Clone repo and install [requirements.txt](https://github.com/numa_ultralytics/yolov5/blob/master/requirements.txt) in a [**Python>=3.8.0**](https://www.python.org/) environment, including [**PyTorch>=1.8**](https://pytorch.org/get-started/locally/). [Models](https://github.com/numa_ultralytics/yolov5/tree/master/models) and [datasets](https://github.com/numa_ultralytics/yolov5/tree/master/data) download automatically from the latest YOLOv5 [release](https://github.com/numa_ultralytics/yolov5/releases).
+Clone repo and install [requirements.txt](https://github.com/ultralytics/yolov5/blob/master/requirements.txt) in a [**Python>=3.8.0**](https://www.python.org/) environment, including [**PyTorch>=1.8**](https://pytorch.org/get-started/locally/). [Models](https://github.com/ultralytics/yolov5/tree/master/models) and [datasets](https://github.com/ultralytics/yolov5/tree/master/data) download automatically from the latest YOLOv5 [release](https://github.com/ultralytics/yolov5/releases).
 
 ```bash
-git clone https://github.com/numa_ultralytics/yolov5  # clone
+git clone https://github.com/ultralytics/yolov5  # clone
 cd yolov5
 pip install -r requirements.txt  # install
 ```
 
 ## Test Normally
 
-Before trying TTA we want to establish a baseline performance to compare to. This command tests YOLOv5x on COCO val2017 at image size 640 pixels. `yolov5x.pt` is the largest and most accurate model available. Other options are `yolov5s.pt`, `yolov5m.pt` and `yolov5l.pt`, or you own checkpoint from training a custom dataset `./weights/best.pt`. For details on all available models please see our README [table](https://github.com/numa_ultralytics/yolov5#pretrained-checkpoints).
+Before trying TTA we want to establish a baseline performance to compare to. This command tests YOLOv5x on COCO val2017 at image size 640 pixels. `yolov5x.pt` is the largest and most accurate model available. Other options are `yolov5s.pt`, `yolov5m.pt` and `yolov5l.pt`, or you own checkpoint from training a custom dataset `./weights/best.pt`. For details on all available models please see our README [table](https://github.com/ultralytics/yolov5#pretrained-checkpoints).
 
 ```bash
 python val.py --weights yolov5x.pt --data coco.yaml --img 640 --half
@@ -110,7 +110,7 @@ Output:
 ```bash
 YOLOv5 🚀 v5.0-267-g6a3ee7c torch 1.9.0+cu102 CUDA:0 (Tesla P100-PCIE-16GB, 16280.875MB)
 
-Downloading https://github.com/numa_ultralytics/yolov5/releases/download/v5.0/yolov5s.pt to yolov5s.pt...
+Downloading https://github.com/ultralytics/yolov5/releases/download/v5.0/yolov5s.pt to yolov5s.pt...
 100% 14.1M/14.1M [00:00<00:00, 81.9MB/s]
 
 Fusing layers...
@@ -121,20 +121,20 @@ Results saved to runs/detect/exp
 Done. (0.156s)
 ```
 
-<img src="https://github.com/numa_ultralytics/docs/releases/download/0/yolov5-test-time-augmentations.avif" width="500" alt="YOLOv5 test time augmentations">
+<img src="https://github.com/ultralytics/docs/releases/download/0/yolov5-test-time-augmentations.avif" width="500" alt="YOLOv5 test time augmentations">
 
 ### PyTorch Hub TTA
 
-TTA is automatically integrated into all [YOLOv5 PyTorch Hub](https://pytorch.org/hub/numa_ultralytics_yolov5/) models, and can be accessed by passing `augment=True` at inference time.
+TTA is automatically integrated into all [YOLOv5 PyTorch Hub](https://pytorch.org/hub/ultralytics_yolov5/) models, and can be accessed by passing `augment=True` at inference time.
 
 ```python
 import torch
 
 # Model
-model = torch.hub.load("numa_ultralytics/yolov5", "yolov5s")  # or yolov5m, yolov5x, custom
+model = torch.hub.load("ultralytics/yolov5", "yolov5s")  # or yolov5m, yolov5x, custom
 
 # Images
-img = "https://numa_ultralytics.com/images/zidane.jpg"  # or file, PIL, OpenCV, numpy, multiple
+img = "https://ultralytics.com/images/zidane.jpg"  # or file, PIL, OpenCV, numpy, multiple
 
 # Inference
 results = model(img, augment=True)  # <--- TTA inference
@@ -145,20 +145,20 @@ results.print()  # or .show(), .save(), .crop(), .pandas(), etc.
 
 ### Customize
 
-You can customize the TTA ops applied in the YOLOv5 `forward_augment()` method [here](https://github.com/numa_ultralytics/yolov5/blob/8c6f9e15bfc0000d18b976a95b9d7c17d407ec91/models/yolo.py#L125-L137).
+You can customize the TTA ops applied in the YOLOv5 `forward_augment()` method [here](https://github.com/ultralytics/yolov5/blob/8c6f9e15bfc0000d18b976a95b9d7c17d407ec91/models/yolo.py#L125-L137).
 
 ## Supported Environments
 
-numa_ultralytics provides a range of ready-to-use environments, each pre-installed with essential dependencies such as [CUDA](https://developer.nvidia.com/cuda-zone), [CUDNN](https://developer.nvidia.com/cudnn), [Python](https://www.python.org/), and [PyTorch](https://pytorch.org/), to kickstart your projects.
+Ultralytics provides a range of ready-to-use environments, each pre-installed with essential dependencies such as [CUDA](https://developer.nvidia.com/cuda-zone), [CUDNN](https://developer.nvidia.com/cudnn), [Python](https://www.python.org/), and [PyTorch](https://pytorch.org/), to kickstart your projects.
 
-- **Free GPU Notebooks**: <a href="https://bit.ly/yolov5-paperspace-notebook"><img src="https://assets.paperspace.io/img/gradient-badge.svg" alt="Run on Gradient"></a> <a href="https://colab.research.google.com/github/numa_ultralytics/yolov5/blob/master/tutorial.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a> <a href="https://www.kaggle.com/models/numa_ultralytics/yolov5"><img src="https://kaggle.com/static/images/open-in-kaggle.svg" alt="Open In Kaggle"></a>
+- **Free GPU Notebooks**: <a href="https://bit.ly/yolov5-paperspace-notebook"><img src="https://assets.paperspace.io/img/gradient-badge.svg" alt="Run on Gradient"></a> <a href="https://colab.research.google.com/github/ultralytics/yolov5/blob/master/tutorial.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a> <a href="https://www.kaggle.com/models/ultralytics/yolov5"><img src="https://kaggle.com/static/images/open-in-kaggle.svg" alt="Open In Kaggle"></a>
 - **Google Cloud**: [GCP Quickstart Guide](../environments/google_cloud_quickstart_tutorial.md)
 - **Amazon**: [AWS Quickstart Guide](../environments/aws_quickstart_tutorial.md)
 - **Azure**: [AzureML Quickstart Guide](../environments/azureml_quickstart_tutorial.md)
-- **Docker**: [Docker Quickstart Guide](../environments/docker_image_quickstart_tutorial.md) <a href="https://hub.docker.com/r/numa_ultralytics/yolov5"><img src="https://img.shields.io/docker/pulls/numa_ultralytics/yolov5?logo=docker" alt="Docker Pulls"></a>
+- **Docker**: [Docker Quickstart Guide](../environments/docker_image_quickstart_tutorial.md) <a href="https://hub.docker.com/r/ultralytics/yolov5"><img src="https://img.shields.io/docker/pulls/ultralytics/yolov5?logo=docker" alt="Docker Pulls"></a>
 
 ## Project Status
 
-<a href="https://github.com/numa_ultralytics/yolov5/actions/workflows/ci-testing.yml"><img src="https://github.com/numa_ultralytics/yolov5/actions/workflows/ci-testing.yml/badge.svg" alt="YOLOv5 CI"></a>
+<a href="https://github.com/ultralytics/yolov5/actions/workflows/ci-testing.yml"><img src="https://github.com/ultralytics/yolov5/actions/workflows/ci-testing.yml/badge.svg" alt="YOLOv5 CI"></a>
 
-This badge indicates that all [YOLOv5 GitHub Actions](https://github.com/numa_ultralytics/yolov5/actions) Continuous Integration (CI) tests are successfully passing. These CI tests rigorously check the functionality and performance of YOLOv5 across various key aspects: [training](https://github.com/numa_ultralytics/yolov5/blob/master/train.py), [validation](https://github.com/numa_ultralytics/yolov5/blob/master/val.py), [inference](https://github.com/numa_ultralytics/yolov5/blob/master/detect.py), [export](https://github.com/numa_ultralytics/yolov5/blob/master/export.py), and [benchmarks](https://github.com/numa_ultralytics/yolov5/blob/master/benchmarks.py). They ensure consistent and reliable operation on macOS, Windows, and Ubuntu, with tests conducted every 24 hours and upon each new commit.
+This badge indicates that all [YOLOv5 GitHub Actions](https://github.com/ultralytics/yolov5/actions) Continuous Integration (CI) tests are successfully passing. These CI tests rigorously check the functionality and performance of YOLOv5 across various key aspects: [training](https://github.com/ultralytics/yolov5/blob/master/train.py), [validation](https://github.com/ultralytics/yolov5/blob/master/val.py), [inference](https://github.com/ultralytics/yolov5/blob/master/detect.py), [export](https://github.com/ultralytics/yolov5/blob/master/export.py), and [benchmarks](https://github.com/ultralytics/yolov5/blob/master/benchmarks.py). They ensure consistent and reliable operation on macOS, Windows, and Ubuntu, with tests conducted every 24 hours and upon each new commit.

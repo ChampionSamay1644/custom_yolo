@@ -1,4 +1,4 @@
-# numa_ultralytics 🚀 AGPL-3.0 License - https://numa_ultralytics.com/license
+# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
 
 import shutil
 import uuid
@@ -8,9 +8,9 @@ from pathlib import Path
 import pytest
 
 from tests import MODEL, SOURCE
-from numa_ultralytics import YOLO
-from numa_ultralytics.cfg import TASK2DATA, TASK2MODEL, TASKS
-from numa_ultralytics.utils import (
+from ultralytics import YOLO
+from ultralytics.cfg import TASK2DATA, TASK2MODEL, TASKS
+from ultralytics.utils import (
     ARM64,
     IS_RASPBERRYPI,
     LINUX,
@@ -18,7 +18,7 @@ from numa_ultralytics.utils import (
     WINDOWS,
     checks,
 )
-from numa_ultralytics.utils.torch_utils import TORCH_1_9, TORCH_1_13
+from ultralytics.utils.torch_utils import TORCH_1_9, TORCH_1_13
 
 
 def test_export_torchscript():
@@ -66,7 +66,7 @@ def test_export_openvino_matrix(task, dynamic, int8, half, batch, nms):
     )
     if WINDOWS:
         # Use unique filenames due to Windows file permissions bug possibly due to latent threaded use
-        # See https://github.com/numa_ultralytics/numa_ultralytics/actions/runs/8957949304/job/24601616830?pr=10423
+        # See https://github.com/ultralytics/ultralytics/actions/runs/8957949304/job/24601616830?pr=10423
         file = Path(file)
         file = file.rename(file.with_stem(f"{file.stem}-{uuid.uuid4()}"))
     YOLO(file)([SOURCE] * batch, imgsz=64 if dynamic else 32)  # exported model inference

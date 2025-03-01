@@ -1,15 +1,15 @@
 ---
 comments: true
 description: Master instance segmentation using YOLO11. Learn how to detect, segment and outline objects in images with detailed guides and examples.
-keywords: instance segmentation, YOLO11, object detection, image segmentation, machine learning, deep learning, computer vision, COCO dataset, numa_ultralytics
+keywords: instance segmentation, YOLO11, object detection, image segmentation, machine learning, deep learning, computer vision, COCO dataset, Ultralytics
 model_name: yolo11n-seg
 ---
 
 # Instance Segmentation
 
-<img width="1024" src="https://github.com/numa_ultralytics/docs/releases/download/0/instance-segmentation-examples.avif" alt="Instance segmentation examples">
+<img width="1024" src="https://github.com/ultralytics/docs/releases/download/0/instance-segmentation-examples.avif" alt="Instance segmentation examples">
 
-[Instance segmentation](https://www.numa_ultralytics.com/glossary/instance-segmentation) goes a step further than object detection and involves identifying individual objects in an image and segmenting them from the rest of the image.
+[Instance segmentation](https://www.ultralytics.com/glossary/instance-segmentation) goes a step further than object detection and involves identifying individual objects in an image and segmenting them from the rest of the image.
 
 The output of an instance segmentation model is a set of masks or contours that outline each object in the image, along with class labels and confidence scores for each object. Instance segmentation is useful when you need to know not only where objects are in an image, but also what their exact shape is.
 
@@ -21,18 +21,18 @@ The output of an instance segmentation model is a set of masks or contours that 
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Run Segmentation with Pre-Trained numa_ultralytics YOLO Model in Python.
+  <strong>Watch:</strong> Run Segmentation with Pre-Trained Ultralytics YOLO Model in Python.
 </p>
 
 !!! tip
 
-    YOLO11 Segment models use the `-seg` suffix, i.e. `yolo11n-seg.pt` and are pretrained on [COCO](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/coco.yaml).
+    YOLO11 Segment models use the `-seg` suffix, i.e. `yolo11n-seg.pt` and are pretrained on [COCO](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco.yaml).
 
-## [Models](https://github.com/numa_ultralytics/numa_ultralytics/tree/main/numa_ultralytics/cfg/models/11)
+## [Models](https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/models/11)
 
-YOLO11 pretrained Segment models are shown here. Detect, Segment and Pose models are pretrained on the [COCO](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/coco.yaml) dataset, while Classify models are pretrained on the [ImageNet](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/ImageNet.yaml) dataset.
+YOLO11 pretrained Segment models are shown here. Detect, Segment and Pose models are pretrained on the [COCO](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco.yaml) dataset, while Classify models are pretrained on the [ImageNet](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/ImageNet.yaml) dataset.
 
-[Models](https://github.com/numa_ultralytics/numa_ultralytics/tree/main/numa_ultralytics/cfg/models) download automatically from the latest numa_ultralytics [release](https://github.com/numa_ultralytics/assets/releases) on first use.
+[Models](https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/models) download automatically from the latest Ultralytics [release](https://github.com/ultralytics/assets/releases) on first use.
 
 {% include "macros/yolo-seg-perf.md" %}
 
@@ -41,14 +41,14 @@ YOLO11 pretrained Segment models are shown here. Detect, Segment and Pose models
 
 ## Train
 
-Train YOLO11n-seg on the COCO8-seg dataset for 100 [epochs](https://www.numa_ultralytics.com/glossary/epoch) at image size 640. For a full list of available arguments see the [Configuration](../usage/cfg.md) page.
+Train YOLO11n-seg on the COCO8-seg dataset for 100 [epochs](https://www.ultralytics.com/glossary/epoch) at image size 640. For a full list of available arguments see the [Configuration](../usage/cfg.md) page.
 
 !!! example
 
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n-seg.yaml")  # build a new model from YAML
@@ -74,18 +74,18 @@ Train YOLO11n-seg on the COCO8-seg dataset for 100 [epochs](https://www.numa_ult
 
 ### Dataset format
 
-YOLO segmentation dataset format can be found in detail in the [Dataset Guide](../datasets/segment/index.md). To convert your existing dataset from other formats (like COCO etc.) to YOLO format, please use [JSON2YOLO](https://github.com/numa_ultralytics/JSON2YOLO) tool by numa_ultralytics.
+YOLO segmentation dataset format can be found in detail in the [Dataset Guide](../datasets/segment/index.md). To convert your existing dataset from other formats (like COCO etc.) to YOLO format, please use [JSON2YOLO](https://github.com/ultralytics/JSON2YOLO) tool by Ultralytics.
 
 ## Val
 
-Validate trained YOLO11n-seg model [accuracy](https://www.numa_ultralytics.com/glossary/accuracy) on the COCO8-seg dataset. No arguments are needed as the `model` retains its training `data` and arguments as model attributes.
+Validate trained YOLO11n-seg model [accuracy](https://www.ultralytics.com/glossary/accuracy) on the COCO8-seg dataset. No arguments are needed as the `model` retains its training `data` and arguments as model attributes.
 
 !!! example
 
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n-seg.pt")  # load an official model
@@ -119,14 +119,14 @@ Use a trained YOLO11n-seg model to run predictions on images.
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n-seg.pt")  # load an official model
         model = YOLO("path/to/best.pt")  # load a custom model
 
         # Predict with the model
-        results = model("https://numa_ultralytics.com/images/bus.jpg")  # predict on an image
+        results = model("https://ultralytics.com/images/bus.jpg")  # predict on an image
 
         # Access the results
         for result in results:
@@ -138,8 +138,8 @@ Use a trained YOLO11n-seg model to run predictions on images.
     === "CLI"
 
         ```bash
-        yolo segment predict model=yolo11n-seg.pt source='https://numa_ultralytics.com/images/bus.jpg'  # predict with official model
-        yolo segment predict model=path/to/best.pt source='https://numa_ultralytics.com/images/bus.jpg'  # predict with custom model
+        yolo segment predict model=yolo11n-seg.pt source='https://ultralytics.com/images/bus.jpg'  # predict with official model
+        yolo segment predict model=path/to/best.pt source='https://ultralytics.com/images/bus.jpg'  # predict with custom model
         ```
 
 See full `predict` mode details in the [Predict](../modes/predict.md) page.
@@ -153,7 +153,7 @@ Export a YOLO11n-seg model to a different format like ONNX, CoreML, etc.
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n-seg.pt")  # load an official model
@@ -180,14 +180,14 @@ See full `export` details in the [Export](../modes/export.md) page.
 
 ### How do I train a YOLO11 segmentation model on a custom dataset?
 
-To train a YOLO11 segmentation model on a custom dataset, you first need to prepare your dataset in the YOLO segmentation format. You can use tools like [JSON2YOLO](https://github.com/numa_ultralytics/JSON2YOLO) to convert datasets from other formats. Once your dataset is ready, you can train the model using Python or CLI commands:
+To train a YOLO11 segmentation model on a custom dataset, you first need to prepare your dataset in the YOLO segmentation format. You can use tools like [JSON2YOLO](https://github.com/ultralytics/JSON2YOLO) to convert datasets from other formats. Once your dataset is ready, you can train the model using Python or CLI commands:
 
 !!! example
 
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a pretrained YOLO11 segment model
         model = YOLO("yolo11n-seg.pt")
@@ -204,13 +204,13 @@ To train a YOLO11 segmentation model on a custom dataset, you first need to prep
 
 Check the [Configuration](../usage/cfg.md) page for more available arguments.
 
-### What is the difference between [object detection](https://www.numa_ultralytics.com/glossary/object-detection) and instance segmentation in YOLO11?
+### What is the difference between [object detection](https://www.ultralytics.com/glossary/object-detection) and instance segmentation in YOLO11?
 
 Object detection identifies and localizes objects within an image by drawing bounding boxes around them, whereas instance segmentation not only identifies the bounding boxes but also delineates the exact shape of each object. YOLO11 instance segmentation models provide masks or contours that outline each detected object, which is particularly useful for tasks where knowing the precise shape of objects is important, such as medical imaging or autonomous driving.
 
 ### Why use YOLO11 for instance segmentation?
 
-numa_ultralytics YOLO11 is a state-of-the-art model recognized for its high accuracy and real-time performance, making it ideal for instance segmentation tasks. YOLO11 Segment models come pretrained on the [COCO dataset](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/coco.yaml), ensuring robust performance across a variety of objects. Additionally, YOLO supports training, validation, prediction, and export functionalities with seamless integration, making it highly versatile for both research and industry applications.
+Ultralytics YOLO11 is a state-of-the-art model recognized for its high accuracy and real-time performance, making it ideal for instance segmentation tasks. YOLO11 Segment models come pretrained on the [COCO dataset](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco.yaml), ensuring robust performance across a variety of objects. Additionally, YOLO supports training, validation, prediction, and export functionalities with seamless integration, making it highly versatile for both research and industry applications.
 
 ### How do I load and validate a pretrained YOLO segmentation model?
 
@@ -221,7 +221,7 @@ Loading and validating a pretrained YOLO segmentation model is straightforward. 
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a pretrained model
         model = YOLO("yolo11n-seg.pt")
@@ -238,7 +238,7 @@ Loading and validating a pretrained YOLO segmentation model is straightforward. 
         yolo segment val model=yolo11n-seg.pt
         ```
 
-These steps will provide you with validation metrics like [Mean Average Precision](https://www.numa_ultralytics.com/glossary/mean-average-precision-map) (mAP), crucial for assessing model performance.
+These steps will provide you with validation metrics like [Mean Average Precision](https://www.ultralytics.com/glossary/mean-average-precision-map) (mAP), crucial for assessing model performance.
 
 ### How can I export a YOLO segmentation model to ONNX format?
 
@@ -249,7 +249,7 @@ Exporting a YOLO segmentation model to ONNX format is simple and can be done usi
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a pretrained model
         model = YOLO("yolo11n-seg.pt")

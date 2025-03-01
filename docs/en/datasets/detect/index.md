@@ -1,18 +1,18 @@
 ---
 comments: true
-description: Learn about dataset formats compatible with numa_ultralytics YOLO for robust object detection. Explore supported datasets and learn how to convert formats.
-keywords: numa_ultralytics, YOLO, object detection datasets, dataset formats, COCO, dataset conversion, training datasets
+description: Learn about dataset formats compatible with Ultralytics YOLO for robust object detection. Explore supported datasets and learn how to convert formats.
+keywords: Ultralytics, YOLO, object detection datasets, dataset formats, COCO, dataset conversion, training datasets
 ---
 
 # Object Detection Datasets Overview
 
-Training a robust and accurate [object detection](https://www.numa_ultralytics.com/glossary/object-detection) model requires a comprehensive dataset. This guide introduces various formats of datasets that are compatible with the numa_ultralytics YOLO model and provides insights into their structure, usage, and how to convert between different formats.
+Training a robust and accurate [object detection](https://www.ultralytics.com/glossary/object-detection) model requires a comprehensive dataset. This guide introduces various formats of datasets that are compatible with the Ultralytics YOLO model and provides insights into their structure, usage, and how to convert between different formats.
 
 ## Supported Dataset Formats
 
-### numa_ultralytics YOLO format
+### Ultralytics YOLO format
 
-The numa_ultralytics YOLO format is a dataset configuration format that allows you to define the dataset root directory, the relative paths to training/validation/testing image directories or `*.txt` files containing image paths, and a dictionary of class names. Here is an example:
+The Ultralytics YOLO format is a dataset configuration format that allows you to define the dataset root directory, the relative paths to training/validation/testing image directories or `*.txt` files containing image paths, and a dictionary of class names. Here is an example:
 
 ```yaml
 # Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
@@ -23,26 +23,26 @@ test: # test images (optional)
 
 # Classes (80 COCO classes)
 names:
-  0: person
-  1: bicycle
-  2: car
-  # ...
-  77: teddy bear
-  78: hair drier
-  79: toothbrush
+    0: person
+    1: bicycle
+    2: car
+    # ...
+    77: teddy bear
+    78: hair drier
+    79: toothbrush
 ```
 
 Labels for this format should be exported to YOLO format with one `*.txt` file per image. If there are no objects in an image, no `*.txt` file is required. The `*.txt` file should be formatted with one row per object in `class x_center y_center width height` format. Box coordinates must be in **normalized xywh** format (from 0 to 1). If your boxes are in pixels, you should divide `x_center` and `width` by image width, and `y_center` and `height` by image height. Class numbers should be zero-indexed (start with 0).
 
-<p align="center"><img width="750" src="https://github.com/numa_ultralytics/docs/releases/download/0/two-persons-tie.avif" alt="Example labelled image"></p>
+<p align="center"><img width="750" src="https://github.com/ultralytics/docs/releases/download/0/two-persons-tie.avif" alt="Example labelled image"></p>
 
 The label file corresponding to the above image contains 2 persons (class `0`) and a tie (class `27`):
 
-<p align="center"><img width="428" src="https://github.com/numa_ultralytics/docs/releases/download/0/two-persons-tie-1.avif" alt="Example label file"></p>
+<p align="center"><img width="428" src="https://github.com/ultralytics/docs/releases/download/0/two-persons-tie-1.avif" alt="Example label file"></p>
 
-When using the numa_ultralytics YOLO format, organize your training and validation images and labels as shown in the [COCO8 dataset](coco8.md) example below.
+When using the Ultralytics YOLO format, organize your training and validation images and labels as shown in the [COCO8 dataset](coco8.md) example below.
 
-<p align="center"><img width="800" src="https://github.com/numa_ultralytics/docs/releases/download/0/two-persons-tie-2.avif" alt="Example dataset directory structure"></p>
+<p align="center"><img width="800" src="https://github.com/ultralytics/docs/releases/download/0/two-persons-tie-2.avif" alt="Example dataset directory structure"></p>
 
 ## Usage
 
@@ -53,7 +53,7 @@ Here's how you can use these formats to train your model:
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n.pt")  # load a pretrained model (recommended for training)
@@ -93,7 +93,7 @@ Here is a list of the supported datasets and a brief description for each:
 
 ### Adding your own dataset
 
-If you have your own dataset and would like to use it for training detection models with numa_ultralytics YOLO format, ensure that it follows the format specified above under "numa_ultralytics YOLO format". Convert your annotations to the required format and specify the paths, number of classes, and class names in the YAML configuration file.
+If you have your own dataset and would like to use it for training detection models with Ultralytics YOLO format, ensure that it follows the format specified above under "Ultralytics YOLO format". Convert your annotations to the required format and specify the paths, number of classes, and class names in the YAML configuration file.
 
 ## Port or Convert Label Formats
 
@@ -106,20 +106,20 @@ You can easily convert labels from the popular COCO dataset format to the YOLO f
     === "Python"
 
         ```python
-        from numa_ultralytics.data.converter import convert_coco
+        from ultralytics.data.converter import convert_coco
 
         convert_coco(labels_dir="path/to/coco/annotations/")
         ```
 
-This conversion tool can be used to convert the COCO dataset or any dataset in the COCO format to the numa_ultralytics YOLO format.
+This conversion tool can be used to convert the COCO dataset or any dataset in the COCO format to the Ultralytics YOLO format.
 
 Remember to double-check if the dataset you want to use is compatible with your model and follows the necessary format conventions. Properly formatted datasets are crucial for training successful object detection models.
 
 ## FAQ
 
-### What is the numa_ultralytics YOLO dataset format and how to structure it?
+### What is the Ultralytics YOLO dataset format and how to structure it?
 
-The numa_ultralytics YOLO format is a structured configuration for defining datasets in your training projects. It involves setting paths to your training, validation, and testing images and corresponding labels. For example:
+The Ultralytics YOLO format is a structured configuration for defining datasets in your training projects. It involves setting paths to your training, validation, and testing images and corresponding labels. For example:
 
 ```yaml
 path: ../datasets/coco8 # dataset root directory
@@ -127,29 +127,29 @@ train: images/train # training images (relative to 'path')
 val: images/val # validation images (relative to 'path')
 test: # optional test images
 names:
-  0: person
-  1: bicycle
-  2: car
-  # ...
+    0: person
+    1: bicycle
+    2: car
+    # ...
 ```
 
 Labels are saved in `*.txt` files with one file per image, formatted as `class x_center y_center width height` with normalized coordinates. For a detailed guide, see the [COCO8 dataset example](coco8.md).
 
 ### How do I convert a COCO dataset to the YOLO format?
 
-You can convert a COCO dataset to the YOLO format using the numa_ultralytics conversion tools. Here's a quick method:
+You can convert a COCO dataset to the YOLO format using the Ultralytics conversion tools. Here's a quick method:
 
 ```python
-from numa_ultralytics.data.converter import convert_coco
+from ultralytics.data.converter import convert_coco
 
 convert_coco(labels_dir="path/to/coco/annotations/")
 ```
 
-This code will convert your COCO annotations to YOLO format, enabling seamless integration with numa_ultralytics YOLO models. For additional details, visit the [Port or Convert Label Formats](#port-or-convert-label-formats) section.
+This code will convert your COCO annotations to YOLO format, enabling seamless integration with Ultralytics YOLO models. For additional details, visit the [Port or Convert Label Formats](#port-or-convert-label-formats) section.
 
-### Which datasets are supported by numa_ultralytics YOLO for object detection?
+### Which datasets are supported by Ultralytics YOLO for object detection?
 
-numa_ultralytics YOLO supports a wide range of datasets, including:
+Ultralytics YOLO supports a wide range of datasets, including:
 
 - [Argoverse](argoverse.md)
 - [COCO](coco.md)
@@ -170,7 +170,7 @@ To start training a YOLO11 model, ensure your dataset is formatted correctly and
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         model = YOLO("yolo11n.pt")  # Load a pretrained model
         results = model.train(data="path/to/your_dataset.yaml", epochs=100, imgsz=640)
@@ -184,6 +184,6 @@ To start training a YOLO11 model, ensure your dataset is formatted correctly and
 
 Refer to the [Usage](#usage) section for more details on utilizing different modes, including CLI commands.
 
-### Where can I find practical examples of using numa_ultralytics YOLO for object detection?
+### Where can I find practical examples of using Ultralytics YOLO for object detection?
 
-numa_ultralytics provides numerous examples and practical guides for using YOLO11 in diverse applications. For a comprehensive overview, visit the [numa_ultralytics Blog](https://www.numa_ultralytics.com/blog) where you can find case studies, detailed tutorials, and community stories showcasing object detection, segmentation, and more with YOLO11. For specific examples, check the [Usage](../../modes/predict.md) section in the documentation.
+Ultralytics provides numerous examples and practical guides for using YOLO11 in diverse applications. For a comprehensive overview, visit the [Ultralytics Blog](https://www.ultralytics.com/blog) where you can find case studies, detailed tutorials, and community stories showcasing object detection, segmentation, and more with YOLO11. For specific examples, check the [Usage](../../modes/predict.md) section in the documentation.

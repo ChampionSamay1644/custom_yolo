@@ -1,12 +1,12 @@
 ---
 comments: true
 description: Explore the comprehensive Open Images V7 dataset by Google. Learn about its annotations, applications, and use YOLO11 pretrained models for computer vision tasks.
-keywords: Open Images V7, Google dataset, computer vision, YOLO11 models, object detection, image segmentation, visual relationships, AI research, numa_ultralytics
+keywords: Open Images V7, Google dataset, computer vision, YOLO11 models, object detection, image segmentation, visual relationships, AI research, Ultralytics
 ---
 
 # Open Images V7 Dataset
 
-[Open Images V7](https://storage.googleapis.com/openimages/web/index.html) is a versatile and expansive dataset championed by Google. Aimed at propelling research in the realm of [computer vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv), it boasts a vast collection of images annotated with a plethora of data, including image-level labels, object bounding boxes, object segmentation masks, visual relationships, and localized narratives.
+[Open Images V7](https://storage.googleapis.com/openimages/web/index.html) is a versatile and expansive dataset championed by Google. Aimed at propelling research in the realm of [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv), it boasts a vast collection of images annotated with a plethora of data, including image-level labels, object bounding boxes, object segmentation masks, visual relationships, and localized narratives.
 
 <p align="center">
   <br>
@@ -16,18 +16,18 @@ keywords: Open Images V7, Google dataset, computer vision, YOLO11 models, object
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> <a href="https://www.numa_ultralytics.com/glossary/object-detection">Object Detection</a> using OpenImagesV7 Pretrained Model
+  <strong>Watch:</strong> <a href="https://www.ultralytics.com/glossary/object-detection">Object Detection</a> using OpenImagesV7 Pretrained Model
 </p>
 
 ## Open Images V7 Pretrained Models
 
-| Model                                                                                          | size<br><sup>(pixels) | mAP<sup>val<br>50-95 | Speed<br><sup>CPU ONNX<br>(ms) | Speed<br><sup>A100 TensorRT<br>(ms) | params<br><sup>(M) | FLOPs<br><sup>(B) |
-| ---------------------------------------------------------------------------------------------- | --------------------- | -------------------- | ------------------------------ | ----------------------------------- | ------------------ | ----------------- |
-| [YOLOv8n](https://github.com/numa_ultralytics/assets/releases/download/v8.2.0/yolov8n-oiv7.pt) | 640                   | 18.4                 | 142.4                          | 1.21                                | 3.5                | 10.5              |
-| [YOLOv8s](https://github.com/numa_ultralytics/assets/releases/download/v8.2.0/yolov8s-oiv7.pt) | 640                   | 27.7                 | 183.1                          | 1.40                                | 11.4               | 29.7              |
-| [YOLOv8m](https://github.com/numa_ultralytics/assets/releases/download/v8.2.0/yolov8m-oiv7.pt) | 640                   | 33.6                 | 408.5                          | 2.26                                | 26.2               | 80.6              |
-| [YOLOv8l](https://github.com/numa_ultralytics/assets/releases/download/v8.2.0/yolov8l-oiv7.pt) | 640                   | 34.9                 | 596.9                          | 2.43                                | 44.1               | 167.4             |
-| [YOLOv8x](https://github.com/numa_ultralytics/assets/releases/download/v8.2.0/yolov8x-oiv7.pt) | 640                   | 36.3                 | 860.6                          | 3.56                                | 68.7               | 260.6             |
+| Model                                                                                     | size<br><sup>(pixels) | mAP<sup>val<br>50-95 | Speed<br><sup>CPU ONNX<br>(ms) | Speed<br><sup>A100 TensorRT<br>(ms) | params<br><sup>(M) | FLOPs<br><sup>(B) |
+| ----------------------------------------------------------------------------------------- | --------------------- | -------------------- | ------------------------------ | ----------------------------------- | ------------------ | ----------------- |
+| [YOLOv8n](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8n-oiv7.pt) | 640                   | 18.4                 | 142.4                          | 1.21                                | 3.5                | 10.5              |
+| [YOLOv8s](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8s-oiv7.pt) | 640                   | 27.7                 | 183.1                          | 1.40                                | 11.4               | 29.7              |
+| [YOLOv8m](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8m-oiv7.pt) | 640                   | 33.6                 | 408.5                          | 2.26                                | 26.2               | 80.6              |
+| [YOLOv8l](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8l-oiv7.pt) | 640                   | 34.9                 | 596.9                          | 2.43                                | 44.1               | 167.4             |
+| [YOLOv8x](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8x-oiv7.pt) | 640                   | 36.3                 | 860.6                          | 3.56                                | 68.7               | 260.6             |
 
 You can use these pretrained for inference or fine-tuning as follows.
 
@@ -36,7 +36,7 @@ You can use these pretrained for inference or fine-tuning as follows.
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load an Open Images Dataset V7 pretrained YOLOv8n model
         model = YOLO("yolov8n-oiv7.pt")
@@ -58,18 +58,18 @@ You can use these pretrained for inference or fine-tuning as follows.
         yolo detect train data=coco8.yaml model=yolov8n-oiv7.pt epochs=100 imgsz=640
         ```
 
-![Open Images V7 classes visual](https://github.com/numa_ultralytics/docs/releases/download/0/open-images-v7-classes-visual.avif)
+![Open Images V7 classes visual](https://github.com/ultralytics/docs/releases/download/0/open-images-v7-classes-visual.avif)
 
 ## Key Features
 
 - Encompasses ~9M images annotated in various ways to suit multiple computer vision tasks.
-- Houses a staggering 16M bounding boxes across 600 object classes in 1.9M images. These boxes are primarily hand-drawn by experts ensuring high [precision](https://www.numa_ultralytics.com/glossary/precision).
+- Houses a staggering 16M bounding boxes across 600 object classes in 1.9M images. These boxes are primarily hand-drawn by experts ensuring high [precision](https://www.ultralytics.com/glossary/precision).
 - Visual relationship annotations totaling 3.3M are available, detailing 1,466 unique relationship triplets, object properties, and human activities.
 - V5 introduced segmentation masks for 2.8M objects across 350 classes.
 - V6 introduced 675k localized narratives that amalgamate voice, text, and mouse traces highlighting described objects.
 - V7 introduced 66.4M point-level labels on 1.4M images, spanning 5,827 classes.
 - Encompasses 61.4M image-level labels across a diverse set of 20,638 classes.
-- Provides a unified platform for image classification, object detection, relationship detection, [instance segmentation](https://www.numa_ultralytics.com/glossary/instance-segmentation), and multimodal image descriptions.
+- Provides a unified platform for image classification, object detection, relationship detection, [instance segmentation](https://www.ultralytics.com/glossary/instance-segmentation), and multimodal image descriptions.
 
 ## Dataset Structure
 
@@ -80,7 +80,7 @@ Open Images V7 is structured in multiple components catering to varied computer 
 - **Segmentation Masks**: These detail the exact boundary of 2.8M objects across 350 classes.
 - **Visual Relationships**: 3.3M annotations indicating object relationships, properties, and actions.
 - **Localized Narratives**: 675k descriptions combining voice, text, and mouse traces.
-- **Point-Level Labels**: 66.4M labels across 1.4M images, suitable for zero/few-shot [semantic segmentation](https://www.numa_ultralytics.com/glossary/semantic-segmentation).
+- **Point-Level Labels**: 66.4M labels across 1.4M images, suitable for zero/few-shot [semantic segmentation](https://www.ultralytics.com/glossary/semantic-segmentation).
 
 ## Applications
 
@@ -93,12 +93,12 @@ Typically, datasets come with a YAML (Yet Another Markup Language) file that del
 !!! example "OpenImagesV7.yaml"
 
     ```yaml
-    --8<-- "numa_ultralytics/cfg/datasets/open-images-v7.yaml"
+    --8<-- "ultralytics/cfg/datasets/open-images-v7.yaml"
     ```
 
 ## Usage
 
-To train a YOLO11n model on the Open Images V7 dataset for 100 [epochs](https://www.numa_ultralytics.com/glossary/epoch) with an image size of 640, you can use the following code snippets. For a comprehensive list of available arguments, refer to the model [Training](../../modes/train.md) page.
+To train a YOLO11n model on the Open Images V7 dataset for 100 [epochs](https://www.ultralytics.com/glossary/epoch) with an image size of 640, you can use the following code snippets. For a comprehensive list of available arguments, refer to the model [Training](../../modes/train.md) page.
 
 !!! warning
 
@@ -114,7 +114,7 @@ To train a YOLO11n model on the Open Images V7 dataset for 100 [epochs](https://
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a COCO-pretrained YOLO11n model
         model = YOLO("yolo11n.pt")
@@ -134,7 +134,7 @@ To train a YOLO11n model on the Open Images V7 dataset for 100 [epochs](https://
 
 Illustrations of the dataset help provide insights into its richness:
 
-![Dataset sample image](https://github.com/numa_ultralytics/docs/releases/download/0/oidv7-all-in-one-example-ab.avif)
+![Dataset sample image](https://github.com/ultralytics/docs/releases/download/0/oidv7-all-in-one-example-ab.avif)
 
 - **Open Images V7**: This image exemplifies the depth and detail of annotations available, including bounding boxes, relationships, and segmentation masks.
 
@@ -174,7 +174,7 @@ To train a YOLO11 model on the Open Images V7 dataset, you can use both Python a
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a COCO-pretrained YOLO11n model
         model = YOLO("yolo11n.pt")
@@ -206,24 +206,24 @@ The Open Images V7 dataset includes approximately 9 million images with various 
 
 ### What pretrained models are available for the Open Images V7 dataset?
 
-numa_ultralytics provides several YOLOv8 pretrained models for the Open Images V7 dataset, each with different sizes and performance metrics:
+Ultralytics provides several YOLOv8 pretrained models for the Open Images V7 dataset, each with different sizes and performance metrics:
 
-| Model                                                                                          | size<br><sup>(pixels) | mAP<sup>val<br>50-95 | Speed<br><sup>CPU ONNX<br>(ms) | Speed<br><sup>A100 TensorRT<br>(ms) | params<br><sup>(M) | FLOPs<br><sup>(B) |
-| ---------------------------------------------------------------------------------------------- | --------------------- | -------------------- | ------------------------------ | ----------------------------------- | ------------------ | ----------------- |
-| [YOLOv8n](https://github.com/numa_ultralytics/assets/releases/download/v8.2.0/yolov8n-oiv7.pt) | 640                   | 18.4                 | 142.4                          | 1.21                                | 3.5                | 10.5              |
-| [YOLOv8s](https://github.com/numa_ultralytics/assets/releases/download/v8.2.0/yolov8s-oiv7.pt) | 640                   | 27.7                 | 183.1                          | 1.40                                | 11.4               | 29.7              |
-| [YOLOv8m](https://github.com/numa_ultralytics/assets/releases/download/v8.2.0/yolov8m-oiv7.pt) | 640                   | 33.6                 | 408.5                          | 2.26                                | 26.2               | 80.6              |
-| [YOLOv8l](https://github.com/numa_ultralytics/assets/releases/download/v8.2.0/yolov8l-oiv7.pt) | 640                   | 34.9                 | 596.9                          | 2.43                                | 44.1               | 167.4             |
-| [YOLOv8x](https://github.com/numa_ultralytics/assets/releases/download/v8.2.0/yolov8x-oiv7.pt) | 640                   | 36.3                 | 860.6                          | 3.56                                | 68.7               | 260.6             |
+| Model                                                                                     | size<br><sup>(pixels) | mAP<sup>val<br>50-95 | Speed<br><sup>CPU ONNX<br>(ms) | Speed<br><sup>A100 TensorRT<br>(ms) | params<br><sup>(M) | FLOPs<br><sup>(B) |
+| ----------------------------------------------------------------------------------------- | --------------------- | -------------------- | ------------------------------ | ----------------------------------- | ------------------ | ----------------- |
+| [YOLOv8n](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8n-oiv7.pt) | 640                   | 18.4                 | 142.4                          | 1.21                                | 3.5                | 10.5              |
+| [YOLOv8s](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8s-oiv7.pt) | 640                   | 27.7                 | 183.1                          | 1.40                                | 11.4               | 29.7              |
+| [YOLOv8m](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8m-oiv7.pt) | 640                   | 33.6                 | 408.5                          | 2.26                                | 26.2               | 80.6              |
+| [YOLOv8l](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8l-oiv7.pt) | 640                   | 34.9                 | 596.9                          | 2.43                                | 44.1               | 167.4             |
+| [YOLOv8x](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8x-oiv7.pt) | 640                   | 36.3                 | 860.6                          | 3.56                                | 68.7               | 260.6             |
 
 ### What applications can the Open Images V7 dataset be used for?
 
 The Open Images V7 dataset supports a variety of computer vision tasks including:
 
-- **[Image Classification](https://www.numa_ultralytics.com/glossary/image-classification)**
+- **[Image Classification](https://www.ultralytics.com/glossary/image-classification)**
 - **Object Detection**
 - **Instance Segmentation**
 - **Visual Relationship Detection**
 - **Multimodal Image Descriptions**
 
-Its comprehensive annotations and broad scope make it suitable for training and evaluating advanced [machine learning](https://www.numa_ultralytics.com/glossary/machine-learning-ml) models, as highlighted in practical use cases detailed in our [applications](#applications) section.
+Its comprehensive annotations and broad scope make it suitable for training and evaluating advanced [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) models, as highlighted in practical use cases detailed in our [applications](#applications) section.

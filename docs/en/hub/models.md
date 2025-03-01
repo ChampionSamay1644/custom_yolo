@@ -1,14 +1,14 @@
 ---
 comments: true
-description: Explore numa_ultralytics HUB for easy training, analysis, preview, deployment and sharing of custom vision AI models using YOLO11. Start training today!.
-keywords: numa_ultralytics HUB, YOLO11, custom AI models, model training, model deployment, model analysis, vision AI
+description: Explore Ultralytics HUB for easy training, analysis, preview, deployment and sharing of custom vision AI models using YOLO11. Start training today!.
+keywords: Ultralytics HUB, YOLO11, custom AI models, model training, model deployment, model analysis, vision AI
 ---
 
-# numa_ultralytics HUB Models
+# Ultralytics HUB Models
 
-[numa_ultralytics HUB](https://www.numa_ultralytics.com/hub) models provide a streamlined solution for training vision AI models on custom datasets.
+[Ultralytics HUB](https://www.ultralytics.com/hub) models provide a streamlined solution for training vision AI models on custom datasets.
 
-The process is user-friendly and efficient, involving a simple three-step creation and accelerated training powered by numa_ultralytics YOLOv8. During training, real-time updates on model metrics are available so that you can monitor each step of the progress. Once training is completed, you can preview your model and easily deploy it to real-world applications. Therefore, [numa_ultralytics HUB](https://www.numa_ultralytics.com/hub) offers a comprehensive yet straightforward system for model creation, training, evaluation, and deployment.
+The process is user-friendly and efficient, involving a simple three-step creation and accelerated training powered by Ultralytics YOLOv8. During training, real-time updates on model metrics are available so that you can monitor each step of the progress. Once training is completed, you can preview your model and easily deploy it to real-world applications. Therefore, [Ultralytics HUB](https://www.ultralytics.com/hub) offers a comprehensive yet straightforward system for model creation, training, evaluation, and deployment.
 
 <p align="center">
   <iframe loading="lazy" width="720" height="405" src="https://www.youtube.com/embed/YVlkq5H2tAQ"
@@ -17,20 +17,20 @@ The process is user-friendly and efficient, involving a simple three-step creati
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> numa_ultralytics HUB Training and Validation Overview
+  <strong>Watch:</strong> Ultralytics HUB Training and Validation Overview
 </p>
 
 ## Train Model
 
-Navigate to the [Models](https://hub.numa_ultralytics.com/models) page by clicking on the **Models** button in the sidebar and click on the **Train Model** button on the top right of the page.
+Navigate to the [Models](https://hub.ultralytics.com/models) page by clicking on the **Models** button in the sidebar and click on the **Train Model** button on the top right of the page.
 
-![numa_ultralytics HUB screenshot of the Models page with an arrow pointing to the Models button in the sidebar and one to the Train Model button](https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-hub-train-model-page.avif)
+![Ultralytics HUB screenshot of the Models page with an arrow pointing to the Models button in the sidebar and one to the Train Model button](https://github.com/ultralytics/docs/releases/download/0/ultralytics-hub-train-model-page.avif)
 
 ??? tip
 
-    You can train a model directly from the [Home](https://hub.numa_ultralytics.com/home) page.
+    You can train a model directly from the [Home](https://hub.ultralytics.com/home) page.
 
-    ![numa_ultralytics HUB screenshot of the Home page with an arrow pointing to the Train Model card](https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-hub-train-model-card.avif)
+    ![Ultralytics HUB screenshot of the Home page with an arrow pointing to the Train Model card](https://github.com/ultralytics/docs/releases/download/0/ultralytics-hub-train-model-card.avif)
 
 This action will trigger the **Train Model** dialog which has three simple steps:
 
@@ -38,43 +38,43 @@ This action will trigger the **Train Model** dialog which has three simple steps
 
 In this step, you have to select the dataset you want to train your model on. After you selected a dataset, click **Continue**.
 
-![numa_ultralytics HUB screenshot of the Train Model dialog with an arrow pointing to a dataset and one to the Continue button](https://github.com/numa_ultralytics/docs/releases/download/0/hub-train-model-dialog-dataset-step.avif)
+![Ultralytics HUB screenshot of the Train Model dialog with an arrow pointing to a dataset and one to the Continue button](https://github.com/ultralytics/docs/releases/download/0/hub-train-model-dialog-dataset-step.avif)
 
 ??? tip
 
     You can skip this step if you train a model directly from the Dataset page.
 
-    ![numa_ultralytics HUB screenshot of the Dataset page with an arrow pointing to the Train Model button](https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-hub-dataset-page-train-model-button.avif)
+    ![Ultralytics HUB screenshot of the Dataset page with an arrow pointing to the Train Model button](https://github.com/ultralytics/docs/releases/download/0/ultralytics-hub-dataset-page-train-model-button.avif)
 
 ### 2. Model
 
 In this step, you have to choose the project in which you want to create your model, the name of your model and your model's architecture.
 
-![numa_ultralytics HUB screenshot of the Train Model dialog with arrows pointing to the project dropdown, model name and Continue button](https://github.com/numa_ultralytics/docs/releases/download/0/hub-train-model-dialog.avif)
+![Ultralytics HUB screenshot of the Train Model dialog with arrows pointing to the project dropdown, model name and Continue button](https://github.com/ultralytics/docs/releases/download/0/hub-train-model-dialog.avif)
 
 ??? note
 
-    numa_ultralytics HUB will try to pre-select the project.
+    Ultralytics HUB will try to pre-select the project.
 
-    If you opened the **Train Model** dialog as described above, [numa_ultralytics HUB](https://www.numa_ultralytics.com/hub) will pre-select the last project you used.
+    If you opened the **Train Model** dialog as described above, [Ultralytics HUB](https://www.ultralytics.com/hub) will pre-select the last project you used.
 
-    If you opened the **Train Model** dialog from the Project page, [numa_ultralytics HUB](https://www.numa_ultralytics.com/hub) will pre-select the project you were inside of.
+    If you opened the **Train Model** dialog from the Project page, [Ultralytics HUB](https://www.ultralytics.com/hub) will pre-select the project you were inside of.
 
-    ![numa_ultralytics HUB screenshot of the Project page with an arrow pointing to the Train Model button](https://github.com/numa_ultralytics/docs/releases/download/0/hub-train-model-button.avif)
+    ![Ultralytics HUB screenshot of the Project page with an arrow pointing to the Train Model button](https://github.com/ultralytics/docs/releases/download/0/hub-train-model-button.avif)
 
     In case you don't have a project created yet, you can set the name of your project in this step and it will be created together with your model.
 
 !!! info
 
-    You can read more about the available [YOLO models](https://docs.numa_ultralytics.com/models/) and architectures in our documentation.
+    You can read more about the available [YOLO models](https://docs.ultralytics.com/models/) and architectures in our documentation.
 
-By default, your model will use a pre-trained model (trained on the [COCO](https://docs.numa_ultralytics.com/datasets/detect/coco/) dataset) to reduce training time. You can change this behavior and tweak your model's configuration by opening the **Advanced Model Configuration** accordion.
+By default, your model will use a pre-trained model (trained on the [COCO](https://docs.ultralytics.com/datasets/detect/coco/) dataset) to reduce training time. You can change this behavior and tweak your model's configuration by opening the **Advanced Model Configuration** accordion.
 
-![numa_ultralytics HUB screenshot of the Train Model dialog with an arrow pointing to the Advanced Model Configuration accordion](https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-hub-train-model-dialog-2.avif)
+![Ultralytics HUB screenshot of the Train Model dialog with an arrow pointing to the Advanced Model Configuration accordion](https://github.com/ultralytics/docs/releases/download/0/ultralytics-hub-train-model-dialog-2.avif)
 
 !!! note
 
-    You can easily change the most common model configuration options (such as the number of epochs) but you can also use the **Custom** option to access all [Train Settings](https://docs.numa_ultralytics.com/modes/train/#train-settings) relevant to [numa_ultralytics HUB](https://www.numa_ultralytics.com/hub).
+    You can easily change the most common model configuration options (such as the number of epochs) but you can also use the **Custom** option to access all [Train Settings](https://docs.ultralytics.com/modes/train/#train-settings) relevant to [Ultralytics HUB](https://www.ultralytics.com/hub).
 
 <p align="center">
   <br>
@@ -84,12 +84,12 @@ By default, your model will use a pre-trained model (trained on the [COCO](https
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> How to Configure numa_ultralytics YOLOv8 Training Parameters in numa_ultralytics HUB
+  <strong>Watch:</strong> How to Configure Ultralytics YOLOv8 Training Parameters in Ultralytics HUB
 </p>
 
 Alternatively, you start training from one of your previously trained models by clicking on the **Custom** tab.
 
-![numa_ultralytics HUB screenshot of the Train Model dialog with an arrow pointing to the Custom tab](https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-hub-train-model-dialog-3.avif)
+![Ultralytics HUB screenshot of the Train Model dialog with an arrow pointing to the Custom tab](https://github.com/ultralytics/docs/releases/download/0/ultralytics-hub-train-model-dialog-3.avif)
 
 When you're happy with your model configuration, click **Continue**.
 
@@ -101,43 +101,43 @@ In this step, you will start training you model.
 
     When you are on this step, you have the option to close the **Train Model** dialog and start training your model from the Model page later.
 
-    ![numa_ultralytics HUB screenshot of the Model page with an arrow pointing to the Start Training card](https://github.com/numa_ultralytics/docs/releases/download/0/hub-cloud-training-model-page-start-training.avif)
+    ![Ultralytics HUB screenshot of the Model page with an arrow pointing to the Start Training card](https://github.com/ultralytics/docs/releases/download/0/hub-cloud-training-model-page-start-training.avif)
 
-[numa_ultralytics HUB](https://www.numa_ultralytics.com/hub) offers three training options:
+[Ultralytics HUB](https://www.ultralytics.com/hub) offers three training options:
 
-- [numa_ultralytics Cloud](./cloud-training.md)
+- [Ultralytics Cloud](./cloud-training.md)
 - Google Colab
 - Bring your own agent
 
-#### a. numa_ultralytics Cloud
+#### a. Ultralytics Cloud
 
-You need to [upgrade](./pro.md#upgrade) to the [Pro Plan](./pro.md) in order to access [numa_ultralytics Cloud](./cloud-training.md).
+You need to [upgrade](./pro.md#upgrade) to the [Pro Plan](./pro.md) in order to access [Ultralytics Cloud](./cloud-training.md).
 
-![numa_ultralytics HUB screenshot of the Train Model dialog](https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-hub-train-model-dialog-4.avif)
+![Ultralytics HUB screenshot of the Train Model dialog](https://github.com/ultralytics/docs/releases/download/0/ultralytics-hub-train-model-dialog-4.avif)
 
-To train models using our [Cloud Training](./cloud-training.md) solution, read the [numa_ultralytics Cloud Training](./cloud-training.md) documentation.
+To train models using our [Cloud Training](./cloud-training.md) solution, read the [Ultralytics Cloud Training](./cloud-training.md) documentation.
 
 #### b. Google Colab
 
-To start training your model using [Google Colab](https://colab.research.google.com/github/numa_ultralytics/hub/blob/master/hub.ipynb), follow the instructions shown in the [numa_ultralytics HUB](https://www.numa_ultralytics.com/hub) **Train Model** dialog or on the [Google Colab](https://colab.research.google.com/github/numa_ultralytics/hub/blob/master/hub.ipynb) notebook.
+To start training your model using [Google Colab](https://colab.research.google.com/github/ultralytics/hub/blob/master/hub.ipynb), follow the instructions shown in the [Ultralytics HUB](https://www.ultralytics.com/hub) **Train Model** dialog or on the [Google Colab](https://colab.research.google.com/github/ultralytics/hub/blob/master/hub.ipynb) notebook.
 
-<a href="https://colab.research.google.com/github/numa_ultralytics/hub/blob/master/hub.ipynb" target="_blank">
+<a href="https://colab.research.google.com/github/ultralytics/hub/blob/master/hub.ipynb" target="_blank">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
 </a>
 
-![numa_ultralytics HUB screenshot of the Train Model dialog with arrows pointing to instructions](https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-hub-train-model-dialog-instructions.avif)
+![Ultralytics HUB screenshot of the Train Model dialog with arrows pointing to instructions](https://github.com/ultralytics/docs/releases/download/0/ultralytics-hub-train-model-dialog-instructions.avif)
 
 When the training starts, you can click **Done** and monitor the training progress on the Model page.
 
-![numa_ultralytics HUB screenshot of the Train Model dialog with an arrow pointing to the Done button](https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-hub-train-model-done-button.avif)
+![Ultralytics HUB screenshot of the Train Model dialog with an arrow pointing to the Done button](https://github.com/ultralytics/docs/releases/download/0/ultralytics-hub-train-model-done-button.avif)
 
-![numa_ultralytics HUB screenshot of the Model page of a model that is currently training](https://github.com/numa_ultralytics/docs/releases/download/0/hub-train-model-progress.avif)
+![Ultralytics HUB screenshot of the Model page of a model that is currently training](https://github.com/ultralytics/docs/releases/download/0/hub-train-model-progress.avif)
 
 !!! note
 
     In case the training stops and a checkpoint was saved, you can resume training your model from the Model page.
 
-    ![numa_ultralytics HUB screenshot of the Model page with an arrow pointing to the Resume Training card](https://github.com/numa_ultralytics/docs/releases/download/0/hub-train-model-resume-training.avif)
+    ![Ultralytics HUB screenshot of the Model page with an arrow pointing to the Resume Training card](https://github.com/ultralytics/docs/releases/download/0/hub-train-model-resume-training.avif)
 
 #### c. Bring your own agent
 
@@ -148,32 +148,32 @@ When the training starts, you can click **Done** and monitor the training progre
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Bring your Own Agent model training using numa_ultralytics HUB
+  <strong>Watch:</strong> Bring your Own Agent model training using Ultralytics HUB
 </p>
 
-To start training your model using your own agent, follow the instructions shown in the [numa_ultralytics HUB](https://www.numa_ultralytics.com/hub) **Train Model** dialog.
+To start training your model using your own agent, follow the instructions shown in the [Ultralytics HUB](https://www.ultralytics.com/hub) **Train Model** dialog.
 
-![numa_ultralytics HUB screenshot of the Train Model dialog with arrows pointing to instructions](https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-hub-train-model-dialog-instructions-1.avif)
+![Ultralytics HUB screenshot of the Train Model dialog with arrows pointing to instructions](https://github.com/ultralytics/docs/releases/download/0/ultralytics-hub-train-model-dialog-instructions-1.avif)
 
-Install the `numa_ultralytics` package from [PyPI](https://pypi.org/project/numa_ultralytics/).
+Install the `ultralytics` package from [PyPI](https://pypi.org/project/ultralytics/).
 
 ```bash
-pip install -U numa_ultralytics
+pip install -U ultralytics
 ```
 
 Next, use the Python code provided to start training the model.
 
 When the training starts, you can click **Done** and monitor the training progress on the Model page.
 
-![numa_ultralytics HUB screenshot of the Train Model dialog with an arrow pointing to the Done button](https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-hub-train-model-done-button-1.avif)
+![Ultralytics HUB screenshot of the Train Model dialog with an arrow pointing to the Done button](https://github.com/ultralytics/docs/releases/download/0/ultralytics-hub-train-model-done-button-1.avif)
 
-![numa_ultralytics HUB screenshot of the Model page of a model that is currently training](https://github.com/numa_ultralytics/docs/releases/download/0/model-training-progress.avif)
+![Ultralytics HUB screenshot of the Model page of a model that is currently training](https://github.com/ultralytics/docs/releases/download/0/model-training-progress.avif)
 
 !!! note
 
     In case the training stops and a checkpoint was saved, you can resume training your model from the Model page.
 
-    ![numa_ultralytics HUB screenshot of the Model page with an arrow pointing to the Resume Training card](https://github.com/numa_ultralytics/docs/releases/download/0/hub-train-model-resume-training-1.avif)
+    ![Ultralytics HUB screenshot of the Model page with an arrow pointing to the Resume Training card](https://github.com/ultralytics/docs/releases/download/0/hub-train-model-resume-training-1.avif)
 
 ## Analyze Model
 
@@ -181,23 +181,23 @@ After you [train a model](#train-model), you can analyze the model metrics.
 
 The **Train** tab presents the most important metrics carefully grouped based on the task.
 
-![numa_ultralytics HUB screenshot of the Model page of a trained model](https://github.com/numa_ultralytics/docs/releases/download/0/hub-analyze-model.avif)
+![Ultralytics HUB screenshot of the Model page of a trained model](https://github.com/ultralytics/docs/releases/download/0/hub-analyze-model.avif)
 
 To access all model metrics, click on the **Charts** tab.
 
-![numa_ultralytics HUB screenshot of the Preview tab inside the Model page with an arrow pointing to the Charts tab](https://github.com/numa_ultralytics/docs/releases/download/0/hub-analyze-model-2.avif)
+![Ultralytics HUB screenshot of the Preview tab inside the Model page with an arrow pointing to the Charts tab](https://github.com/ultralytics/docs/releases/download/0/hub-analyze-model-2.avif)
 
 ??? tip
 
     Each chart can be enlarged for better visualization.
 
-    ![numa_ultralytics HUB screenshot of the Train tab inside the Model page with an arrow pointing to the expand icon of one of the charts](https://github.com/numa_ultralytics/docs/releases/download/0/hub-analyze-model-train-tab-expand-icon.avif)
+    ![Ultralytics HUB screenshot of the Train tab inside the Model page with an arrow pointing to the expand icon of one of the charts](https://github.com/ultralytics/docs/releases/download/0/hub-analyze-model-train-tab-expand-icon.avif)
 
-    ![numa_ultralytics HUB screenshot of the Train tab inside the Model page with one of the charts expanded](https://github.com/numa_ultralytics/docs/releases/download/0/hub-analyze-model-train-tab-expanded-chart.avif)
+    ![Ultralytics HUB screenshot of the Train tab inside the Model page with one of the charts expanded](https://github.com/ultralytics/docs/releases/download/0/hub-analyze-model-train-tab-expanded-chart.avif)
 
     Furthermore, to properly analyze the data, you can utilize the zoom feature.
 
-    ![numa_ultralytics HUB screenshot of the Train tab inside the Model page with one of the charts expanded and zoomed](https://github.com/numa_ultralytics/docs/releases/download/0/hub-analyze-model-zoomed-chart.avif)
+    ![Ultralytics HUB screenshot of the Train tab inside the Model page with one of the charts expanded and zoomed](https://github.com/ultralytics/docs/releases/download/0/hub-analyze-model-zoomed-chart.avif)
 
 ## Preview Model
 
@@ -205,21 +205,21 @@ After you [train a model](#train-model), you can preview it by clicking on the *
 
 In the **Test** card, you can select a preview image from the dataset used during training or upload an image from your device.
 
-![numa_ultralytics HUB screenshot of the Preview tab inside the Model page with an arrow pointing to Charts tab and one to the Test card](https://github.com/numa_ultralytics/docs/releases/download/0/hub-preview-model-charts-test-card.avif)
+![Ultralytics HUB screenshot of the Preview tab inside the Model page with an arrow pointing to Charts tab and one to the Test card](https://github.com/ultralytics/docs/releases/download/0/hub-preview-model-charts-test-card.avif)
 
 !!! note
 
     You can also use your camera to take a picture and run inference on it directly.
 
-    ![numa_ultralytics HUB screenshot of the Preview tab inside the Model page with an arrow pointing to Camera tab inside the Test card](https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-hub-preview-camera-tab.avif)
+    ![Ultralytics HUB screenshot of the Preview tab inside the Model page with an arrow pointing to Camera tab inside the Test card](https://github.com/ultralytics/docs/releases/download/0/ultralytics-hub-preview-camera-tab.avif)
 
-Furthermore, you can preview your model in real-time directly on your [iOS](https://apps.apple.com/xk/app/numa_ultralytics/id1583935240) or [Android](https://play.google.com/store/apps/details?id=com.numa_ultralytics.numa_ultralytics_app) mobile device by [downloading](https://www.numa_ultralytics.com/app-install) our [numa_ultralytics HUB App](app/index.md).
+Furthermore, you can preview your model in real-time directly on your [iOS](https://apps.apple.com/xk/app/ultralytics/id1583935240) or [Android](https://play.google.com/store/apps/details?id=com.ultralytics.ultralytics_app) mobile device by [downloading](https://www.ultralytics.com/app-install) our [Ultralytics HUB App](app/index.md).
 
-![numa_ultralytics HUB screenshot of the Deploy tab inside the Model page with arrow pointing to the Real-Time Preview card](https://github.com/numa_ultralytics/docs/releases/download/0/deploy-tab-real-time-preview-card.avif)
+![Ultralytics HUB screenshot of the Deploy tab inside the Model page with arrow pointing to the Real-Time Preview card](https://github.com/ultralytics/docs/releases/download/0/deploy-tab-real-time-preview-card.avif)
 
 ## Deploy Model
 
-After you [train a model](#train-model), you can export it to 13 different formats, including ONNX, OpenVINO, CoreML, [TensorFlow](https://www.numa_ultralytics.com/glossary/tensorflow), Paddle and many others.
+After you [train a model](#train-model), you can export it to 13 different formats, including ONNX, OpenVINO, CoreML, [TensorFlow](https://www.ultralytics.com/glossary/tensorflow), Paddle and many others.
 
 <p align="center">
   <iframe loading="lazy" width="720" height="405" src="https://www.youtube.com/embed/K69DUpSBNdA"
@@ -228,16 +228,16 @@ After you [train a model](#train-model), you can export it to 13 different forma
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> How to Export the numa_ultralytics YOLO11 to ONNX, OpenVINO and Other Formats using numa_ultralytics HUB 🚀
+  <strong>Watch:</strong> How to Export the Ultralytics YOLO11 to ONNX, OpenVINO and Other Formats using Ultralytics HUB 🚀
 </p>
 
-![numa_ultralytics HUB screenshot of the Deploy tab inside the Model page with an arrow pointing to the Export card and all formats exported](https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-hub-deploy-export-formats.avif)
+![Ultralytics HUB screenshot of the Deploy tab inside the Model page with an arrow pointing to the Export card and all formats exported](https://github.com/ultralytics/docs/releases/download/0/ultralytics-hub-deploy-export-formats.avif)
 
 ??? tip
 
     You can customize the export options of each format if you open the export actions dropdown and click on the **Advanced** option.
 
-    ![numa_ultralytics HUB screenshot of the Deploy tab inside the Model page with an arrow pointing to the Advanced option of one of the formats](https://github.com/numa_ultralytics/docs/releases/download/0/hub-deploy-model-advanced-option.avif)
+    ![Ultralytics HUB screenshot of the Deploy tab inside the Model page with an arrow pointing to the Advanced option of one of the formats](https://github.com/ultralytics/docs/releases/download/0/hub-deploy-model-advanced-option.avif)
 
 !!! note
 
@@ -245,35 +245,35 @@ After you [train a model](#train-model), you can export it to 13 different forma
 
 You can also use our [Inference API](./inference-api.md) in production.
 
-![numa_ultralytics HUB screenshot of the Deploy tab inside the Model page with an arrow pointing to the numa_ultralytics Inference API card](https://github.com/numa_ultralytics/docs/releases/download/0/hub-inference-api-card.avif)
+![Ultralytics HUB screenshot of the Deploy tab inside the Model page with an arrow pointing to the Ultralytics Inference API card](https://github.com/ultralytics/docs/releases/download/0/hub-inference-api-card.avif)
 
-Read the [numa_ultralytics Inference API](./inference-api.md) documentation for more information.
+Read the [Ultralytics Inference API](./inference-api.md) documentation for more information.
 
 ## Share Model
 
 !!! info
 
-    [numa_ultralytics HUB](https://www.numa_ultralytics.com/hub)'s sharing functionality provides a convenient way to share models with others. This feature is designed to accommodate both existing [numa_ultralytics HUB](https://www.numa_ultralytics.com/hub) users and those who have yet to create an account.
+    [Ultralytics HUB](https://www.ultralytics.com/hub)'s sharing functionality provides a convenient way to share models with others. This feature is designed to accommodate both existing [Ultralytics HUB](https://www.ultralytics.com/hub) users and those who have yet to create an account.
 
 ??? note
 
     You have control over the general access of your models.
 
-    You can choose to set the general access to "Private", in which case, only you will have access to it. Alternatively, you can set the general access to "Unlisted" which grants viewing access to anyone who has the direct link to the model, regardless of whether they have an [numa_ultralytics HUB](https://www.numa_ultralytics.com/hub) account or not.
+    You can choose to set the general access to "Private", in which case, only you will have access to it. Alternatively, you can set the general access to "Unlisted" which grants viewing access to anyone who has the direct link to the model, regardless of whether they have an [Ultralytics HUB](https://www.ultralytics.com/hub) account or not.
 
 Navigate to the Model page of the model you want to share, open the model actions dropdown and click on the **Share** option. This action will trigger the **Share Model** dialog.
 
-![numa_ultralytics HUB screenshot of the Model page with an arrow pointing to the Share option](https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-hub-share-model.avif)
+![Ultralytics HUB screenshot of the Model page with an arrow pointing to the Share option](https://github.com/ultralytics/docs/releases/download/0/ultralytics-hub-share-model.avif)
 
 ??? tip
 
-    You can also share a model directly from the [Models](https://hub.numa_ultralytics.com/models) page or from the Project page of the project where your model is located.
+    You can also share a model directly from the [Models](https://hub.ultralytics.com/models) page or from the Project page of the project where your model is located.
 
-    ![numa_ultralytics HUB screenshot of the Models page with an arrow pointing to the Share option of one of the models](https://github.com/numa_ultralytics/docs/releases/download/0/hub-share-model-2.avif)
+    ![Ultralytics HUB screenshot of the Models page with an arrow pointing to the Share option of one of the models](https://github.com/ultralytics/docs/releases/download/0/hub-share-model-2.avif)
 
 Set the general access to "Unlisted" and click **Save**.
 
-![numa_ultralytics HUB screenshot of the Share Model dialog with an arrow pointing to the dropdown and one to the Save button](https://github.com/numa_ultralytics/docs/releases/download/0/hub-share-model-dialog.avif)
+![Ultralytics HUB screenshot of the Share Model dialog with an arrow pointing to the dropdown and one to the Save button](https://github.com/ultralytics/docs/releases/download/0/hub-share-model-dialog.avif)
 
 Now, anyone who has the direct link to your model can view it.
 
@@ -281,38 +281,38 @@ Now, anyone who has the direct link to your model can view it.
 
     You can easily click on the model's link shown in the **Share Model** dialog to copy it.
 
-    ![numa_ultralytics HUB screenshot of the Share Model dialog with an arrow pointing to the model's link](https://github.com/numa_ultralytics/docs/releases/download/0/hub-share-model-link.avif)
+    ![Ultralytics HUB screenshot of the Share Model dialog with an arrow pointing to the model's link](https://github.com/ultralytics/docs/releases/download/0/hub-share-model-link.avif)
 
 ## Edit Model
 
 Navigate to the Model page of the model you want to edit, open the model actions dropdown and click on the **Edit** option. This action will trigger the **Update Model** dialog.
 
-![numa_ultralytics HUB screenshot of the Model page with an arrow pointing to the Edit option](https://github.com/numa_ultralytics/docs/releases/download/0/hub-edit-model-1.avif)
+![Ultralytics HUB screenshot of the Model page with an arrow pointing to the Edit option](https://github.com/ultralytics/docs/releases/download/0/hub-edit-model-1.avif)
 
 ??? tip
 
-    You can also edit a model directly from the [Models](https://hub.numa_ultralytics.com/models) page or from the Project page of the project where your model is located.
+    You can also edit a model directly from the [Models](https://hub.ultralytics.com/models) page or from the Project page of the project where your model is located.
 
-    ![numa_ultralytics HUB screenshot of the Models page with an arrow pointing to the Edit option of one of the models](https://github.com/numa_ultralytics/docs/releases/download/0/hub-edit-model-2.avif)
+    ![Ultralytics HUB screenshot of the Models page with an arrow pointing to the Edit option of one of the models](https://github.com/ultralytics/docs/releases/download/0/hub-edit-model-2.avif)
 
 Apply the desired modifications to your model and then confirm the changes by clicking **Save**.
 
-![numa_ultralytics HUB screenshot of the Update Model dialog with an arrow pointing to the Save button](https://github.com/numa_ultralytics/docs/releases/download/0/hub-edit-model-save-button.avif)
+![Ultralytics HUB screenshot of the Update Model dialog with an arrow pointing to the Save button](https://github.com/ultralytics/docs/releases/download/0/hub-edit-model-save-button.avif)
 
 ## Delete Model
 
 Navigate to the Model page of the model you want to delete, open the model actions dropdown and click on the **Delete** option. This action will delete the model.
 
-![numa_ultralytics HUB screenshot of the Model page with an arrow pointing to the Delete option](https://github.com/numa_ultralytics/docs/releases/download/0/hub-delete-model-1.avif)
+![Ultralytics HUB screenshot of the Model page with an arrow pointing to the Delete option](https://github.com/ultralytics/docs/releases/download/0/hub-delete-model-1.avif)
 
 ??? tip
 
-    You can also delete a model directly from the [Models](https://hub.numa_ultralytics.com/models) page or from the Project page of the project where your model is located.
+    You can also delete a model directly from the [Models](https://hub.ultralytics.com/models) page or from the Project page of the project where your model is located.
 
-    ![numa_ultralytics HUB screenshot of the Models page with an arrow pointing to the Delete option of one of the models](https://github.com/numa_ultralytics/docs/releases/download/0/hub-delete-model-2.avif)
+    ![Ultralytics HUB screenshot of the Models page with an arrow pointing to the Delete option of one of the models](https://github.com/ultralytics/docs/releases/download/0/hub-delete-model-2.avif)
 
 !!! note
 
-    If you change your mind, you can restore the model from the [Trash](https://hub.numa_ultralytics.com/trash) page.
+    If you change your mind, you can restore the model from the [Trash](https://hub.ultralytics.com/trash) page.
 
-    ![numa_ultralytics HUB screenshot of the Trash page with an arrow pointing to the Restore option of one of the models](https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-hub-trash-restore-option.avif)
+    ![Ultralytics HUB screenshot of the Trash page with an arrow pointing to the Restore option of one of the models](https://github.com/ultralytics/docs/releases/download/0/ultralytics-hub-trash-restore-option.avif)

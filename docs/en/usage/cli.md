@@ -1,7 +1,7 @@
 ---
 comments: true
 description: Explore the YOLO11 command line interface (CLI) for easy execution of detection tasks without needing a Python environment.
-keywords: YOLO11 CLI, command line interface, YOLO11 commands, detection tasks, numa_ultralytics, model training, model prediction
+keywords: YOLO11 CLI, command line interface, YOLO11 commands, detection tasks, Ultralytics, model training, model prediction
 ---
 
 # Command Line Interface Usage
@@ -16,14 +16,14 @@ The YOLO command line interface (CLI) allows for simple single-line commands wit
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Mastering numa_ultralytics YOLO: CLI
+  <strong>Watch:</strong> Mastering Ultralytics YOLO: CLI
 </p>
 
 !!! example
 
     === "Syntax"
 
-        numa_ultralytics `yolo` commands use the following syntax:
+        Ultralytics `yolo` commands use the following syntax:
         ```bash
         yolo TASK MODE ARGS
 
@@ -35,7 +35,7 @@ The YOLO command line interface (CLI) allows for simple single-line commands wit
 
     === "Train"
 
-        Train a detection model for 10 [epochs](https://www.numa_ultralytics.com/glossary/epoch) with an initial learning_rate of 0.01
+        Train a detection model for 10 [epochs](https://www.ultralytics.com/glossary/epoch) with an initial learning_rate of 0.01
         ```bash
         yolo train data=coco8.yaml model=yolo11n.pt epochs=10 lr0=0.01
         ```
@@ -109,7 +109,7 @@ Train YOLO11n on the COCO8 dataset for 100 epochs at image size 640. For a full 
 
 ## Val
 
-Validate trained YOLO11n model [accuracy](https://www.numa_ultralytics.com/glossary/accuracy) on the COCO8 dataset. No arguments are needed as the `model` retains its training `data` and arguments as model attributes.
+Validate trained YOLO11n model [accuracy](https://www.ultralytics.com/glossary/accuracy) on the COCO8 dataset. No arguments are needed as the `model` retains its training `data` and arguments as model attributes.
 
 !!! example
 
@@ -137,14 +137,14 @@ Use a trained YOLO11n model to run predictions on images.
 
         Predict with an official YOLO11n model.
         ```bash
-        yolo detect predict model=yolo11n.pt source='https://numa_ultralytics.com/images/bus.jpg'
+        yolo detect predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
         ```
 
     === "Custom"
 
         Predict with a custom model.
         ```bash
-        yolo detect predict model=path/to/best.pt source='https://numa_ultralytics.com/images/bus.jpg'
+        yolo detect predict model=path/to/best.pt source='https://ultralytics.com/images/bus.jpg'
         ```
 
 ## Export
@@ -219,9 +219,9 @@ This will create `default_copy.yaml`, which you can then pass as `cfg=default_co
 
 ## FAQ
 
-### How do I use the numa_ultralytics YOLO11 command line interface (CLI) for model training?
+### How do I use the Ultralytics YOLO11 command line interface (CLI) for model training?
 
-To train a YOLO11 model using the CLI, you can execute a simple one-line command in the terminal. For example, to train a detection model for 10 epochs with a [learning rate](https://www.numa_ultralytics.com/glossary/learning-rate) of 0.01, you would run:
+To train a YOLO11 model using the CLI, you can execute a simple one-line command in the terminal. For example, to train a detection model for 10 epochs with a [learning rate](https://www.ultralytics.com/glossary/learning-rate) of 0.01, you would run:
 
 ```bash
 yolo train data=coco8.yaml model=yolo11n.pt epochs=10 lr0=0.01
@@ -229,9 +229,9 @@ yolo train data=coco8.yaml model=yolo11n.pt epochs=10 lr0=0.01
 
 This command uses the `train` mode with specific arguments. Refer to the full list of available arguments in the [Configuration Guide](cfg.md).
 
-### What tasks can I perform with the numa_ultralytics YOLO11 CLI?
+### What tasks can I perform with the Ultralytics YOLO11 CLI?
 
-The numa_ultralytics YOLO11 CLI supports a variety of tasks including detection, segmentation, classification, validation, prediction, export, and tracking. For instance:
+The Ultralytics YOLO11 CLI supports a variety of tasks including detection, segmentation, classification, validation, prediction, export, and tracking. For instance:
 
 - **Train a Model**: Run `yolo train data=<data.yaml> model=<model.pt> epochs=<num>`.
 - **Run Predictions**: Use `yolo predict model=<model.pt> source=<data_source> imgsz=<image_size>`.
@@ -241,7 +241,7 @@ Each task can be customized with various arguments. For detailed syntax and exam
 
 ### How can I validate the accuracy of a trained YOLO11 model using the CLI?
 
-To validate a YOLO11 model's accuracy, use the `val` mode. For example, to validate a pretrained detection model with a [batch size](https://www.numa_ultralytics.com/glossary/batch-size) of 1 and image size of 640, run:
+To validate a YOLO11 model's accuracy, use the `val` mode. For example, to validate a pretrained detection model with a [batch size](https://www.ultralytics.com/glossary/batch-size) of 1 and image size of 640, run:
 
 ```bash
 yolo val model=yolo11n.pt data=coco8.yaml batch=1 imgsz=640

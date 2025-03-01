@@ -1,22 +1,22 @@
 ---
 comments: true
 description: Discover how to integrate YOLO11 with ClearML to streamline your MLOps workflow, automate experiments, and enhance model management effortlessly.
-keywords: YOLO11, ClearML, MLOps, numa_ultralytics, machine learning, object detection, model training, automation, experiment management
+keywords: YOLO11, ClearML, MLOps, Ultralytics, machine learning, object detection, model training, automation, experiment management
 ---
 
 # Training YOLO11 with ClearML: Streamlining Your MLOps Workflow
 
-MLOps bridges the gap between creating and deploying [machine learning](https://www.numa_ultralytics.com/glossary/machine-learning-ml) models in real-world settings. It focuses on efficient deployment, scalability, and ongoing management to ensure models perform well in practical applications.
+MLOps bridges the gap between creating and deploying [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) models in real-world settings. It focuses on efficient deployment, scalability, and ongoing management to ensure models perform well in practical applications.
 
-[numa_ultralytics YOLO11](https://www.numa_ultralytics.com/) effortlessly integrates with ClearML, streamlining and enhancing your [object detection](https://www.numa_ultralytics.com/glossary/object-detection) model's training and management. This guide will walk you through the integration process, detailing how to set up ClearML, manage experiments, automate model management, and collaborate effectively.
+[Ultralytics YOLO11](https://www.ultralytics.com/) effortlessly integrates with ClearML, streamlining and enhancing your [object detection](https://www.ultralytics.com/glossary/object-detection) model's training and management. This guide will walk you through the integration process, detailing how to set up ClearML, manage experiments, automate model management, and collaborate effectively.
 
 ## ClearML
 
 <p align="center">
-  <img width="100%" src="https://github.com/numa_ultralytics/docs/releases/download/0/clearml-overview.avif" alt="ClearML Overview">
+  <img width="100%" src="https://github.com/ultralytics/docs/releases/download/0/clearml-overview.avif" alt="ClearML Overview">
 </p>
 
-[ClearML](https://clear.ml/) is an innovative open-source MLOps platform that is skillfully designed to automate, monitor, and orchestrate machine learning workflows. Its key features include automated logging of all training and inference data for full experiment reproducibility, an intuitive web UI for easy [data visualization](https://www.numa_ultralytics.com/glossary/data-visualization) and analysis, advanced hyperparameter [optimization algorithms](https://www.numa_ultralytics.com/glossary/optimization-algorithm), and robust model management for efficient deployment across various platforms.
+[ClearML](https://clear.ml/) is an innovative open-source MLOps platform that is skillfully designed to automate, monitor, and orchestrate machine learning workflows. Its key features include automated logging of all training and inference data for full experiment reproducibility, an intuitive web UI for easy [data visualization](https://www.ultralytics.com/glossary/data-visualization) and analysis, advanced hyperparameter [optimization algorithms](https://www.ultralytics.com/glossary/optimization-algorithm), and robust model management for efficient deployment across various platforms.
 
 ## YOLO11 Training with ClearML
 
@@ -32,7 +32,7 @@ To install the required packages, run:
 
         ```bash
         # Install the required packages for YOLO11 and ClearML
-        pip install numa_ultralytics clearml
+        pip install ultralytics clearml
         ```
 
 For detailed instructions and best practices related to the installation process, be sure to check our [YOLO11 Installation guide](../quickstart.md). While installing the required packages for YOLO11, if you encounter any difficulties, consult our [Common Issues guide](../guides/yolo-common-issues.md) for solutions and tips.
@@ -56,7 +56,7 @@ After executing this command, visit the [ClearML Settings page](https://app.clea
 
 ## Usage
 
-Before diving into the usage instructions, be sure to check out the range of [YOLO11 models offered by numa_ultralytics](../models/index.md). This will help you choose the most appropriate model for your project requirements.
+Before diving into the usage instructions, be sure to check out the range of [YOLO11 models offered by Ultralytics](../models/index.md). This will help you choose the most appropriate model for your project requirements.
 
 !!! example "Usage"
 
@@ -65,7 +65,7 @@ Before diving into the usage instructions, be sure to check out the range of [YO
         ```python
         from clearml import Task
 
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Step 1: Creating a ClearML Task
         task = Task.init(project_name="my_project", task_name="my_yolov8_task")
@@ -93,9 +93,9 @@ Let's understand the steps showcased in the usage code snippet above.
 
 **Step 2: Selecting the YOLO11 Model**: The `model_variant` variable is set to 'yolo11n', one of the YOLO11 models. This variant is then logged in ClearML for tracking.
 
-**Step 3: Loading the YOLO11 Model**: The selected YOLO11 model is loaded using numa_ultralytics' YOLO class, preparing it for training.
+**Step 3: Loading the YOLO11 Model**: The selected YOLO11 model is loaded using Ultralytics' YOLO class, preparing it for training.
 
-**Step 4: Setting Up Training Arguments**: Key training arguments like the dataset (`coco8.yaml`) and the number of [epochs](https://www.numa_ultralytics.com/glossary/epoch) (`16`) are organized in a dictionary and connected to the ClearML task. This allows for tracking and potential modification via the ClearML UI. For a detailed understanding of the model training process and best practices, refer to our [YOLO11 Model Training guide](../modes/train.md).
+**Step 4: Setting Up Training Arguments**: Key training arguments like the dataset (`coco8.yaml`) and the number of [epochs](https://www.ultralytics.com/glossary/epoch) (`16`) are organized in a dictionary and connected to the ClearML task. This allows for tracking and potential modification via the ClearML UI. For a detailed understanding of the model training process and best practices, refer to our [YOLO11 Model Training guide](../modes/train.md).
 
 **Step 5: Initiating Model Training**: The model training is started with the specified arguments. The results of the training process are captured in the `results` variable.
 
@@ -107,7 +107,7 @@ Upon running the usage code snippet above, you can expect the following output:
 - An informational message about the script code being stored, indicating that the code execution is being tracked by ClearML.
 - A URL link to the ClearML results page where you can monitor the training progress and view detailed logs.
 - Download progress for the YOLO11 model and the specified dataset, followed by a summary of the model architecture and training configuration.
-- Initialization messages for various training components like TensorBoard, Automatic [Mixed Precision](https://www.numa_ultralytics.com/glossary/mixed-precision) (AMP), and dataset preparation.
+- Initialization messages for various training components like TensorBoard, Automatic [Mixed Precision](https://www.ultralytics.com/glossary/mixed-precision) (AMP), and dataset preparation.
 - Finally, the training process starts, with progress updates as the model trains on the specified dataset. For an in-depth understanding of the performance metrics used during training, read [our guide on performance metrics](../guides/yolo-performance-metrics.md).
 
 ### Viewing the ClearML Results Page
@@ -118,28 +118,28 @@ By clicking on the URL link to the ClearML results page in the output of the usa
 
 - **Real-Time Metrics Tracking**
 
-  - Track critical metrics like loss, [accuracy](https://www.numa_ultralytics.com/glossary/accuracy), and validation scores as they occur.
-  - Provides immediate feedback for timely model performance adjustments.
+    - Track critical metrics like loss, [accuracy](https://www.ultralytics.com/glossary/accuracy), and validation scores as they occur.
+    - Provides immediate feedback for timely model performance adjustments.
 
 - **Experiment Comparison**
 
-  - Compare different training runs side-by-side.
-  - Essential for [hyperparameter tuning](https://www.numa_ultralytics.com/glossary/hyperparameter-tuning) and identifying the most effective models.
+    - Compare different training runs side-by-side.
+    - Essential for [hyperparameter tuning](https://www.ultralytics.com/glossary/hyperparameter-tuning) and identifying the most effective models.
 
 - **Detailed Logs and Outputs**
 
-  - Access comprehensive logs, graphical representations of metrics, and console outputs.
-  - Gain a deeper understanding of model behavior and issue resolution.
+    - Access comprehensive logs, graphical representations of metrics, and console outputs.
+    - Gain a deeper understanding of model behavior and issue resolution.
 
 - **Resource Utilization Monitoring**
 
-  - Monitor the utilization of computational resources, including CPU, GPU, and memory.
-  - Key to optimizing training efficiency and costs.
+    - Monitor the utilization of computational resources, including CPU, GPU, and memory.
+    - Key to optimizing training efficiency and costs.
 
 - **Model Artifacts Management**
 
-  - View, download, and share model artifacts like trained models and checkpoints.
-  - Enhances collaboration and streamlines [model deployment](https://www.numa_ultralytics.com/glossary/model-deployment) and sharing.
+    - View, download, and share model artifacts like trained models and checkpoints.
+    - Enhances collaboration and streamlines [model deployment](https://www.ultralytics.com/glossary/model-deployment) and sharing.
 
 For a visual walkthrough of what the ClearML Results Page looks like, watch the video below:
 
@@ -175,25 +175,25 @@ This setup is applicable to cloud VMs, local GPUs, or laptops. ClearML Autoscale
 ClearML's user-friendly interface allows easy cloning, editing, and enqueuing of tasks. Users can clone an existing experiment, adjust parameters or other details through the UI, and enqueue the task for execution. This streamlined process ensures that the ClearML Agent executing the task uses updated configurations, making it ideal for iterative experimentation and model fine-tuning.
 
 <p align="center"><br>
-  <img width="100%" src="https://github.com/numa_ultralytics/docs/releases/download/0/cloning-editing-enqueuing-clearml.avif" alt="Cloning, Editing, and Enqueuing with ClearML">
+  <img width="100%" src="https://github.com/ultralytics/docs/releases/download/0/cloning-editing-enqueuing-clearml.avif" alt="Cloning, Editing, and Enqueuing with ClearML">
 </p>
 
 ## Summary
 
-This guide has led you through the process of integrating ClearML with numa_ultralytics' YOLO11. Covering everything from initial setup to advanced model management, you've discovered how to leverage ClearML for efficient training, experiment tracking, and workflow optimization in your machine learning projects.
+This guide has led you through the process of integrating ClearML with Ultralytics' YOLO11. Covering everything from initial setup to advanced model management, you've discovered how to leverage ClearML for efficient training, experiment tracking, and workflow optimization in your machine learning projects.
 
 For further details on usage, visit [ClearML's official documentation](https://clear.ml/docs/latest/docs/integrations/yolov8/).
 
-Additionally, explore more integrations and capabilities of numa_ultralytics by visiting the [numa_ultralytics integration guide page](../integrations/index.md), which is a treasure trove of resources and insights.
+Additionally, explore more integrations and capabilities of Ultralytics by visiting the [Ultralytics integration guide page](../integrations/index.md), which is a treasure trove of resources and insights.
 
 ## FAQ
 
-### What is the process for integrating numa_ultralytics YOLO11 with ClearML?
+### What is the process for integrating Ultralytics YOLO11 with ClearML?
 
-Integrating numa_ultralytics YOLO11 with ClearML involves a series of steps to streamline your MLOps workflow. First, install the necessary packages:
+Integrating Ultralytics YOLO11 with ClearML involves a series of steps to streamline your MLOps workflow. First, install the necessary packages:
 
 ```bash
-pip install numa_ultralytics clearml
+pip install ultralytics clearml
 ```
 
 Next, initialize the ClearML SDK in your environment using:
@@ -204,9 +204,9 @@ clearml-init
 
 You then configure ClearML with your credentials from the [ClearML Settings page](https://app.clear.ml/settings/workspace-configuration). Detailed instructions on the entire setup process, including model selection and training configurations, can be found in our [YOLO11 Model Training guide](../modes/train.md).
 
-### Why should I use ClearML with numa_ultralytics YOLO11 for my machine learning projects?
+### Why should I use ClearML with Ultralytics YOLO11 for my machine learning projects?
 
-Using ClearML with numa_ultralytics YOLO11 enhances your machine learning projects by automating experiment tracking, streamlining workflows, and enabling robust model management. ClearML offers real-time metrics tracking, resource utilization monitoring, and a user-friendly interface for comparing experiments. These features help optimize your model's performance and make the development process more efficient. Learn more about the benefits and procedures in our [MLOps Integration guide](../modes/train.md).
+Using ClearML with Ultralytics YOLO11 enhances your machine learning projects by automating experiment tracking, streamlining workflows, and enabling robust model management. ClearML offers real-time metrics tracking, resource utilization monitoring, and a user-friendly interface for comparing experiments. These features help optimize your model's performance and make the development process more efficient. Learn more about the benefits and procedures in our [MLOps Integration guide](../modes/train.md).
 
 ### How do I troubleshoot common issues during YOLO11 and ClearML integration?
 
@@ -219,7 +219,7 @@ Setting up a ClearML task for YOLO11 training involves initializing a task, sele
 ```python
 from clearml import Task
 
-from numa_ultralytics import YOLO
+from ultralytics import YOLO
 
 # Step 1: Creating a ClearML Task
 task = Task.init(project_name="my_project", task_name="my_yolov8_task")

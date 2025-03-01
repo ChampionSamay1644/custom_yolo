@@ -1,6 +1,6 @@
-# numa_ultralytics 🚀 AGPL-3.0 License - https://numa_ultralytics.com/license
+# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
 """
-Helper file to build numa_ultralytics Docs reference section. Recursively walks through numa_ultralytics dir and builds an MkDocs
+Helper file to build Ultralytics Docs reference section. Recursively walks through ultralytics dir and builds an MkDocs
 reference section of *.md files composed of classes and functions, and also creates a nav menu for use in mkdocs.yaml.
 
 Note: Must be run from repository root directory. Do not run from docs directory.
@@ -16,12 +16,12 @@ hub_sdk = False
 if hub_sdk:
     PACKAGE_DIR = Path("/Users/glennjocher/PycharmProjects/hub-sdk/hub_sdk")
     REFERENCE_DIR = PACKAGE_DIR.parent / "docs/reference"
-    GITHUB_REPO = "numa_ultralytics/hub-sdk"
+    GITHUB_REPO = "ultralytics/hub-sdk"
 else:
     FILE = Path(__file__).resolve()
-    PACKAGE_DIR = FILE.parents[1] / "numa_ultralytics"  # i.e. /Users/glennjocher/PycharmProjects/numa_ultralytics/numa_ultralytics
+    PACKAGE_DIR = FILE.parents[1] / "ultralytics"  # i.e. /Users/glennjocher/PycharmProjects/ultralytics/ultralytics
     REFERENCE_DIR = PACKAGE_DIR.parent / "docs/en/reference"
-    GITHUB_REPO = "numa_ultralytics/numa_ultralytics"
+    GITHUB_REPO = "ultralytics/ultralytics"
 
 
 def extract_classes_and_functions(filepath: Path) -> tuple:
@@ -61,7 +61,7 @@ def create_markdown(py_filepath: Path, module_path: str, classes: list, function
         f"# Reference for `{module_path}.py`\n\n"
         f"!!! note\n\n"
         f"    This file is available at [{pretty}]({url}). If you spot a problem please help fix it by [contributing]"
-        f"(https://docs.numa_ultralytics.com/help/contributing/) a [Pull Request]({edit}) 🛠️. Thank you 🙏!\n\n"
+        f"(https://docs.ultralytics.com/help/contributing/) a [Pull Request]({edit}) 🛠️. Thank you 🙏!\n\n"
     )
     md_content = ["<br>\n"] + [f"## ::: {module_name}.{class_name}\n\n<br><br><hr><br>\n" for class_name in classes]
     md_content.extend(f"## ::: {module_name}.{func_name}\n\n<br><br><hr><br>\n" for func_name in functions)

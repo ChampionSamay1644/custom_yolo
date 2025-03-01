@@ -1,4 +1,4 @@
-# numa_ultralytics 🚀 AGPL-3.0 License - https://numa_ultralytics.com/license
+# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
 
 import contextlib
 import os
@@ -9,9 +9,9 @@ from pathlib import Path
 import pytest
 
 from tests import MODEL, SOURCE, TMP
-from numa_ultralytics import YOLO, download
-from numa_ultralytics.utils import DATASETS_DIR, SETTINGS
-from numa_ultralytics.utils.checks import check_requirements
+from ultralytics import YOLO, download
+from ultralytics.utils import DATASETS_DIR, SETTINGS
+from ultralytics.utils.checks import check_requirements
 
 
 @pytest.mark.skipif(not check_requirements("ray", install=False), reason="ray[tune] not installed")
@@ -30,7 +30,7 @@ def test_mlflow():
     SETTINGS["mlflow"] = False
 
 
-@pytest.mark.skipif(True, reason="Test failing in scheduled CI https://github.com/numa_ultralytics/numa_ultralytics/pull/8868")
+@pytest.mark.skipif(True, reason="Test failing in scheduled CI https://github.com/ultralytics/ultralytics/pull/8868")
 @pytest.mark.skipif(not check_requirements("mlflow", install=False), reason="mlflow not installed")
 def test_mlflow_keep_run_active():
     """Ensure MLflow run status matches MLFLOW_KEEP_RUN_ACTIVE environment variable settings."""
@@ -121,12 +121,12 @@ def test_triton():
 @pytest.mark.skipif(not check_requirements("pycocotools", install=False), reason="pycocotools not installed")
 def test_pycocotools():
     """Validate YOLO model predictions on COCO dataset using pycocotools."""
-    from numa_ultralytics.models.yolo.detect import DetectionValidator
-    from numa_ultralytics.models.yolo.pose import PoseValidator
-    from numa_ultralytics.models.yolo.segment import SegmentationValidator
+    from ultralytics.models.yolo.detect import DetectionValidator
+    from ultralytics.models.yolo.pose import PoseValidator
+    from ultralytics.models.yolo.segment import SegmentationValidator
 
     # Download annotations after each dataset downloads first
-    url = "https://github.com/numa_ultralytics/assets/releases/download/v0.0.0/"
+    url = "https://github.com/ultralytics/assets/releases/download/v0.0.0/"
 
     args = {"model": "yolo11n.pt", "data": "coco8.yaml", "save_json": True, "imgsz": 64}
     validator = DetectionValidator(args=args)

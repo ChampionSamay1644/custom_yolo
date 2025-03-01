@@ -14,17 +14,17 @@ This guide walks you through YOLO11's deployment options and the essential facto
 
 ## How to Select the Right Deployment Option for Your YOLO11 Model
 
-When it's time to deploy your YOLO11 model, selecting a suitable export format is very important. As outlined in the [numa_ultralytics YOLO11 Modes documentation](../modes/export.md#usage-examples), the model.export() function allows for converting your trained model into a variety of formats tailored to diverse environments and performance requirements.
+When it's time to deploy your YOLO11 model, selecting a suitable export format is very important. As outlined in the [Ultralytics YOLO11 Modes documentation](../modes/export.md#usage-examples), the model.export() function allows for converting your trained model into a variety of formats tailored to diverse environments and performance requirements.
 
 The ideal format depends on your model's intended operational context, balancing speed, hardware constraints, and ease of integration. In the following section, we'll take a closer look at each export option, understanding when to choose each one.
 
 ### YOLO11's Deployment Options
 
-Let's walk through the different YOLO11 deployment options. For a detailed walkthrough of the export process, visit the [numa_ultralytics documentation page on exporting](../modes/export.md).
+Let's walk through the different YOLO11 deployment options. For a detailed walkthrough of the export process, visit the [Ultralytics documentation page on exporting](../modes/export.md).
 
 #### PyTorch
 
-PyTorch is an open-source machine learning library widely used for applications in [deep learning](https://www.numa_ultralytics.com/glossary/deep-learning-dl) and [artificial intelligence](https://www.numa_ultralytics.com/glossary/artificial-intelligence-ai). It provides a high level of flexibility and speed, which has made it a favorite among researchers and developers.
+PyTorch is an open-source machine learning library widely used for applications in [deep learning](https://www.ultralytics.com/glossary/deep-learning-dl) and [artificial intelligence](https://www.ultralytics.com/glossary/artificial-intelligence-ai). It provides a high level of flexibility and speed, which has made it a favorite among researchers and developers.
 
 - **Performance Benchmarks**: PyTorch is known for its ease of use and flexibility, which may result in a slight trade-off in raw performance when compared to other frameworks that are more specialized and optimized.
 
@@ -60,7 +60,7 @@ TorchScript extends PyTorch's capabilities by allowing the exportation of models
 
 #### ONNX
 
-The Open [Neural Network](https://www.numa_ultralytics.com/glossary/neural-network-nn) Exchange (ONNX) is a format that allows for model interoperability across different frameworks, which can be critical when deploying to various platforms.
+The Open [Neural Network](https://www.ultralytics.com/glossary/neural-network-nn) Exchange (ONNX) is a format that allows for model interoperability across different frameworks, which can be critical when deploying to various platforms.
 
 - **Performance Benchmarks**: ONNX models may experience a variable performance depending on the specific runtime they are deployed on.
 
@@ -84,9 +84,9 @@ OpenVINO is an Intel toolkit designed to facilitate the deployment of deep learn
 
 - **Compatibility and Integration**: Works best within the Intel ecosystem but also supports a range of other platforms.
 
-- **Community Support and Ecosystem**: Backed by Intel, with a solid user base especially in the [computer vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv) domain.
+- **Community Support and Ecosystem**: Backed by Intel, with a solid user base especially in the [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) domain.
 
-- **Case Studies**: Often utilized in IoT and [edge computing](https://www.numa_ultralytics.com/glossary/edge-computing) scenarios where Intel hardware is prevalent.
+- **Case Studies**: Often utilized in IoT and [edge computing](https://www.ultralytics.com/glossary/edge-computing) scenarios where Intel hardware is prevalent.
 
 - **Maintenance and Updates**: Intel regularly updates OpenVINO to support the latest deep learning models and Intel hardware.
 
@@ -94,7 +94,7 @@ OpenVINO is an Intel toolkit designed to facilitate the deployment of deep learn
 
 - **Hardware Acceleration**: Tailored for acceleration on Intel hardware, leveraging dedicated instruction sets and hardware features.
 
-For more details on deployment using OpenVINO, refer to the numa_ultralytics Integration documentation: [Intel OpenVINO Export](../integrations/openvino.md).
+For more details on deployment using OpenVINO, refer to the Ultralytics Integration documentation: [Intel OpenVINO Export](../integrations/openvino.md).
 
 #### TensorRT
 
@@ -128,7 +128,7 @@ CoreML is Apple's machine learning framework, optimized for on-device performanc
 
 - **Maintenance and Updates**: Regularly updated by Apple to support the latest machine learning advancements and Apple hardware.
 
-- **Security Considerations**: Benefits from Apple's focus on user privacy and [data security](https://www.numa_ultralytics.com/glossary/data-security).
+- **Security Considerations**: Benefits from Apple's focus on user privacy and [data security](https://www.ultralytics.com/glossary/data-security).
 
 - **Hardware Acceleration**: Takes full advantage of Apple's neural engine and GPU for accelerated machine learning tasks.
 
@@ -236,7 +236,7 @@ PaddlePaddle is an open-source deep learning framework developed by Baidu. It is
 
 - **Maintenance and Updates**: Regularly updated with a focus on serving Chinese language AI applications and services.
 
-- **Security Considerations**: Emphasizes [data privacy](https://www.numa_ultralytics.com/glossary/data-privacy) and security, catering to Chinese data governance standards.
+- **Security Considerations**: Emphasizes [data privacy](https://www.ultralytics.com/glossary/data-privacy) and security, catering to Chinese data governance standards.
 
 - **Hardware Acceleration**: Supports various hardware accelerations, including Baidu's own Kunlun chips.
 
@@ -264,7 +264,7 @@ MNN is a highly efficient and lightweight deep learning framework. It supports i
 
 ## Comparative Analysis of YOLO11 Deployment Options
 
-The following table provides a snapshot of the various deployment options available for YOLO11 models, helping you to assess which may best fit your project needs based on several critical criteria. For an in-depth look at each deployment option's format, please see the [numa_ultralytics documentation page on export formats](../modes/export.md#export-formats).
+The following table provides a snapshot of the various deployment options available for YOLO11 models, helping you to assess which may best fit your project needs based on several critical criteria. For an in-depth look at each deployment option's format, please see the [Ultralytics documentation page on export formats](../modes/export.md#export-formats).
 
 | Deployment Option | Performance Benchmarks                          | Compatibility and Integration                  | Community Support and Ecosystem               | Case Studies                               | Maintenance and Updates                        | Security Considerations                           | Hardware Acceleration              |
 | ----------------- | ----------------------------------------------- | ---------------------------------------------- | --------------------------------------------- | ------------------------------------------ | ---------------------------------------------- | ------------------------------------------------- | ---------------------------------- |
@@ -293,11 +293,11 @@ When you're getting started with YOLO11, having a helpful community and support 
 
 - **GitHub Discussions:** The YOLO11 repository on GitHub has a "Discussions" section where you can ask questions, report issues, and suggest improvements.
 
-- **numa_ultralytics Discord Server:** numa_ultralytics has a [Discord server](https://discord.com/invite/numa_ultralytics) where you can interact with other users and developers.
+- **Ultralytics Discord Server:** Ultralytics has a [Discord server](https://discord.com/invite/ultralytics) where you can interact with other users and developers.
 
 ### Official Documentation and Resources
 
-- **numa_ultralytics YOLO11 Docs:** The [official documentation](../index.md) provides a comprehensive overview of YOLO11, along with guides on installation, usage, and troubleshooting.
+- **Ultralytics YOLO11 Docs:** The [official documentation](../index.md) provides a comprehensive overview of YOLO11, along with guides on installation, usage, and troubleshooting.
 
 These resources will help you tackle challenges and stay updated on the latest trends and best practices in the YOLO11 community.
 
@@ -305,7 +305,7 @@ These resources will help you tackle challenges and stay updated on the latest t
 
 In this guide, we've explored the different deployment options for YOLO11. We've also discussed the important factors to consider when making your choice. These options allow you to customize your model for various environments and performance requirements, making it suitable for real-world applications.
 
-Don't forget that the YOLO11 and numa_ultralytics community is a valuable source of help. Connect with other developers and experts to learn unique tips and solutions you might not find in regular documentation. Keep seeking knowledge, exploring new ideas, and sharing your experiences.
+Don't forget that the YOLO11 and Ultralytics community is a valuable source of help. Connect with other developers and experts to learn unique tips and solutions you might not find in regular documentation. Keep seeking knowledge, exploring new ideas, and sharing your experiences.
 
 Happy deploying!
 
@@ -313,7 +313,7 @@ Happy deploying!
 
 ### What are the deployment options available for YOLO11 on different hardware platforms?
 
-numa_ultralytics YOLO11 supports various deployment formats, each designed for specific environments and hardware platforms. Key formats include:
+Ultralytics YOLO11 supports various deployment formats, each designed for specific environments and hardware platforms. Key formats include:
 
 - **PyTorch** for research and prototyping, with excellent Python integration.
 - **TorchScript** for production environments where Python is unavailable.
@@ -330,11 +330,11 @@ To enhance inference speed on Intel CPUs, you can deploy your YOLO11 model using
 1. Convert your YOLO11 model to the OpenVINO format using the `model.export()` function.
 2. Follow the detailed setup guide in the [Intel OpenVINO Export documentation](../integrations/openvino.md).
 
-For more insights, check out our [blog post](https://www.numa_ultralytics.com/blog/achieve-faster-inference-speeds-numa_ultralytics-yolov8-openvino).
+For more insights, check out our [blog post](https://www.ultralytics.com/blog/achieve-faster-inference-speeds-ultralytics-yolov8-openvino).
 
 ### Can I deploy YOLO11 models on mobile devices?
 
-Yes, YOLO11 models can be deployed on mobile devices using [TensorFlow](https://www.numa_ultralytics.com/glossary/tensorflow) Lite (TF Lite) for both Android and iOS platforms. TF Lite is designed for mobile and embedded devices, providing efficient on-device inference.
+Yes, YOLO11 models can be deployed on mobile devices using [TensorFlow](https://www.ultralytics.com/glossary/tensorflow) Lite (TF Lite) for both Android and iOS platforms. TF Lite is designed for mobile and embedded devices, providing efficient on-device inference.
 
 !!! example
 
@@ -361,13 +361,13 @@ When choosing a deployment format for YOLO11, consider the following factors:
 - **Performance**: Some formats like TensorRT provide exceptional speeds on NVIDIA GPUs, while OpenVINO is optimized for Intel hardware.
 - **Compatibility**: ONNX offers broad compatibility across different platforms.
 - **Ease of Integration**: Formats like CoreML or TF Lite are tailored for specific ecosystems like iOS and Android, respectively.
-- **Community Support**: Formats like [PyTorch](https://www.numa_ultralytics.com/glossary/pytorch) and TensorFlow have extensive community resources and support.
+- **Community Support**: Formats like [PyTorch](https://www.ultralytics.com/glossary/pytorch) and TensorFlow have extensive community resources and support.
 
 For a comparative analysis, refer to our [export formats documentation](../modes/export.md#export-formats).
 
 ### How can I deploy YOLO11 models in a web application?
 
-To deploy YOLO11 models in a web application, you can use TensorFlow.js (TF.js), which allows for running [machine learning](https://www.numa_ultralytics.com/glossary/machine-learning-ml) models directly in the browser. This approach eliminates the need for backend infrastructure and provides real-time performance.
+To deploy YOLO11 models in a web application, you can use TensorFlow.js (TF.js), which allows for running [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) models directly in the browser. This approach eliminates the need for backend infrastructure and provides real-time performance.
 
 1. Export the YOLO11 model to the TF.js format.
 2. Integrate the exported model into your web application.

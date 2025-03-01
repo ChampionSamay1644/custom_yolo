@@ -1,20 +1,20 @@
 ---
 comments: true
-description: Discover efficient, flexible, and customizable multi-object tracking with numa_ultralytics YOLO. Learn to track real-time video streams with ease.
-keywords: multi-object tracking, numa_ultralytics YOLO, video analytics, real-time tracking, object detection, AI, machine learning
+description: Discover efficient, flexible, and customizable multi-object tracking with Ultralytics YOLO. Learn to track real-time video streams with ease.
+keywords: multi-object tracking, Ultralytics YOLO, video analytics, real-time tracking, object detection, AI, machine learning
 ---
 
-# Multi-Object Tracking with numa_ultralytics YOLO
+# Multi-Object Tracking with Ultralytics YOLO
 
-<img width="1024" src="https://github.com/numa_ultralytics/docs/releases/download/0/multi-object-tracking-examples.avif" alt="Multi-object tracking examples">
+<img width="1024" src="https://github.com/ultralytics/docs/releases/download/0/multi-object-tracking-examples.avif" alt="Multi-object tracking examples">
 
 Object tracking in the realm of video analytics is a critical task that not only identifies the location and class of objects within the frame but also maintains a unique ID for each detected object as the video progresses. The applications are limitless—ranging from surveillance and security to real-time sports analytics.
 
-## Why Choose numa_ultralytics YOLO for Object Tracking?
+## Why Choose Ultralytics YOLO for Object Tracking?
 
-The output from numa_ultralytics trackers is consistent with standard [object detection](https://www.numa_ultralytics.com/glossary/object-detection) but has the added value of object IDs. This makes it easy to track objects in video streams and perform subsequent analytics. Here's why you should consider using numa_ultralytics YOLO for your object tracking needs:
+The output from Ultralytics trackers is consistent with standard [object detection](https://www.ultralytics.com/glossary/object-detection) but has the added value of object IDs. This makes it easy to track objects in video streams and perform subsequent analytics. Here's why you should consider using Ultralytics YOLO for your object tracking needs:
 
-- **Efficiency:** Process video streams in real-time without compromising [accuracy](https://www.numa_ultralytics.com/glossary/accuracy).
+- **Efficiency:** Process video streams in real-time without compromising [accuracy](https://www.ultralytics.com/glossary/accuracy).
 - **Flexibility:** Supports multiple tracking algorithms and configurations.
 - **Ease of Use:** Simple Python API and CLI options for quick integration and deployment.
 - **Customizability:** Easy to use with custom trained YOLO models, allowing integration into domain-specific applications.
@@ -27,7 +27,7 @@ The output from numa_ultralytics trackers is consistent with standard [object de
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Object Detection and Tracking with numa_ultralytics YOLO.
+  <strong>Watch:</strong> Object Detection and Tracking with Ultralytics YOLO.
 </p>
 
 ## Real-world Applications
@@ -39,7 +39,7 @@ The output from numa_ultralytics trackers is consistent with standard [object de
 
 ## Features at a Glance
 
-numa_ultralytics YOLO extends its object detection features to provide robust and versatile object tracking:
+Ultralytics YOLO extends its object detection features to provide robust and versatile object tracking:
 
 - **Real-Time Tracking:** Seamlessly track objects in high-frame-rate videos.
 - **Multiple Tracker Support:** Choose from a variety of established tracking algorithms.
@@ -47,7 +47,7 @@ numa_ultralytics YOLO extends its object detection features to provide robust an
 
 ## Available Trackers
 
-numa_ultralytics YOLO supports the following tracking algorithms. They can be enabled by passing the relevant YAML configuration file such as `tracker=tracker_type.yaml`:
+Ultralytics YOLO supports the following tracking algorithms. They can be enabled by passing the relevant YAML configuration file such as `tracker=tracker_type.yaml`:
 
 - [BoT-SORT](https://github.com/NirAharon/BoT-SORT) - Use `botsort.yaml` to enable this tracker.
 - [ByteTrack](https://github.com/ifzhang/ByteTrack) - Use `bytetrack.yaml` to enable this tracker.
@@ -58,7 +58,7 @@ The default tracker is BoT-SORT.
 
 !!! warning "Tracker Threshold Information"
 
-    If object confidence score will be low, i.e lower than [`track_high_thresh`](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/trackers/bytetrack.yaml#L5), then there will be no tracks successfully returned and updated.
+    If object confidence score will be low, i.e lower than [`track_high_thresh`](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/trackers/bytetrack.yaml#L5), then there will be no tracks successfully returned and updated.
 
 To run the tracker on video streams, use a trained Detect, Segment or Pose model such as YOLO11n, YOLO11n-seg and YOLO11n-pose.
 
@@ -67,7 +67,7 @@ To run the tracker on video streams, use a trained Detect, Segment or Pose model
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load an official or custom model
         model = YOLO("yolo11n.pt")  # Load an official Detect model
@@ -99,7 +99,7 @@ As can be seen in the above usage, tracking is available for all Detect, Segment
 
 !!! warning "Tracker Threshold Information"
 
-    If object confidence score will be low, i.e lower than [`track_high_thresh`](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/trackers/bytetrack.yaml#L5), then there will be no tracks successfully returned and updated.
+    If object confidence score will be low, i.e lower than [`track_high_thresh`](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/trackers/bytetrack.yaml#L5), then there will be no tracks successfully returned and updated.
 
 ### Tracking Arguments
 
@@ -110,7 +110,7 @@ Tracking configuration shares properties with Predict mode, such as `conf`, `iou
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Configure the tracking parameters and run the tracker
         model = YOLO("yolo11n.pt")
@@ -126,14 +126,14 @@ Tracking configuration shares properties with Predict mode, such as `conf`, `iou
 
 ### Tracker Selection
 
-numa_ultralytics also allows you to use a modified tracker configuration file. To do this, simply make a copy of a tracker config file (for example, `custom_tracker.yaml`) from [numa_ultralytics/cfg/trackers](https://github.com/numa_ultralytics/numa_ultralytics/tree/main/numa_ultralytics/cfg/trackers) and modify any configurations (except the `tracker_type`) as per your needs.
+Ultralytics also allows you to use a modified tracker configuration file. To do this, simply make a copy of a tracker config file (for example, `custom_tracker.yaml`) from [ultralytics/cfg/trackers](https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/trackers) and modify any configurations (except the `tracker_type`) as per your needs.
 
 !!! example
 
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load the model and run the tracker with a custom configuration file
         model = YOLO("yolo11n.pt")
@@ -147,20 +147,20 @@ numa_ultralytics also allows you to use a modified tracker configuration file. T
         yolo track model=yolo11n.pt source="https://youtu.be/LNwODJXcvt4" tracker='custom_tracker.yaml'
         ```
 
-For a comprehensive list of tracking arguments, refer to the [numa_ultralytics/cfg/trackers](https://github.com/numa_ultralytics/numa_ultralytics/tree/main/numa_ultralytics/cfg/trackers) page.
+For a comprehensive list of tracking arguments, refer to the [ultralytics/cfg/trackers](https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/trackers) page.
 
 ## Python Examples
 
 ### Persisting Tracks Loop
 
-Here is a Python script using [OpenCV](https://www.numa_ultralytics.com/glossary/opencv) (`cv2`) and YOLO11 to run object tracking on video frames. This script still assumes you have already installed the necessary packages (`opencv-python` and `numa_ultralytics`). The `persist=True` argument tells the tracker that the current image or frame is the next in a sequence and to expect tracks from the previous image in the current image.
+Here is a Python script using [OpenCV](https://www.ultralytics.com/glossary/opencv) (`cv2`) and YOLO11 to run object tracking on video frames. This script still assumes you have already installed the necessary packages (`opencv-python` and `ultralytics`). The `persist=True` argument tells the tracker that the current image or frame is the next in a sequence and to expect tracks from the previous image in the current image.
 
 !!! example "Streaming for-loop with tracking"
 
     ```python
     import cv2
 
-    from numa_ultralytics import YOLO
+    from ultralytics import YOLO
 
     # Load the YOLO11 model
     model = YOLO("yolo11n.pt")
@@ -200,7 +200,7 @@ Please note the change from `model(frame)` to `model.track(frame)`, which enable
 
 ### Plotting Tracks Over Time
 
-Visualizing object tracks over consecutive frames can provide valuable insights into the movement patterns and behavior of detected objects within a video. With numa_ultralytics YOLO11, plotting these tracks is a seamless and efficient process.
+Visualizing object tracks over consecutive frames can provide valuable insights into the movement patterns and behavior of detected objects within a video. With Ultralytics YOLO11, plotting these tracks is a seamless and efficient process.
 
 In the following example, we demonstrate how to utilize YOLO11's tracking capabilities to plot the movement of detected objects across multiple video frames. This script involves opening a video file, reading it frame by frame, and utilizing the YOLO model to identify and track various objects. By retaining the center points of the detected bounding boxes and connecting them, we can draw lines that represent the paths followed by the tracked objects.
 
@@ -212,7 +212,7 @@ In the following example, we demonstrate how to utilize YOLO11's tracking capabi
     import cv2
     import numpy as np
 
-    from numa_ultralytics import YOLO
+    from ultralytics import YOLO
 
     # Load the YOLO11 model
     model = YOLO("yolo11n.pt")
@@ -288,7 +288,7 @@ Finally, after all threads have completed their task, the windows displaying the
 
     import cv2
 
-    from numa_ultralytics import YOLO
+    from ultralytics import YOLO
 
     # Define model names and video sources
     MODEL_NAMES = ["yolo11n.pt", "yolo11n-seg.pt"]
@@ -328,34 +328,34 @@ This example can easily be extended to handle more video files and models by cre
 
 ## Contribute New Trackers
 
-Are you proficient in multi-object tracking and have successfully implemented or adapted a tracking algorithm with numa_ultralytics YOLO? We invite you to contribute to our Trackers section in [numa_ultralytics/cfg/trackers](https://github.com/numa_ultralytics/numa_ultralytics/tree/main/numa_ultralytics/cfg/trackers)! Your real-world applications and solutions could be invaluable for users working on tracking tasks.
+Are you proficient in multi-object tracking and have successfully implemented or adapted a tracking algorithm with Ultralytics YOLO? We invite you to contribute to our Trackers section in [ultralytics/cfg/trackers](https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/trackers)! Your real-world applications and solutions could be invaluable for users working on tracking tasks.
 
-By contributing to this section, you help expand the scope of tracking solutions available within the numa_ultralytics YOLO framework, adding another layer of functionality and utility for the community.
+By contributing to this section, you help expand the scope of tracking solutions available within the Ultralytics YOLO framework, adding another layer of functionality and utility for the community.
 
 To initiate your contribution, please refer to our [Contributing Guide](../help/contributing.md) for comprehensive instructions on submitting a Pull Request (PR) 🛠️. We are excited to see what you bring to the table!
 
-Together, let's enhance the tracking capabilities of the numa_ultralytics YOLO ecosystem 🙏!
+Together, let's enhance the tracking capabilities of the Ultralytics YOLO ecosystem 🙏!
 
-[fish track]: https://github.com/RizwanMunawar/numa_ultralytics/assets/62513924/a5146d0f-bfa8-4e0a-b7df-3c1446cd8142
-[people track]: https://github.com/RizwanMunawar/numa_ultralytics/assets/62513924/93bb4ee2-77a0-4e4e-8eb6-eb8f527f0527
-[vehicle track]: https://github.com/RizwanMunawar/numa_ultralytics/assets/62513924/ee6e6038-383b-4f21-ac29-b2a1c7d386ab
+[fish track]: https://github.com/RizwanMunawar/ultralytics/assets/62513924/a5146d0f-bfa8-4e0a-b7df-3c1446cd8142
+[people track]: https://github.com/RizwanMunawar/ultralytics/assets/62513924/93bb4ee2-77a0-4e4e-8eb6-eb8f527f0527
+[vehicle track]: https://github.com/RizwanMunawar/ultralytics/assets/62513924/ee6e6038-383b-4f21-ac29-b2a1c7d386ab
 
 ## FAQ
 
-### What is Multi-Object Tracking and how does numa_ultralytics YOLO support it?
+### What is Multi-Object Tracking and how does Ultralytics YOLO support it?
 
-Multi-object tracking in video analytics involves both identifying objects and maintaining a unique ID for each detected object across video frames. numa_ultralytics YOLO supports this by providing real-time tracking along with object IDs, facilitating tasks such as security surveillance and sports analytics. The system uses trackers like BoT-SORT and ByteTrack, which can be configured via YAML files.
+Multi-object tracking in video analytics involves both identifying objects and maintaining a unique ID for each detected object across video frames. Ultralytics YOLO supports this by providing real-time tracking along with object IDs, facilitating tasks such as security surveillance and sports analytics. The system uses trackers like BoT-SORT and ByteTrack, which can be configured via YAML files.
 
-### How do I configure a custom tracker for numa_ultralytics YOLO?
+### How do I configure a custom tracker for Ultralytics YOLO?
 
-You can configure a custom tracker by copying an existing tracker configuration file (e.g., `custom_tracker.yaml`) from the [numa_ultralytics tracker configuration directory](https://github.com/numa_ultralytics/numa_ultralytics/tree/main/numa_ultralytics/cfg/trackers) and modifying parameters as needed, except for the `tracker_type`. Use this file in your tracking model like so:
+You can configure a custom tracker by copying an existing tracker configuration file (e.g., `custom_tracker.yaml`) from the [Ultralytics tracker configuration directory](https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/trackers) and modifying parameters as needed, except for the `tracker_type`. Use this file in your tracking model like so:
 
 !!! example
 
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         model = YOLO("yolo11n.pt")
         results = model.track(source="https://youtu.be/LNwODJXcvt4", tracker="custom_tracker.yaml")
@@ -378,7 +378,7 @@ To run object tracking on multiple video streams simultaneously, you can use Pyt
 
     import cv2
 
-    from numa_ultralytics import YOLO
+    from ultralytics import YOLO
 
     # Define model names and video sources
     MODEL_NAMES = ["yolo11n.pt", "yolo11n-seg.pt"]
@@ -414,17 +414,17 @@ To run object tracking on multiple video streams simultaneously, you can use Pyt
     cv2.destroyAllWindows()
     ```
 
-### What are the real-world applications of multi-object tracking with numa_ultralytics YOLO?
+### What are the real-world applications of multi-object tracking with Ultralytics YOLO?
 
-Multi-object tracking with numa_ultralytics YOLO has numerous applications, including:
+Multi-object tracking with Ultralytics YOLO has numerous applications, including:
 
 - **Transportation:** Vehicle tracking for traffic management and autonomous driving.
 - **Retail:** People tracking for in-store analytics and security.
 - **Aquaculture:** Fish tracking for monitoring aquatic environments.
 
-These applications benefit from numa_ultralytics YOLO's ability to process high-frame-rate videos in real time.
+These applications benefit from Ultralytics YOLO's ability to process high-frame-rate videos in real time.
 
-### How can I visualize object tracks over multiple video frames with numa_ultralytics YOLO?
+### How can I visualize object tracks over multiple video frames with Ultralytics YOLO?
 
 To visualize object tracks over multiple video frames, you can use the YOLO model's tracking features along with OpenCV to draw the paths of detected objects. Here's an example script that demonstrates this:
 
@@ -436,7 +436,7 @@ To visualize object tracks over multiple video frames, you can use the YOLO mode
     import cv2
     import numpy as np
 
-    from numa_ultralytics import YOLO
+    from ultralytics import YOLO
 
     model = YOLO("yolo11n.pt")
     video_path = "path/to/video.mp4"

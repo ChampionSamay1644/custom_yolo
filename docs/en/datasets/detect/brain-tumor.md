@@ -6,9 +6,9 @@ keywords: brain tumor dataset, MRI scans, CT scans, brain tumor detection, medic
 
 # Brain Tumor Dataset
 
-<a href="https://colab.research.google.com/github/numa_ultralytics/notebooks/blob/main/notebooks/how-to-train-numa_ultralytics-yolo-on-brain-tumor-detection-dataset.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open Brain Tumor Dataset In Colab"></a>
+<a href="https://colab.research.google.com/github/ultralytics/notebooks/blob/main/notebooks/how-to-train-ultralytics-yolo-on-brain-tumor-detection-dataset.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open Brain Tumor Dataset In Colab"></a>
 
-A brain tumor detection dataset consists of medical images from MRI or CT scans, containing information about brain tumor presence, location, and characteristics. This dataset is essential for training [computer vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv) algorithms to automate brain tumor identification, aiding in early diagnosis and treatment planning.
+A brain tumor detection dataset consists of medical images from MRI or CT scans, containing information about brain tumor presence, location, and characteristics. This dataset is essential for training [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) algorithms to automate brain tumor identification, aiding in early diagnosis and treatment planning.
 
 <p align="center">
   <br>
@@ -18,7 +18,7 @@ A brain tumor detection dataset consists of medical images from MRI or CT scans,
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Brain Tumor Detection using numa_ultralytics HUB
+  <strong>Watch:</strong> Brain Tumor Detection using Ultralytics HUB
 </p>
 
 ## Dataset Structure
@@ -34,24 +34,24 @@ The application of brain tumor detection using computer vision enables early dia
 
 ## Dataset YAML
 
-A YAML (Yet Another Markup Language) file is used to define the dataset configuration. It contains information about the dataset's paths, classes, and other relevant information. In the case of the brain tumor dataset, the `brain-tumor.yaml` file is maintained at [https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/brain-tumor.yaml](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/brain-tumor.yaml).
+A YAML (Yet Another Markup Language) file is used to define the dataset configuration. It contains information about the dataset's paths, classes, and other relevant information. In the case of the brain tumor dataset, the `brain-tumor.yaml` file is maintained at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/brain-tumor.yaml](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/brain-tumor.yaml).
 
-!!! example "numa_ultralytics/cfg/datasets/brain-tumor.yaml"
+!!! example "ultralytics/cfg/datasets/brain-tumor.yaml"
 
     ```yaml
-    --8<-- "numa_ultralytics/cfg/datasets/brain-tumor.yaml"
+    --8<-- "ultralytics/cfg/datasets/brain-tumor.yaml"
     ```
 
 ## Usage
 
-To train a YOLO11n model on the brain tumor dataset for 100 [epochs](https://www.numa_ultralytics.com/glossary/epoch) with an image size of 640, utilize the provided code snippets. For a detailed list of available arguments, consult the model's [Training](../../modes/train.md) page.
+To train a YOLO11n model on the brain tumor dataset for 100 [epochs](https://www.ultralytics.com/glossary/epoch) with an image size of 640, utilize the provided code snippets. For a detailed list of available arguments, consult the model's [Training](../../modes/train.md) page.
 
 !!! example "Train Example"
 
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n.pt")  # load a pretrained model (recommended for training)
@@ -72,27 +72,27 @@ To train a YOLO11n model on the brain tumor dataset for 100 [epochs](https://www
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a model
         model = YOLO("path/to/best.pt")  # load a brain-tumor fine-tuned model
 
         # Inference using the model
-        results = model.predict("https://numa_ultralytics.com/assets/brain-tumor-sample.jpg")
+        results = model.predict("https://ultralytics.com/assets/brain-tumor-sample.jpg")
         ```
 
     === "CLI"
 
         ```bash
         # Start prediction with a finetuned *.pt model
-        yolo detect predict model='path/to/best.pt' imgsz=640 source="https://numa_ultralytics.com/assets/brain-tumor-sample.jpg"
+        yolo detect predict model='path/to/best.pt' imgsz=640 source="https://ultralytics.com/assets/brain-tumor-sample.jpg"
         ```
 
 ## Sample Images and Annotations
 
 The brain tumor dataset encompasses a wide array of images featuring diverse object categories and intricate scenes. Presented below are examples of images from the dataset, accompanied by their respective annotations
 
-![Brain tumor dataset sample image](https://github.com/numa_ultralytics/docs/releases/download/0/brain-tumor-dataset-sample-image.avif)
+![Brain tumor dataset sample image](https://github.com/ultralytics/docs/releases/download/0/brain-tumor-dataset-sample-image.avif)
 
 - **Mosaiced Image**: Displayed here is a training batch comprising mosaiced dataset images. Mosaicing, a training technique, consolidates multiple images into one, enhancing batch diversity. This approach aids in improving the model's capacity to generalize across various object sizes, aspect ratios, and contexts.
 
@@ -100,15 +100,15 @@ This example highlights the diversity and intricacy of images within the brain t
 
 ## Citations and Acknowledgments
 
-The dataset has been released available under the [AGPL-3.0 License](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/LICENSE).
+The dataset has been released available under the [AGPL-3.0 License](https://github.com/ultralytics/ultralytics/blob/main/LICENSE).
 
 ## FAQ
 
-### What is the structure of the brain tumor dataset available in numa_ultralytics documentation?
+### What is the structure of the brain tumor dataset available in Ultralytics documentation?
 
 The brain tumor dataset is divided into two subsets: the **training set** consists of 893 images with corresponding annotations, while the **testing set** comprises 223 images with paired annotations. This structured division aids in developing robust and accurate computer vision models for detecting brain tumors. For more information on the dataset structure, visit the [Dataset Structure](#dataset-structure) section.
 
-### How can I train a YOLO11 model on the brain tumor dataset using numa_ultralytics?
+### How can I train a YOLO11 model on the brain tumor dataset using Ultralytics?
 
 You can train a YOLO11 model on the brain tumor dataset for 100 epochs with an image size of 640px using both Python and CLI methods. Below are the examples for both:
 
@@ -117,7 +117,7 @@ You can train a YOLO11 model on the brain tumor dataset for 100 epochs with an i
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n.pt")  # load a pretrained model (recommended for training)
@@ -149,22 +149,22 @@ Inference using a fine-tuned YOLO11 model can be performed with either Python or
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a model
         model = YOLO("path/to/best.pt")  # load a brain-tumor fine-tuned model
 
         # Inference using the model
-        results = model.predict("https://numa_ultralytics.com/assets/brain-tumor-sample.jpg")
+        results = model.predict("https://ultralytics.com/assets/brain-tumor-sample.jpg")
         ```
 
     === "CLI"
 
         ```bash
         # Start prediction with a finetuned *.pt model
-        yolo detect predict model='path/to/best.pt' imgsz=640 source="https://numa_ultralytics.com/assets/brain-tumor-sample.jpg"
+        yolo detect predict model='path/to/best.pt' imgsz=640 source="https://ultralytics.com/assets/brain-tumor-sample.jpg"
         ```
 
 ### Where can I find the YAML configuration for the brain tumor dataset?
 
-The YAML configuration file for the brain tumor dataset can be found at [brain-tumor.yaml](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/brain-tumor.yaml). This file includes paths, classes, and additional relevant information necessary for training and evaluating models on this dataset.
+The YAML configuration file for the brain tumor dataset can be found at [brain-tumor.yaml](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/brain-tumor.yaml). This file includes paths, classes, and additional relevant information necessary for training and evaluating models on this dataset.

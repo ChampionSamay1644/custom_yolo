@@ -1,12 +1,12 @@
-# numa_ultralytics 🚀 AGPL-3.0 License - https://numa_ultralytics.com/license
+# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
 
 import argparse
 
 import cv2.dnn
 import numpy as np
 
-from numa_ultralytics.utils import ASSETS, yaml_load
-from numa_ultralytics.utils.checks import check_yaml
+from ultralytics.utils import ASSETS, yaml_load
+from ultralytics.utils.checks import check_yaml
 
 CLASSES = yaml_load(check_yaml("coco8.yaml"))["names"]
 colors = np.random.uniform(0, 255, size=(len(CLASSES), 3))

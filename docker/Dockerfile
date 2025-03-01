@@ -1,5 +1,5 @@
-# numa_ultralytics YOLO 🚀, AGPL-3.0 license
-# Builds numa_ultralytics/numa_ultralytics:latest image on DockerHub https://hub.docker.com/r/numa_ultralytics/numa_ultralytics
+# Ultralytics YOLO 🚀, AGPL-3.0 license
+# Builds ultralytics/ultralytics:latest image on DockerHub https://hub.docker.com/r/ultralytics/ultralytics
 # Image is CUDA-optimized for YOLO11 single/multi-GPU training and inference
 
 # Start FROM PyTorch image https://hub.docker.com/r/pytorch/pytorch or nvcr.io/nvidia/pytorch:23.03-py3
@@ -15,9 +15,9 @@ ENV PYTHONUNBUFFERED=1 \
     OMP_NUM_THREADS=1 
 
 # Downloads to user config dir
-ADD https://github.com/numa_ultralytics/assets/releases/download/v0.0.0/Arial.ttf \
-    https://github.com/numa_ultralytics/assets/releases/download/v0.0.0/Arial.Unicode.ttf \
-    /root/.config/numa_ultralytics/
+ADD https://github.com/ultralytics/assets/releases/download/v0.0.0/Arial.ttf \
+    https://github.com/ultralytics/assets/releases/download/v0.0.0/Arial.Unicode.ttf \
+    /root/.config/Ultralytics/
 
 # Install linux packages
 # g++ required to build 'tflite_support' and 'lap' packages, libusb-1.0-0 required for 'tflite_support' package
@@ -32,12 +32,12 @@ RUN apt-get update && \
 RUN apt upgrade --no-install-recommends -y openssl tar
 
 # Create working directory
-WORKDIR /numa_ultralytics
+WORKDIR /ultralytics
 
 # Copy contents and configure git
 COPY . .
 RUN sed -i '/^\[http "https:\/\/github\.com\/"\]/,+1d' .git/config
-ADD https://github.com/numa_ultralytics/assets/releases/download/v8.3.0/yolo11n.pt .
+ADD https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n.pt .
 
 # Install pip packages
 RUN pip install uv
@@ -51,30 +51,30 @@ RUN yolo export model=tmp/yolo11n.pt format=ncnn imgsz=32
 RUN uv pip install --system "paddlepaddle>=2.6.0" x2paddle
 
 # Remove extra build files
-RUN rm -rf tmp /root/.config/numa_ultralytics/persistent_cache.json
+RUN rm -rf tmp /root/.config/Ultralytics/persistent_cache.json
 
 # Usage Examples -------------------------------------------------------------------------------------------------------
 
 # Build and Push
-# t=numa_ultralytics/numa_ultralytics:latest && sudo docker build -f docker/Dockerfile -t $t . && sudo docker push $t
+# t=ultralytics/ultralytics:latest && sudo docker build -f docker/Dockerfile -t $t . && sudo docker push $t
 
 # Pull and Run with access to all GPUs
-# t=numa_ultralytics/numa_ultralytics:latest && sudo docker pull $t && sudo docker run -it --ipc=host --gpus all $t
+# t=ultralytics/ultralytics:latest && sudo docker pull $t && sudo docker run -it --ipc=host --gpus all $t
 
 # Pull and Run with access to GPUs 2 and 3 (inside container CUDA devices will appear as 0 and 1)
-# t=numa_ultralytics/numa_ultralytics:latest && sudo docker pull $t && sudo docker run -it --ipc=host --gpus '"device=2,3"' $t
+# t=ultralytics/ultralytics:latest && sudo docker pull $t && sudo docker run -it --ipc=host --gpus '"device=2,3"' $t
 
 # Pull and Run with local directory access
-# t=numa_ultralytics/numa_ultralytics:latest && sudo docker pull $t && sudo docker run -it --ipc=host --gpus all -v "$(pwd)"/shared/datasets:/datasets $t
+# t=ultralytics/ultralytics:latest && sudo docker pull $t && sudo docker run -it --ipc=host --gpus all -v "$(pwd)"/shared/datasets:/datasets $t
 
 # Kill all
 # sudo docker kill $(sudo docker ps -q)
 
 # Kill all image-based
-# sudo docker kill $(sudo docker ps -qa --filter ancestor=numa_ultralytics/numa_ultralytics:latest)
+# sudo docker kill $(sudo docker ps -qa --filter ancestor=ultralytics/ultralytics:latest)
 
 # DockerHub tag update
-# t=numa_ultralytics/numa_ultralytics:latest tnew=numa_ultralytics/numa_ultralytics:v6.2 && sudo docker pull $t && sudo docker tag $t $tnew && sudo docker push $tnew
+# t=ultralytics/ultralytics:latest tnew=ultralytics/ultralytics:v6.2 && sudo docker pull $t && sudo docker tag $t $tnew && sudo docker push $tnew
 
 # Clean up
 # sudo docker system prune -a --volumes
@@ -86,4 +86,4 @@ RUN rm -rf tmp /root/.config/numa_ultralytics/persistent_cache.json
 # python -m torch.distributed.run --nproc_per_node 2 --master_port 1 train.py --epochs 3
 
 # GCP VM from Image
-# docker.io/numa_ultralytics/numa_ultralytics:latest
+# docker.io/ultralytics/ultralytics:latest

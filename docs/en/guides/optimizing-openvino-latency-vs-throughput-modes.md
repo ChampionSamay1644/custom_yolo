@@ -1,16 +1,16 @@
 ---
 comments: true
-description: Discover how to enhance numa_ultralytics YOLO model performance using Intel's OpenVINO toolkit. Boost latency and throughput efficiently.
-keywords: numa_ultralytics YOLO, OpenVINO optimization, deep learning, model inference, throughput optimization, latency optimization, AI deployment, Intel's OpenVINO, performance tuning
+description: Discover how to enhance Ultralytics YOLO model performance using Intel's OpenVINO toolkit. Boost latency and throughput efficiently.
+keywords: Ultralytics YOLO, OpenVINO optimization, deep learning, model inference, throughput optimization, latency optimization, AI deployment, Intel's OpenVINO, performance tuning
 ---
 
-# Optimizing OpenVINO Inference for numa_ultralytics YOLO Models: A Comprehensive Guide
+# Optimizing OpenVINO Inference for Ultralytics YOLO Models: A Comprehensive Guide
 
-<img width="1024" src="https://github.com/numa_ultralytics/docs/releases/download/0/openvino-ecosystem.avif" alt="OpenVINO Ecosystem">
+<img width="1024" src="https://github.com/ultralytics/docs/releases/download/0/openvino-ecosystem.avif" alt="OpenVINO Ecosystem">
 
 ## Introduction
 
-When deploying [deep learning](https://www.numa_ultralytics.com/glossary/deep-learning-dl) models, particularly those for [object detection](https://www.numa_ultralytics.com/glossary/object-detection) such as numa_ultralytics YOLO models, achieving optimal performance is crucial. This guide delves into leveraging Intel's OpenVINO toolkit to optimize inference, focusing on latency and throughput. Whether you're working on consumer-grade applications or large-scale deployments, understanding and applying these optimization strategies will ensure your models run efficiently on various devices.
+When deploying [deep learning](https://www.ultralytics.com/glossary/deep-learning-dl) models, particularly those for [object detection](https://www.ultralytics.com/glossary/object-detection) such as Ultralytics YOLO models, achieving optimal performance is crucial. This guide delves into leveraging Intel's OpenVINO toolkit to optimize inference, focusing on latency and throughput. Whether you're working on consumer-grade applications or large-scale deployments, understanding and applying these optimization strategies will ensure your models run efficiently on various devices.
 
 ## Optimizing for Latency
 
@@ -36,12 +36,12 @@ Throughput optimization is crucial for scenarios serving numerous inference requ
 
 1. **OpenVINO Performance Hints:** A high-level, future-proof method to enhance throughput across devices using performance hints.
 
-   ```python
-   import openvino.properties.hint as hints
+    ```python
+    import openvino.properties.hint as hints
 
-   config = {hints.performance_mode: hints.PerformanceMode.THROUGHPUT}
-   compiled_model = core.compile_model(model, "GPU", config)
-   ```
+    config = {hints.performance_mode: hints.PerformanceMode.THROUGHPUT}
+    compiled_model = core.compile_model(model, "GPU", config)
+    ```
 
 2. **Explicit Batching and Streams:** A more granular approach involving explicit batching and the use of streams for advanced performance tuning.
 
@@ -59,19 +59,19 @@ OpenVINO's multi-device mode simplifies scaling throughput by automatically bala
 
 ## Conclusion
 
-Optimizing numa_ultralytics YOLO models for latency and throughput with OpenVINO can significantly enhance your application's performance. By carefully applying the strategies outlined in this guide, developers can ensure their models run efficiently, meeting the demands of various deployment scenarios. Remember, the choice between optimizing for latency or throughput depends on your specific application needs and the characteristics of the deployment environment.
+Optimizing Ultralytics YOLO models for latency and throughput with OpenVINO can significantly enhance your application's performance. By carefully applying the strategies outlined in this guide, developers can ensure their models run efficiently, meeting the demands of various deployment scenarios. Remember, the choice between optimizing for latency or throughput depends on your specific application needs and the characteristics of the deployment environment.
 
-For more detailed technical information and the latest updates, refer to the [OpenVINO documentation](https://docs.openvino.ai/2024/index.html) and [numa_ultralytics YOLO repository](https://github.com/numa_ultralytics/numa_ultralytics). These resources provide in-depth guides, tutorials, and community support to help you get the most out of your deep learning models.
+For more detailed technical information and the latest updates, refer to the [OpenVINO documentation](https://docs.openvino.ai/2024/index.html) and [Ultralytics YOLO repository](https://github.com/ultralytics/ultralytics). These resources provide in-depth guides, tutorials, and community support to help you get the most out of your deep learning models.
 
 ---
 
-Ensuring your models achieve optimal performance is not just about tweaking configurations; it's about understanding your application's needs and making informed decisions. Whether you're optimizing for real-time responses or maximizing throughput for large-scale processing, the combination of numa_ultralytics YOLO models and OpenVINO offers a powerful toolkit for developers to deploy high-performance AI solutions.
+Ensuring your models achieve optimal performance is not just about tweaking configurations; it's about understanding your application's needs and making informed decisions. Whether you're optimizing for real-time responses or maximizing throughput for large-scale processing, the combination of Ultralytics YOLO models and OpenVINO offers a powerful toolkit for developers to deploy high-performance AI solutions.
 
 ## FAQ
 
-### How do I optimize numa_ultralytics YOLO models for low latency using OpenVINO?
+### How do I optimize Ultralytics YOLO models for low latency using OpenVINO?
 
-Optimizing numa_ultralytics YOLO models for low latency involves several key strategies:
+Optimizing Ultralytics YOLO models for low latency involves several key strategies:
 
 1. **Single Inference per Device:** Limit inferences to one at a time per device to minimize delays.
 2. **Leveraging Sub-Devices:** Utilize devices like multi-socket CPUs or multi-tile GPUs which can handle multiple requests with minimal latency increase.
@@ -79,9 +79,9 @@ Optimizing numa_ultralytics YOLO models for low latency involves several key str
 
 For more practical tips on optimizing latency, check out the [Latency Optimization section](#optimizing-for-latency) of our guide.
 
-### Why should I use OpenVINO for optimizing numa_ultralytics YOLO throughput?
+### Why should I use OpenVINO for optimizing Ultralytics YOLO throughput?
 
-OpenVINO enhances numa_ultralytics YOLO model throughput by maximizing device resource utilization without sacrificing performance. Key benefits include:
+OpenVINO enhances Ultralytics YOLO model throughput by maximizing device resource utilization without sacrificing performance. Key benefits include:
 
 - **Performance Hints:** Simple, high-level performance tuning across devices.
 - **Explicit Batching and Streams:** Fine-tuning for advanced performance.
@@ -108,21 +108,21 @@ To reduce first-inference latency, consider these practices:
 
 For detailed strategies on managing first-inference latency, refer to the [Managing First-Inference Latency section](#managing-first-inference-latency).
 
-### How do I balance optimizing for latency and throughput with numa_ultralytics YOLO and OpenVINO?
+### How do I balance optimizing for latency and throughput with Ultralytics YOLO and OpenVINO?
 
 Balancing latency and throughput optimization requires understanding your application needs:
 
 - **Latency Optimization:** Ideal for real-time applications requiring immediate responses (e.g., consumer-grade apps).
 - **Throughput Optimization:** Best for scenarios with many concurrent inferences, maximizing resource use (e.g., large-scale deployments).
 
-Using OpenVINO's high-level performance hints and multi-device modes can help strike the right balance. Choose the appropriate [OpenVINO Performance hints](https://docs.numa_ultralytics.com/integrations/openvino/#openvino-performance-hints) based on your specific requirements.
+Using OpenVINO's high-level performance hints and multi-device modes can help strike the right balance. Choose the appropriate [OpenVINO Performance hints](https://docs.ultralytics.com/integrations/openvino/#openvino-performance-hints) based on your specific requirements.
 
-### Can I use numa_ultralytics YOLO models with other AI frameworks besides OpenVINO?
+### Can I use Ultralytics YOLO models with other AI frameworks besides OpenVINO?
 
-Yes, numa_ultralytics YOLO models are highly versatile and can be integrated with various AI frameworks. Options include:
+Yes, Ultralytics YOLO models are highly versatile and can be integrated with various AI frameworks. Options include:
 
-- **TensorRT:** For NVIDIA GPU optimization, follow the [TensorRT integration guide](https://docs.numa_ultralytics.com/integrations/tensorrt/).
-- **CoreML:** For Apple devices, refer to our [CoreML export instructions](https://docs.numa_ultralytics.com/integrations/coreml/).
-- **[TensorFlow](https://www.numa_ultralytics.com/glossary/tensorflow).js:** For web and Node.js apps, see the [TF.js conversion guide](https://docs.numa_ultralytics.com/integrations/tfjs/).
+- **TensorRT:** For NVIDIA GPU optimization, follow the [TensorRT integration guide](https://docs.ultralytics.com/integrations/tensorrt/).
+- **CoreML:** For Apple devices, refer to our [CoreML export instructions](https://docs.ultralytics.com/integrations/coreml/).
+- **[TensorFlow](https://www.ultralytics.com/glossary/tensorflow).js:** For web and Node.js apps, see the [TF.js conversion guide](https://docs.ultralytics.com/integrations/tfjs/).
 
-Explore more integrations on the [numa_ultralytics Integrations page](https://docs.numa_ultralytics.com/integrations/).
+Explore more integrations on the [Ultralytics Integrations page](https://docs.ultralytics.com/integrations/).

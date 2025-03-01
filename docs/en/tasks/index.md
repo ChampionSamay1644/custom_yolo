@@ -1,14 +1,14 @@
 ---
 comments: true
-description: Explore numa_ultralytics YOLO11 for detection, segmentation, classification, OBB, and pose estimation with high accuracy and speed. Learn how to apply each task.
-keywords: numa_ultralytics YOLO11, detection, segmentation, classification, oriented object detection, pose estimation, computer vision, AI framework
+description: Explore Ultralytics YOLO11 for detection, segmentation, classification, OBB, and pose estimation with high accuracy and speed. Learn how to apply each task.
+keywords: Ultralytics YOLO11, detection, segmentation, classification, oriented object detection, pose estimation, computer vision, AI framework
 ---
 
-# Computer Vision Tasks supported by numa_ultralytics YOLO11
+# Computer Vision Tasks supported by Ultralytics YOLO11
 
-<img width="1024" src="https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-yolov8-tasks-banner.avif" alt="numa_ultralytics YOLO supported computer vision tasks">
+<img width="1024" src="https://github.com/ultralytics/docs/releases/download/0/ultralytics-yolov8-tasks-banner.avif" alt="Ultralytics YOLO supported computer vision tasks">
 
-YOLO11 is an AI framework that supports multiple [computer vision](https://www.numa_ultralytics.com/blog/everything-you-need-to-know-about-computer-vision-in-2025) **tasks**. The framework can be used to perform [detection](detect.md), [segmentation](segment.md), [obb](obb.md), [classification](classify.md), and [pose](pose.md) estimation. Each of these tasks has a different objective and use case.
+YOLO11 is an AI framework that supports multiple [computer vision](https://www.ultralytics.com/blog/everything-you-need-to-know-about-computer-vision-in-2025) **tasks**. The framework can be used to perform [detection](detect.md), [segmentation](segment.md), [obb](obb.md), [classification](classify.md), and [pose](pose.md) estimation. Each of these tasks has a different objective and use case.
 
 <p align="center">
   <br>
@@ -18,18 +18,18 @@ YOLO11 is an AI framework that supports multiple [computer vision](https://www.n
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Explore numa_ultralytics YOLO Tasks: <a href="https://www.numa_ultralytics.com/blog/a-guide-to-deep-dive-into-object-detection-in-2025">Object Detection</a>, Segmentation, OBB, Tracking, and Pose Estimation.
+  <strong>Watch:</strong> Explore Ultralytics YOLO Tasks: <a href="https://www.ultralytics.com/blog/a-guide-to-deep-dive-into-object-detection-in-2025">Object Detection</a>, Segmentation, OBB, Tracking, and Pose Estimation.
 </p>
 
 ## [Detection](detect.md)
 
-Detection is the primary task supported by YOLO11. It involves detecting objects in an image or video frame and drawing bounding boxes around them. The detected objects are classified into different categories based on their features. YOLO11 can detect multiple objects in a single image or video frame with high [accuracy](https://www.numa_ultralytics.com/glossary/accuracy) and speed.
+Detection is the primary task supported by YOLO11. It involves detecting objects in an image or video frame and drawing bounding boxes around them. The detected objects are classified into different categories based on their features. YOLO11 can detect multiple objects in a single image or video frame with high [accuracy](https://www.ultralytics.com/glossary/accuracy) and speed.
 
 [Detection Examples](detect.md){ .md-button }
 
 ## [Image segmentation](segment.md)
 
-Segmentation is a task that involves segmenting an image into different regions based on the content of the image. Each region is assigned a label based on its content. This task is useful in applications such as [image segmentation](https://www.numa_ultralytics.com/glossary/image-segmentation) and medical imaging. YOLO11 uses a variant of the U-Net architecture to perform segmentation.
+Segmentation is a task that involves segmenting an image into different regions based on the content of the image. Each region is assigned a label based on its content. This task is useful in applications such as [image segmentation](https://www.ultralytics.com/glossary/image-segmentation) and medical imaging. YOLO11 uses a variant of the U-Net architecture to perform segmentation.
 
 [Segmentation Examples](segment.md){ .md-button }
 
@@ -57,9 +57,9 @@ YOLO11 supports multiple tasks, including detection, segmentation, classificatio
 
 ## FAQ
 
-### What computer vision tasks can numa_ultralytics YOLO11 perform?
+### What computer vision tasks can Ultralytics YOLO11 perform?
 
-numa_ultralytics YOLO11 is a versatile AI framework capable of performing various computer vision tasks with high accuracy and speed. These tasks include:
+Ultralytics YOLO11 is a versatile AI framework capable of performing various computer vision tasks with high accuracy and speed. These tasks include:
 
 - **[Object Detection](detect.md):** Identifying and localizing objects in images or video frames by drawing bounding boxes around them.
 - **[Image segmentation](segment.md):** Segmenting images into different regions based on their content, useful for applications like medical imaging.
@@ -67,9 +67,9 @@ numa_ultralytics YOLO11 is a versatile AI framework capable of performing variou
 - **[Pose estimation](pose.md):** Detecting specific keypoints in an image or video frame to track movements or poses.
 - **[Oriented Object Detection (OBB)](obb.md):** Detecting rotated objects with an added orientation angle for enhanced accuracy.
 
-### How do I use numa_ultralytics YOLO11 for object detection?
+### How do I use Ultralytics YOLO11 for object detection?
 
-To use numa_ultralytics YOLO11 for object detection, follow these steps:
+To use Ultralytics YOLO11 for object detection, follow these steps:
 
 1. Prepare your dataset in the appropriate format.
 2. Train the YOLO11 model using the detection task.
@@ -80,7 +80,7 @@ To use numa_ultralytics YOLO11 for object detection, follow these steps:
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a pre-trained YOLO model (adjust model type as needed)
         model = YOLO("yolo11n.pt")  # n, s, m, l, x versions available
@@ -111,15 +111,15 @@ Using YOLO11 for segmentation tasks provides several advantages:
 
 Learn more about the benefits and use cases of YOLO11 for segmentation in the [image segmentation section](segment.md).
 
-### Can numa_ultralytics YOLO11 handle pose estimation and keypoint detection?
+### Can Ultralytics YOLO11 handle pose estimation and keypoint detection?
 
-Yes, numa_ultralytics YOLO11 can effectively perform pose estimation and keypoint detection with high accuracy and speed. This feature is particularly useful for tracking movements in sports analytics, healthcare, and human-computer interaction applications. YOLO11 detects keypoints in an image or video frame, allowing for precise pose estimation.
+Yes, Ultralytics YOLO11 can effectively perform pose estimation and keypoint detection with high accuracy and speed. This feature is particularly useful for tracking movements in sports analytics, healthcare, and human-computer interaction applications. YOLO11 detects keypoints in an image or video frame, allowing for precise pose estimation.
 
 For more details and implementation tips, visit our [pose estimation examples](pose.md).
 
-### Why should I choose numa_ultralytics YOLO11 for oriented object detection (OBB)?
+### Why should I choose Ultralytics YOLO11 for oriented object detection (OBB)?
 
-Oriented Object Detection (OBB) with YOLO11 provides enhanced [precision](https://www.numa_ultralytics.com/glossary/precision) by detecting objects with an additional angle parameter. This feature is beneficial for applications requiring accurate localization of rotated objects, such as aerial imagery analysis and warehouse automation.
+Oriented Object Detection (OBB) with YOLO11 provides enhanced [precision](https://www.ultralytics.com/glossary/precision) by detecting objects with an additional angle parameter. This feature is beneficial for applications requiring accurate localization of rotated objects, such as aerial imagery analysis and warehouse automation.
 
 - **Increased Precision:** The angle component reduces false positives for rotated objects.
 - **Versatile Applications:** Useful for tasks in geospatial analysis, robotics, etc.

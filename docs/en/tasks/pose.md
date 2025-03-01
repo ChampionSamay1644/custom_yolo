@@ -1,13 +1,13 @@
 ---
 comments: true
 description: Discover how to use YOLO11 for pose estimation tasks. Learn about model training, validation, prediction, and exporting in various formats.
-keywords: pose estimation, YOLO11, numa_ultralytics, keypoints, model training, image recognition, deep learning
+keywords: pose estimation, YOLO11, Ultralytics, keypoints, model training, image recognition, deep learning
 model_name: yolo11n-pose
 ---
 
 # Pose Estimation
 
-<img width="1024" src="https://github.com/numa_ultralytics/docs/releases/download/0/pose-estimation-examples.avif" alt="Pose estimation examples">
+<img width="1024" src="https://github.com/ultralytics/docs/releases/download/0/pose-estimation-examples.avif" alt="Pose estimation examples">
 
 Pose estimation is a task that involves identifying the location of specific points in an image, usually referred to as keypoints. The keypoints can represent various parts of the object such as joints, landmarks, or other distinctive features. The locations of the keypoints are usually represented as a set of 2D `[x, y]` or 3D `[x, y, visible]` coordinates.
 
@@ -21,12 +21,12 @@ The output of a pose estimation model is a set of points that represent the keyp
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> numa_ultralytics YOLO11 Pose Estimation Tutorial | Real-Time Object Tracking and Human Pose Detection
+  <strong>Watch:</strong> Ultralytics YOLO11 Pose Estimation Tutorial | Real-Time Object Tracking and Human Pose Detection
 </p>
 
 !!! tip
 
-    YOLO11 _pose_ models use the `-pose` suffix, i.e. `yolo11n-pose.pt`. These models are trained on the [COCO keypoints](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/coco-pose.yaml) dataset and are suitable for a variety of pose estimation tasks.
+    YOLO11 _pose_ models use the `-pose` suffix, i.e. `yolo11n-pose.pt`. These models are trained on the [COCO keypoints](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco-pose.yaml) dataset and are suitable for a variety of pose estimation tasks.
 
     In the default YOLO11 pose model, there are 17 keypoints, each representing a different part of the human body. Here is the mapping of each index to its respective body joint:
 
@@ -48,11 +48,11 @@ The output of a pose estimation model is a set of points that represent the keyp
     15. Left Ankle
     16. Right Ankle
 
-## [Models](https://github.com/numa_ultralytics/numa_ultralytics/tree/main/numa_ultralytics/cfg/models/11)
+## [Models](https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/models/11)
 
-YOLO11 pretrained Pose models are shown here. Detect, Segment and Pose models are pretrained on the [COCO](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/coco.yaml) dataset, while Classify models are pretrained on the [ImageNet](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/ImageNet.yaml) dataset.
+YOLO11 pretrained Pose models are shown here. Detect, Segment and Pose models are pretrained on the [COCO](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco.yaml) dataset, while Classify models are pretrained on the [ImageNet](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/ImageNet.yaml) dataset.
 
-[Models](https://github.com/numa_ultralytics/numa_ultralytics/tree/main/numa_ultralytics/cfg/models) download automatically from the latest numa_ultralytics [release](https://github.com/numa_ultralytics/assets/releases) on first use.
+[Models](https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/models) download automatically from the latest Ultralytics [release](https://github.com/ultralytics/assets/releases) on first use.
 
 {% include "macros/yolo-pose-perf.md" %}
 
@@ -68,7 +68,7 @@ Train a YOLO11-pose model on the COCO8-pose dataset.
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n-pose.yaml")  # build a new model from YAML
@@ -94,18 +94,18 @@ Train a YOLO11-pose model on the COCO8-pose dataset.
 
 ### Dataset format
 
-YOLO pose dataset format can be found in detail in the [Dataset Guide](../datasets/pose/index.md). To convert your existing dataset from other formats (like COCO etc.) to YOLO format, please use [JSON2YOLO](https://github.com/numa_ultralytics/JSON2YOLO) tool by numa_ultralytics.
+YOLO pose dataset format can be found in detail in the [Dataset Guide](../datasets/pose/index.md). To convert your existing dataset from other formats (like COCO etc.) to YOLO format, please use [JSON2YOLO](https://github.com/ultralytics/JSON2YOLO) tool by Ultralytics.
 
 ## Val
 
-Validate trained YOLO11n-pose model [accuracy](https://www.numa_ultralytics.com/glossary/accuracy) on the COCO8-pose dataset. No arguments are needed as the `model` retains its training `data` and arguments as model attributes.
+Validate trained YOLO11n-pose model [accuracy](https://www.ultralytics.com/glossary/accuracy) on the COCO8-pose dataset. No arguments are needed as the `model` retains its training `data` and arguments as model attributes.
 
 !!! example
 
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n-pose.pt")  # load an official model
@@ -135,14 +135,14 @@ Use a trained YOLO11n-pose model to run predictions on images.
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n-pose.pt")  # load an official model
         model = YOLO("path/to/best.pt")  # load a custom model
 
         # Predict with the model
-        results = model("https://numa_ultralytics.com/images/bus.jpg")  # predict on an image
+        results = model("https://ultralytics.com/images/bus.jpg")  # predict on an image
 
         # Access the results
         for result in results:
@@ -154,8 +154,8 @@ Use a trained YOLO11n-pose model to run predictions on images.
     === "CLI"
 
         ```bash
-        yolo pose predict model=yolo11n-pose.pt source='https://numa_ultralytics.com/images/bus.jpg'  # predict with official model
-        yolo pose predict model=path/to/best.pt source='https://numa_ultralytics.com/images/bus.jpg'  # predict with custom model
+        yolo pose predict model=yolo11n-pose.pt source='https://ultralytics.com/images/bus.jpg'  # predict with official model
+        yolo pose predict model=path/to/best.pt source='https://ultralytics.com/images/bus.jpg'  # predict with custom model
         ```
 
 See full `predict` mode details in the [Predict](../modes/predict.md) page.
@@ -169,7 +169,7 @@ Export a YOLO11n Pose model to a different format like ONNX, CoreML, etc.
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n-pose.pt")  # load an official model
@@ -194,16 +194,16 @@ See full `export` details in the [Export](../modes/export.md) page.
 
 ## FAQ
 
-### What is Pose Estimation with numa_ultralytics YOLO11 and how does it work?
+### What is Pose Estimation with Ultralytics YOLO11 and how does it work?
 
-Pose estimation with numa_ultralytics YOLO11 involves identifying specific points, known as keypoints, in an image. These keypoints typically represent joints or other important features of the object. The output includes the `[x, y]` coordinates and confidence scores for each point. YOLO11-pose models are specifically designed for this task and use the `-pose` suffix, such as `yolo11n-pose.pt`. These models are pre-trained on datasets like [COCO keypoints](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/coco-pose.yaml) and can be used for various pose estimation tasks. For more information, visit the [Pose Estimation Page](#pose-estimation).
+Pose estimation with Ultralytics YOLO11 involves identifying specific points, known as keypoints, in an image. These keypoints typically represent joints or other important features of the object. The output includes the `[x, y]` coordinates and confidence scores for each point. YOLO11-pose models are specifically designed for this task and use the `-pose` suffix, such as `yolo11n-pose.pt`. These models are pre-trained on datasets like [COCO keypoints](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco-pose.yaml) and can be used for various pose estimation tasks. For more information, visit the [Pose Estimation Page](#pose-estimation).
 
 ### How can I train a YOLO11-pose model on a custom dataset?
 
 Training a YOLO11-pose model on a custom dataset involves loading a model, either a new model defined by a YAML file or a pre-trained model. You can then start the training process using your specified dataset and parameters.
 
 ```python
-from numa_ultralytics import YOLO
+from ultralytics import YOLO
 
 # Load a model
 model = YOLO("yolo11n-pose.yaml")  # build a new model from YAML
@@ -220,7 +220,7 @@ For comprehensive details on training, refer to the [Train Section](#train).
 Validation of a YOLO11-pose model involves assessing its accuracy using the same dataset parameters retained during training. Here's an example:
 
 ```python
-from numa_ultralytics import YOLO
+from ultralytics import YOLO
 
 # Load a model
 model = YOLO("yolo11n-pose.pt")  # load an official model
@@ -237,7 +237,7 @@ For more information, visit the [Val Section](#val).
 Yes, you can export a YOLO11-pose model to various formats like ONNX, CoreML, TensorRT, and more. This can be done using either Python or the Command Line Interface (CLI).
 
 ```python
-from numa_ultralytics import YOLO
+from ultralytics import YOLO
 
 # Load a model
 model = YOLO("yolo11n-pose.pt")  # load an official model
@@ -249,6 +249,6 @@ model.export(format="onnx")
 
 Refer to the [Export Section](#export) for more details.
 
-### What are the available numa_ultralytics YOLO11-pose models and their performance metrics?
+### What are the available Ultralytics YOLO11-pose models and their performance metrics?
 
-numa_ultralytics YOLO11 offers various pretrained pose models such as YOLO11n-pose, YOLO11s-pose, YOLO11m-pose, among others. These models differ in size, accuracy (mAP), and speed. For instance, the YOLO11n-pose model achieves a mAP<sup>pose</sup>50-95 of 50.4 and an mAP<sup>pose</sup>50 of 80.1. For a complete list and performance details, visit the [Models Section](#models).
+Ultralytics YOLO11 offers various pretrained pose models such as YOLO11n-pose, YOLO11s-pose, YOLO11m-pose, among others. These models differ in size, accuracy (mAP), and speed. For instance, the YOLO11n-pose model achieves a mAP<sup>pose</sup>50-95 of 50.4 and an mAP<sup>pose</sup>50 of 80.1. For a complete list and performance details, visit the [Models Section](#models).

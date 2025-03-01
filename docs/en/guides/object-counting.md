@@ -1,16 +1,16 @@
 ---
 comments: true
-description: Learn to accurately identify and count objects in real-time using numa_ultralytics YOLO11 for applications like crowd analysis and surveillance.
-keywords: object counting, YOLO11, numa_ultralytics, real-time object detection, AI, deep learning, object tracking, crowd analysis, surveillance, resource optimization
+description: Learn to accurately identify and count objects in real-time using Ultralytics YOLO11 for applications like crowd analysis and surveillance.
+keywords: object counting, YOLO11, Ultralytics, real-time object detection, AI, deep learning, object tracking, crowd analysis, surveillance, resource optimization
 ---
 
-# Object Counting using numa_ultralytics YOLO11
+# Object Counting using Ultralytics YOLO11
 
 ## What is Object Counting?
 
-<a href="https://colab.research.google.com/github/numa_ultralytics/notebooks/blob/main/notebooks/how-to-count-the-objects-using-numa_ultralytics-yolo.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open Object Counting In Colab"></a>
+<a href="https://colab.research.google.com/github/ultralytics/notebooks/blob/main/notebooks/how-to-count-the-objects-using-ultralytics-yolo.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open Object Counting In Colab"></a>
 
-Object counting with [numa_ultralytics YOLO11](https://github.com/numa_ultralytics/numa_ultralytics/) involves accurate identification and counting of specific objects in videos and camera streams. YOLO11 excels in real-time applications, providing efficient and precise object counting for various scenarios like crowd analysis and surveillance, thanks to its state-of-the-art algorithms and [deep learning](https://www.numa_ultralytics.com/glossary/deep-learning-dl) capabilities.
+Object counting with [Ultralytics YOLO11](https://github.com/ultralytics/ultralytics/) involves accurate identification and counting of specific objects in videos and camera streams. YOLO11 excels in real-time applications, providing efficient and precise object counting for various scenarios like crowd analysis and surveillance, thanks to its state-of-the-art algorithms and [deep learning](https://www.ultralytics.com/glossary/deep-learning-dl) capabilities.
 
 <p align="center">
   <br>
@@ -20,7 +20,7 @@ Object counting with [numa_ultralytics YOLO11](https://github.com/numa_ultralyti
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Class-wise Object Counting using numa_ultralytics YOLOv8
+  <strong>Watch:</strong> Class-wise Object Counting using Ultralytics YOLOv8
 </p>
 
 ## Advantages of Object Counting?
@@ -31,10 +31,10 @@ Object counting with [numa_ultralytics YOLO11](https://github.com/numa_ultralyti
 
 ## Real World Applications
 
-|                                                                             Logistics                                                                             |                                                                                 Aquaculture                                                                                 |
-| :---------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| ![Conveyor Belt Packets Counting Using numa_ultralytics YOLO11](https://github.com/numa_ultralytics/docs/releases/download/0/conveyor-belt-packets-counting.avif) | ![Fish Counting in Sea using numa_ultralytics YOLO11](https://github.com/numa_ultralytics/docs/releases/download/0/fish-counting-in-sea-using-numa_ultralytics-yolov8.avif) |
-|                                                   Conveyor Belt Packets Counting Using numa_ultralytics YOLO11                                                    |                                                             Fish Counting in Sea using numa_ultralytics YOLO11                                                              |
+|                                                                        Logistics                                                                        |                                                                         Aquaculture                                                                          |
+| :-----------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| ![Conveyor Belt Packets Counting Using Ultralytics YOLO11](https://github.com/ultralytics/docs/releases/download/0/conveyor-belt-packets-counting.avif) | ![Fish Counting in Sea using Ultralytics YOLO11](https://github.com/ultralytics/docs/releases/download/0/fish-counting-in-sea-using-ultralytics-yolov8.avif) |
+|                                                 Conveyor Belt Packets Counting Using Ultralytics YOLO11                                                 |                                                        Fish Counting in Sea using Ultralytics YOLO11                                                         |
 
 !!! example "Object Counting using YOLO11 Example"
 
@@ -56,7 +56,7 @@ Object counting with [numa_ultralytics YOLO11](https://github.com/numa_ultralyti
         ```python
         import cv2
 
-        from numa_ultralytics import solutions
+        from ultralytics import solutions
 
         cap = cv2.VideoCapture("path/to/video/file.mp4")
         assert cap.isOpened(), "Error reading video file"
@@ -101,7 +101,7 @@ Here's a table with the `ObjectCounter` arguments:
 
 | Name         | Type   | Default                    | Description                                                            |
 | ------------ | ------ | -------------------------- | ---------------------------------------------------------------------- |
-| `model`      | `str`  | `None`                     | Path to numa_ultralytics YOLO Model File                               |
+| `model`      | `str`  | `None`                     | Path to Ultralytics YOLO Model File                                    |
 | `region`     | `list` | `[(20, 400), (1260, 400)]` | List of points defining the counting region.                           |
 | `line_width` | `int`  | `2`                        | Line thickness for bounding boxes.                                     |
 | `show`       | `bool` | `False`                    | Flag to control whether to display the video stream.                   |
@@ -114,11 +114,11 @@ Here's a table with the `ObjectCounter` arguments:
 
 ## FAQ
 
-### How do I count objects in a video using numa_ultralytics YOLO11?
+### How do I count objects in a video using Ultralytics YOLO11?
 
-To count objects in a video using numa_ultralytics YOLO11, you can follow these steps:
+To count objects in a video using Ultralytics YOLO11, you can follow these steps:
 
-1. Import the necessary libraries (`cv2`, `numa_ultralytics`).
+1. Import the necessary libraries (`cv2`, `ultralytics`).
 2. Define the counting region (e.g., a polygon, line, etc.).
 3. Set up the video capture and initialize the object counter.
 4. Process each frame to track objects and count them within the defined region.
@@ -128,7 +128,7 @@ Here's a simple example for counting in a region:
 ```python
 import cv2
 
-from numa_ultralytics import solutions
+from ultralytics import solutions
 
 
 def count_objects_in_region(video_path, output_video_path, model_path):
@@ -157,11 +157,11 @@ def count_objects_in_region(video_path, output_video_path, model_path):
 count_objects_in_region("path/to/video.mp4", "output_video.avi", "yolo11n.pt")
 ```
 
-Explore more configurations and options in the [Object Counting](#object-counting-using-numa_ultralytics-yolo11) section.
+Explore more configurations and options in the [Object Counting](#object-counting-using-ultralytics-yolo11) section.
 
-### What are the advantages of using numa_ultralytics YOLO11 for object counting?
+### What are the advantages of using Ultralytics YOLO11 for object counting?
 
-Using numa_ultralytics YOLO11 for object counting offers several advantages:
+Using Ultralytics YOLO11 for object counting offers several advantages:
 
 1. **Resource Optimization:** It facilitates efficient resource management by providing accurate counts, helping optimize resource allocation in industries like inventory management.
 2. **Enhanced Security:** It enhances security and surveillance by accurately tracking and counting entities, aiding in proactive threat detection.
@@ -169,14 +169,14 @@ Using numa_ultralytics YOLO11 for object counting offers several advantages:
 
 For real-world applications and code examples, visit the [Advantages of Object Counting](#advantages-of-object-counting) section.
 
-### How can I count specific classes of objects using numa_ultralytics YOLO11?
+### How can I count specific classes of objects using Ultralytics YOLO11?
 
-To count specific classes of objects using numa_ultralytics YOLO11, you need to specify the classes you are interested in during the tracking phase. Below is a Python example:
+To count specific classes of objects using Ultralytics YOLO11, you need to specify the classes you are interested in during the tracking phase. Below is a Python example:
 
 ```python
 import cv2
 
-from numa_ultralytics import solutions
+from ultralytics import solutions
 
 
 def count_specific_classes(video_path, output_video_path, model_path, classes_to_count):
@@ -207,20 +207,20 @@ count_specific_classes("path/to/video.mp4", "output_specific_classes.avi", "yolo
 
 In this example, `classes_to_count=[0, 2]`, which means it counts objects of class `0` and `2` (e.g., person and car).
 
-### Why should I use YOLO11 over other [object detection](https://www.numa_ultralytics.com/glossary/object-detection) models for real-time applications?
+### Why should I use YOLO11 over other [object detection](https://www.ultralytics.com/glossary/object-detection) models for real-time applications?
 
-numa_ultralytics YOLO11 provides several advantages over other object detection models like Faster R-CNN, SSD, and previous YOLO versions:
+Ultralytics YOLO11 provides several advantages over other object detection models like Faster R-CNN, SSD, and previous YOLO versions:
 
 1. **Speed and Efficiency:** YOLO11 offers real-time processing capabilities, making it ideal for applications requiring high-speed inference, such as surveillance and autonomous driving.
-2. **[Accuracy](https://www.numa_ultralytics.com/glossary/accuracy):** It provides state-of-the-art accuracy for object detection and tracking tasks, reducing the number of false positives and improving overall system reliability.
+2. **[Accuracy](https://www.ultralytics.com/glossary/accuracy):** It provides state-of-the-art accuracy for object detection and tracking tasks, reducing the number of false positives and improving overall system reliability.
 3. **Ease of Integration:** YOLO11 offers seamless integration with various platforms and devices, including mobile and edge devices, which is crucial for modern AI applications.
 4. **Flexibility:** Supports various tasks like object detection, segmentation, and tracking with configurable models to meet specific use-case requirements.
 
-Check out numa_ultralytics [YOLO11 Documentation](https://docs.numa_ultralytics.com/models/yolo11/) for a deeper dive into its features and performance comparisons.
+Check out Ultralytics [YOLO11 Documentation](https://docs.ultralytics.com/models/yolo11/) for a deeper dive into its features and performance comparisons.
 
 ### Can I use YOLO11 for advanced applications like crowd analysis and traffic management?
 
-Yes, numa_ultralytics YOLO11 is perfectly suited for advanced applications like crowd analysis and traffic management due to its real-time detection capabilities, scalability, and integration flexibility. Its advanced features allow for high-accuracy object tracking, counting, and classification in dynamic environments. Example use cases include:
+Yes, Ultralytics YOLO11 is perfectly suited for advanced applications like crowd analysis and traffic management due to its real-time detection capabilities, scalability, and integration flexibility. Its advanced features allow for high-accuracy object tracking, counting, and classification in dynamic environments. Example use cases include:
 
 - **Crowd Analysis:** Monitor and manage large gatherings, ensuring safety and optimizing crowd flow.
 - **Traffic Management:** Track and count vehicles, analyze traffic patterns, and manage congestion in real-time.

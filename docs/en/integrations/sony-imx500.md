@@ -1,19 +1,19 @@
 ---
 comments: true
-description: Learn to export numa_ultralytics YOLOv8 models to Sony's IMX500 format to optimize your models for efficient deployment.
+description: Learn to export Ultralytics YOLOv8 models to Sony's IMX500 format to optimize your models for efficient deployment.
 keywords: Sony, IMX500, IMX 500, Atrios, MCT, model export, quantization, pruning, deep learning optimization, Raspberry Pi AI Camera, edge AI, PyTorch, IMX
 ---
 
-# Sony IMX500 Export for numa_ultralytics YOLOv8
+# Sony IMX500 Export for Ultralytics YOLOv8
 
-This guide covers exporting and deploying numa_ultralytics YOLOv8 models to Raspberry Pi AI Cameras that feature the Sony IMX500 sensor.
+This guide covers exporting and deploying Ultralytics YOLOv8 models to Raspberry Pi AI Cameras that feature the Sony IMX500 sensor.
 
 Deploying computer vision models on devices with limited computational power, such as [Raspberry Pi AI Camera](https://www.raspberrypi.com/products/ai-camera/), can be tricky. Using a model format optimized for faster performance makes a huge difference.
 
-The IMX500 model format is designed to use minimal power while delivering fast performance for neural networks. It allows you to optimize your [numa_ultralytics YOLOv8](https://github.com/numa_ultralytics/numa_ultralytics) models for high-speed and low-power inferencing. In this guide, we'll walk you through exporting and deploying your models to the IMX500 format while making it easier for your models to perform well on the [Raspberry Pi AI Camera](https://www.raspberrypi.com/products/ai-camera/).
+The IMX500 model format is designed to use minimal power while delivering fast performance for neural networks. It allows you to optimize your [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics) models for high-speed and low-power inferencing. In this guide, we'll walk you through exporting and deploying your models to the IMX500 format while making it easier for your models to perform well on the [Raspberry Pi AI Camera](https://www.raspberrypi.com/products/ai-camera/).
 
 <p align="center">
-  <img width="100%" src="https://github.com/numa_ultralytics/assets/releases/download/v8.3.0/ai-camera.avif" alt="Raspberry Pi AI Camera">
+  <img width="100%" src="https://github.com/ultralytics/assets/releases/download/v8.3.0/ai-camera.avif" alt="Raspberry Pi AI Camera">
 </p>
 
 ## Why Should You Export to IMX500
@@ -25,7 +25,7 @@ While other sensors merely pass along images and frames, the IMX500 tells a whol
 
 The IMX500 is designed to transform how devices handle data directly on the sensor, without needing to send it off to the cloud for processing.
 
-The IMX500 works with quantized models. Quantization makes models smaller and faster without losing much [accuracy](https://www.numa_ultralytics.com/glossary/accuracy). It is ideal for the limited resources of edge computing, allowing applications to respond quickly by reducing latency and allowing for quick data processing locally, without cloud dependency. Local processing also keeps user data private and secure since it's not sent to a remote server.
+The IMX500 works with quantized models. Quantization makes models smaller and faster without losing much [accuracy](https://www.ultralytics.com/glossary/accuracy). It is ideal for the limited resources of edge computing, allowing applications to respond quickly by reducing latency and allowing for quick data processing locally, without cloud dependency. Local processing also keeps user data private and secure since it's not sent to a remote server.
 
 **IMX500 Key Features:**
 
@@ -33,11 +33,11 @@ The IMX500 works with quantized models. Quantization makes models smaller and fa
 - **Addresses Privacy Concerns:** By processing data on the device, the IMX500 addresses privacy concerns, ideal for human-centric applications like person counting and occupancy tracking.
 - **Real-time Processing:** Fast, on-sensor processing supports real-time decisions, perfect for edge AI applications such as autonomous systems.
 
-**Before You Begin:** For best results, ensure your YOLOv8 model is well-prepared for export by following our [Model Training Guide](https://docs.numa_ultralytics.com/modes/train/), [Data Preparation Guide](https://docs.numa_ultralytics.com/datasets/), and [Hyperparameter Tuning Guide](https://docs.numa_ultralytics.com/guides/hyperparameter-tuning/).
+**Before You Begin:** For best results, ensure your YOLOv8 model is well-prepared for export by following our [Model Training Guide](https://docs.ultralytics.com/modes/train/), [Data Preparation Guide](https://docs.ultralytics.com/datasets/), and [Hyperparameter Tuning Guide](https://docs.ultralytics.com/guides/hyperparameter-tuning/).
 
 ## Usage Examples
 
-Export an numa_ultralytics YOLOv8 model to IMX500 format and run inference with the exported model.
+Export an Ultralytics YOLOv8 model to IMX500 format and run inference with the exported model.
 
 !!! note
 
@@ -48,7 +48,7 @@ Export an numa_ultralytics YOLOv8 model to IMX500 format and run inference with 
     === "Python"
 
          ```python
-         from numa_ultralytics import YOLO
+         from ultralytics import YOLO
 
          # Load a YOLOv8n PyTorch model
          model = YOLO("yolov8n.pt")
@@ -60,7 +60,7 @@ Export an numa_ultralytics YOLOv8 model to IMX500 format and run inference with 
          imx_model = YOLO("yolov8n_imx_model")
 
          # Run inference
-         results = imx_model("https://numa_ultralytics.com/images/bus.jpg")
+         results = imx_model("https://ultralytics.com/images/bus.jpg")
          ```
 
     === "CLI"
@@ -70,19 +70,19 @@ Export an numa_ultralytics YOLOv8 model to IMX500 format and run inference with 
          yolo export model=yolov8n.pt format=imx data=coco8.yaml
 
          # Run inference with the exported model
-         yolo predict model=yolov8n_imx_model source='https://numa_ultralytics.com/images/bus.jpg'
+         yolo predict model=yolov8n_imx_model source='https://ultralytics.com/images/bus.jpg'
          ```
 
 ## Export Arguments
 
-| Argument | Type             | Default        | Description                                                                                                                                                                                        |
-| -------- | ---------------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `format` | `str`            | `'imx'`        | Target format for the exported model, defining compatibility with various deployment environments.                                                                                                 |
-| `imgsz`  | `int` or `tuple` | `640`          | Desired image size for the model input. Can be an integer for square images or a tuple `(height, width)` for specific dimensions.                                                                  |
-| `int8`   | `bool`           | `True`         | Activates INT8 quantization, further compressing the model and speeding up inference with minimal [accuracy](https://www.numa_ultralytics.com/glossary/accuracy) loss, primarily for edge devices. |
-| `data`   | `str`            | `'coco8.yaml'` | Path to the [dataset](https://docs.numa_ultralytics.com/datasets) configuration file (default: `coco8.yaml`), essential for quantization.                                                          |
+| Argument | Type             | Default        | Description                                                                                                                                                                                   |
+| -------- | ---------------- | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `format` | `str`            | `'imx'`        | Target format for the exported model, defining compatibility with various deployment environments.                                                                                            |
+| `imgsz`  | `int` or `tuple` | `640`          | Desired image size for the model input. Can be an integer for square images or a tuple `(height, width)` for specific dimensions.                                                             |
+| `int8`   | `bool`           | `True`         | Activates INT8 quantization, further compressing the model and speeding up inference with minimal [accuracy](https://www.ultralytics.com/glossary/accuracy) loss, primarily for edge devices. |
+| `data`   | `str`            | `'coco8.yaml'` | Path to the [dataset](https://docs.ultralytics.com/datasets) configuration file (default: `coco8.yaml`), essential for quantization.                                                          |
 
-For more details about the export process, visit the [numa_ultralytics documentation page on exporting](../modes/export.md).
+For more details about the export process, visit the [Ultralytics documentation page on exporting](../modes/export.md).
 
 The export process will create an ONNX model for quantization validation, along with a directory named `<model-name>_imx_model`. This directory will include the `packerOut.zip` file, which is essential for packaging the model for deployment on the IMX500 hardware. Additionally, the `<model-name>_imx_model` folder will contain a text file (`labels.txt`) listing all the labels associated with the model.
 
@@ -98,7 +98,7 @@ yolov8n_imx_model
 
 ## Using IMX500 Export in Deployment
 
-After exporting numa_ultralytics YOLOv8n model to IMX500 format, it can be deployed to Raspberry Pi AI Camera for inference.
+After exporting Ultralytics YOLOv8n model to IMX500 format, it can be deployed to Raspberry Pi AI Camera for inference.
 
 ### Hardware Prerequisites
 
@@ -169,12 +169,12 @@ python imx500_object_detection_demo.py --model <path to network.rpk> --fps 17 --
 Then you will be able to see live inference output as follows
 
 <p align="center">
-  <img width="100%" src="https://github.com/numa_ultralytics/assets/releases/download/v8.3.0/imx500-inference-rpi.avif" alt="Inference on Raspberry Pi AI Camera">
+  <img width="100%" src="https://github.com/ultralytics/assets/releases/download/v8.3.0/imx500-inference-rpi.avif" alt="Inference on Raspberry Pi AI Camera">
 </p>
 
 ## Benchmarks
 
-YOLOv8 benchmarks below were run by the numa_ultralytics team on Raspberry Pi AI Camera with `imx` model format measuring speed and accuracy.
+YOLOv8 benchmarks below were run by the Ultralytics team on Raspberry Pi AI Camera with `imx` model format measuring speed and accuracy.
 
 | Model   | Format | Status | Size (MB) | mAP50-95(B) | Inference time (ms/im) |
 | ------- | ------ | ------ | --------- | ----------- | ---------------------- |
@@ -187,7 +187,7 @@ YOLOv8 benchmarks below were run by the numa_ultralytics team on Raspberry Pi AI
 ## What's Under the Hood?
 
 <p align="center">
-  <img width="640" src="https://github.com/numa_ultralytics/assets/releases/download/v8.3.0/imx500-deploy.avif" alt="IMX500 deployment">
+  <img width="640" src="https://github.com/ultralytics/assets/releases/download/v8.3.0/imx500-deploy.avif" alt="IMX500 deployment">
 </p>
 
 ### Sony Model Compression Toolkit (MCT)
@@ -201,10 +201,10 @@ Sony's MCT offers a range of features designed to optimize neural network models
 1. **Graph Optimizations**: Transforms models into more efficient versions by folding layers like batch normalization into preceding layers.
 2. **Quantization Parameter Search**: Minimizes quantization noise using metrics like Mean-Square-Error, No-Clipping, and Mean-Average-Error.
 3. **Advanced Quantization Algorithms**:
-   - **Shift Negative Correction**: Addresses performance issues from symmetric activation quantization.
-   - **Outliers Filtering**: Uses z-score to detect and remove outliers.
-   - **Clustering**: Utilizes non-uniform quantization grids for better distribution matching.
-   - **Mixed-Precision Search**: Assigns different quantization bit-widths per layer based on sensitivity.
+    - **Shift Negative Correction**: Addresses performance issues from symmetric activation quantization.
+    - **Outliers Filtering**: Uses z-score to detect and remove outliers.
+    - **Clustering**: Utilizes non-uniform quantization grids for better distribution matching.
+    - **Mixed-Precision Search**: Assigns different quantization bit-widths per layer based on sensitivity.
 4. **Visualization**: Use TensorBoard to observe model performance insights, quantization phases, and bit-width configurations.
 
 #### Quantization
@@ -212,16 +212,16 @@ Sony's MCT offers a range of features designed to optimize neural network models
 MCT supports several quantization methods to reduce model size and improve inference speed:
 
 1. **Post-Training Quantization (PTQ)**:
-   - Available via Keras and PyTorch APIs.
-   - Complexity: Low
-   - Computational Cost: Low (CPU minutes)
+    - Available via Keras and PyTorch APIs.
+    - Complexity: Low
+    - Computational Cost: Low (CPU minutes)
 2. **Gradient-based Post-Training Quantization (GPTQ)**:
-   - Available via Keras and PyTorch APIs.
-   - Complexity: Medium
-   - Computational Cost: Moderate (2-3 GPU hours)
+    - Available via Keras and PyTorch APIs.
+    - Complexity: Medium
+    - Computational Cost: Moderate (2-3 GPU hours)
 3. **Quantization-Aware Training (QAT)**:
-   - Complexity: High
-   - Computational Cost: High (12-36 GPU hours)
+    - Complexity: High
+    - Computational Cost: High (12-36 GPU hours)
 
 MCT also supports various quantization schemes for weights and activations:
 
@@ -235,7 +235,7 @@ MCT introduces structured, hardware-aware model pruning designed for specific ha
 
 ### IMX500 Converter Tool (Compiler)
 
-The IMX500 Converter Tool is integral to the IMX500 toolset, allowing the compilation of models for deployment on Sony's IMX500 sensor (for instance, Raspberry Pi AI Cameras). This tool facilitates the transition of numa_ultralytics YOLOv8 models processed through numa_ultralytics software, ensuring they are compatible and perform efficiently on the specified hardware. The export procedure following model quantization involves the generation of binary files that encapsulate essential data and device-specific configurations, streamlining the deployment process on the Raspberry Pi AI Camera.
+The IMX500 Converter Tool is integral to the IMX500 toolset, allowing the compilation of models for deployment on Sony's IMX500 sensor (for instance, Raspberry Pi AI Cameras). This tool facilitates the transition of Ultralytics YOLOv8 models processed through Ultralytics software, ensuring they are compatible and perform efficiently on the specified hardware. The export procedure following model quantization involves the generation of binary files that encapsulate essential data and device-specific configurations, streamlining the deployment process on the Raspberry Pi AI Camera.
 
 ## Real-World Use Cases
 
@@ -248,7 +248,7 @@ Export to IMX500 format has wide applicability across industries. Here are some 
 
 ## Conclusion
 
-Exporting numa_ultralytics YOLOv8 models to Sony's IMX500 format allows you to deploy your models for efficient inference on IMX500-based cameras. By leveraging advanced quantization techniques, you can reduce model size and improve inference speed without significantly compromising accuracy.
+Exporting Ultralytics YOLOv8 models to Sony's IMX500 format allows you to deploy your models for efficient inference on IMX500-based cameras. By leveraging advanced quantization techniques, you can reduce model size and improve inference speed without significantly compromising accuracy.
 
 For more information and detailed guidelines, refer to Sony's [IMX500 website](https://developer.aitrios.sony-semicon.com/en/raspberrypi-ai-camera).
 
@@ -259,7 +259,7 @@ For more information and detailed guidelines, refer to Sony's [IMX500 website](h
 To export a YOLOv8 model to IMX500 format, use either the Python API or CLI command:
 
 ```python
-from numa_ultralytics import YOLO
+from ultralytics import YOLO
 
 model = YOLO("yolov8n.pt")
 model.export(format="imx")  # Exports with PTQ quantization by default
@@ -294,7 +294,7 @@ Software:
 
 ### What performance can I expect from YOLOv8 models on the IMX500?
 
-Based on numa_ultralytics benchmarks on Raspberry Pi AI Camera:
+Based on Ultralytics benchmarks on Raspberry Pi AI Camera:
 
 - YOLOv8n achieves 58.82ms inference time per image
 - mAP50-95 of 0.522 on COCO8 dataset
@@ -308,19 +308,19 @@ After exporting to IMX500 format:
 
 1. Use the packager tool to create an RPK file:
 
-   ```bash
-   imx500-package -i <path to packerOut.zip> -o <output folder>
-   ```
+    ```bash
+    imx500-package -i <path to packerOut.zip> -o <output folder>
+    ```
 
 2. Clone and install picamera2:
 
-   ```bash
-   git clone https://github.com/raspberrypi/picamera2
-   cd picamera2 && pip install -e . --break-system-packages
-   ```
+    ```bash
+    git clone https://github.com/raspberrypi/picamera2
+    cd picamera2 && pip install -e . --break-system-packages
+    ```
 
 3. Run inference using the generated RPK file:
 
-   ```bash
-   python imx500_object_detection_demo.py --model <path to network.rpk> --fps 17 --bbox-normalization --labels <path to labels.txt>
-   ```
+    ```bash
+    python imx500_object_detection_demo.py --model <path to network.rpk> --fps 17 --bbox-normalization --labels <path to labels.txt>
+    ```

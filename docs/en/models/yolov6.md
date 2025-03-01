@@ -1,17 +1,17 @@
 ---
 comments: true
-description: Explore Meituan YOLOv6, a top-tier object detector balancing speed and accuracy. Learn about its unique features and performance metrics on numa_ultralytics Docs.
-keywords: Meituan YOLOv6, object detection, real-time applications, BiC module, Anchor-Aided Training, COCO dataset, high-performance models, numa_ultralytics Docs
+description: Explore Meituan YOLOv6, a top-tier object detector balancing speed and accuracy. Learn about its unique features and performance metrics on Ultralytics Docs.
+keywords: Meituan YOLOv6, object detection, real-time applications, BiC module, Anchor-Aided Training, COCO dataset, high-performance models, Ultralytics Docs
 ---
 
 # Meituan YOLOv6
 
 ## Overview
 
-[Meituan](https://www.meituan.com/) YOLOv6 is a cutting-edge object detector that offers remarkable balance between speed and accuracy, making it a popular choice for real-time applications. This model introduces several notable enhancements on its architecture and training scheme, including the implementation of a Bi-directional Concatenation (BiC) module, an anchor-aided training (AAT) strategy, and an improved [backbone](https://www.numa_ultralytics.com/glossary/backbone) and neck design for state-of-the-art accuracy on the COCO dataset.
+[Meituan](https://www.meituan.com/) YOLOv6 is a cutting-edge object detector that offers remarkable balance between speed and accuracy, making it a popular choice for real-time applications. This model introduces several notable enhancements on its architecture and training scheme, including the implementation of a Bi-directional Concatenation (BiC) module, an anchor-aided training (AAT) strategy, and an improved [backbone](https://www.ultralytics.com/glossary/backbone) and neck design for state-of-the-art accuracy on the COCO dataset.
 
-![Meituan YOLOv6](https://github.com/numa_ultralytics/docs/releases/download/0/meituan-yolov6.avif)
-![Model example image](https://github.com/numa_ultralytics/docs/releases/download/0/yolov6-architecture-diagram.avif) **Overview of YOLOv6.** Model architecture diagram showing the redesigned network components and training strategies that have led to significant performance improvements. (a) The neck of YOLOv6 (N and S are shown). Note for M/L, RepBlocks is replaced with CSPStackRep. (b) The structure of a BiC module. (c) A SimCSPSPPF block. ([source](https://arxiv.org/pdf/2301.05586.pdf)).
+![Meituan YOLOv6](https://github.com/ultralytics/docs/releases/download/0/meituan-yolov6.avif)
+![Model example image](https://github.com/ultralytics/docs/releases/download/0/yolov6-architecture-diagram.avif) **Overview of YOLOv6.** Model architecture diagram showing the redesigned network components and training strategies that have led to significant performance improvements. (a) The neck of YOLOv6 (N and S are shown). Note for M/L, RepBlocks is replaced with CSPStackRep. (b) The structure of a BiC module. (c) A SimCSPSPPF block. ([source](https://arxiv.org/pdf/2301.05586.pdf)).
 
 ### Key Features
 
@@ -35,7 +35,7 @@ YOLOv6 provides various pre-trained models with different scales:
 - YOLOv6-L: 52.8% AP at 116 FPS.
 - YOLOv6-L6: State-of-the-art accuracy in real-time.
 
-YOLOv6 also provides quantized models for different [precisions](https://www.numa_ultralytics.com/glossary/precision) and models optimized for mobile platforms.
+YOLOv6 also provides quantized models for different [precisions](https://www.ultralytics.com/glossary/precision) and models optimized for mobile platforms.
 
 ## Usage Examples
 
@@ -48,7 +48,7 @@ This example provides simple YOLOv6 training and inference examples. For full do
         YOLOv6 `*.yaml` files can be passed to the `YOLO()` class to build the corresponding model in Python:
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Build a YOLOv6n model from scratch
         model = YOLO("yolov6n.yaml")
@@ -77,7 +77,7 @@ This example provides simple YOLOv6 training and inference examples. For full do
 
 ## Supported Tasks and Modes
 
-The YOLOv6 series offers a range of models, each optimized for high-performance [Object Detection](../tasks/detect.md). These models cater to varying computational needs and [accuracy](https://www.numa_ultralytics.com/glossary/accuracy) requirements, making them versatile for a wide array of applications.
+The YOLOv6 series offers a range of models, each optimized for high-performance [Object Detection](../tasks/detect.md). These models cater to varying computational needs and [accuracy](https://www.ultralytics.com/glossary/accuracy) requirements, making them versatile for a wide array of applications.
 
 | Model    | Filenames      | Tasks                                  | Inference | Validation | Training | Export |
 | -------- | -------------- | -------------------------------------- | --------- | ---------- | -------- | ------ |
@@ -87,7 +87,7 @@ The YOLOv6 series offers a range of models, each optimized for high-performance 
 | YOLOv6-L | `yolov6l.yaml` | [Object Detection](../tasks/detect.md) | ✅        | ✅         | ✅       | ✅     |
 | YOLOv6-X | `yolov6x.yaml` | [Object Detection](../tasks/detect.md) | ✅        | ✅         | ✅       | ✅     |
 
-This table provides a detailed overview of the YOLOv6 model variants, highlighting their capabilities in [object detection](https://www.numa_ultralytics.com/glossary/object-detection) tasks and their compatibility with various operational modes such as [Inference](../modes/predict.md), [Validation](../modes/val.md), [Training](../modes/train.md), and [Export](../modes/export.md). This comprehensive support ensures that users can fully leverage the capabilities of YOLOv6 models in a broad range of object detection scenarios.
+This table provides a detailed overview of the YOLOv6 model variants, highlighting their capabilities in [object detection](https://www.ultralytics.com/glossary/object-detection) tasks and their compatibility with various operational modes such as [Inference](../modes/predict.md), [Validation](../modes/val.md), [Training](../modes/train.md), and [Export](../modes/export.md). This comprehensive support ensures that users can fully leverage the capabilities of YOLOv6 models in a broad range of object detection scenarios.
 
 ## Citations and Acknowledgements
 
@@ -118,18 +118,18 @@ Meituan YOLOv6 is a state-of-the-art object detector that balances speed and acc
 
 ### How does the Bi-directional Concatenation (BiC) Module in YOLOv6 improve performance?
 
-The Bi-directional Concatenation (BiC) module in YOLOv6 enhances localization signals in the detector's neck, delivering performance improvements with negligible speed impact. This module effectively combines different [feature maps](https://www.numa_ultralytics.com/glossary/feature-maps), increasing the model's ability to detect objects accurately. For more details on YOLOv6's features, refer to the [Key Features](#key-features) section.
+The Bi-directional Concatenation (BiC) module in YOLOv6 enhances localization signals in the detector's neck, delivering performance improvements with negligible speed impact. This module effectively combines different [feature maps](https://www.ultralytics.com/glossary/feature-maps), increasing the model's ability to detect objects accurately. For more details on YOLOv6's features, refer to the [Key Features](#key-features) section.
 
-### How can I train a YOLOv6 model using numa_ultralytics?
+### How can I train a YOLOv6 model using Ultralytics?
 
-You can train a YOLOv6 model using numa_ultralytics with simple Python or CLI commands. For instance:
+You can train a YOLOv6 model using Ultralytics with simple Python or CLI commands. For instance:
 
 !!! example
 
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Build a YOLOv6n model from scratch
         model = YOLO("yolov6n.yaml")
@@ -160,8 +160,8 @@ These models are evaluated on the COCO dataset using an NVIDIA T4 GPU. For more 
 
 ### How does the Anchor-Aided Training (AAT) strategy benefit YOLOv6?
 
-Anchor-Aided Training (AAT) in YOLOv6 combines elements of anchor-based and anchor-free approaches, enhancing the model's detection capabilities without compromising inference efficiency. This strategy leverages anchors during training to improve [bounding box](https://www.numa_ultralytics.com/glossary/bounding-box) predictions, making YOLOv6 effective in diverse object detection tasks.
+Anchor-Aided Training (AAT) in YOLOv6 combines elements of anchor-based and anchor-free approaches, enhancing the model's detection capabilities without compromising inference efficiency. This strategy leverages anchors during training to improve [bounding box](https://www.ultralytics.com/glossary/bounding-box) predictions, making YOLOv6 effective in diverse object detection tasks.
 
-### Which operational modes are supported by YOLOv6 models in numa_ultralytics?
+### Which operational modes are supported by YOLOv6 models in Ultralytics?
 
 YOLOv6 supports various operational modes including Inference, Validation, Training, and Export. This flexibility allows users to fully exploit the model's capabilities in different scenarios. Check out the [Supported Tasks and Modes](#supported-tasks-and-modes) section for a detailed overview of each mode.

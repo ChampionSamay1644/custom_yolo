@@ -1,14 +1,14 @@
 ---
 comments: true
 description: Learn how to run YOLO11 on AzureML. Quickstart instructions for terminal and notebooks to harness Azure's cloud computing for efficient model training.
-keywords: YOLO11, AzureML, machine learning, cloud computing, quickstart, terminal, notebooks, model training, Python SDK, AI, numa_ultralytics
+keywords: YOLO11, AzureML, machine learning, cloud computing, quickstart, terminal, notebooks, model training, Python SDK, AI, Ultralytics
 ---
 
 # YOLO11 🚀 on AzureML
 
 ## What is Azure?
 
-[Azure](https://azure.microsoft.com/) is Microsoft's [cloud computing](https://www.numa_ultralytics.com/glossary/cloud-computing) platform, designed to help organizations move their workloads to the cloud from on-premises data centers. With the full spectrum of cloud services including those for computing, databases, analytics, [machine learning](https://www.numa_ultralytics.com/glossary/machine-learning-ml), and networking, users can pick and choose from these services to develop and scale new applications, or run existing applications, in the public cloud.
+[Azure](https://azure.microsoft.com/) is Microsoft's [cloud computing](https://www.ultralytics.com/glossary/cloud-computing) platform, designed to help organizations move their workloads to the cloud from on-premises data centers. With the full spectrum of cloud services including those for computing, databases, analytics, [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml), and networking, users can pick and choose from these services to develop and scale new applications, or run existing applications, in the public cloud.
 
 ## What is Azure Machine Learning (AzureML)?
 
@@ -33,7 +33,7 @@ Before you can get started, make sure you have access to an AzureML workspace. I
 From your AzureML workspace, select Compute > Compute instances > New, select the instance with the resources you need.
 
 <p align="center">
-  <img width="1280" src="https://github.com/numa_ultralytics/docs/releases/download/0/create-compute-arrow.avif" alt="Create Azure Compute Instance">
+  <img width="1280" src="https://github.com/ultralytics/docs/releases/download/0/create-compute-arrow.avif" alt="Create Azure Compute Instance">
 </p>
 
 ## Quickstart from Terminal
@@ -41,7 +41,7 @@ From your AzureML workspace, select Compute > Compute instances > New, select th
 Start your compute and open a Terminal:
 
 <p align="center">
-  <img width="480" src="https://github.com/numa_ultralytics/docs/releases/download/0/open-terminal.avif" alt="Open Terminal">
+  <img width="480" src="https://github.com/ultralytics/docs/releases/download/0/open-terminal.avif" alt="Open Terminal">
 </p>
 
 ### Create virtualenv
@@ -58,9 +58,9 @@ conda install pip -y
 Install the required dependencies:
 
 ```bash
-cd numa_ultralytics
+cd ultralytics
 pip install -r requirements.txt
-pip install numa_ultralytics
+pip install ultralytics
 pip install onnx>=1.12.0
 ```
 
@@ -69,16 +69,16 @@ pip install onnx>=1.12.0
 Predict:
 
 ```bash
-yolo predict model=yolo11n.pt source='https://numa_ultralytics.com/images/bus.jpg'
+yolo predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
 ```
 
-Train a detection model for 10 [epochs](https://www.numa_ultralytics.com/glossary/epoch) with an initial learning_rate of 0.01:
+Train a detection model for 10 [epochs](https://www.ultralytics.com/glossary/epoch) with an initial learning_rate of 0.01:
 
 ```bash
 yolo train data=coco8.yaml model=yolo11n.pt epochs=10 lr0=0.01
 ```
 
-You can find more [instructions to use the numa_ultralytics CLI here](../quickstart.md#use-numa_ultralytics-with-cli).
+You can find more [instructions to use the Ultralytics CLI here](../quickstart.md#use-ultralytics-with-cli).
 
 ## Quickstart from a Notebook
 
@@ -87,7 +87,7 @@ You can find more [instructions to use the numa_ultralytics CLI here](../quickst
 Open the compute Terminal.
 
 <p align="center">
-  <img width="480" src="https://github.com/numa_ultralytics/docs/releases/download/0/open-terminal.avif" alt="Open Terminal">
+  <img width="480" src="https://github.com/ultralytics/docs/releases/download/0/open-terminal.avif" alt="Open Terminal">
 </p>
 
 From your compute terminal, you need to create a new ipykernel (with a specific python version - because Python 3.13.1 is having some issues with some dependencies in AzureML) that will be used by your notebook to manage your dependencies:
@@ -107,26 +107,26 @@ Then you can open a Notebook cell and install the required dependencies:
 ```bash
 %%bash
 source activate yolo11env
-cd numa_ultralytics
+cd ultralytics
 pip install -r requirements.txt
-pip install numa_ultralytics
+pip install ultralytics
 pip install onnx>=1.12.0
 ```
 
 Note that we need to use the `source activate yolo11env` for all the %%bash cells, to make sure that the %%bash cell uses environment we want.
 
-Run some predictions using the [numa_ultralytics CLI](../quickstart.md#use-numa_ultralytics-with-cli):
+Run some predictions using the [Ultralytics CLI](../quickstart.md#use-ultralytics-with-cli):
 
 ```bash
 %%bash
 source activate yolo11env
-yolo predict model=yolo11n.pt source='https://numa_ultralytics.com/images/bus.jpg'
+yolo predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
 ```
 
-Or with the [numa_ultralytics Python interface](../quickstart.md#use-numa_ultralytics-with-python), for example to train the model:
+Or with the [Ultralytics Python interface](../quickstart.md#use-ultralytics-with-python), for example to train the model:
 
 ```python
-from numa_ultralytics import YOLO
+from ultralytics import YOLO
 
 # Load a model
 model = YOLO("yolo11n.pt")  # load an official YOLO11n model
@@ -134,11 +134,11 @@ model = YOLO("yolo11n.pt")  # load an official YOLO11n model
 # Use the model
 model.train(data="coco8.yaml", epochs=3)  # train the model
 metrics = model.val()  # evaluate model performance on the validation set
-results = model("https://numa_ultralytics.com/images/bus.jpg")  # predict on an image
+results = model("https://ultralytics.com/images/bus.jpg")  # predict on an image
 path = model.export(format="onnx")  # export the model to ONNX format
 ```
 
-You can use either the numa_ultralytics CLI or Python interface for running YOLO11 tasks, as described in the terminal section above.
+You can use either the Ultralytics CLI or Python interface for running YOLO11 tasks, as described in the terminal section above.
 
 By following these steps, you should be able to get YOLO11 running quickly on AzureML for quick trials. For more advanced uses, you may refer to the full AzureML documentation linked at the beginning of this guide.
 
@@ -162,19 +162,19 @@ Running YOLO11 on AzureML for model training involves several steps:
 
 2. **Setup Environment**: Start your compute instance, open a terminal, and create a conda environment, and don't forget to set your python version (python 3.13.1 is not supported yet) :
 
-   ```bash
-   conda create --name yolo11env -y python=3.12
-   conda activate yolo11env
-   conda install pip -y
-   pip install numa_ultralytics onnx>=1.12.0
-   ```
+    ```bash
+    conda create --name yolo11env -y python=3.12
+    conda activate yolo11env
+    conda install pip -y
+    pip install ultralytics onnx>=1.12.0
+    ```
 
-3. **Run YOLO11 Tasks**: Use the numa_ultralytics CLI to train your model:
-   ```bash
-   yolo train data=coco8.yaml model=yolo11n.pt epochs=10 lr0=0.01
-   ```
+3. **Run YOLO11 Tasks**: Use the Ultralytics CLI to train your model:
+    ```bash
+    yolo train data=coco8.yaml model=yolo11n.pt epochs=10 lr0=0.01
+    ```
 
-For more details, you can refer to the [instructions to use the numa_ultralytics CLI](../quickstart.md#use-numa_ultralytics-with-cli).
+For more details, you can refer to the [instructions to use the Ultralytics CLI](../quickstart.md#use-ultralytics-with-cli).
 
 ### What are the benefits of using AzureML for YOLO11 training?
 
@@ -194,35 +194,35 @@ Troubleshooting common issues with YOLO11 on AzureML can involve the following s
 - **Environment Setup**: Verify that your conda environment is correctly activated before running commands.
 - **Resource Allocation**: Make sure your compute instances have sufficient resources to handle the training workload.
 
-For additional guidance, review our [YOLO Common Issues](https://docs.numa_ultralytics.com/guides/yolo-common-issues/) documentation.
+For additional guidance, review our [YOLO Common Issues](https://docs.ultralytics.com/guides/yolo-common-issues/) documentation.
 
-### Can I use both the numa_ultralytics CLI and Python interface on AzureML?
+### Can I use both the Ultralytics CLI and Python interface on AzureML?
 
-Yes, AzureML allows you to use both the numa_ultralytics CLI and the Python interface seamlessly:
+Yes, AzureML allows you to use both the Ultralytics CLI and the Python interface seamlessly:
 
 - **CLI**: Ideal for quick tasks and running standard scripts directly from the terminal.
 
-  ```bash
-  yolo predict model=yolo11n.pt source='https://numa_ultralytics.com/images/bus.jpg'
-  ```
+    ```bash
+    yolo predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
+    ```
 
 - **Python Interface**: Useful for more complex tasks requiring custom coding and integration within notebooks.
 
-  ```python
-  from numa_ultralytics import YOLO
+    ```python
+    from ultralytics import YOLO
 
-  model = YOLO("yolo11n.pt")
-  model.train(data="coco8.yaml", epochs=3)
-  ```
+    model = YOLO("yolo11n.pt")
+    model.train(data="coco8.yaml", epochs=3)
+    ```
 
-Refer to the quickstart guides for more detailed instructions [here](../quickstart.md#use-numa_ultralytics-with-cli) and [here](../quickstart.md#use-numa_ultralytics-with-python).
+Refer to the quickstart guides for more detailed instructions [here](../quickstart.md#use-ultralytics-with-cli) and [here](../quickstart.md#use-ultralytics-with-python).
 
-### What is the advantage of using numa_ultralytics YOLO11 over other [object detection](https://www.numa_ultralytics.com/glossary/object-detection) models?
+### What is the advantage of using Ultralytics YOLO11 over other [object detection](https://www.ultralytics.com/glossary/object-detection) models?
 
-numa_ultralytics YOLO11 offers several unique advantages over competing object detection models:
+Ultralytics YOLO11 offers several unique advantages over competing object detection models:
 
 - **Speed**: Faster inference and training times compared to models like Faster R-CNN and SSD.
-- **[Accuracy](https://www.numa_ultralytics.com/glossary/accuracy)**: High accuracy in detection tasks with features like anchor-free design and enhanced augmentation strategies.
+- **[Accuracy](https://www.ultralytics.com/glossary/accuracy)**: High accuracy in detection tasks with features like anchor-free design and enhanced augmentation strategies.
 - **Ease of Use**: Intuitive API and CLI for quick setup, making it accessible both to beginners and experts.
 
-To explore more about YOLO11's features, visit the [numa_ultralytics YOLO](https://www.numa_ultralytics.com/yolo) page for detailed insights.
+To explore more about YOLO11's features, visit the [Ultralytics YOLO](https://www.ultralytics.com/yolo) page for detailed insights.
