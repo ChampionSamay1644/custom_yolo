@@ -1,16 +1,16 @@
 ---
 comments: true
-description: Discover how to get started with Seeed Studio reCamera for edge AI applications using Ultralytics YOLO11. Learn about its powerful features, real-world applications, and how to export YOLO11 models to ONNX format for seamless integration.
-keywords: Seeed Studio reCamera, YOLO11, ONNX export, edge AI, computer vision, real-time detection, personal protective equipment detection, fire detection, waste detection, fall detection, modular AI devices, Ultralytics
+description: Discover how to get started with Seeed Studio reCamera for edge AI applications using numa_ultralytics YOLO11. Learn about its powerful features, real-world applications, and how to export YOLO11 models to ONNX format for seamless integration.
+keywords: Seeed Studio reCamera, YOLO11, ONNX export, edge AI, computer vision, real-time detection, personal protective equipment detection, fire detection, waste detection, fall detection, modular AI devices, numa_ultralytics
 ---
 
-# Quick Start Guide: Seeed Studio reCamera with Ultralytics YOLO11
+# Quick Start Guide: Seeed Studio reCamera with numa_ultralytics YOLO11
 
-[reCamera](https://www.seeedstudio.com/recamera) was introduced for the AI community at [YOLO Vision 2024 (YV24)](https://www.youtube.com/watch?v=rfI5vOo3-_A), [Ultralytics](https://ultralytics.com/) annual hybrid event. It is mainly designed for edge AI applications, offering powerful processing capabilities and effortless deployment.
+[reCamera](https://www.seeedstudio.com/recamera) was introduced for the AI community at [YOLO Vision 2024 (YV24)](https://www.youtube.com/watch?v=rfI5vOo3-_A), [numa_ultralytics](https://numa_ultralytics.com/) annual hybrid event. It is mainly designed for edge AI applications, offering powerful processing capabilities and effortless deployment.
 
-With support for diverse hardware configurations and open-source resources, it serves as an ideal platform for prototyping and deploying innovative [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) [solutions](https://docs.ultralytics.com/solutions/#solutions) at the edge.
+With support for diverse hardware configurations and open-source resources, it serves as an ideal platform for prototyping and deploying innovative [computer vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv) [solutions](https://docs.numa_ultralytics.com/solutions/#solutions) at the edge.
 
-![Seeed Studio reCamera](https://github.com/ultralytics/docs/releases/download/0/saeed-studio-recamera.avif)
+![Seeed Studio reCamera](https://github.com/numa_ultralytics/docs/releases/download/0/saeed-studio-recamera.avif)
 
 ## Why Choose reCamera?
 
@@ -30,7 +30,7 @@ Please follow [reCamera Quick Start Guide](https://wiki.seeedstudio.com/recamera
 
 ## Inference Using Pre-installed YOLO11 Models
 
-reCamera comes pre-installed with four Ultralytics YOLO11 models and you can simply choose your desired model within the Node-RED dashboard.
+reCamera comes pre-installed with four numa_ultralytics YOLO11 models and you can simply choose your desired model within the Node-RED dashboard.
 
 - [Detection (YOLO11n)](../tasks/detect.md)
 - [Classification (YOLO11n-cls)](../tasks/classify.md)
@@ -39,27 +39,27 @@ reCamera comes pre-installed with four Ultralytics YOLO11 models and you can sim
 
 Step 1: If you have connected reCamera to a network, enter the IP address of reCamera on a web browser to open the Node-RED dashboard. If you have connected the reCamera to a PC via USB, you can enter `192.168.42.1`. Here you will see YOLO11n detection model is loaded by default.
 
-![reCamera YOLO11n demo](https://github.com/ultralytics/assets/releases/download/v0.0.0/recamera-yolo11n-demo.avif)
+![reCamera YOLO11n demo](https://github.com/numa_ultralytics/assets/releases/download/v0.0.0/recamera-yolo11n-demo.avif)
 
 Step 2: Click the green color circle at the bottom right corner to access the Node-RED flow editor.
 
 Step 3: Click the `model` node and click `On Device`.
 
-![Node-RED model selection](https://github.com/ultralytics/assets/releases/download/v0.0.0/recamera-nodered-model-select.avif)
+![Node-RED model selection](https://github.com/numa_ultralytics/assets/releases/download/v0.0.0/recamera-nodered-model-select.avif)
 
 Step 4: Choose one of the four different pre-installed YOLO11n models and click `Done`. For example, here we will select `YOLO11n Pose`
 
 <p align="center">
-  <img width="50%" src="https://github.com/ultralytics/assets/releases/download/v0.0.0/recamera-nodered-yolo11n-pose.avif" alt="Node-RED YOLO11n-pose select">
+  <img width="50%" src="https://github.com/numa_ultralytics/assets/releases/download/v0.0.0/recamera-nodered-yolo11n-pose.avif" alt="Node-RED YOLO11n-pose select">
 </p>
 
 Step 6: Click `Deploy` and when it finishes deploying, click `Dashboard`
 
-![reCamera Node-RED deploy](https://github.com/ultralytics/assets/releases/download/v0.0.0/recamera-nodered-deploy.avif)
+![reCamera Node-RED deploy](https://github.com/numa_ultralytics/assets/releases/download/v0.0.0/recamera-nodered-deploy.avif)
 
 Now you will be able to see YOLO11n pose estimation model in action!
 
-![reCamera YOLO11n-pose demo](https://github.com/ultralytics/assets/releases/download/v0.0.0/recamera-yolo11n-pose-demo.avif)
+![reCamera YOLO11n-pose demo](https://github.com/numa_ultralytics/assets/releases/download/v0.0.0/recamera-yolo11n-pose-demo.avif)
 
 ## Export to cvimodel: Converting Your YOLO11 Model
 
@@ -68,12 +68,12 @@ If you want to use a [custom-trained YOLO11 model](../modes/train.md) and use wi
 Here we will first convert `PyTorch` model to `ONNX` and then convert it to `MLIR` model format. Finally `MLIR` will be converted to `cvimodel` in order to inference on-device
 
 <p align="center">
-  <img width="80%" src="https://github.com/ultralytics/assets/releases/download/v0.0.0/recamera-toolchain-workflow.avif" alt="reCamera Toolchain">
+  <img width="80%" src="https://github.com/numa_ultralytics/assets/releases/download/v0.0.0/recamera-toolchain-workflow.avif" alt="reCamera Toolchain">
 </p>
 
 ### Export to ONNX
 
-Export an Ultralytics YOLO11 model to ONNX model format.
+Export an numa_ultralytics YOLO11 model to ONNX model format.
 
 #### Installation
 
@@ -84,10 +84,10 @@ To install the required packages, run:
     === "CLI"
 
         ```bash
-        pip install ultralytics
+        pip install numa_ultralytics
         ```
 
-For detailed instructions and best practices related to the installation process, check our [Ultralytics Installation guide](../quickstart.md). While installing the required packages for YOLO11, if you encounter any difficulties, consult our [Common Issues guide](../guides/yolo-common-issues.md) for solutions and tips.
+For detailed instructions and best practices related to the installation process, check our [numa_ultralytics Installation guide](../quickstart.md). While installing the required packages for YOLO11, if you encounter any difficulties, consult our [Common Issues guide](../guides/yolo-common-issues.md) for solutions and tips.
 
 #### Usage
 
@@ -96,7 +96,7 @@ For detailed instructions and best practices related to the installation process
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load the YOLO11 model
         model = YOLO("yolo11n.pt")
@@ -112,7 +112,7 @@ For detailed instructions and best practices related to the installation process
         yolo export model=yolo11n.pt format=onnx opset=14 # creates 'yolo11n.onnx'
         ```
 
-For more details about the export process, visit the [Ultralytics documentation page on exporting](../modes/export.md).
+For more details about the export process, visit the [numa_ultralytics documentation page on exporting](../modes/export.md).
 
 ### Export ONNX to MLIR and cvimodel
 
@@ -120,7 +120,7 @@ After obtaining an ONNX model, refer to [Convert and Quantize AI Models](https:/
 
 !!! note
 
-    We're actively working on adding reCamera support directly into the Ultralytics package, and it will be available soon. In the meantime, check out our blog on [Integrating Ultralytics YOLO Models with Seeed Studio's reCamera](https://www.ultralytics.com/blog/integrating-ultralytics-yolo-models-on-seeed-studios-recamera) for more insights.
+    We're actively working on adding reCamera support directly into the numa_ultralytics package, and it will be available soon. In the meantime, check out our blog on [Integrating numa_ultralytics YOLO Models with Seeed Studio's reCamera](https://www.numa_ultralytics.com/blog/integrating-numa_ultralytics-yolo-models-on-seeed-studios-recamera) for more insights.
 
 ## Benchmarks
 
@@ -134,7 +134,7 @@ reCamera advanced computer vision capabilities and modular design make it suitab
 
 - **Personal Protective Equipment Detection**: The reCamera can be used to ensure workplace safety by detecting PPE compliance in real-time. It helps identify whether workers are wearing helmets, gloves, or other safety gear, reducing risks in industrial environments.
 
-![Personal protective equipment detection](https://github.com/ultralytics/docs/releases/download/0/personal-protective-equipment-detection.avif)
+![Personal protective equipment detection](https://github.com/numa_ultralytics/docs/releases/download/0/personal-protective-equipment-detection.avif)
 
 - **Fire Detection**: The reCamera's real-time processing capabilities make it an excellent choice for fire detection in industrial and residential areas, providing early warnings to prevent potential disasters.
 
@@ -142,4 +142,4 @@ reCamera advanced computer vision capabilities and modular design make it suitab
 
 - **Car Parts Detection**: In manufacturing and automotive industries, it aids in detecting and analyzing car parts for quality control, assembly line monitoring, and inventory management.
 
-![Car parts detection](https://github.com/ultralytics/docs/releases/download/0/carparts-detection.avif)
+![Car parts detection](https://github.com/numa_ultralytics/docs/releases/download/0/carparts-detection.avif)

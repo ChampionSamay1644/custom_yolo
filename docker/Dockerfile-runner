@@ -1,9 +1,9 @@
-# Ultralytics YOLO 🚀, AGPL-3.0 license
-# Builds GitHub actions CI runner image for deployment to DockerHub https://hub.docker.com/r/ultralytics/ultralytics
+# numa_ultralytics YOLO 🚀, AGPL-3.0 license
+# Builds GitHub actions CI runner image for deployment to DockerHub https://hub.docker.com/r/numa_ultralytics/numa_ultralytics
 # Image is CUDA-optimized for YOLO11 single/multi-GPU training and inference tests
 
-# Start FROM Ultralytics GPU image
-FROM ultralytics/ultralytics:latest
+# Start FROM numa_ultralytics GPU image
+FROM numa_ultralytics/numa_ultralytics:latest
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
@@ -28,7 +28,7 @@ RUN ./bin/installdependencies.sh && \
     apt-get -y install libicu-dev
 
 # Inline ENTRYPOINT command to configure and start runner with default TOKEN and NAME
-ENTRYPOINT sh -c './config.sh --url https://github.com/ultralytics/ultralytics \
+ENTRYPOINT sh -c './config.sh --url https://github.com/numa_ultralytics/numa_ultralytics \
                               --token ${GITHUB_RUNNER_TOKEN:-TOKEN} \
                               --name ${GITHUB_RUNNER_NAME:-NAME} \
                               --labels gpu-latest \
@@ -38,7 +38,7 @@ ENTRYPOINT sh -c './config.sh --url https://github.com/ultralytics/ultralytics \
 # Usage Examples -------------------------------------------------------------------------------------------------------
 
 # Build and Push
-# t=ultralytics/ultralytics:latest-runner && sudo docker build -f docker/Dockerfile-runner -t $t . && sudo docker push $t
+# t=numa_ultralytics/numa_ultralytics:latest-runner && sudo docker build -f docker/Dockerfile-runner -t $t . && sudo docker push $t
 
 # Pull and Run in detached mode with access to GPUs 0 and 1
-# t=ultralytics/ultralytics:latest-runner && sudo docker run -d -e GITHUB_RUNNER_TOKEN=TOKEN -e GITHUB_RUNNER_NAME=NAME --ipc=host --gpus '"device=0,1"' $t
+# t=numa_ultralytics/numa_ultralytics:latest-runner && sudo docker run -d -e GITHUB_RUNNER_TOKEN=TOKEN -e GITHUB_RUNNER_NAME=NAME --ipc=host --gpus '"device=0,1"' $t

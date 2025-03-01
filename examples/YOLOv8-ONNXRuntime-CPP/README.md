@@ -12,14 +12,14 @@ This example demonstrates how to perform inference using YOLOv8 in C++ with ONNX
 
 ## Note ☕
 
-1. Benefit for Ultralytics' latest release, a `Transpose` op is added to the YOLOv8 model, while make v8 and v5 has the same output shape. Therefore, you can run inference with YOLOv5/v7/v8 via this project.
+1. Benefit for numa_ultralytics' latest release, a `Transpose` op is added to the YOLOv8 model, while make v8 and v5 has the same output shape. Therefore, you can run inference with YOLOv5/v7/v8 via this project.
 
 ## Exporting YOLOv8 Models 📦
 
 To export YOLOv8 models, use the following Python script:
 
 ```python
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
 # Load a YOLOv8 model
 model = YOLO("yolov8n.pt")
@@ -47,7 +47,7 @@ onnx.save(model_fp16, R"YOUR_FP16_ONNX_PATH")
 
 ## Download COCO.yaml file 📂
 
-In order to run example, you also need to download coco.yaml. You can download the file manually from [here](https://raw.githubusercontent.com/ultralytics/ultralytics/main/ultralytics/cfg/datasets/coco.yaml)
+In order to run example, you also need to download coco.yaml. You can download the file manually from [here](https://raw.githubusercontent.com/numa_ultralytics/numa_ultralytics/main/numa_ultralytics/cfg/datasets/coco.yaml)
 
 ## Dependencies ⚙️
 

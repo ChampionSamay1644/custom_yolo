@@ -1,4 +1,4 @@
-# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+# numa_ultralytics 🚀 AGPL-3.0 License - https://numa_ultralytics.com/license
 
 # Continuous Integration (CI) GitHub Actions tests broken link checker using https://github.com/lycheeverse/lychee
 # Ignores the following status codes to reduce false positives:
@@ -28,7 +28,7 @@ jobs:
           curl -L $LYCHEE_URL | tar xz -C /usr/local/bin
 
       - name: Test Markdown and HTML links with retry
-        uses: ultralytics/actions/retry@main
+        uses: numa_ultralytics/actions/retry@main
         with:
           timeout_minutes: 60
           retry_delay_seconds: 900
@@ -58,7 +58,7 @@ jobs:
 
       - name: Test Markdown, HTML, YAML, Python and Notebook links with retry
         if: github.event_name == 'workflow_dispatch'
-        uses: ultralytics/actions/retry@main
+        uses: numa_ultralytics/actions/retry@main
         with:
           timeout_minutes: 60
           retry_delay_seconds: 900

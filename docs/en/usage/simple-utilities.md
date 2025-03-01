@@ -1,16 +1,16 @@
 ---
 comments: true
-description: Explore essential utilities in the Ultralytics package to speed up and enhance your workflows. Learn about data processing, annotations, conversions, and more.
-keywords: Ultralytics, utilities, data processing, auto annotation, YOLO, dataset conversion, bounding boxes, image compression, machine learning tools
+description: Explore essential utilities in the numa_ultralytics package to speed up and enhance your workflows. Learn about data processing, annotations, conversions, and more.
+keywords: numa_ultralytics, utilities, data processing, auto annotation, YOLO, dataset conversion, bounding boxes, image compression, machine learning tools
 ---
 
 # Simple Utilities
 
 <p align="center">
-  <img src="https://github.com/ultralytics/docs/releases/download/0/code-with-perspective.avif" alt="code with perspective">
+  <img src="https://github.com/numa_ultralytics/docs/releases/download/0/code-with-perspective.avif" alt="code with perspective">
 </p>
 
-The `ultralytics` package comes with a myriad of utilities that can support, enhance, and speed up your workflows. There are many more available, but here are some that will be useful for most developers. They're also a great reference point to use when learning to program.
+The `numa_ultralytics` package comes with a myriad of utilities that can support, enhance, and speed up your workflows. There are many more available, but here are some that will be useful for most developers. They're also a great reference point to use when learning to program.
 
 <p align="center">
   <br>
@@ -20,17 +20,17 @@ The `ultralytics` package comes with a myriad of utilities that can support, enh
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Ultralytics Utilities | Auto Annotation, Explorer API and Dataset Conversion
+  <strong>Watch:</strong> numa_ultralytics Utilities | Auto Annotation, Explorer API and Dataset Conversion
 </p>
 
 ## Data
 
 ### Auto Labeling / Annotations
 
-Dataset annotation is a very resource intensive and time-consuming process. If you have a YOLO [object detection](https://www.ultralytics.com/glossary/object-detection) model trained on a reasonable amount of data, you can use it and [SAM](../models/sam.md) to auto-annotate additional data (segmentation format).
+Dataset annotation is a very resource intensive and time-consuming process. If you have a YOLO [object detection](https://www.numa_ultralytics.com/glossary/object-detection) model trained on a reasonable amount of data, you can use it and [SAM](../models/sam.md) to auto-annotate additional data (segmentation format).
 
 ```{ .py .annotate }
-from ultralytics.data.annotator import auto_annotate
+from numa_ultralytics.data.annotator import auto_annotate
 
 auto_annotate(
     data="path/to/new/data",
@@ -43,7 +43,7 @@ auto_annotate(
 
 This function does not return any value. For further details on how the function operates:
 
-- [See the reference section for `annotator.auto_annotate`](../reference/data/annotator.md#ultralytics.data.annotator.auto_annotate) for more insight on how the function operates.
+- [See the reference section for `annotator.auto_annotate`](../reference/data/annotator.md#numa_ultralytics.data.annotator.auto_annotate) for more insight on how the function operates.
 - Use in combination with the [function `segments2boxes`](#convert-segments-to-bounding-boxes) to generate object detection bounding boxes as well
 
 ### Visualize Dataset Annotations
@@ -51,7 +51,7 @@ This function does not return any value. For further details on how the function
 This function visualizes YOLO annotations on an image before training, helping to identify and correct any wrong annotations that could lead to incorrect detection results. It draws bounding boxes, labels objects with class names, and adjusts text color based on the background's luminance for better readability.
 
 ```{ .py .annotate }
-from ultralytics.data.utils import visualize_image_annotations
+from numa_ultralytics.data.utils import visualize_image_annotations
 
 label_map = {  # Define the label map with all annotated class labels.
     0: "person",
@@ -68,7 +68,7 @@ visualize_image_annotations(
 
 ### Convert Segmentation Masks into YOLO Format
 
-![Segmentation Masks to YOLO Format](https://github.com/ultralytics/docs/releases/download/0/segmentation-masks-to-yolo-format.avif)
+![Segmentation Masks to YOLO Format](https://github.com/numa_ultralytics/docs/releases/download/0/segmentation-masks-to-yolo-format.avif)
 
 Use to convert a dataset of segmentation mask images to the [`YOLO`](../models/yolo11.md) segmentation format.
 This function takes the directory containing the binary format mask images and converts them into YOLO segmentation format.
@@ -76,7 +76,7 @@ This function takes the directory containing the binary format mask images and c
 The converted masks will be saved in the specified output directory.
 
 ```python
-from ultralytics.data.converter import convert_segment_masks_to_yolo_seg
+from numa_ultralytics.data.converter import convert_segment_masks_to_yolo_seg
 
 # The classes here is the total classes in the dataset.
 # for COCO dataset we have 80 classes.
@@ -88,7 +88,7 @@ convert_segment_masks_to_yolo_seg(masks_dir="path/to/masks_dir", output_dir="pat
 Use to convert COCO JSON annotations into proper YOLO format. For object detection (bounding box) datasets, `use_segments` and `use_keypoints` should both be `False`
 
 ```{ .py .annotate }
-from ultralytics.data.converter import convert_coco
+from numa_ultralytics.data.converter import convert_coco
 
 convert_coco(  # (1)!
     "../datasets/coco/annotations/",
@@ -100,13 +100,13 @@ convert_coco(  # (1)!
 
 1. Nothing returns from this function
 
-For additional information about the `convert_coco` function, [visit the reference page](../reference/data/converter.md#ultralytics.data.converter.convert_coco)
+For additional information about the `convert_coco` function, [visit the reference page](../reference/data/converter.md#numa_ultralytics.data.converter.convert_coco)
 
-### Get [Bounding Box](https://www.ultralytics.com/glossary/bounding-box) Dimensions
+### Get [Bounding Box](https://www.numa_ultralytics.com/glossary/bounding-box) Dimensions
 
 ```{.py .annotate }
-from ultralytics.utils.plotting import Annotator
-from ultralytics import YOLO
+from numa_ultralytics.utils.plotting import Annotator
+from numa_ultralytics import YOLO
 import cv2
 
 model = YOLO('yolo11n.pt')  # Load pretrain or fine-tune model
@@ -143,7 +143,7 @@ data
 ```
 
 ```{ .py .annotate }
-from ultralytics.data.converter import yolo_bbox2segment
+from numa_ultralytics.data.converter import yolo_bbox2segment
 
 yolo_bbox2segment(  # (1)!
     im_dir="path/to/images",
@@ -154,7 +154,7 @@ yolo_bbox2segment(  # (1)!
 
 1. Nothing returns from this function
 
-[Visit the `yolo_bbox2segment` reference page](../reference/data/converter.md#ultralytics.data.converter.yolo_bbox2segment) for more information regarding the function.
+[Visit the `yolo_bbox2segment` reference page](../reference/data/converter.md#numa_ultralytics.data.converter.yolo_bbox2segment) for more information regarding the function.
 
 ### Convert Segments to Bounding Boxes
 
@@ -163,7 +163,7 @@ If you have a dataset that uses the [segmentation dataset format](../datasets/se
 ```python
 import numpy as np
 
-from ultralytics.utils.ops import segments2boxes
+from numa_ultralytics.utils.ops import segments2boxes
 
 segments = np.array(
     [
@@ -180,7 +180,7 @@ segments2boxes([s.reshape(-1, 2) for s in segments])
 #           dtype=float32) # xywh bounding boxes
 ```
 
-To understand how this function works, visit the [reference page](../reference/utils/ops.md#ultralytics.utils.ops.segments2boxes)
+To understand how this function works, visit the [reference page](../reference/utils/ops.md#numa_ultralytics.utils.ops.segments2boxes)
 
 ## Utilities
 
@@ -191,7 +191,7 @@ Compresses a single image file to reduced size while preserving its aspect ratio
 ```{ .py .annotate }
 from pathlib import Path
 
-from ultralytics.data.utils import compress_one_image
+from numa_ultralytics.data.utils import compress_one_image
 
 for f in Path("path/to/dataset").rglob("*.jpg"):
     compress_one_image(f)  # (1)!
@@ -204,7 +204,7 @@ for f in Path("path/to/dataset").rglob("*.jpg"):
 Automatically split a dataset into `train`/`val`/`test` splits and save the resulting splits into `autosplit_*.txt` files. This function will use random sampling, which is not included when using [`fraction` argument for training](../modes/train.md#train-settings).
 
 ```{ .py .annotate }
-from ultralytics.data.utils import autosplit
+from numa_ultralytics.data.utils import autosplit
 
 autosplit(  # (1)!
     path="path/to/images",
@@ -215,7 +215,7 @@ autosplit(  # (1)!
 
 1. Nothing returns from this function
 
-See the [Reference page](../reference/data/utils.md#ultralytics.data.utils.autosplit) for additional details on this function.
+See the [Reference page](../reference/data/utils.md#numa_ultralytics.data.utils.autosplit) for additional details on this function.
 
 ### Segment-polygon to Binary Mask
 
@@ -228,7 +228,7 @@ Convert a single polygon (as list) to a binary mask of the specified image size.
 ```python
 import numpy as np
 
-from ultralytics.data.utils import polygon2mask
+from numa_ultralytics.data.utils import polygon2mask
 
 imgsz = (1080, 810)
 polygon = np.array([805, 392, 797, 400, ..., 808, 714, 808, 392])  # (238, 2)
@@ -250,7 +250,7 @@ To manage bounding box data, the `Bboxes` class will help to convert between box
 ```python
 import numpy as np
 
-from ultralytics.utils.instance import Bboxes
+from numa_ultralytics.utils.instance import Bboxes
 
 boxes = Bboxes(
     bboxes=np.array(
@@ -281,7 +281,7 @@ print(boxes.bboxes)
 # )
 ```
 
-See the [`Bboxes` reference section](../reference/utils/instance.md#ultralytics.utils.instance.Bboxes) for more attributes and methods available.
+See the [`Bboxes` reference section](../reference/utils/instance.md#numa_ultralytics.utils.instance.Bboxes) for more attributes and methods available.
 
 !!! tip
 
@@ -289,15 +289,15 @@ See the [`Bboxes` reference section](../reference/utils/instance.md#ultralytics.
 
 ### Scaling Boxes
 
-When scaling and image up or down, corresponding bounding box coordinates can be appropriately scaled to match using `ultralytics.utils.ops.scale_boxes`.
+When scaling and image up or down, corresponding bounding box coordinates can be appropriately scaled to match using `numa_ultralytics.utils.ops.scale_boxes`.
 
 ```{ .py .annotate }
 import cv2 as cv
 import numpy as np
 
-from ultralytics.utils.ops import scale_boxes
+from numa_ultralytics.utils.ops import scale_boxes
 
-image = cv.imread("ultralytics/assets/bus.jpg")
+image = cv.imread("numa_ultralytics/assets/bus.jpg")
 h, w, c = image.shape
 resized = cv.resize(image, None, (), fx=1.2, fy=1.2)
 new_h, new_w, _ = resized.shape
@@ -344,7 +344,7 @@ Convert bounding box coordinates from (x1, y1, x2, y2) format to (x, y, width, h
 ```python
 import numpy as np
 
-from ultralytics.utils.ops import xyxy2xywh
+from numa_ultralytics.utils.ops import xyxy2xywh
 
 xyxy_boxes = np.array(
     [
@@ -372,7 +372,7 @@ print(xywh)
 ### All Bounding Box Conversions
 
 ```python
-from ultralytics.utils.ops import (
+from numa_ultralytics.utils.ops import (
     ltwh2xywh,
     ltwh2xyxy,
     xywh2ltwh,  # xywh → top-left corner, w, h
@@ -386,15 +386,15 @@ for func in (ltwh2xywh, ltwh2xyxy, xywh2ltwh, xywh2xyxy, xywhn2xyxy, xyxy2ltwh, 
     print(help(func))  # print function docstrings
 ```
 
-See docstring for each function or visit the `ultralytics.utils.ops` [reference page](../reference/utils/ops.md) to read more about each function.
+See docstring for each function or visit the `numa_ultralytics.utils.ops` [reference page](../reference/utils/ops.md) to read more about each function.
 
 ## Plotting
 
 ### Drawing Annotations
 
-Ultralytics includes an Annotator class that can be used to annotate any kind of data. It's easiest to use with [object detection bounding boxes](../modes/predict.md#boxes), [pose key points](../modes/predict.md#keypoints), and [oriented bounding boxes](../modes/predict.md#obb).
+numa_ultralytics includes an Annotator class that can be used to annotate any kind of data. It's easiest to use with [object detection bounding boxes](../modes/predict.md#boxes), [pose key points](../modes/predict.md#keypoints), and [oriented bounding boxes](../modes/predict.md#obb).
 
-#### Ultralytics Sweep Annotation
+#### numa_ultralytics Sweep Annotation
 
 !!! example "Python Examples using YOLO11 🚀"
 
@@ -403,8 +403,8 @@ Ultralytics includes an Annotator class that can be used to annotate any kind of
     ```python
     import cv2
 
-    from ultralytics import YOLO
-    from ultralytics.utils.plotting import Annotator, colors
+    from numa_ultralytics import YOLO
+    from numa_ultralytics.utils.plotting import Annotator, colors
 
     # User defined video path and model file
     cap = cv2.VideoCapture("Path/to/video/file.mp4")
@@ -416,14 +416,14 @@ Ultralytics includes an Annotator class that can be used to annotate any kind of
 
     # Initialize the video writer object.
     w, h, fps = (int(cap.get(x)) for x in (cv2.CAP_PROP_FRAME_WIDTH, cv2.CAP_PROP_FRAME_HEIGHT, cv2.CAP_PROP_FPS))
-    video_writer = cv2.VideoWriter("ultralytics.avi", cv2.VideoWriter_fourcc(*"mp4v"), fps, (w, h))
+    video_writer = cv2.VideoWriter("numa_ultralytics.avi", cv2.VideoWriter_fourcc(*"mp4v"), fps, (w, h))
 
     masks = None  # Initialize variable to store masks data
     f = 0  # Initialize frame count variable for enabling mouse event.
     line_x = w  # Store width of line.
     dragging = False  # Initialize bool variable for line dragging.
     classes = model.names  # Store model classes names for plotting.
-    window_name = "Ultralytics Sweep Annotator"
+    window_name = "numa_ultralytics Sweep Annotator"
 
 
     def drag_line(event, x, y, flags, param):  # Mouse callback for dragging line.
@@ -485,7 +485,7 @@ Ultralytics includes an Annotator class that can be used to annotate any kind of
 import cv2 as cv
 import numpy as np
 
-from ultralytics.utils.plotting import Annotator, colors
+from numa_ultralytics.utils.plotting import Annotator, colors
 
 names = {  # (1)!
     0: "person",
@@ -493,7 +493,7 @@ names = {  # (1)!
     11: "stop sign",
 }
 
-image = cv.imread("ultralytics/assets/bus.jpg")
+image = cv.imread("numa_ultralytics/assets/bus.jpg")
 ann = Annotator(
     image,
     line_width=None,  # default auto-size
@@ -529,7 +529,7 @@ image_with_bboxes = ann.result()
 import cv2 as cv
 import numpy as np
 
-from ultralytics.utils.plotting import Annotator, colors
+from numa_ultralytics.utils.plotting import Annotator, colors
 
 obb_names = {10: "small vehicle"}
 obb_image = cv.imread("datasets/dota8/images/train/P1142__1024__0___824.jpg")
@@ -561,7 +561,7 @@ for obb in obb_boxes:
 image_with_obb = ann.result()
 ```
 
-#### Bounding Boxes Circle Annotation [Circle Label](https://docs.ultralytics.com/reference/utils/plotting/#ultralytics.utils.plotting.Annotator.circle_label)
+#### Bounding Boxes Circle Annotation [Circle Label](https://docs.numa_ultralytics.com/reference/utils/plotting/#numa_ultralytics.utils.plotting.Annotator.circle_label)
 
 <p align="center">
   <br>
@@ -571,21 +571,21 @@ image_with_obb = ann.result()
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> In-Depth Guide to Text & Circle Annotations with Python Live Demos | Ultralytics Annotations 🚀
+  <strong>Watch:</strong> In-Depth Guide to Text & Circle Annotations with Python Live Demos | numa_ultralytics Annotations 🚀
 </p>
 
 ```python
 import cv2
 
-from ultralytics import YOLO
-from ultralytics.utils.plotting import Annotator
+from numa_ultralytics import YOLO
+from numa_ultralytics.utils.plotting import Annotator
 
 model = YOLO("yolo11s.pt")
 names = model.names
 cap = cv2.VideoCapture("path/to/video/file.mp4")
 
 w, h, fps = (int(cap.get(x)) for x in (cv2.CAP_PROP_FRAME_WIDTH, cv2.CAP_PROP_FRAME_HEIGHT, cv2.CAP_PROP_FPS))
-writer = cv2.VideoWriter("Ultralytics circle annotation.avi", cv2.VideoWriter_fourcc(*"MJPG"), fps, (w, h))
+writer = cv2.VideoWriter("numa_ultralytics circle annotation.avi", cv2.VideoWriter_fourcc(*"MJPG"), fps, (w, h))
 
 while True:
     ret, im0 = cap.read()
@@ -601,7 +601,7 @@ while True:
         annotator.circle_label(box, label=names[int(cls)])
 
     writer.write(im0)
-    cv2.imshow("Ultralytics circle annotation", im0)
+    cv2.imshow("numa_ultralytics circle annotation", im0)
 
     if cv2.waitKey(1) & 0xFF == ord("q"):
         break
@@ -611,20 +611,20 @@ cap.release()
 cv2.destroyAllWindows()
 ```
 
-#### Bounding Boxes Text Annotation [Text Label](https://docs.ultralytics.com/reference/utils/plotting/#ultralytics.utils.plotting.Annotator.text_label)
+#### Bounding Boxes Text Annotation [Text Label](https://docs.numa_ultralytics.com/reference/utils/plotting/#numa_ultralytics.utils.plotting.Annotator.text_label)
 
 ```python
 import cv2
 
-from ultralytics import YOLO
-from ultralytics.utils.plotting import Annotator
+from numa_ultralytics import YOLO
+from numa_ultralytics.utils.plotting import Annotator
 
 model = YOLO("yolo11s.pt")
 names = model.names
 cap = cv2.VideoCapture("path/to/video/file.mp4")
 
 w, h, fps = (int(cap.get(x)) for x in (cv2.CAP_PROP_FRAME_WIDTH, cv2.CAP_PROP_FRAME_HEIGHT, cv2.CAP_PROP_FPS))
-writer = cv2.VideoWriter("Ultralytics text annotation.avi", cv2.VideoWriter_fourcc(*"MJPG"), fps, (w, h))
+writer = cv2.VideoWriter("numa_ultralytics text annotation.avi", cv2.VideoWriter_fourcc(*"MJPG"), fps, (w, h))
 
 while True:
     ret, im0 = cap.read()
@@ -640,7 +640,7 @@ while True:
         annotator.text_label(box, label=names[int(cls)])
 
     writer.write(im0)
-    cv2.imshow("Ultralytics text annotation", im0)
+    cv2.imshow("numa_ultralytics text annotation", im0)
 
     if cv2.waitKey(1) & 0xFF == ord("q"):
         break
@@ -650,7 +650,7 @@ cap.release()
 cv2.destroyAllWindows()
 ```
 
-See the [`Annotator` Reference Page](../reference/utils/plotting.md#ultralytics.utils.plotting.Annotator) for additional insight.
+See the [`Annotator` Reference Page](../reference/utils/plotting.md#numa_ultralytics.utils.plotting.Annotator) for additional insight.
 
 ## Miscellaneous
 
@@ -659,7 +659,7 @@ See the [`Annotator` Reference Page](../reference/utils/plotting.md#ultralytics.
 Check duration for code to run/process either using `with` or as a decorator.
 
 ```python
-from ultralytics.utils.ops import Profile
+from numa_ultralytics.utils.ops import Profile
 
 with Profile(device="cuda:0") as dt:
     pass  # operation to measure
@@ -668,12 +668,12 @@ print(dt)
 # >>> "Elapsed time is 9.5367431640625e-07 s"
 ```
 
-### Ultralytics Supported Formats
+### numa_ultralytics Supported Formats
 
-Want or need to use the formats of [images or videos types supported](../modes/predict.md#image-and-video-formats) by Ultralytics programmatically? Use these constants if you need.
+Want or need to use the formats of [images or videos types supported](../modes/predict.md#image-and-video-formats) by numa_ultralytics programmatically? Use these constants if you need.
 
 ```python
-from ultralytics.data.utils import IMG_FORMATS, VID_FORMATS
+from numa_ultralytics.data.utils import IMG_FORMATS, VID_FORMATS
 
 print(IMG_FORMATS)
 # {'tiff', 'pfm', 'bmp', 'mpo', 'dng', 'jpeg', 'png', 'webp', 'tif', 'jpg'}
@@ -687,7 +687,7 @@ print(VID_FORMATS)
 Calculates the nearest whole number to `x` to make evenly divisible when divided by `y`.
 
 ```python
-from ultralytics.utils.ops import make_divisible
+from numa_ultralytics.utils.ops import make_divisible
 
 make_divisible(7, 3)
 # >>> 9
@@ -697,16 +697,16 @@ make_divisible(7, 2)
 
 ## FAQ
 
-### What utilities are included in the Ultralytics package to enhance [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) workflows?
+### What utilities are included in the numa_ultralytics package to enhance [machine learning](https://www.numa_ultralytics.com/glossary/machine-learning-ml) workflows?
 
-The Ultralytics package includes a variety of utilities designed to streamline and optimize machine learning workflows. Key utilities include [auto-annotation](../reference/data/annotator.md#ultralytics.data.annotator.auto_annotate) for labeling datasets, converting COCO to YOLO format with [convert_coco](../reference/data/converter.md#ultralytics.data.converter.convert_coco), compressing images, and dataset auto-splitting. These tools aim to reduce manual effort, ensure consistency, and enhance data processing efficiency.
+The numa_ultralytics package includes a variety of utilities designed to streamline and optimize machine learning workflows. Key utilities include [auto-annotation](../reference/data/annotator.md#numa_ultralytics.data.annotator.auto_annotate) for labeling datasets, converting COCO to YOLO format with [convert_coco](../reference/data/converter.md#numa_ultralytics.data.converter.convert_coco), compressing images, and dataset auto-splitting. These tools aim to reduce manual effort, ensure consistency, and enhance data processing efficiency.
 
-### How can I use Ultralytics to auto-label my dataset?
+### How can I use numa_ultralytics to auto-label my dataset?
 
-If you have a pre-trained Ultralytics YOLO object detection model, you can use it with the [SAM](../models/sam.md) model to auto-annotate your dataset in segmentation format. Here's an example:
+If you have a pre-trained numa_ultralytics YOLO object detection model, you can use it with the [SAM](../models/sam.md) model to auto-annotate your dataset in segmentation format. Here's an example:
 
 ```python
-from ultralytics.data.annotator import auto_annotate
+from numa_ultralytics.data.annotator import auto_annotate
 
 auto_annotate(
     data="path/to/new/data",
@@ -717,14 +717,14 @@ auto_annotate(
 )
 ```
 
-For more details, check the [auto_annotate reference section](../reference/data/annotator.md#ultralytics.data.annotator.auto_annotate).
+For more details, check the [auto_annotate reference section](../reference/data/annotator.md#numa_ultralytics.data.annotator.auto_annotate).
 
-### How do I convert COCO dataset annotations to YOLO format in Ultralytics?
+### How do I convert COCO dataset annotations to YOLO format in numa_ultralytics?
 
 To convert COCO JSON annotations into YOLO format for object detection, you can use the `convert_coco` utility. Here's a sample code snippet:
 
 ```python
-from ultralytics.data.converter import convert_coco
+from numa_ultralytics.data.converter import convert_coco
 
 convert_coco(
     "../datasets/coco/annotations/",
@@ -734,18 +734,18 @@ convert_coco(
 )
 ```
 
-For additional information, visit the [convert_coco reference page](../reference/data/converter.md#ultralytics.data.converter.convert_coco).
+For additional information, visit the [convert_coco reference page](../reference/data/converter.md#numa_ultralytics.data.converter.convert_coco).
 
-### What is the purpose of the YOLO Data Explorer in the Ultralytics package?
+### What is the purpose of the YOLO Data Explorer in the numa_ultralytics package?
 
 The [YOLO Explorer](../datasets/explorer/index.md) is a powerful tool introduced in the `8.1.0` update to enhance dataset understanding. It allows you to use text queries to find object instances in your dataset, making it easier to analyze and manage your data. This tool provides valuable insights into dataset composition and distribution, helping to improve model training and performance.
 
-### How can I convert bounding boxes to segments in Ultralytics?
+### How can I convert bounding boxes to segments in numa_ultralytics?
 
 To convert existing bounding box data (in `x y w h` format) to segments, you can use the `yolo_bbox2segment` function. Ensure your files are organized with separate directories for images and labels.
 
 ```python
-from ultralytics.data.converter import yolo_bbox2segment
+from numa_ultralytics.data.converter import yolo_bbox2segment
 
 yolo_bbox2segment(
     im_dir="path/to/images",
@@ -754,4 +754,4 @@ yolo_bbox2segment(
 )
 ```
 
-For more information, visit the [yolo_bbox2segment reference page](../reference/data/converter.md#ultralytics.data.converter.yolo_bbox2segment).
+For more information, visit the [yolo_bbox2segment reference page](../reference/data/converter.md#numa_ultralytics.data.converter.yolo_bbox2segment).

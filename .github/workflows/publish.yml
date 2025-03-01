@@ -1,6 +1,6 @@
-# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+# numa_ultralytics 🚀 AGPL-3.0 License - https://numa_ultralytics.com/license
 
-# Publish pip package to PyPI https://pypi.org/project/ultralytics/
+# Publish pip package to PyPI https://pypi.org/project/numa_ultralytics/
 
 name: Publish to PyPI
 
@@ -15,7 +15,7 @@ on:
 
 jobs:
   check:
-    if: github.repository == 'ultralytics/ultralytics' && github.actor == 'glenn-jocher'
+    if: github.repository == 'numa_ultralytics/numa_ultralytics' && github.actor == 'glenn-jocher'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -29,7 +29,7 @@ jobs:
         with:
           python-version: "3.x"
       - uses: astral-sh/setup-uv@v5
-      - run: uv pip install --system --no-cache ultralytics-actions
+      - run: uv pip install --system --no-cache numa_ultralytics-actions
       - id: check_pypi
         shell: python
         run: |
@@ -49,11 +49,11 @@ jobs:
           PREVIOUS_TAG: ${{ steps.check_pypi.outputs.previous_tag }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          git config --global user.name "UltralyticsAssistant"
-          git config --global user.email "web@ultralytics.com"
+          git config --global user.name "numa_ultralyticsAssistant"
+          git config --global user.email "web@numa_ultralytics.com"
           git tag -a "$CURRENT_TAG" -m "$(git log -1 --pretty=%B)"
           git push origin "$CURRENT_TAG"
-          ultralytics-actions-summarize-release
+          numa_ultralytics-actions-summarize-release
           uv cache prune --ci
 
   build:
@@ -82,7 +82,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: # for GitHub Deployments tab
       name: Release - PyPI
-      url: https://pypi.org/p/ultralytics
+      url: https://pypi.org/p/numa_ultralytics
     permissions:
       id-token: write # for PyPI trusted publishing
     steps:

@@ -1,16 +1,16 @@
-# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+# numa_ultralytics 🚀 AGPL-3.0 License - https://numa_ultralytics.com/license
 
 blank_issues_enabled: true
 contact_links:
   - name: 📄 Docs
-    url: https://docs.ultralytics.com/
-    about: Full Ultralytics YOLO Documentation
+    url: https://docs.numa_ultralytics.com/
+    about: Full numa_ultralytics YOLO Documentation
   - name: 💬 Forum
-    url: https://community.ultralytics.com/
-    about: Ask on Ultralytics Community Forum
+    url: https://community.numa_ultralytics.com/
+    about: Ask on numa_ultralytics Community Forum
   - name: 🎧 Discord
-    url: https://ultralytics.com/discord
-    about: Ask on Ultralytics Discord
+    url: https://numa_ultralytics.com/discord
+    about: Ask on numa_ultralytics Discord
   - name: ⌨️ Reddit
-    url: https://reddit.com/r/ultralytics
-    about: Ask on Ultralytics Subreddit
+    url: https://reddit.com/r/numa_ultralytics
+    about: Ask on numa_ultralytics Subreddit

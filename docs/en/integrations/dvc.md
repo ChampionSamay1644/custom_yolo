@@ -6,17 +6,17 @@ keywords: YOLO11, DVCLive, experiment tracking, machine learning, model training
 
 # Advanced YOLO11 Experiment Tracking with DVCLive
 
-Experiment tracking in [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) is critical to model development and evaluation. It involves recording and analyzing various parameters, metrics, and outcomes from numerous training runs. This process is essential for understanding model performance and making data-driven decisions to refine and optimize models.
+Experiment tracking in [machine learning](https://www.numa_ultralytics.com/glossary/machine-learning-ml) is critical to model development and evaluation. It involves recording and analyzing various parameters, metrics, and outcomes from numerous training runs. This process is essential for understanding model performance and making data-driven decisions to refine and optimize models.
 
-Integrating DVCLive with [Ultralytics YOLO11](https://www.ultralytics.com/) transforms the way experiments are tracked and managed. This integration offers a seamless solution for automatically logging key experiment details, comparing results across different runs, and visualizing data for in-depth analysis. In this guide, we'll understand how DVCLive can be used to streamline the process.
+Integrating DVCLive with [numa_ultralytics YOLO11](https://www.numa_ultralytics.com/) transforms the way experiments are tracked and managed. This integration offers a seamless solution for automatically logging key experiment details, comparing results across different runs, and visualizing data for in-depth analysis. In this guide, we'll understand how DVCLive can be used to streamline the process.
 
 ## DVCLive
 
 <p align="center">
-  <img width="640" src="https://github.com/ultralytics/docs/releases/download/0/dvclive-overview.avif" alt="DVCLive Overview">
+  <img width="640" src="https://github.com/numa_ultralytics/docs/releases/download/0/dvclive-overview.avif" alt="DVCLive Overview">
 </p>
 
-[DVCLive](https://dvc.org/doc/dvclive), developed by DVC, is an innovative open-source tool for experiment tracking in machine learning. Integrating seamlessly with Git and DVC, it automates the logging of crucial experiment data like model parameters and training metrics. Designed for simplicity, DVCLive enables effortless comparison and analysis of multiple runs, enhancing the efficiency of machine learning projects with intuitive [data visualization](https://www.ultralytics.com/glossary/data-visualization) and analysis tools.
+[DVCLive](https://dvc.org/doc/dvclive), developed by DVC, is an innovative open-source tool for experiment tracking in machine learning. Integrating seamlessly with Git and DVC, it automates the logging of crucial experiment data like model parameters and training metrics. Designed for simplicity, DVCLive enables effortless comparison and analysis of multiple runs, enhancing the efficiency of machine learning projects with intuitive [data visualization](https://www.numa_ultralytics.com/glossary/data-visualization) and analysis tools.
 
 ## YOLO11 Training with DVCLive
 
@@ -32,7 +32,7 @@ To install the required packages, run:
 
         ```bash
         # Install the required packages for YOLO11 and DVCLive
-        pip install ultralytics dvclive
+        pip install numa_ultralytics dvclive
         ```
 
 For detailed instructions and best practices related to the installation process, be sure to check our [YOLO11 Installation guide](../quickstart.md). While installing the required packages for YOLO11, if you encounter any difficulties, consult our [Common Issues guide](../guides/yolo-common-issues.md) for solutions and tips.
@@ -66,7 +66,7 @@ In these commands, ensure to replace "you@example.com" with the email address as
 
 ## Usage
 
-Before diving into the usage instructions, be sure to check out the range of [YOLO11 models offered by Ultralytics](../models/index.md). This will help you choose the most appropriate model for your project requirements.
+Before diving into the usage instructions, be sure to check out the range of [YOLO11 models offered by numa_ultralytics](../models/index.md). This will help you choose the most appropriate model for your project requirements.
 
 ### Training YOLO11 Models with DVCLive
 
@@ -78,11 +78,11 @@ yolo train model=yolo11n.pt data=coco8.yaml epochs=5 imgsz=512
 yolo train model=yolo11n.pt data=coco8.yaml epochs=5 imgsz=640
 ```
 
-Adjust the model, data, [epochs](https://www.ultralytics.com/glossary/epoch), and imgsz parameters according to your specific requirements. For a detailed understanding of the model training process and best practices, refer to our [YOLO11 Model Training guide](../modes/train.md).
+Adjust the model, data, [epochs](https://www.numa_ultralytics.com/glossary/epoch), and imgsz parameters according to your specific requirements. For a detailed understanding of the model training process and best practices, refer to our [YOLO11 Model Training guide](../modes/train.md).
 
 ### Monitoring Experiments with DVCLive
 
-DVCLive enhances the training process by enabling the tracking and visualization of key metrics. When installed, Ultralytics YOLO11 automatically integrates with DVCLive for experiment tracking, which you can later analyze for performance insights. For a comprehensive understanding of the specific performance metrics used during training, be sure to explore [our detailed guide on performance metrics](../guides/yolo-performance-metrics.md).
+DVCLive enhances the training process by enabling the tracking and visualization of key metrics. When installed, numa_ultralytics YOLO11 automatically integrates with DVCLive for experiment tracking, which you can later analyze for performance insights. For a comprehensive understanding of the specific performance metrics used during training, be sure to explore [our detailed guide on performance metrics](../guides/yolo-performance-metrics.md).
 
 ### Analyzing Results
 
@@ -108,7 +108,7 @@ df.reset_index(drop=True, inplace=True)
 print(df)
 ```
 
-The output of the code snippet above provides a clear tabular view of the different experiments conducted with YOLO11 models. Each row represents a different training run, detailing the experiment's name, the number of epochs, image size (imgsz), the specific model used, and the mAP50-95(B) metric. This metric is crucial for evaluating the model's [accuracy](https://www.ultralytics.com/glossary/accuracy), with higher values indicating better performance.
+The output of the code snippet above provides a clear tabular view of the different experiments conducted with YOLO11 models. Each row represents a different training run, detailing the experiment's name, the number of epochs, image size (imgsz), the specific model used, and the mAP50-95(B) metric. This metric is crucial for evaluating the model's [accuracy](https://www.numa_ultralytics.com/glossary/accuracy), with higher values indicating better performance.
 
 #### Visualizing Results with Plotly
 
@@ -135,10 +135,10 @@ DVC provides a useful command to generate comparative plots for your experiments
 dvc plots diff $(dvc exp list --names-only)
 ```
 
-After executing this command, DVC generates plots comparing the metrics across different experiments, which are saved as HTML files. Below is an example image illustrating typical plots generated by this process. The image showcases various graphs, including those representing mAP, [recall](https://www.ultralytics.com/glossary/recall), [precision](https://www.ultralytics.com/glossary/precision), loss values, and more, providing a visual overview of key performance metrics:
+After executing this command, DVC generates plots comparing the metrics across different experiments, which are saved as HTML files. Below is an example image illustrating typical plots generated by this process. The image showcases various graphs, including those representing mAP, [recall](https://www.numa_ultralytics.com/glossary/recall), [precision](https://www.numa_ultralytics.com/glossary/precision), loss values, and more, providing a visual overview of key performance metrics:
 
 <p align="center">
-  <img width="640" src="https://github.com/ultralytics/docs/releases/download/0/dvclive-comparative-plots.avif" alt="DVCLive Plots">
+  <img width="640" src="https://github.com/numa_ultralytics/docs/releases/download/0/dvclive-comparative-plots.avif" alt="DVCLive Plots">
 </p>
 
 ### Displaying DVC Plots
@@ -156,7 +156,7 @@ This code will render the HTML file containing the DVC plots directly in your Ju
 
 ### Making Data-Driven Decisions
 
-Use the insights gained from these visualizations to make informed decisions about model optimizations, [hyperparameter tuning](https://www.ultralytics.com/glossary/hyperparameter-tuning), and other modifications to enhance your model's performance.
+Use the insights gained from these visualizations to make informed decisions about model optimizations, [hyperparameter tuning](https://www.numa_ultralytics.com/glossary/hyperparameter-tuning), and other modifications to enhance your model's performance.
 
 ### Iterating on Experiments
 
@@ -164,24 +164,24 @@ Based on your analysis, iterate on your experiments. Adjust model configurations
 
 ## Summary
 
-This guide has led you through the process of integrating DVCLive with Ultralytics' YOLO11. You have learned how to harness the power of DVCLive for detailed experiment monitoring, effective visualization, and insightful analysis in your machine learning endeavors.
+This guide has led you through the process of integrating DVCLive with numa_ultralytics' YOLO11. You have learned how to harness the power of DVCLive for detailed experiment monitoring, effective visualization, and insightful analysis in your machine learning endeavors.
 
 For further details on usage, visit [DVCLive's official documentation](https://dvc.org/doc/dvclive/ml-frameworks/yolo).
 
-Additionally, explore more integrations and capabilities of Ultralytics by visiting the [Ultralytics integration guide page](../integrations/index.md), which is a collection of great resources and insights.
+Additionally, explore more integrations and capabilities of numa_ultralytics by visiting the [numa_ultralytics integration guide page](../integrations/index.md), which is a collection of great resources and insights.
 
 ## FAQ
 
-### How do I integrate DVCLive with Ultralytics YOLO11 for experiment tracking?
+### How do I integrate DVCLive with numa_ultralytics YOLO11 for experiment tracking?
 
-Integrating DVCLive with Ultralytics YOLO11 is straightforward. Start by installing the necessary packages:
+Integrating DVCLive with numa_ultralytics YOLO11 is straightforward. Start by installing the necessary packages:
 
 !!! example "Installation"
 
     === "CLI"
 
         ```bash
-        pip install ultralytics dvclive
+        pip install numa_ultralytics dvclive
         ```
 
 Next, initialize a Git repository and configure DVCLive in your project:
@@ -247,7 +247,7 @@ Refer to our guide on [YOLO11 Training with DVCLive](#yolo11-training-with-dvcli
 
 To configure your environment for a smooth integration of DVCLive and YOLO11, follow these steps:
 
-1. **Install Required Packages**: Use `pip install ultralytics dvclive`.
+1. **Install Required Packages**: Use `pip install numa_ultralytics dvclive`.
 2. **Initialize Git Repository**: Run `git init -q`.
 3. **Setup DVCLive**: Execute `dvc init -q`.
 4. **Commit to Git**: Use `git commit -m "DVC init"`.

@@ -24,28 +24,28 @@ The Objects365 dataset is organized into a single set of images with correspondi
 
 ## Applications
 
-The Objects365 dataset is widely used for training and evaluating deep learning models in object detection tasks. The dataset's diverse set of object categories and high-quality annotations make it a valuable resource for researchers and practitioners in the field of [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv).
+The Objects365 dataset is widely used for training and evaluating deep learning models in object detection tasks. The dataset's diverse set of object categories and high-quality annotations make it a valuable resource for researchers and practitioners in the field of [computer vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv).
 
 ## Dataset YAML
 
-A YAML (Yet Another Markup Language) file is used to define the dataset configuration. It contains information about the dataset's paths, classes, and other relevant information. For the case of the Objects365 Dataset, the `Objects365.yaml` file is maintained at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/Objects365.yaml](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/Objects365.yaml).
+A YAML (Yet Another Markup Language) file is used to define the dataset configuration. It contains information about the dataset's paths, classes, and other relevant information. For the case of the Objects365 Dataset, the `Objects365.yaml` file is maintained at [https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/Objects365.yaml](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/Objects365.yaml).
 
-!!! example "ultralytics/cfg/datasets/Objects365.yaml"
+!!! example "numa_ultralytics/cfg/datasets/Objects365.yaml"
 
     ```yaml
-    --8<-- "ultralytics/cfg/datasets/Objects365.yaml"
+    --8<-- "numa_ultralytics/cfg/datasets/Objects365.yaml"
     ```
 
 ## Usage
 
-To train a YOLO11n model on the Objects365 dataset for 100 [epochs](https://www.ultralytics.com/glossary/epoch) with an image size of 640, you can use the following code snippets. For a comprehensive list of available arguments, refer to the model [Training](../../modes/train.md) page.
+To train a YOLO11n model on the Objects365 dataset for 100 [epochs](https://www.numa_ultralytics.com/glossary/epoch) with an image size of 640, you can use the following code snippets. For a comprehensive list of available arguments, refer to the model [Training](../../modes/train.md) page.
 
 !!! example "Train Example"
 
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n.pt")  # load a pretrained model (recommended for training)
@@ -63,9 +63,9 @@ To train a YOLO11n model on the Objects365 dataset for 100 [epochs](https://www.
 
 ## Sample Data and Annotations
 
-The Objects365 dataset contains a diverse set of high-resolution images with objects from 365 categories, providing rich context for [object detection](https://www.ultralytics.com/glossary/object-detection) tasks. Here are some examples of the images in the dataset:
+The Objects365 dataset contains a diverse set of high-resolution images with objects from 365 categories, providing rich context for [object detection](https://www.numa_ultralytics.com/glossary/object-detection) tasks. Here are some examples of the images in the dataset:
 
-![Dataset sample image](https://github.com/ultralytics/docs/releases/download/0/objects365-sample-image.avif)
+![Dataset sample image](https://github.com/numa_ultralytics/docs/releases/download/0/objects365-sample-image.avif)
 
 - **Objects365**: This image demonstrates an example of object detection, where objects are annotated with bounding boxes. The dataset provides a wide range of images to facilitate the development of models for this task.
 
@@ -95,7 +95,7 @@ We would like to acknowledge the team of researchers who created and maintain th
 
 ### What is the Objects365 dataset used for?
 
-The [Objects365 dataset](https://www.objects365.org/) is designed for object detection tasks in [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) and computer vision. It provides a large-scale, high-quality dataset with 2 million annotated images and 30 million bounding boxes across 365 categories. Leveraging such a diverse dataset helps improve the performance and generalization of object detection models, making it invaluable for research and development in the field.
+The [Objects365 dataset](https://www.objects365.org/) is designed for object detection tasks in [machine learning](https://www.numa_ultralytics.com/glossary/machine-learning-ml) and computer vision. It provides a large-scale, high-quality dataset with 2 million annotated images and 30 million bounding boxes across 365 categories. Leveraging such a diverse dataset helps improve the performance and generalization of object detection models, making it invaluable for research and development in the field.
 
 ### How can I train a YOLO11 model on the Objects365 dataset?
 
@@ -106,7 +106,7 @@ To train a YOLO11n model using the Objects365 dataset for 100 epochs with an ima
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n.pt")  # load a pretrained model (recommended for training)
@@ -134,8 +134,8 @@ The Objects365 dataset offers several advantages for object detection tasks:
 
 ### Where can I find the YAML configuration file for the Objects365 dataset?
 
-The YAML configuration file for the Objects365 dataset is available at [Objects365.yaml](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/Objects365.yaml). This file contains essential information such as dataset paths and class labels, crucial for setting up your training environment.
+The YAML configuration file for the Objects365 dataset is available at [Objects365.yaml](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/Objects365.yaml). This file contains essential information such as dataset paths and class labels, crucial for setting up your training environment.
 
 ### How does the dataset structure of Objects365 enhance object detection modeling?
 
-The [Objects365 dataset](https://www.objects365.org/) is organized with 2 million high-resolution images and comprehensive annotations of over 30 million bounding boxes. This structure ensures a robust dataset for training [deep learning](https://www.ultralytics.com/glossary/deep-learning-dl) models in object detection, offering a wide variety of objects and scenarios. Such diversity and volume help in developing models that are more accurate and capable of generalizing well to real-world applications. For more details on the dataset structure, refer to the [Dataset YAML](#dataset-yaml) section.
+The [Objects365 dataset](https://www.objects365.org/) is organized with 2 million high-resolution images and comprehensive annotations of over 30 million bounding boxes. This structure ensures a robust dataset for training [deep learning](https://www.numa_ultralytics.com/glossary/deep-learning-dl) models in object detection, offering a wide variety of objects and scenarios. Such diversity and volume help in developing models that are more accurate and capable of generalizing well to real-world applications. For more details on the dataset structure, refer to the [Dataset YAML](#dataset-yaml) section.

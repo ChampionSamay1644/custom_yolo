@@ -1,18 +1,18 @@
 ---
 comments: true
-description: Explore the Ultralytics Explorer API for dataset exploration with SQL queries, vector similarity search, and semantic search. Learn installation and usage tips.
-keywords: Ultralytics, Explorer API, dataset exploration, SQL queries, similarity search, semantic search, Python API, LanceDB, embeddings, data analysis
+description: Explore the numa_ultralytics Explorer API for dataset exploration with SQL queries, vector similarity search, and semantic search. Learn installation and usage tips.
+keywords: numa_ultralytics, Explorer API, dataset exploration, SQL queries, similarity search, semantic search, Python API, LanceDB, embeddings, data analysis
 ---
 
-# Ultralytics Explorer API
+# numa_ultralytics Explorer API
 
 !!! warning "Community Note ⚠️"
 
-    As of **`ultralytics>=8.3.10`**, Ultralytics explorer support has been deprecated. But don't worry! You can now access similar and even enhanced functionality through [Ultralytics HUB](https://hub.ultralytics.com/), our intuitive no-code platform designed to streamline your workflow. With Ultralytics HUB, you can continue exploring, visualizing, and managing your data effortlessly, all without writing a single line of code. Make sure to check it out and take advantage of its powerful features!🚀
+    As of **`numa_ultralytics>=8.3.10`**, numa_ultralytics explorer support has been deprecated. But don't worry! You can now access similar and even enhanced functionality through [numa_ultralytics HUB](https://hub.numa_ultralytics.com/), our intuitive no-code platform designed to streamline your workflow. With numa_ultralytics HUB, you can continue exploring, visualizing, and managing your data effortlessly, all without writing a single line of code. Make sure to check it out and take advantage of its powerful features!🚀
 
 ## Introduction
 
-<a href="https://colab.research.google.com/github/ultralytics/ultralytics/blob/main/docs/en/datasets/explorer/explorer.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
+<a href="https://colab.research.google.com/github/numa_ultralytics/numa_ultralytics/blob/main/docs/en/datasets/explorer/explorer.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
 The Explorer API is a Python API for exploring your datasets. It supports filtering and searching your dataset using SQL queries, vector similarity search and semantic search.
 
 <p align="center">
@@ -23,7 +23,7 @@ The Explorer API is a Python API for exploring your datasets. It supports filter
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Ultralytics Explorer API Overview
+  <strong>Watch:</strong> numa_ultralytics Explorer API Overview
 </p>
 
 ## Installation
@@ -31,13 +31,13 @@ The Explorer API is a Python API for exploring your datasets. It supports filter
 Explorer depends on external libraries for some of its functionality. These are automatically installed on usage. To manually install these dependencies, use the following command:
 
 ```bash
-pip install ultralytics[explorer]
+pip install numa_ultralytics[explorer]
 ```
 
 ## Usage
 
 ```python
-from ultralytics import Explorer
+from numa_ultralytics import Explorer
 
 # Create an Explorer object
 explorer = Explorer(data="coco128.yaml", model="yolo11n.pt")
@@ -54,7 +54,7 @@ dataframe = explorer.get_similar(idx=0)
 
 !!! note
 
-    [Embeddings](https://www.ultralytics.com/glossary/embeddings) table for a given dataset and model pair is only created once and reused. These use [LanceDB](https://lancedb.github.io/lancedb/) under the hood, which scales on-disk, so you can create and reuse embeddings for large datasets like COCO without running out of memory.
+    [Embeddings](https://www.numa_ultralytics.com/glossary/embeddings) table for a given dataset and model pair is only created once and reused. These use [LanceDB](https://lancedb.github.io/lancedb/) under the hood, which scales on-disk, so you can create and reuse embeddings for large datasets like COCO without running out of memory.
 
 In case you want to force update the embeddings table, you can pass `force=True` to `create_embeddings_table` method.
 
@@ -76,18 +76,18 @@ You get a pandas dataframe with the `limit` number of most similar data points t
     === "Using Images"
 
         ```python
-        from ultralytics import Explorer
+        from numa_ultralytics import Explorer
 
         # create an Explorer object
         exp = Explorer(data="coco128.yaml", model="yolo11n.pt")
         exp.create_embeddings_table()
 
-        similar = exp.get_similar(img="https://ultralytics.com/images/bus.jpg", limit=10)
+        similar = exp.get_similar(img="https://numa_ultralytics.com/images/bus.jpg", limit=10)
         print(similar.head())
 
         # Search using multiple indices
         similar = exp.get_similar(
-            img=["https://ultralytics.com/images/bus.jpg", "https://ultralytics.com/images/bus.jpg"],
+            img=["https://numa_ultralytics.com/images/bus.jpg", "https://numa_ultralytics.com/images/bus.jpg"],
             limit=10,
         )
         print(similar.head())
@@ -96,7 +96,7 @@ You get a pandas dataframe with the `limit` number of most similar data points t
     === "Using Dataset Indices"
 
         ```python
-        from ultralytics import Explorer
+        from numa_ultralytics import Explorer
 
         # create an Explorer object
         exp = Explorer(data="coco128.yaml", model="yolo11n.pt")
@@ -119,20 +119,20 @@ You can also plot the similar images using the `plot_similar` method. This metho
     === "Using Images"
 
         ```python
-        from ultralytics import Explorer
+        from numa_ultralytics import Explorer
 
         # create an Explorer object
         exp = Explorer(data="coco128.yaml", model="yolo11n.pt")
         exp.create_embeddings_table()
 
-        plt = exp.plot_similar(img="https://ultralytics.com/images/bus.jpg", limit=10)
+        plt = exp.plot_similar(img="https://numa_ultralytics.com/images/bus.jpg", limit=10)
         plt.show()
         ```
 
     === "Using Dataset Indices"
 
         ```python
-        from ultralytics import Explorer
+        from numa_ultralytics import Explorer
 
         # create an Explorer object
         exp = Explorer(data="coco128.yaml", model="yolo11n.pt")
@@ -150,8 +150,8 @@ Note: This works using LLMs under the hood so the results are probabilistic and 
 !!! example "Ask AI"
 
     ```python
-    from ultralytics import Explorer
-    from ultralytics.data.explorer import plot_query_result
+    from numa_ultralytics import Explorer
+    from numa_ultralytics.data.explorer import plot_query_result
 
     # create an Explorer object
     exp = Explorer(data="coco128.yaml", model="yolo11n.pt")
@@ -172,7 +172,7 @@ You can run SQL queries on your dataset using the `sql_query` method. This metho
 !!! example "SQL Query"
 
     ```python
-    from ultralytics import Explorer
+    from numa_ultralytics import Explorer
 
     # create an Explorer object
     exp = Explorer(data="coco128.yaml", model="yolo11n.pt")
@@ -189,7 +189,7 @@ You can also plot the results of a SQL query using the `plot_sql_query` method. 
 !!! example "Plotting SQL Query Results"
 
     ```python
-    from ultralytics import Explorer
+    from numa_ultralytics import Explorer
 
     # create an Explorer object
     exp = Explorer(data="coco128.yaml", model="yolo11n.pt")
@@ -208,7 +208,7 @@ You can also work with the embeddings table directly. Once the embeddings table 
     Explorer works on [LanceDB](https://lancedb.github.io/lancedb/) tables internally. You can access this table directly, using `Explorer.table` object and run raw queries, push down pre- and post-filters, etc.
 
     ```python
-    from ultralytics import Explorer
+    from numa_ultralytics import Explorer
 
     exp = Explorer()
     exp.create_embeddings_table()
@@ -222,7 +222,7 @@ Here are some examples of what you can do with the table:
 !!! example
 
     ```python
-    from ultralytics import Explorer
+    from numa_ultralytics import Explorer
 
     exp = Explorer()
     exp.create_embeddings_table()
@@ -237,7 +237,7 @@ Here are some examples of what you can do with the table:
 !!! example
 
     ```python
-    from ultralytics import Explorer
+    from numa_ultralytics import Explorer
 
     exp = Explorer(model="yolo11n.pt")
     exp.create_embeddings_table()
@@ -283,7 +283,7 @@ It returns a pandas dataframe with the following columns:
 !!! example "Similarity Index"
 
     ```python
-    from ultralytics import Explorer
+    from numa_ultralytics import Explorer
 
     exp = Explorer()
     exp.create_embeddings_table()
@@ -328,7 +328,7 @@ plt.show()
 
 Start creating your own CV dataset exploration reports using the Explorer API. For inspiration, check out the
 
-## Apps Built Using Ultralytics Explorer
+## Apps Built Using numa_ultralytics Explorer
 
 Try our GUI Demo based on Explorer API
 
@@ -341,26 +341,26 @@ Try our GUI Demo based on Explorer API
 
 ## FAQ
 
-### What is the Ultralytics Explorer API used for?
+### What is the numa_ultralytics Explorer API used for?
 
-The Ultralytics Explorer API is designed for comprehensive dataset exploration. It allows users to filter and search datasets using SQL queries, vector similarity search, and semantic search. This powerful Python API can handle large datasets, making it ideal for various [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) tasks using Ultralytics models.
+The numa_ultralytics Explorer API is designed for comprehensive dataset exploration. It allows users to filter and search datasets using SQL queries, vector similarity search, and semantic search. This powerful Python API can handle large datasets, making it ideal for various [computer vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv) tasks using numa_ultralytics models.
 
-### How do I install the Ultralytics Explorer API?
+### How do I install the numa_ultralytics Explorer API?
 
-To install the Ultralytics Explorer API along with its dependencies, use the following command:
+To install the numa_ultralytics Explorer API along with its dependencies, use the following command:
 
 ```bash
-pip install ultralytics[explorer]
+pip install numa_ultralytics[explorer]
 ```
 
 This will automatically install all necessary external libraries for the Explorer API functionality. For additional setup details, refer to the [installation section](#installation) of our documentation.
 
-### How can I use the Ultralytics Explorer API for similarity search?
+### How can I use the numa_ultralytics Explorer API for similarity search?
 
-You can use the Ultralytics Explorer API to perform similarity searches by creating an embeddings table and querying it for similar images. Here's a basic example:
+You can use the numa_ultralytics Explorer API to perform similarity searches by creating an embeddings table and querying it for similar images. Here's a basic example:
 
 ```python
-from ultralytics import Explorer
+from numa_ultralytics import Explorer
 
 # Create an Explorer object
 explorer = Explorer(data="coco128.yaml", model="yolo11n.pt")
@@ -373,16 +373,16 @@ print(similar_images_df.head())
 
 For more details, please visit the [Similarity Search section](#1-similarity-search).
 
-### What are the benefits of using LanceDB with Ultralytics Explorer?
+### What are the benefits of using LanceDB with numa_ultralytics Explorer?
 
-LanceDB, used under the hood by Ultralytics Explorer, provides scalable, on-disk embeddings tables. This ensures that you can create and reuse embeddings for large datasets like COCO without running out of memory. These tables are only created once and can be reused, enhancing efficiency in data handling.
+LanceDB, used under the hood by numa_ultralytics Explorer, provides scalable, on-disk embeddings tables. This ensures that you can create and reuse embeddings for large datasets like COCO without running out of memory. These tables are only created once and can be reused, enhancing efficiency in data handling.
 
-### How does the Ask AI feature work in the Ultralytics Explorer API?
+### How does the Ask AI feature work in the numa_ultralytics Explorer API?
 
 The Ask AI feature allows users to filter datasets using natural language queries. This feature leverages LLMs to convert these queries into SQL queries behind the scenes. Here's an example:
 
 ```python
-from ultralytics import Explorer
+from numa_ultralytics import Explorer
 
 # Create an Explorer object
 explorer = Explorer(data="coco128.yaml", model="yolo11n.pt")

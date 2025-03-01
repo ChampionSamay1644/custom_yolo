@@ -24,28 +24,28 @@ The Global Wheat Head Dataset is organized into two main subsets:
 
 ## Applications
 
-The Global Wheat Head Dataset is widely used for training and evaluating [deep learning](https://www.ultralytics.com/glossary/deep-learning-dl) models in wheat head detection tasks. The dataset's diverse set of images, capturing a wide range of appearances, environments, and conditions, make it a valuable resource for researchers and practitioners in the field of plant phenotyping and crop management.
+The Global Wheat Head Dataset is widely used for training and evaluating [deep learning](https://www.numa_ultralytics.com/glossary/deep-learning-dl) models in wheat head detection tasks. The dataset's diverse set of images, capturing a wide range of appearances, environments, and conditions, make it a valuable resource for researchers and practitioners in the field of plant phenotyping and crop management.
 
 ## Dataset YAML
 
-A YAML (Yet Another Markup Language) file is used to define the dataset configuration. It contains information about the dataset's paths, classes, and other relevant information. For the case of the Global Wheat Head Dataset, the `GlobalWheat2020.yaml` file is maintained at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/GlobalWheat2020.yaml](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/GlobalWheat2020.yaml).
+A YAML (Yet Another Markup Language) file is used to define the dataset configuration. It contains information about the dataset's paths, classes, and other relevant information. For the case of the Global Wheat Head Dataset, the `GlobalWheat2020.yaml` file is maintained at [https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/GlobalWheat2020.yaml](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/GlobalWheat2020.yaml).
 
-!!! example "ultralytics/cfg/datasets/GlobalWheat2020.yaml"
+!!! example "numa_ultralytics/cfg/datasets/GlobalWheat2020.yaml"
 
     ```yaml
-    --8<-- "ultralytics/cfg/datasets/GlobalWheat2020.yaml"
+    --8<-- "numa_ultralytics/cfg/datasets/GlobalWheat2020.yaml"
     ```
 
 ## Usage
 
-To train a YOLO11n model on the Global Wheat Head Dataset for 100 [epochs](https://www.ultralytics.com/glossary/epoch) with an image size of 640, you can use the following code snippets. For a comprehensive list of available arguments, refer to the model [Training](../../modes/train.md) page.
+To train a YOLO11n model on the Global Wheat Head Dataset for 100 [epochs](https://www.numa_ultralytics.com/glossary/epoch) with an image size of 640, you can use the following code snippets. For a comprehensive list of available arguments, refer to the model [Training](../../modes/train.md) page.
 
 !!! example "Train Example"
 
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n.pt")  # load a pretrained model (recommended for training)
@@ -65,7 +65,7 @@ To train a YOLO11n model on the Global Wheat Head Dataset for 100 [epochs](https
 
 The Global Wheat Head Dataset contains a diverse set of outdoor field images, capturing the natural variability in wheat head appearances, environments, and conditions. Here are some examples of data from the dataset, along with their corresponding annotations:
 
-![Dataset sample image](https://github.com/ultralytics/docs/releases/download/0/wheat-head-detection-sample.avif)
+![Dataset sample image](https://github.com/numa_ultralytics/docs/releases/download/0/wheat-head-detection-sample.avif)
 
 - **Wheat Head Detection**: This image demonstrates an example of wheat head detection, where wheat heads are annotated with bounding boxes. The dataset provides a variety of images to facilitate the development of models for this task.
 
@@ -105,7 +105,7 @@ To train a YOLO11n model on the Global Wheat Head Dataset, you can use the follo
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a pre-trained model (recommended for training)
         model = YOLO("yolo11n.pt")
@@ -130,16 +130,16 @@ Key features of the Global Wheat Head Dataset include:
 - Over 3,000 training images from Europe (France, UK, Switzerland) and North America (Canada).
 - Approximately 1,000 test images from Australia, Japan, and China.
 - High variability in wheat head appearances due to different growing environments.
-- Detailed annotations with wheat head bounding boxes to aid [object detection](https://www.ultralytics.com/glossary/object-detection) models.
+- Detailed annotations with wheat head bounding boxes to aid [object detection](https://www.numa_ultralytics.com/glossary/object-detection) models.
 
 These features facilitate the development of robust models capable of generalization across multiple regions.
 
 ### Where can I find the configuration YAML file for the Global Wheat Head Dataset?
 
-The configuration YAML file for the Global Wheat Head Dataset, named `GlobalWheat2020.yaml`, is available on GitHub. You can access it at this [link](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/GlobalWheat2020.yaml). This file contains necessary information about dataset paths, classes, and other configuration details needed for model training in Ultralytics YOLO.
+The configuration YAML file for the Global Wheat Head Dataset, named `GlobalWheat2020.yaml`, is available on GitHub. You can access it at this [link](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/GlobalWheat2020.yaml). This file contains necessary information about dataset paths, classes, and other configuration details needed for model training in numa_ultralytics YOLO.
 
 ### Why is wheat head detection important in crop management?
 
 Wheat head detection is critical in crop management because it enables accurate estimation of wheat head density and size, which are essential for evaluating crop health, maturity, and yield potential. By leveraging deep learning models trained on datasets like the Global Wheat Head Dataset, farmers and researchers can better monitor and manage crops, leading to improved productivity and optimized resource use in agricultural practices. This technological advancement supports sustainable agriculture and food security initiatives.
 
-For more information on applications of AI in agriculture, visit [AI in Agriculture](https://www.ultralytics.com/solutions/ai-in-agriculture).
+For more information on applications of AI in agriculture, visit [AI in Agriculture](https://www.numa_ultralytics.com/solutions/ai-in-agriculture).

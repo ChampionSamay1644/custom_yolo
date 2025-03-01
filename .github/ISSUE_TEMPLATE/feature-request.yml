@@ -1,7 +1,7 @@
-# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+# numa_ultralytics 🚀 AGPL-3.0 License - https://numa_ultralytics.com/license
 
 name: 🚀 Feature Request
-description: Suggest an Ultralytics YOLO idea
+description: Suggest an numa_ultralytics YOLO idea
 # title: " "
 labels: [enhancement]
 type: "feature"
@@ -9,16 +9,16 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for submitting an Ultralytics 🚀 Feature Request!
+        Thank you for submitting an numa_ultralytics 🚀 Feature Request!
 
   - type: checkboxes
     attributes:
       label: Search before asking
       description: >
-        Please search the Ultralytics [Docs](https://docs.ultralytics.com/) and [issues](https://github.com/ultralytics/ultralytics/issues) to see if a similar feature request already exists.
+        Please search the numa_ultralytics [Docs](https://docs.numa_ultralytics.com/) and [issues](https://github.com/numa_ultralytics/numa_ultralytics/issues) to see if a similar feature request already exists.
       options:
         - label: >
-            I have searched the Ultralytics [issues](https://github.com/ultralytics/ultralytics/issues) and found no similar feature requests.
+            I have searched the numa_ultralytics [issues](https://github.com/numa_ultralytics/numa_ultralytics/issues) and found no similar feature requests.
           required: true
 
   - type: textarea
@@ -47,7 +47,7 @@ body:
     attributes:
       label: Are you willing to submit a PR?
       description: >
-        (Optional) We encourage you to submit a [Pull Request](https://github.com/ultralytics/ultralytics/pulls) (PR) to help improve YOLO for everyone, especially if you have a good understanding of how to implement a fix or feature.
-        See the Ultralytics [Contributing Guide](https://docs.ultralytics.com/help/contributing/) to get started.
+        (Optional) We encourage you to submit a [Pull Request](https://github.com/numa_ultralytics/numa_ultralytics/pulls) (PR) to help improve YOLO for everyone, especially if you have a good understanding of how to implement a fix or feature.
+        See the numa_ultralytics [Contributing Guide](https://docs.numa_ultralytics.com/help/contributing/) to get started.
       options:
         - label: Yes I'd like to help by submitting a PR!

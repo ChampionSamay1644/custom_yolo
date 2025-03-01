@@ -1,31 +1,31 @@
-# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+# numa_ultralytics 🚀 AGPL-3.0 License - https://numa_ultralytics.com/license
 
 name: 🐛 Bug Report
 # title: " "
-description: Problems with Ultralytics YOLO
+description: Problems with numa_ultralytics YOLO
 labels: [bug, triage]
 type: "bug"
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for submitting an Ultralytics YOLO 🐛 Bug Report!
+        Thank you for submitting an numa_ultralytics YOLO 🐛 Bug Report!
 
   - type: checkboxes
     attributes:
       label: Search before asking
       description: >
-        Please search the Ultralytics [Docs](https://docs.ultralytics.com/) and [issues](https://github.com/ultralytics/ultralytics/issues) to see if a similar bug report already exists.
+        Please search the numa_ultralytics [Docs](https://docs.numa_ultralytics.com/) and [issues](https://github.com/numa_ultralytics/numa_ultralytics/issues) to see if a similar bug report already exists.
       options:
         - label: >
-            I have searched the Ultralytics YOLO [issues](https://github.com/ultralytics/ultralytics/issues) and found no similar bug report.
+            I have searched the numa_ultralytics YOLO [issues](https://github.com/numa_ultralytics/numa_ultralytics/issues) and found no similar bug report.
           required: true
 
   - type: dropdown
     attributes:
-      label: Ultralytics YOLO Component
+      label: numa_ultralytics YOLO Component
       description: |
-        Please select the Ultralytics YOLO component where you found the bug.
+        Please select the numa_ultralytics YOLO component where you found the bug.
       multiple: true
       options:
         - "Install"
@@ -53,11 +53,11 @@ body:
   - type: textarea
     attributes:
       label: Environment
-      description: Try the latest version (`pip install -U ultralytics`) before reporting a bug. If it's still present, please provide the output of `yolo checks` (CLI) or `ultralytics.utils.checks.collect_system_info()` (Python) command to help us diagnose the problem.
+      description: Try the latest version (`pip install -U numa_ultralytics`) before reporting a bug. If it's still present, please provide the output of `yolo checks` (CLI) or `numa_ultralytics.utils.checks.collect_system_info()` (Python) command to help us diagnose the problem.
       placeholder: |
-        Paste output of `yolo checks` (CLI) or `ultralytics.utils.checks.collect_system_info()` (Python) command, i.e.:
+        Paste output of `yolo checks` (CLI) or `numa_ultralytics.utils.checks.collect_system_info()` (Python) command, i.e.:
         ```
-        Ultralytics 8.3.2 🚀 Python-3.11.2 torch-2.4.1 CPU (Apple M3)
+        numa_ultralytics 8.3.2 🚀 Python-3.11.2 torch-2.4.1 CPU (Apple M3)
         Setup complete ✅ (8 CPUs, 16.0 GB RAM, 266.5/460.4 GB disk)
 
         OS                  macOS-13.5.2
@@ -75,7 +75,7 @@ body:
     attributes:
       label: Minimal Reproducible Example
       description: >
-        When asking a question, people will be better able to provide help if you provide code that they can easily understand and use to **reproduce** the problem. This is referred to by community members as creating a [minimal reproducible example](https://docs.ultralytics.com/help/minimum-reproducible-example/).
+        When asking a question, people will be better able to provide help if you provide code that they can easily understand and use to **reproduce** the problem. This is referred to by community members as creating a [minimal reproducible example](https://docs.numa_ultralytics.com/help/minimum-reproducible-example/).
       placeholder: |
         ```
         # Code to reproduce your issue here
@@ -92,7 +92,7 @@ body:
     attributes:
       label: Are you willing to submit a PR?
       description: >
-        (Optional) We encourage you to submit a [Pull Request](https://github.com/ultralytics/ultralytics/pulls) (PR) to help improve Ultralytics YOLO for everyone, especially if you have a good understanding of how to implement a fix or feature.
-        See the Ultralytics YOLO [Contributing Guide](https://docs.ultralytics.com/help/contributing/) to get started.
+        (Optional) We encourage you to submit a [Pull Request](https://github.com/numa_ultralytics/numa_ultralytics/pulls) (PR) to help improve numa_ultralytics YOLO for everyone, especially if you have a good understanding of how to implement a fix or feature.
+        See the numa_ultralytics YOLO [Contributing Guide](https://docs.numa_ultralytics.com/help/contributing/) to get started.
       options:
         - label: Yes I'd like to help by submitting a PR!

@@ -1,35 +1,35 @@
 ---
 comments: true
-description: Experience real-time object detection on Android with Ultralytics. Leverage YOLO models for efficient and fast object identification. Download now!.
-keywords: Ultralytics, Android app, real-time object detection, YOLO models, TensorFlow Lite, FP16 quantization, INT8 quantization, hardware delegates, mobile AI, download app
+description: Experience real-time object detection on Android with numa_ultralytics. Leverage YOLO models for efficient and fast object identification. Download now!.
+keywords: numa_ultralytics, Android app, real-time object detection, YOLO models, TensorFlow Lite, FP16 quantization, INT8 quantization, hardware delegates, mobile AI, download app
 ---
 
-# Ultralytics Android App: Real-time [Object Detection](https://www.ultralytics.com/glossary/object-detection) with YOLO Models
+# numa_ultralytics Android App: Real-time [Object Detection](https://www.numa_ultralytics.com/glossary/object-detection) with YOLO Models
 
-<a href="https://www.ultralytics.com/hub" target="_blank">
-  <img width="100%" src="https://github.com/ultralytics/docs/releases/download/0/ultralytics-android-app-detection.avif" alt="Ultralytics HUB preview image"></a>
+<a href="https://www.numa_ultralytics.com/hub" target="_blank">
+  <img width="100%" src="https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-android-app-detection.avif" alt="numa_ultralytics HUB preview image"></a>
 <br>
 <div align="center">
-  <a href="https://github.com/ultralytics"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-github.png" width="3%" alt="Ultralytics GitHub"></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="space">
-  <a href="https://www.linkedin.com/company/ultralytics/"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-linkedin.png" width="3%" alt="Ultralytics LinkedIn"></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="space">
-  <a href="https://twitter.com/ultralytics"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-twitter.png" width="3%" alt="Ultralytics Twitter"></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="space">
-  <a href="https://youtube.com/ultralytics?sub_confirmation=1"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-youtube.png" width="3%" alt="Ultralytics YouTube"></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="space">
-  <a href="https://www.tiktok.com/@ultralytics"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-tiktok.png" width="3%" alt="Ultralytics TikTok"></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="space">
-  <a href="https://ultralytics.com/bilibili"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-bilibili.png" width="3%" alt="Ultralytics BiliBili"></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="space">
-  <a href="https://discord.com/invite/ultralytics"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-discord.png" width="3%" alt="Ultralytics Discord"></a>
+  <a href="https://github.com/numa_ultralytics"><img src="https://github.com/numa_ultralytics/assets/raw/main/social/logo-social-github.png" width="3%" alt="numa_ultralytics GitHub"></a>
+  <img src="https://github.com/numa_ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="space">
+  <a href="https://www.linkedin.com/company/numa_ultralytics/"><img src="https://github.com/numa_ultralytics/assets/raw/main/social/logo-social-linkedin.png" width="3%" alt="numa_ultralytics LinkedIn"></a>
+  <img src="https://github.com/numa_ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="space">
+  <a href="https://twitter.com/numa_ultralytics"><img src="https://github.com/numa_ultralytics/assets/raw/main/social/logo-social-twitter.png" width="3%" alt="numa_ultralytics Twitter"></a>
+  <img src="https://github.com/numa_ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="space">
+  <a href="https://youtube.com/numa_ultralytics?sub_confirmation=1"><img src="https://github.com/numa_ultralytics/assets/raw/main/social/logo-social-youtube.png" width="3%" alt="numa_ultralytics YouTube"></a>
+  <img src="https://github.com/numa_ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="space">
+  <a href="https://www.tiktok.com/@numa_ultralytics"><img src="https://github.com/numa_ultralytics/assets/raw/main/social/logo-social-tiktok.png" width="3%" alt="numa_ultralytics TikTok"></a>
+  <img src="https://github.com/numa_ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="space">
+  <a href="https://numa_ultralytics.com/bilibili"><img src="https://github.com/numa_ultralytics/assets/raw/main/social/logo-social-bilibili.png" width="3%" alt="numa_ultralytics BiliBili"></a>
+  <img src="https://github.com/numa_ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="space">
+  <a href="https://discord.com/invite/numa_ultralytics"><img src="https://github.com/numa_ultralytics/assets/raw/main/social/logo-social-discord.png" width="3%" alt="numa_ultralytics Discord"></a>
   <br>
   <br>
-  <a href="https://play.google.com/store/apps/details?id=com.ultralytics.ultralytics_app" style="text-decoration:none;">
-    <img src="https://raw.githubusercontent.com/ultralytics/assets/master/app/google-play.svg" width="15%" alt="Google Play store"></a>&nbsp;
+  <a href="https://play.google.com/store/apps/details?id=com.numa_ultralytics.numa_ultralytics_app" style="text-decoration:none;">
+    <img src="https://raw.githubusercontent.com/numa_ultralytics/assets/master/app/google-play.svg" width="15%" alt="Google Play store"></a>&nbsp;
 </div>
 
-The Ultralytics Android App is a powerful tool that allows you to run YOLO models directly on your Android device for real-time object detection. This app utilizes [TensorFlow](https://www.ultralytics.com/glossary/tensorflow) Lite for model optimization and various hardware delegates for acceleration, enabling fast and efficient object detection.
+The numa_ultralytics Android App is a powerful tool that allows you to run YOLO models directly on your Android device for real-time object detection. This app utilizes [TensorFlow](https://www.numa_ultralytics.com/glossary/tensorflow) Lite for model optimization and various hardware delegates for acceleration, enabling fast and efficient object detection.
 
 <p align="center">
   <br>
@@ -39,12 +39,12 @@ The Ultralytics Android App is a powerful tool that allows you to run YOLO model
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Getting Started with the Ultralytics HUB App (IOS & Android)
+  <strong>Watch:</strong> Getting Started with the numa_ultralytics HUB App (IOS & Android)
 </p>
 
 ## Quantization and Acceleration
 
-To achieve real-time performance on your Android device, YOLO models are quantized to either FP16 or INT8 [precision](https://www.ultralytics.com/glossary/precision). Quantization is a process that reduces the numerical precision of the model's weights and biases, thus reducing the model's size and the amount of computation required. This results in faster inference times without significantly affecting the model's [accuracy](https://www.ultralytics.com/glossary/accuracy).
+To achieve real-time performance on your Android device, YOLO models are quantized to either FP16 or INT8 [precision](https://www.numa_ultralytics.com/glossary/precision). Quantization is a process that reduces the numerical precision of the model's weights and biases, thus reducing the model's size and the amount of computation required. This results in faster inference times without significantly affecting the model's [accuracy](https://www.numa_ultralytics.com/glossary/accuracy).
 
 ### FP16 Quantization
 
@@ -52,7 +52,7 @@ FP16 (or half-precision) quantization converts the model's 32-bit floating-point
 
 ### INT8 Quantization
 
-INT8 (or 8-bit integer) quantization further reduces the model's size and computation requirements by converting its 32-bit floating-point numbers to 8-bit integers. This quantization method can result in a significant speedup, but it may lead to a slight reduction in [mean average precision](https://www.ultralytics.com/glossary/mean-average-precision-map) (mAP) due to the lower numerical precision.
+INT8 (or 8-bit integer) quantization further reduces the model's size and computation requirements by converting its 32-bit floating-point numbers to 8-bit integers. This quantization method can result in a significant speedup, but it may lead to a slight reduction in [mean average precision](https://www.numa_ultralytics.com/glossary/mean-average-precision-map) (mAP) due to the lower numerical precision.
 
 !!! tip "mAP Reduction in INT8 Models"
 
@@ -65,7 +65,7 @@ Different delegates are available on Android devices to accelerate model inferen
 1. **CPU**: The default option, with reasonable performance on most devices.
 2. **GPU**: Utilizes the device's GPU for faster inference. It can provide a significant performance boost on devices with powerful GPUs.
 3. **Hexagon**: Leverages Qualcomm's Hexagon DSP for faster and more efficient processing. This option is available on devices with Qualcomm Snapdragon processors.
-4. **NNAPI**: The Android [Neural Networks](https://www.ultralytics.com/glossary/neural-network-nn) API (NNAPI) serves as an abstraction layer for running ML models on Android devices. NNAPI can utilize various hardware accelerators, such as CPU, GPU, and dedicated AI chips (e.g., Google's Edge TPU, or the Pixel Neural Core).
+4. **NNAPI**: The Android [Neural Networks](https://www.numa_ultralytics.com/glossary/neural-network-nn) API (NNAPI) serves as an abstraction layer for running ML models on Android devices. NNAPI can utilize various hardware accelerators, such as CPU, GPU, and dedicated AI chips (e.g., Google's Edge TPU, or the Pixel Neural Core).
 
 Here's a table showing the primary vendors, their product lines, popular devices, and supported delegates:
 
@@ -81,13 +81,13 @@ Please note that the list of devices mentioned is not exhaustive and may vary de
 
 Keep in mind that the choice of delegate can affect performance and model compatibility. For example, some models may not work with certain delegates, or a delegate may not be available on a specific device. As such, it's essential to test your model and the chosen delegate on your target devices for the best results.
 
-## Getting Started with the Ultralytics Android App
+## Getting Started with the numa_ultralytics Android App
 
-To get started with the Ultralytics Android App, follow these steps:
+To get started with the numa_ultralytics Android App, follow these steps:
 
-1. Download the Ultralytics App from the [Google Play Store](https://play.google.com/store/apps/details?id=com.ultralytics.ultralytics_app).
+1. Download the numa_ultralytics App from the [Google Play Store](https://play.google.com/store/apps/details?id=com.numa_ultralytics.numa_ultralytics_app).
 
-2. Launch the app on your Android device and sign in with your Ultralytics account. If you don't have an account yet, create one [here](https://hub.ultralytics.com/).
+2. Launch the app on your Android device and sign in with your numa_ultralytics account. If you don't have an account yet, create one [here](https://hub.numa_ultralytics.com/).
 
 3. Once signed in, you will see a list of your trained YOLO models. Select a model to use for object detection.
 
@@ -97,4 +97,4 @@ To get started with the Ultralytics Android App, follow these steps:
 
 6. Explore the app's settings to adjust the detection threshold, enable or disable specific object classes, and more.
 
-With the Ultralytics Android App, you now have the power of real-time object detection using YOLO models right at your fingertips. Enjoy exploring the app's features and optimizing its settings to suit your specific use cases.
+With the numa_ultralytics Android App, you now have the power of real-time object detection using YOLO models right at your fingertips. Enjoy exploring the app's features and optimizing its settings to suit your specific use cases.

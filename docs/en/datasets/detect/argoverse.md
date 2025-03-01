@@ -29,28 +29,28 @@ The Argoverse dataset is organized into three main subsets:
 
 ## Applications
 
-The Argoverse dataset is widely used for training and evaluating [deep learning](https://www.ultralytics.com/glossary/deep-learning-dl) models in autonomous driving tasks such as 3D object tracking, motion forecasting, and stereo depth estimation. The dataset's diverse set of sensor data, object annotations, and map information make it a valuable resource for researchers and practitioners in the field of autonomous driving.
+The Argoverse dataset is widely used for training and evaluating [deep learning](https://www.numa_ultralytics.com/glossary/deep-learning-dl) models in autonomous driving tasks such as 3D object tracking, motion forecasting, and stereo depth estimation. The dataset's diverse set of sensor data, object annotations, and map information make it a valuable resource for researchers and practitioners in the field of autonomous driving.
 
 ## Dataset YAML
 
-A YAML (Yet Another Markup Language) file is used to define the dataset configuration. It contains information about the dataset's paths, classes, and other relevant information. For the case of the Argoverse dataset, the `Argoverse.yaml` file is maintained at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/Argoverse.yaml](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/Argoverse.yaml).
+A YAML (Yet Another Markup Language) file is used to define the dataset configuration. It contains information about the dataset's paths, classes, and other relevant information. For the case of the Argoverse dataset, the `Argoverse.yaml` file is maintained at [https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/Argoverse.yaml](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/Argoverse.yaml).
 
-!!! example "ultralytics/cfg/datasets/Argoverse.yaml"
+!!! example "numa_ultralytics/cfg/datasets/Argoverse.yaml"
 
     ```yaml
-    --8<-- "ultralytics/cfg/datasets/Argoverse.yaml"
+    --8<-- "numa_ultralytics/cfg/datasets/Argoverse.yaml"
     ```
 
 ## Usage
 
-To train a YOLO11n model on the Argoverse dataset for 100 [epochs](https://www.ultralytics.com/glossary/epoch) with an image size of 640, you can use the following code snippets. For a comprehensive list of available arguments, refer to the model [Training](../../modes/train.md) page.
+To train a YOLO11n model on the Argoverse dataset for 100 [epochs](https://www.numa_ultralytics.com/glossary/epoch) with an image size of 640, you can use the following code snippets. For a comprehensive list of available arguments, refer to the model [Training](../../modes/train.md) page.
 
 !!! example "Train Example"
 
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n.pt")  # load a pretrained model (recommended for training)
@@ -70,7 +70,7 @@ To train a YOLO11n model on the Argoverse dataset for 100 [epochs](https://www.u
 
 The Argoverse dataset contains a diverse set of sensor data, including camera images, LiDAR point clouds, and HD map information, providing rich context for autonomous driving tasks. Here are some examples of data from the dataset, along with their corresponding annotations:
 
-![Dataset sample image](https://github.com/ultralytics/docs/releases/download/0/argoverse-3d-tracking-sample.avif)
+![Dataset sample image](https://github.com/numa_ultralytics/docs/releases/download/0/argoverse-3d-tracking-sample.avif)
 
 - **Argoverse 3D Tracking**: This image demonstrates an example of 3D object tracking, where objects are annotated with 3D bounding boxes. The dataset provides LiDAR point clouds and camera images to facilitate the development of models for this task.
 
@@ -102,7 +102,7 @@ We would like to acknowledge Argo AI for creating and maintaining the Argoverse 
 
 The [Argoverse](https://www.argoverse.org/) dataset, developed by Argo AI, supports autonomous driving research. It includes over 290K labeled 3D object tracks and 5 million object instances across 1,263 distinct scenes. The dataset provides high-resolution camera images, LiDAR point clouds, and annotated HD maps, making it valuable for tasks like 3D tracking, motion forecasting, and stereo depth estimation.
 
-### How can I train an Ultralytics YOLO model using the Argoverse dataset?
+### How can I train an numa_ultralytics YOLO model using the Argoverse dataset?
 
 To train a YOLO11 model with the Argoverse dataset, use the provided YAML configuration file and the following code:
 
@@ -111,7 +111,7 @@ To train a YOLO11 model with the Argoverse dataset, use the provided YAML config
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n.pt")  # load a pretrained model (recommended for training)
@@ -148,6 +148,6 @@ The Argoverse dataset `*.zip` file, previously available on Amazon S3, can now b
 
 ### What is the YAML configuration file used for with the Argoverse dataset?
 
-A YAML file contains the dataset's paths, classes, and other essential information. For the Argoverse dataset, the configuration file, `Argoverse.yaml`, can be found at the following link: [Argoverse.yaml](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/Argoverse.yaml).
+A YAML file contains the dataset's paths, classes, and other essential information. For the Argoverse dataset, the configuration file, `Argoverse.yaml`, can be found at the following link: [Argoverse.yaml](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/Argoverse.yaml).
 
 For more information about YAML configurations, see our [datasets](../index.md) guide.

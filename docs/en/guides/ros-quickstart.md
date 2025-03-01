@@ -1,7 +1,7 @@
 ---
 comments: true
-description: Learn to integrate Ultralytics YOLO with your robot running ROS Noetic, utilizing RGB images, depth images, and point clouds for efficient object detection, segmentation, and enhanced robotic perception.
-keywords: Ultralytics, YOLO, object detection, deep learning, machine learning, guide, ROS, Robot Operating System, robotics, ROS Noetic, Python, Ubuntu, simulation, visualization, communication, middleware, hardware abstraction, tools, utilities, ecosystem, Noetic Ninjemys, autonomous vehicle, AMV
+description: Learn to integrate numa_ultralytics YOLO with your robot running ROS Noetic, utilizing RGB images, depth images, and point clouds for efficient object detection, segmentation, and enhanced robotic perception.
+keywords: numa_ultralytics, YOLO, object detection, deep learning, machine learning, guide, ROS, Robot Operating System, robotics, ROS Noetic, Python, Ubuntu, simulation, visualization, communication, middleware, hardware abstraction, tools, utilities, ecosystem, Noetic Ninjemys, autonomous vehicle, AMV
 ---
 
 # ROS (Robot Operating System) quickstart guide
@@ -43,12 +43,12 @@ The [Robot Operating System (ROS)](https://www.ros.org/) is an open-source frame
 
 In ROS, communication between nodes is facilitated through [messages](https://wiki.ros.org/Messages) and [topics](https://wiki.ros.org/Topics). A message is a data structure that defines the information exchanged between nodes, while a topic is a named channel over which messages are sent and received. Nodes can publish messages to a topic or subscribe to messages from a topic, enabling them to communicate with each other. This publish-subscribe model allows for asynchronous communication and decoupling between nodes. Each sensor or actuator in a robotic system typically publishes data to a topic, which can then be consumed by other nodes for processing or control. For the purpose of this guide, we will focus on Image, Depth and PointCloud messages and camera topics.
 
-## Setting Up Ultralytics YOLO with ROS
+## Setting Up numa_ultralytics YOLO with ROS
 
-This guide has been tested using [this ROS environment](https://github.com/ambitious-octopus/rosbot_ros/tree/noetic), which is a fork of the [ROSbot ROS repository](https://github.com/husarion/rosbot_ros). This environment includes the Ultralytics YOLO package, a Docker container for easy setup, comprehensive ROS packages, and Gazebo worlds for rapid testing. It is designed to work with the [Husarion ROSbot 2 PRO](https://husarion.com/manuals/rosbot/). The code examples provided will work in any ROS Noetic/Melodic environment, including both simulation and real-world.
+This guide has been tested using [this ROS environment](https://github.com/ambitious-octopus/rosbot_ros/tree/noetic), which is a fork of the [ROSbot ROS repository](https://github.com/husarion/rosbot_ros). This environment includes the numa_ultralytics YOLO package, a Docker container for easy setup, comprehensive ROS packages, and Gazebo worlds for rapid testing. It is designed to work with the [Husarion ROSbot 2 PRO](https://husarion.com/manuals/rosbot/). The code examples provided will work in any ROS Noetic/Melodic environment, including both simulation and real-world.
 
 <p align="center">
-  <img width="50%" src="https://github.com/ultralytics/docs/releases/download/0/husarion-rosbot-2-pro.avif" alt="Husarion ROSbot 2 PRO">
+  <img width="50%" src="https://github.com/numa_ultralytics/docs/releases/download/0/husarion-rosbot-2-pro.avif" alt="Husarion ROSbot 2 PRO">
 </p>
 
 ### Dependencies Installation
@@ -57,40 +57,40 @@ Apart from the ROS environment, you will need to install the following dependenc
 
 - **[ROS Numpy package](https://github.com/eric-wieser/ros_numpy)**: This is required for fast conversion between ROS Image messages and numpy arrays.
 
-    ```bash
-    pip install ros_numpy
-    ```
+  ```bash
+  pip install ros_numpy
+  ```
 
-- **Ultralytics package**:
+- **numa_ultralytics package**:
 
-    ```bash
-    pip install ultralytics
-    ```
+  ```bash
+  pip install numa_ultralytics
+  ```
 
-## Use Ultralytics with ROS `sensor_msgs/Image`
+## Use numa_ultralytics with ROS `sensor_msgs/Image`
 
-The `sensor_msgs/Image` [message type](https://docs.ros.org/en/api/sensor_msgs/html/msg/Image.html) is commonly used in ROS for representing image data. It contains fields for encoding, height, width, and pixel data, making it suitable for transmitting images captured by cameras or other sensors. Image messages are widely used in robotic applications for tasks such as visual perception, [object detection](https://www.ultralytics.com/glossary/object-detection), and navigation.
+The `sensor_msgs/Image` [message type](https://docs.ros.org/en/api/sensor_msgs/html/msg/Image.html) is commonly used in ROS for representing image data. It contains fields for encoding, height, width, and pixel data, making it suitable for transmitting images captured by cameras or other sensors. Image messages are widely used in robotic applications for tasks such as visual perception, [object detection](https://www.numa_ultralytics.com/glossary/object-detection), and navigation.
 
 <p align="center">
-  <img width="100%" src="https://github.com/ultralytics/docs/releases/download/0/detection-segmentation-ros-gazebo.avif" alt="Detection and Segmentation in ROS Gazebo">
+  <img width="100%" src="https://github.com/numa_ultralytics/docs/releases/download/0/detection-segmentation-ros-gazebo.avif" alt="Detection and Segmentation in ROS Gazebo">
 </p>
 
 ### Image Step-by-Step Usage
 
-The following code snippet demonstrates how to use the Ultralytics YOLO package with ROS. In this example, we subscribe to a camera topic, process the incoming image using YOLO, and publish the detected objects to new topics for [detection](../tasks/detect.md) and [segmentation](../tasks/segment.md).
+The following code snippet demonstrates how to use the numa_ultralytics YOLO package with ROS. In this example, we subscribe to a camera topic, process the incoming image using YOLO, and publish the detected objects to new topics for [detection](../tasks/detect.md) and [segmentation](../tasks/segment.md).
 
-First, import the necessary libraries and instantiate two models: one for [segmentation](../tasks/segment.md) and one for [detection](../tasks/detect.md). Initialize a ROS node (with the name `ultralytics`) to enable communication with the ROS master. To ensure a stable connection, we include a brief pause, giving the node sufficient time to establish the connection before proceeding.
+First, import the necessary libraries and instantiate two models: one for [segmentation](../tasks/segment.md) and one for [detection](../tasks/detect.md). Initialize a ROS node (with the name `numa_ultralytics`) to enable communication with the ROS master. To ensure a stable connection, we include a brief pause, giving the node sufficient time to establish the connection before proceeding.
 
 ```python
 import time
 
 import rospy
 
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
 detection_model = YOLO("yolo11m.pt")
 segmentation_model = YOLO("yolo11m-seg.pt")
-rospy.init_node("ultralytics")
+rospy.init_node("numa_ultralytics")
 time.sleep(1)
 ```
 
@@ -99,11 +99,11 @@ Initialize two ROS topics: one for [detection](../tasks/detect.md) and one for [
 ```python
 from sensor_msgs.msg import Image
 
-det_image_pub = rospy.Publisher("/ultralytics/detection/image", Image, queue_size=5)
-seg_image_pub = rospy.Publisher("/ultralytics/segmentation/image", Image, queue_size=5)
+det_image_pub = rospy.Publisher("/numa_ultralytics/detection/image", Image, queue_size=5)
+seg_image_pub = rospy.Publisher("/numa_ultralytics/segmentation/image", Image, queue_size=5)
 ```
 
-Finally, create a subscriber that listens to messages on the `/camera/color/image_raw` topic and calls a callback function for each new message. This callback function receives messages of type `sensor_msgs/Image`, converts them into a numpy array using `ros_numpy`, processes the images with the previously instantiated YOLO models, annotates the images, and then publishes them back to the respective topics: `/ultralytics/detection/image` for detection and `/ultralytics/segmentation/image` for segmentation.
+Finally, create a subscriber that listens to messages on the `/camera/color/image_raw` topic and calls a callback function for each new message. This callback function receives messages of type `sensor_msgs/Image`, converts them into a numpy array using `ros_numpy`, processes the images with the previously instantiated YOLO models, annotates the images, and then publishes them back to the respective topics: `/numa_ultralytics/detection/image` for detection and `/numa_ultralytics/segmentation/image` for segmentation.
 
 ```python
 import ros_numpy
@@ -138,15 +138,15 @@ while True:
     import rospy
     from sensor_msgs.msg import Image
 
-    from ultralytics import YOLO
+    from numa_ultralytics import YOLO
 
     detection_model = YOLO("yolo11m.pt")
     segmentation_model = YOLO("yolo11m-seg.pt")
-    rospy.init_node("ultralytics")
+    rospy.init_node("numa_ultralytics")
     time.sleep(1)
 
-    det_image_pub = rospy.Publisher("/ultralytics/detection/image", Image, queue_size=5)
-    seg_image_pub = rospy.Publisher("/ultralytics/segmentation/image", Image, queue_size=5)
+    det_image_pub = rospy.Publisher("/numa_ultralytics/detection/image", Image, queue_size=5)
+    seg_image_pub = rospy.Publisher("/numa_ultralytics/segmentation/image", Image, queue_size=5)
 
 
     def callback(data):
@@ -180,15 +180,15 @@ while True:
 
 ### Publish Detected Classes with `std_msgs/String`
 
-Standard ROS messages also include `std_msgs/String` messages. In many applications, it is not necessary to republish the entire annotated image; instead, only the classes present in the robot's view are needed. The following example demonstrates how to use `std_msgs/String` [messages](https://docs.ros.org/en/noetic/api/std_msgs/html/msg/String.html) to republish the detected classes on the `/ultralytics/detection/classes` topic. These messages are more lightweight and provide essential information, making them valuable for various applications.
+Standard ROS messages also include `std_msgs/String` messages. In many applications, it is not necessary to republish the entire annotated image; instead, only the classes present in the robot's view are needed. The following example demonstrates how to use `std_msgs/String` [messages](https://docs.ros.org/en/noetic/api/std_msgs/html/msg/String.html) to republish the detected classes on the `/numa_ultralytics/detection/classes` topic. These messages are more lightweight and provide essential information, making them valuable for various applications.
 
 #### Example Use Case
 
-Consider a warehouse robot equipped with a camera and object [detection model](../tasks/detect.md). Instead of sending large annotated images over the network, the robot can publish a list of detected classes as `std_msgs/String` messages. For instance, when the robot detects objects like "box", "pallet" and "forklift" it publishes these classes to the `/ultralytics/detection/classes` topic. This information can then be used by a central monitoring system to track the inventory in real-time, optimize the robot's path planning to avoid obstacles, or trigger specific actions such as picking up a detected box. This approach reduces the bandwidth required for communication and focuses on transmitting critical data.
+Consider a warehouse robot equipped with a camera and object [detection model](../tasks/detect.md). Instead of sending large annotated images over the network, the robot can publish a list of detected classes as `std_msgs/String` messages. For instance, when the robot detects objects like "box", "pallet" and "forklift" it publishes these classes to the `/numa_ultralytics/detection/classes` topic. This information can then be used by a central monitoring system to track the inventory in real-time, optimize the robot's path planning to avoid obstacles, or trigger specific actions such as picking up a detected box. This approach reduces the bandwidth required for communication and focuses on transmitting critical data.
 
 ### String Step-by-Step Usage
 
-This example demonstrates how to use the Ultralytics YOLO package with ROS. In this example, we subscribe to a camera topic, process the incoming image using YOLO, and publish the detected objects to new topic `/ultralytics/detection/classes` using `std_msgs/String` messages. The `ros_numpy` package is used to convert the ROS Image message to a numpy array for processing with YOLO.
+This example demonstrates how to use the numa_ultralytics YOLO package with ROS. In this example, we subscribe to a camera topic, process the incoming image using YOLO, and publish the detected objects to new topic `/numa_ultralytics/detection/classes` using `std_msgs/String` messages. The `ros_numpy` package is used to convert the ROS Image message to a numpy array for processing with YOLO.
 
 ```python
 import time
@@ -198,12 +198,12 @@ import rospy
 from sensor_msgs.msg import Image
 from std_msgs.msg import String
 
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
 detection_model = YOLO("yolo11m.pt")
-rospy.init_node("ultralytics")
+rospy.init_node("numa_ultralytics")
 time.sleep(1)
-classes_pub = rospy.Publisher("/ultralytics/detection/classes", String, queue_size=5)
+classes_pub = rospy.Publisher("/numa_ultralytics/detection/classes", String, queue_size=5)
 
 
 def callback(data):
@@ -221,7 +221,7 @@ while True:
     rospy.spin()
 ```
 
-## Use Ultralytics with ROS Depth Images
+## Use numa_ultralytics with ROS Depth Images
 
 In addition to RGB images, ROS supports [depth images](https://en.wikipedia.org/wiki/Depth_map), which provide information about the distance of objects from the camera. Depth images are crucial for robotic applications such as obstacle avoidance, 3D mapping, and localization.
 
@@ -255,17 +255,17 @@ import time
 import rospy
 from std_msgs.msg import String
 
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
-rospy.init_node("ultralytics")
+rospy.init_node("numa_ultralytics")
 time.sleep(1)
 
 segmentation_model = YOLO("yolo11m-seg.pt")
 
-classes_pub = rospy.Publisher("/ultralytics/detection/distance", String, queue_size=5)
+classes_pub = rospy.Publisher("/numa_ultralytics/detection/distance", String, queue_size=5)
 ```
 
-Next, define a callback function that processes the incoming depth image message. The function waits for the depth image and RGB image messages, converts them into numpy arrays, and applies the segmentation model to the RGB image. It then extracts the segmentation mask for each detected object and calculates the average distance of the object from the camera using the depth image. Most sensors have a maximum distance, known as the clip distance, beyond which values are represented as inf (`np.inf`). Before processing, it is important to filter out these null values and assign them a value of `0`. Finally, it publishes the detected objects along with their average distances to the `/ultralytics/detection/distance` topic.
+Next, define a callback function that processes the incoming depth image message. The function waits for the depth image and RGB image messages, converts them into numpy arrays, and applies the segmentation model to the RGB image. It then extracts the segmentation mask for each detected object and calculates the average distance of the object from the camera using the depth image. Most sensors have a maximum distance, known as the clip distance, beyond which values are represented as inf (`np.inf`). Before processing, it is important to filter out these null values and assign them a value of `0`. Finally, it publishes the detected objects along with their average distances to the `/numa_ultralytics/detection/distance` topic.
 
 ```python
 import numpy as np
@@ -308,14 +308,14 @@ while True:
     from sensor_msgs.msg import Image
     from std_msgs.msg import String
 
-    from ultralytics import YOLO
+    from numa_ultralytics import YOLO
 
-    rospy.init_node("ultralytics")
+    rospy.init_node("numa_ultralytics")
     time.sleep(1)
 
     segmentation_model = YOLO("yolo11m-seg.pt")
 
-    classes_pub = rospy.Publisher("/ultralytics/detection/distance", String, queue_size=5)
+    classes_pub = rospy.Publisher("/numa_ultralytics/detection/distance", String, queue_size=5)
 
 
     def callback(data):
@@ -342,10 +342,10 @@ while True:
         rospy.spin()
     ```
 
-## Use Ultralytics with ROS `sensor_msgs/PointCloud2`
+## Use numa_ultralytics with ROS `sensor_msgs/PointCloud2`
 
 <p align="center">
-  <img width="100%" src="https://github.com/ultralytics/docs/releases/download/0/detection-segmentation-ros-gazebo-1.avif" alt="Detection and Segmentation in ROS Gazebo">
+  <img width="100%" src="https://github.com/numa_ultralytics/docs/releases/download/0/detection-segmentation-ros-gazebo-1.avif" alt="Detection and Segmentation in ROS Gazebo">
 </p>
 
 The `sensor_msgs/PointCloud2` [message type](https://docs.ros.org/en/api/sensor_msgs/html/msg/PointCloud2.html) is a data structure used in ROS to represent 3D point cloud data. This message type is integral to robotic applications, enabling tasks such as 3D mapping, object recognition, and localization.
@@ -360,7 +360,7 @@ A point cloud is a collection of data points defined within a three-dimensional 
 
     Point Clouds can be obtained using various sensors:
 
-    1. **LIDAR (Light Detection and Ranging)**: Uses laser pulses to measure distances to objects and create high-[precision](https://www.ultralytics.com/glossary/precision) 3D maps.
+    1. **LIDAR (Light Detection and Ranging)**: Uses laser pulses to measure distances to objects and create high-[precision](https://www.numa_ultralytics.com/glossary/precision) 3D maps.
     2. **Depth Cameras**: Capture depth information for each pixel, allowing for 3D reconstruction of the scene.
     3. **Stereo Cameras**: Utilize two or more cameras to obtain depth information through triangulation.
     4. **Structured Light Scanners**: Project a known pattern onto a surface and measure the deformation to calculate depth.
@@ -380,9 +380,9 @@ import time
 
 import rospy
 
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
-rospy.init_node("ultralytics")
+rospy.init_node("numa_ultralytics")
 time.sleep(1)
 segmentation_model = YOLO("yolo11m-seg.pt")
 ```
@@ -459,9 +459,9 @@ for index, class_id in enumerate(classes):
     import ros_numpy
     import rospy
 
-    from ultralytics import YOLO
+    from numa_ultralytics import YOLO
 
-    rospy.init_node("ultralytics")
+    rospy.init_node("numa_ultralytics")
     time.sleep(1)
     segmentation_model = YOLO("yolo11m-seg.pt")
 
@@ -510,7 +510,7 @@ for index, class_id in enumerate(classes):
     ```
 
 <p align="center">
-  <img width="100%" src="https://github.com/ultralytics/docs/releases/download/0/point-cloud-segmentation-ultralytics.avif" alt="Point Cloud Segmentation with Ultralytics ">
+  <img width="100%" src="https://github.com/numa_ultralytics/docs/releases/download/0/point-cloud-segmentation-numa_ultralytics.avif" alt="Point Cloud Segmentation with numa_ultralytics ">
 </p>
 
 ## FAQ
@@ -519,12 +519,12 @@ for index, class_id in enumerate(classes):
 
 The [Robot Operating System (ROS)](https://www.ros.org/) is an open-source framework commonly used in robotics to help developers create robust robot applications. It provides a collection of [libraries and tools](https://www.ros.org/blog/ecosystem/) for building and interfacing with robotic systems, enabling easier development of complex applications. ROS supports communication between nodes using messages over [topics](https://wiki.ros.org/ROS/Tutorials/UnderstandingTopics) or [services](https://wiki.ros.org/ROS/Tutorials/UnderstandingServicesParams).
 
-### How do I integrate Ultralytics YOLO with ROS for real-time object detection?
+### How do I integrate numa_ultralytics YOLO with ROS for real-time object detection?
 
-Integrating Ultralytics YOLO with ROS involves setting up a ROS environment and using YOLO for processing sensor data. Begin by installing the required dependencies like `ros_numpy` and Ultralytics YOLO:
+Integrating numa_ultralytics YOLO with ROS involves setting up a ROS environment and using YOLO for processing sensor data. Begin by installing the required dependencies like `ros_numpy` and numa_ultralytics YOLO:
 
 ```bash
-pip install ros_numpy ultralytics
+pip install ros_numpy numa_ultralytics
 ```
 
 Next, create a ROS node and subscribe to an [image topic](../tasks/detect.md) to process the incoming data. Here is a minimal example:
@@ -534,11 +534,11 @@ import ros_numpy
 import rospy
 from sensor_msgs.msg import Image
 
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
 detection_model = YOLO("yolo11m.pt")
-rospy.init_node("ultralytics")
-det_image_pub = rospy.Publisher("/ultralytics/detection/image", Image, queue_size=5)
+rospy.init_node("numa_ultralytics")
+det_image_pub = rospy.Publisher("/numa_ultralytics/detection/image", Image, queue_size=5)
 
 
 def callback(data):
@@ -552,9 +552,9 @@ rospy.Subscriber("/camera/color/image_raw", Image, callback)
 rospy.spin()
 ```
 
-### What are ROS topics and how are they used in Ultralytics YOLO?
+### What are ROS topics and how are they used in numa_ultralytics YOLO?
 
-ROS topics facilitate communication between nodes in a ROS network by using a publish-subscribe model. A topic is a named channel that nodes use to send and receive messages asynchronously. In the context of Ultralytics YOLO, you can make a node subscribe to an image topic, process the images using YOLO for tasks like detection or segmentation, and publish outcomes to new topics.
+ROS topics facilitate communication between nodes in a ROS network by using a publish-subscribe model. A topic is a named channel that nodes use to send and receive messages asynchronously. In the context of numa_ultralytics YOLO, you can make a node subscribe to an image topic, process the images using YOLO for tasks like detection or segmentation, and publish outcomes to new topics.
 
 For example, subscribe to a camera topic and process the incoming image for detection:
 
@@ -562,7 +562,7 @@ For example, subscribe to a camera topic and process the incoming image for dete
 rospy.Subscriber("/camera/color/image_raw", Image, callback)
 ```
 
-### Why use depth images with Ultralytics YOLO in ROS?
+### Why use depth images with numa_ultralytics YOLO in ROS?
 
 Depth images in ROS, represented by `sensor_msgs/Image`, provide the distance of objects from the camera, crucial for tasks like obstacle avoidance, 3D mapping, and localization. By [using depth information](https://en.wikipedia.org/wiki/Depth_map) along with RGB images, robots can better understand their 3D environment.
 
@@ -586,9 +586,9 @@ import ros_numpy
 import rospy
 from sensor_msgs.msg import PointCloud2
 
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
-rospy.init_node("ultralytics")
+rospy.init_node("numa_ultralytics")
 segmentation_model = YOLO("yolo11m-seg.pt")
 
 

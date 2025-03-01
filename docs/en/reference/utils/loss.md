@@ -1,60 +1,60 @@
 ---
-description: Explore detailed descriptions and implementations of various loss functions used in Ultralytics models, including Varifocal Loss, Focal Loss, Bbox Loss, and more.
-keywords: Ultralytics, loss functions, Varifocal Loss, Focal Loss, Bbox Loss, Rotated Bbox Loss, Keypoint Loss, YOLO, model training, documentation
+description: Explore detailed descriptions and implementations of various loss functions used in numa_ultralytics models, including Varifocal Loss, Focal Loss, Bbox Loss, and more.
+keywords: numa_ultralytics, loss functions, Varifocal Loss, Focal Loss, Bbox Loss, Rotated Bbox Loss, Keypoint Loss, YOLO, model training, documentation
 ---
 
-# Reference for `ultralytics/utils/loss.py`
+# Reference for `numa_ultralytics/utils/loss.py`
 
 !!! note
 
-    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/utils/loss.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/utils/loss.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/utils/loss.py) 🛠️. Thank you 🙏!
+    This file is available at [https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/utils/loss.py](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/utils/loss.py). If you spot a problem please help fix it by [contributing](https://docs.numa_ultralytics.com/help/contributing/) a [Pull Request](https://github.com/numa_ultralytics/numa_ultralytics/edit/main/numa_ultralytics/utils/loss.py) 🛠️. Thank you 🙏!
 
 <br>
 
-## ::: ultralytics.utils.loss.VarifocalLoss
+## ::: numa_ultralytics.utils.loss.VarifocalLoss
 
 <br><br><hr><br>
 
-## ::: ultralytics.utils.loss.FocalLoss
+## ::: numa_ultralytics.utils.loss.FocalLoss
 
 <br><br><hr><br>
 
-## ::: ultralytics.utils.loss.DFLoss
+## ::: numa_ultralytics.utils.loss.DFLoss
 
 <br><br><hr><br>
 
-## ::: ultralytics.utils.loss.BboxLoss
+## ::: numa_ultralytics.utils.loss.BboxLoss
 
 <br><br><hr><br>
 
-## ::: ultralytics.utils.loss.RotatedBboxLoss
+## ::: numa_ultralytics.utils.loss.RotatedBboxLoss
 
 <br><br><hr><br>
 
-## ::: ultralytics.utils.loss.KeypointLoss
+## ::: numa_ultralytics.utils.loss.KeypointLoss
 
 <br><br><hr><br>
 
-## ::: ultralytics.utils.loss.v8DetectionLoss
+## ::: numa_ultralytics.utils.loss.v8DetectionLoss
 
 <br><br><hr><br>
 
-## ::: ultralytics.utils.loss.v8SegmentationLoss
+## ::: numa_ultralytics.utils.loss.v8SegmentationLoss
 
 <br><br><hr><br>
 
-## ::: ultralytics.utils.loss.v8PoseLoss
+## ::: numa_ultralytics.utils.loss.v8PoseLoss
 
 <br><br><hr><br>
 
-## ::: ultralytics.utils.loss.v8ClassificationLoss
+## ::: numa_ultralytics.utils.loss.v8ClassificationLoss
 
 <br><br><hr><br>
 
-## ::: ultralytics.utils.loss.v8OBBLoss
+## ::: numa_ultralytics.utils.loss.v8OBBLoss
 
 <br><br><hr><br>
 
-## ::: ultralytics.utils.loss.E2EDetectLoss
+## ::: numa_ultralytics.utils.loss.E2EDetectLoss
 
 <br><br>

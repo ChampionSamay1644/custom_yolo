@@ -1,4 +1,4 @@
-# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+# numa_ultralytics 🚀 AGPL-3.0 License - https://numa_ultralytics.com/license
 
 import subprocess
 
@@ -6,9 +6,9 @@ import pytest
 from PIL import Image
 
 from tests import CUDA_DEVICE_COUNT, CUDA_IS_AVAILABLE
-from ultralytics.cfg import TASK2DATA, TASK2MODEL, TASKS
-from ultralytics.utils import ASSETS, WEIGHTS_DIR, checks
-from ultralytics.utils.torch_utils import TORCH_1_9
+from numa_ultralytics.cfg import TASK2DATA, TASK2MODEL, TASKS
+from numa_ultralytics.utils import ASSETS, WEIGHTS_DIR, checks
+from numa_ultralytics.utils.torch_utils import TORCH_1_9
 
 # Constants
 TASK_MODEL_DATA = [(task, WEIGHTS_DIR / TASK2MODEL[task], TASK2DATA[task]) for task in TASKS]
@@ -54,7 +54,7 @@ def test_export(model):
 
 
 def test_rtdetr(task="detect", model="yolov8n-rtdetr.yaml", data="coco8.yaml"):
-    """Test the RTDETR functionality within Ultralytics for detection tasks using specified model and data."""
+    """Test the RTDETR functionality within numa_ultralytics for detection tasks using specified model and data."""
     # Warning: must use imgsz=640 (note also add coma, spaces, fraction=0.25 args to test single-image training)
     run(f"yolo train {task} model={model} data={data} --imgsz= 160 epochs =1, cache = disk fraction=0.25")
     run(f"yolo predict {task} model={model} source={ASSETS / 'bus.jpg'} imgsz=160 save save_crop save_txt")
@@ -65,14 +65,14 @@ def test_rtdetr(task="detect", model="yolov8n-rtdetr.yaml", data="coco8.yaml"):
 
 @pytest.mark.skipif(checks.IS_PYTHON_3_12, reason="MobileSAM with CLIP is not supported in Python 3.12")
 def test_fastsam(task="segment", model=WEIGHTS_DIR / "FastSAM-s.pt", data="coco8-seg.yaml"):
-    """Test FastSAM model for segmenting objects in images using various prompts within Ultralytics."""
+    """Test FastSAM model for segmenting objects in images using various prompts within numa_ultralytics."""
     source = ASSETS / "bus.jpg"
 
     run(f"yolo segment val {task} model={model} data={data} imgsz=32")
     run(f"yolo segment predict model={model} source={source} imgsz=32 save save_crop save_txt")
 
-    from ultralytics import FastSAM
-    from ultralytics.models.sam import Predictor
+    from numa_ultralytics import FastSAM
+    from numa_ultralytics.models.sam import Predictor
 
     # Create a FastSAM model
     sam_model = FastSAM(model)  # or FastSAM-x.pt
@@ -89,8 +89,8 @@ def test_fastsam(task="segment", model=WEIGHTS_DIR / "FastSAM-s.pt", data="coco8
 
 
 def test_mobilesam():
-    """Test MobileSAM segmentation with point prompts using Ultralytics."""
-    from ultralytics import SAM
+    """Test MobileSAM segmentation with point prompts using numa_ultralytics."""
+    from numa_ultralytics import SAM
 
     # Load the model
     model = SAM(WEIGHTS_DIR / "mobile_sam.pt")

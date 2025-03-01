@@ -1,20 +1,20 @@
 ---
-description: Explore Ultralytics' Parking Management solution leveraging YOLO for efficient parking zone monitoring and management.
-keywords: Ultralytics, YOLO, parking management, computer vision, parking monitoring, AI solutions, machine learning
+description: Explore numa_ultralytics' Parking Management solution leveraging YOLO for efficient parking zone monitoring and management.
+keywords: numa_ultralytics, YOLO, parking management, computer vision, parking monitoring, AI solutions, machine learning
 ---
 
-# Reference for `ultralytics/solutions/parking_management.py`
+# Reference for `numa_ultralytics/solutions/parking_management.py`
 
 !!! note
 
-    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/solutions/parking_management.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/solutions/parking_management.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/solutions/parking_management.py) 🛠️. Thank you 🙏!
+    This file is available at [https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/solutions/parking_management.py](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/solutions/parking_management.py). If you spot a problem please help fix it by [contributing](https://docs.numa_ultralytics.com/help/contributing/) a [Pull Request](https://github.com/numa_ultralytics/numa_ultralytics/edit/main/numa_ultralytics/solutions/parking_management.py) 🛠️. Thank you 🙏!
 
 <br>
 
-## ::: ultralytics.solutions.parking_management.ParkingPtsSelection
+## ::: numa_ultralytics.solutions.parking_management.ParkingPtsSelection
 
 <br><br><hr><br>
 
-## ::: ultralytics.solutions.parking_management.ParkingManagement
+## ::: numa_ultralytics.solutions.parking_management.ParkingManagement
 
 <br><br>

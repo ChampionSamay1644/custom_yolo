@@ -1,7 +1,7 @@
 ---
 comments: true
 description: Learn how to optimize YOLOv5 hyperparameters using genetic algorithms for improved training performance. Step-by-step instructions included.
-keywords: YOLOv5, hyperparameter evolution, genetic algorithms, machine learning, optimization, Ultralytics
+keywords: YOLOv5, hyperparameter evolution, genetic algorithms, machine learning, optimization, numa_ultralytics
 ---
 
 📚 This guide explains **hyperparameter evolution** for YOLOv5 🚀. Hyperparameter evolution is a method of [Hyperparameter Optimization](https://en.wikipedia.org/wiki/Hyperparameter_optimization) using a [Genetic Algorithm](https://en.wikipedia.org/wiki/Genetic_algorithm) (GA) for optimization.
@@ -10,10 +10,10 @@ Hyperparameters in ML control various aspects of training, and finding optimal v
 
 ## Before You Start
 
-Clone repo and install [requirements.txt](https://github.com/ultralytics/yolov5/blob/master/requirements.txt) in a [**Python>=3.8.0**](https://www.python.org/) environment, including [**PyTorch>=1.8**](https://pytorch.org/get-started/locally/). [Models](https://github.com/ultralytics/yolov5/tree/master/models) and [datasets](https://github.com/ultralytics/yolov5/tree/master/data) download automatically from the latest YOLOv5 [release](https://github.com/ultralytics/yolov5/releases).
+Clone repo and install [requirements.txt](https://github.com/numa_ultralytics/yolov5/blob/master/requirements.txt) in a [**Python>=3.8.0**](https://www.python.org/) environment, including [**PyTorch>=1.8**](https://pytorch.org/get-started/locally/). [Models](https://github.com/numa_ultralytics/yolov5/tree/master/models) and [datasets](https://github.com/numa_ultralytics/yolov5/tree/master/data) download automatically from the latest YOLOv5 [release](https://github.com/numa_ultralytics/yolov5/releases).
 
 ```bash
-git clone https://github.com/ultralytics/yolov5  # clone
+git clone https://github.com/numa_ultralytics/yolov5  # clone
 cd yolov5
 pip install -r requirements.txt  # install
 ```
@@ -23,10 +23,10 @@ pip install -r requirements.txt  # install
 YOLOv5 has about 30 hyperparameters used for various training settings. These are defined in `*.yaml` files in the `/data/hyps` directory. Better initial guesses will produce better final results, so it is important to initialize these values properly before evolving. If in doubt, simply use the default values, which are optimized for YOLOv5 COCO training from scratch.
 
 ```yaml
-# YOLOv5 🚀 by Ultralytics, AGPL-3.0 license
+# YOLOv5 🚀 by numa_ultralytics, AGPL-3.0 license
 # Hyperparameters for low-augmentation COCO training from scratch
 # python train.py --batch 64 --cfg yolov5n6.yaml --weights '' --data coco.yaml --img 640 --epochs 300 --linear
-# See tutorials for hyperparameter evolution https://github.com/ultralytics/yolov5#tutorials
+# See tutorials for hyperparameter evolution https://github.com/numa_ultralytics/yolov5#tutorials
 
 lr0: 0.01 # initial learning rate (SGD=1E-2, Adam=1E-3)
 lrf: 0.01 # final OneCycleLR learning rate (lr0 * lrf)
@@ -61,7 +61,7 @@ copy_paste: 0.0 # segment copy-paste (probability)
 
 ## 2. Define Fitness
 
-Fitness is the value we seek to maximize. In YOLOv5 we define a default fitness function as a weighted combination of metrics: `mAP@0.5` contributes 10% of the weight and `mAP@0.5:0.95` contributes the remaining 90%, with [Precision `P` and [Recall](https://www.ultralytics.com/glossary/recall) `R`](https://en.wikipedia.org/wiki/Precision_and_recall) absent. You may adjust these as you see fit or use the default fitness definition in utils/metrics.py (recommended).
+Fitness is the value we seek to maximize. In YOLOv5 we define a default fitness function as a weighted combination of metrics: `mAP@0.5` contributes 10% of the weight and `mAP@0.5:0.95` contributes the remaining 90%, with [Precision `P` and [Recall](https://www.numa_ultralytics.com/glossary/recall) `R`](https://en.wikipedia.org/wiki/Precision_and_recall) absent. You may adjust these as you see fit or use the default fitness definition in utils/metrics.py (recommended).
 
 ```python
 def fitness(x):
@@ -72,7 +72,7 @@ def fitness(x):
 
 ## 3. Evolve
 
-Evolution is performed about a base scenario which we seek to improve upon. The base scenario in this example is [finetuning](https://www.ultralytics.com/glossary/fine-tuning) COCO128 for 10 [epochs](https://www.ultralytics.com/glossary/epoch) using pretrained YOLOv5s. The base scenario training command is:
+Evolution is performed about a base scenario which we seek to improve upon. The base scenario in this example is [finetuning](https://www.numa_ultralytics.com/glossary/fine-tuning) COCO128 for 10 [epochs](https://www.numa_ultralytics.com/glossary/epoch) using pretrained YOLOv5s. The base scenario training command is:
 
 ```bash
 python train.py --epochs 10 --data coco128.yaml --weights yolov5s.pt --cache
@@ -147,20 +147,20 @@ We recommend a minimum of 300 generations of evolution for best results. Note th
 
 `evolve.csv` is plotted as `evolve.png` by `utils.plots.plot_evolve()` after evolution finishes with one subplot per hyperparameter showing fitness (y-axis) vs hyperparameter values (x-axis). Yellow indicates higher concentrations. Vertical distributions indicate that a parameter has been disabled and does not mutate. This is user selectable in the `meta` dictionary in train.py, and is useful for fixing parameters and preventing them from evolving.
 
-![evolve](https://github.com/ultralytics/docs/releases/download/0/evolve.avif)
+![evolve](https://github.com/numa_ultralytics/docs/releases/download/0/evolve.avif)
 
 ## Supported Environments
 
-Ultralytics provides a range of ready-to-use environments, each pre-installed with essential dependencies such as [CUDA](https://developer.nvidia.com/cuda-zone), [CUDNN](https://developer.nvidia.com/cudnn), [Python](https://www.python.org/), and [PyTorch](https://pytorch.org/), to kickstart your projects.
+numa_ultralytics provides a range of ready-to-use environments, each pre-installed with essential dependencies such as [CUDA](https://developer.nvidia.com/cuda-zone), [CUDNN](https://developer.nvidia.com/cudnn), [Python](https://www.python.org/), and [PyTorch](https://pytorch.org/), to kickstart your projects.
 
-- **Free GPU Notebooks**: <a href="https://bit.ly/yolov5-paperspace-notebook"><img src="https://assets.paperspace.io/img/gradient-badge.svg" alt="Run on Gradient"></a> <a href="https://colab.research.google.com/github/ultralytics/yolov5/blob/master/tutorial.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a> <a href="https://www.kaggle.com/models/ultralytics/yolov5"><img src="https://kaggle.com/static/images/open-in-kaggle.svg" alt="Open In Kaggle"></a>
+- **Free GPU Notebooks**: <a href="https://bit.ly/yolov5-paperspace-notebook"><img src="https://assets.paperspace.io/img/gradient-badge.svg" alt="Run on Gradient"></a> <a href="https://colab.research.google.com/github/numa_ultralytics/yolov5/blob/master/tutorial.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a> <a href="https://www.kaggle.com/models/numa_ultralytics/yolov5"><img src="https://kaggle.com/static/images/open-in-kaggle.svg" alt="Open In Kaggle"></a>
 - **Google Cloud**: [GCP Quickstart Guide](../environments/google_cloud_quickstart_tutorial.md)
 - **Amazon**: [AWS Quickstart Guide](../environments/aws_quickstart_tutorial.md)
 - **Azure**: [AzureML Quickstart Guide](../environments/azureml_quickstart_tutorial.md)
-- **Docker**: [Docker Quickstart Guide](../environments/docker_image_quickstart_tutorial.md) <a href="https://hub.docker.com/r/ultralytics/yolov5"><img src="https://img.shields.io/docker/pulls/ultralytics/yolov5?logo=docker" alt="Docker Pulls"></a>
+- **Docker**: [Docker Quickstart Guide](../environments/docker_image_quickstart_tutorial.md) <a href="https://hub.docker.com/r/numa_ultralytics/yolov5"><img src="https://img.shields.io/docker/pulls/numa_ultralytics/yolov5?logo=docker" alt="Docker Pulls"></a>
 
 ## Project Status
 
-<a href="https://github.com/ultralytics/yolov5/actions/workflows/ci-testing.yml"><img src="https://github.com/ultralytics/yolov5/actions/workflows/ci-testing.yml/badge.svg" alt="YOLOv5 CI"></a>
+<a href="https://github.com/numa_ultralytics/yolov5/actions/workflows/ci-testing.yml"><img src="https://github.com/numa_ultralytics/yolov5/actions/workflows/ci-testing.yml/badge.svg" alt="YOLOv5 CI"></a>
 
-This badge indicates that all [YOLOv5 GitHub Actions](https://github.com/ultralytics/yolov5/actions) Continuous Integration (CI) tests are successfully passing. These CI tests rigorously check the functionality and performance of YOLOv5 across various key aspects: [training](https://github.com/ultralytics/yolov5/blob/master/train.py), [validation](https://github.com/ultralytics/yolov5/blob/master/val.py), [inference](https://github.com/ultralytics/yolov5/blob/master/detect.py), [export](https://github.com/ultralytics/yolov5/blob/master/export.py), and [benchmarks](https://github.com/ultralytics/yolov5/blob/master/benchmarks.py). They ensure consistent and reliable operation on macOS, Windows, and Ubuntu, with tests conducted every 24 hours and upon each new commit.
+This badge indicates that all [YOLOv5 GitHub Actions](https://github.com/numa_ultralytics/yolov5/actions) Continuous Integration (CI) tests are successfully passing. These CI tests rigorously check the functionality and performance of YOLOv5 across various key aspects: [training](https://github.com/numa_ultralytics/yolov5/blob/master/train.py), [validation](https://github.com/numa_ultralytics/yolov5/blob/master/val.py), [inference](https://github.com/numa_ultralytics/yolov5/blob/master/detect.py), [export](https://github.com/numa_ultralytics/yolov5/blob/master/export.py), and [benchmarks](https://github.com/numa_ultralytics/yolov5/blob/master/benchmarks.py). They ensure consistent and reliable operation on macOS, Windows, and Ubuntu, with tests conducted every 24 hours and upon each new commit.

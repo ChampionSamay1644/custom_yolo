@@ -1,14 +1,14 @@
 ---
 comments: true
 description: Explore the Roboflow Carparts Segmentation Dataset for automotive AI applications. Enhance your segmentation models with rich, annotated data.
-keywords: Carparts Segmentation Dataset, Roboflow, computer vision, automotive AI, vehicle maintenance, Ultralytics
+keywords: Carparts Segmentation Dataset, Roboflow, computer vision, automotive AI, vehicle maintenance, numa_ultralytics
 ---
 
 # Roboflow Universe Carparts Segmentation Dataset
 
-<a href="https://colab.research.google.com/github/ultralytics/notebooks/blob/main/notebooks/how-to-train-ultralytics-yolo-on-carparts-segmentation-dataset.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open Carparts Segmentation Dataset In Colab"></a>
+<a href="https://colab.research.google.com/github/numa_ultralytics/notebooks/blob/main/notebooks/how-to-train-numa_ultralytics-yolo-on-carparts-segmentation-dataset.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open Carparts Segmentation Dataset In Colab"></a>
 
-The [Roboflow](https://roboflow.com/?ref=ultralytics) [Carparts Segmentation Dataset](https://universe.roboflow.com/gianmarco-russo-vt9xr/car-seg-un1pm?ref=ultralytics) is a curated collection of images and videos designed for [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) applications, specifically focusing on segmentation tasks related to car parts. This dataset provides a diverse set of visuals captured from multiple perspectives, offering valuable annotated examples for training and testing segmentation models.
+The [Roboflow](https://roboflow.com/?ref=numa_ultralytics) [Carparts Segmentation Dataset](https://universe.roboflow.com/gianmarco-russo-vt9xr/car-seg-un1pm?ref=numa_ultralytics) is a curated collection of images and videos designed for [computer vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv) applications, specifically focusing on segmentation tasks related to car parts. This dataset provides a diverse set of visuals captured from multiple perspectives, offering valuable annotated examples for training and testing segmentation models.
 
 Whether you're working on automotive research, developing AI solutions for vehicle maintenance, or exploring computer vision applications, the Carparts Segmentation Dataset serves as a valuable resource for enhancing accuracy and efficiency in your projects.
 
@@ -20,7 +20,7 @@ Whether you're working on automotive research, developing AI solutions for vehic
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Carparts <a href="https://www.ultralytics.com/glossary/instance-segmentation">Instance Segmentation</a> with Ultralytics YOLO11
+  <strong>Watch:</strong> Carparts <a href="https://www.numa_ultralytics.com/glossary/instance-segmentation">Instance Segmentation</a> with numa_ultralytics YOLO11
 </p>
 
 ## Dataset Structure
@@ -37,24 +37,24 @@ Carparts Segmentation finds applications in automotive quality control, auto rep
 
 ## Dataset YAML
 
-A YAML (Yet Another Markup Language) file is used to define the dataset configuration. It contains information about the dataset's paths, classes, and other relevant information. In the case of the Package Segmentation dataset, the `carparts-seg.yaml` file is maintained at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/carparts-seg.yaml](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/carparts-seg.yaml).
+A YAML (Yet Another Markup Language) file is used to define the dataset configuration. It contains information about the dataset's paths, classes, and other relevant information. In the case of the Package Segmentation dataset, the `carparts-seg.yaml` file is maintained at [https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/carparts-seg.yaml](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/carparts-seg.yaml).
 
-!!! example "ultralytics/cfg/datasets/carparts-seg.yaml"
+!!! example "numa_ultralytics/cfg/datasets/carparts-seg.yaml"
 
     ```yaml
-    --8<-- "ultralytics/cfg/datasets/carparts-seg.yaml"
+    --8<-- "numa_ultralytics/cfg/datasets/carparts-seg.yaml"
     ```
 
 ## Usage
 
-To train Ultralytics YOLO11n model on the Carparts Segmentation dataset for 100 [epochs](https://www.ultralytics.com/glossary/epoch) with an image size of 640, you can use the following code snippets. For a comprehensive list of available arguments, refer to the model [Training](../../modes/train.md) page.
+To train numa_ultralytics YOLO11n model on the Carparts Segmentation dataset for 100 [epochs](https://www.numa_ultralytics.com/glossary/epoch) with an image size of 640, you can use the following code snippets. For a comprehensive list of available arguments, refer to the model [Training](../../modes/train.md) page.
 
 !!! example "Train Example"
 
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n-seg.pt")  # load a pretrained model (recommended for training)
@@ -74,7 +74,7 @@ To train Ultralytics YOLO11n model on the Carparts Segmentation dataset for 100 
 
 The Carparts Segmentation dataset includes a diverse array of images and videos taken from various perspectives. Below, you'll find examples of data from the dataset along with their corresponding annotations:
 
-![Dataset sample image](https://github.com/ultralytics/docs/releases/download/0/dataset-sample-image.avif)
+![Dataset sample image](https://github.com/numa_ultralytics/docs/releases/download/0/dataset-sample-image.avif)
 
 - This image illustrates object segmentation within a sample, featuring annotated bounding boxes with masks surrounding identified objects. The dataset consists of a varied set of images captured in various locations, environments, and densities, serving as a comprehensive resource for crafting models specific to this task.
 - This instance highlights the diversity and complexity inherent in the dataset, emphasizing the crucial role of high-quality data in computer vision tasks, particularly in the realm of car parts segmentation.
@@ -102,15 +102,15 @@ If you integrate the Carparts Segmentation dataset into your research or develop
             }
         ```
 
-We extend our thanks to the Roboflow team for their dedication in developing and managing the Carparts Segmentation dataset, a valuable resource for vehicle maintenance and research projects. For additional details about the Carparts Segmentation dataset and its creators, please visit the [CarParts Segmentation Dataset Page](https://universe.roboflow.com/gianmarco-russo-vt9xr/car-seg-un1pm?ref=ultralytics).
+We extend our thanks to the Roboflow team for their dedication in developing and managing the Carparts Segmentation dataset, a valuable resource for vehicle maintenance and research projects. For additional details about the Carparts Segmentation dataset and its creators, please visit the [CarParts Segmentation Dataset Page](https://universe.roboflow.com/gianmarco-russo-vt9xr/car-seg-un1pm?ref=numa_ultralytics).
 
 ## FAQ
 
 ### What is the Roboflow Carparts Segmentation Dataset?
 
-The [Roboflow Carparts Segmentation Dataset](https://universe.roboflow.com/gianmarco-russo-vt9xr/car-seg-un1pm?ref=ultralytics) is a curated collection of images and videos specifically designed for car part segmentation tasks in computer vision. This dataset includes a diverse range of visuals captured from multiple perspectives, making it an invaluable resource for training and testing segmentation models for automotive applications.
+The [Roboflow Carparts Segmentation Dataset](https://universe.roboflow.com/gianmarco-russo-vt9xr/car-seg-un1pm?ref=numa_ultralytics) is a curated collection of images and videos specifically designed for car part segmentation tasks in computer vision. This dataset includes a diverse range of visuals captured from multiple perspectives, making it an invaluable resource for training and testing segmentation models for automotive applications.
 
-### How can I use the Carparts Segmentation Dataset with Ultralytics YOLO11?
+### How can I use the Carparts Segmentation Dataset with numa_ultralytics YOLO11?
 
 To train a YOLO11 model on the Carparts Segmentation dataset, you can follow these steps:
 
@@ -119,7 +119,7 @@ To train a YOLO11 model on the Carparts Segmentation dataset, you can follow the
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n-seg.pt")  # load a pretrained model (recommended for training)
@@ -154,10 +154,10 @@ This segmentation helps in accurately identifying and categorizing different veh
 
 ### Where can I find the dataset configuration file for Carparts Segmentation?
 
-The dataset configuration file for the Carparts Segmentation dataset, `carparts-seg.yaml`, can be found at the following location: [carparts-seg.yaml](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/carparts-seg.yaml).
+The dataset configuration file for the Carparts Segmentation dataset, `carparts-seg.yaml`, can be found at the following location: [carparts-seg.yaml](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/carparts-seg.yaml).
 
 ### Why should I use the Carparts Segmentation Dataset?
 
-The Carparts Segmentation Dataset provides rich, annotated data essential for developing high-[accuracy](https://www.ultralytics.com/glossary/accuracy) segmentation models in automotive computer vision. This dataset's diversity and detailed annotations improve model training, making it ideal for applications like vehicle maintenance automation, enhancing vehicle safety systems, and supporting autonomous driving technologies. Partnering with a robust dataset accelerates AI development and ensures better model performance.
+The Carparts Segmentation Dataset provides rich, annotated data essential for developing high-[accuracy](https://www.numa_ultralytics.com/glossary/accuracy) segmentation models in automotive computer vision. This dataset's diversity and detailed annotations improve model training, making it ideal for applications like vehicle maintenance automation, enhancing vehicle safety systems, and supporting autonomous driving technologies. Partnering with a robust dataset accelerates AI development and ensures better model performance.
 
-For more details, visit the [CarParts Segmentation Dataset Page](https://universe.roboflow.com/gianmarco-russo-vt9xr/car-seg-un1pm?ref=ultralytics).
+For more details, visit the [CarParts Segmentation Dataset Page](https://universe.roboflow.com/gianmarco-russo-vt9xr/car-seg-un1pm?ref=numa_ultralytics).

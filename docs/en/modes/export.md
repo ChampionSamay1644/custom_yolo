@@ -1,16 +1,16 @@
 ---
 comments: true
 description: Learn how to export your YOLO11 model to various formats like ONNX, TensorRT, and CoreML. Achieve maximum compatibility and performance.
-keywords: YOLO11, Model Export, ONNX, TensorRT, CoreML, Ultralytics, AI, Machine Learning, Inference, Deployment
+keywords: YOLO11, Model Export, ONNX, TensorRT, CoreML, numa_ultralytics, AI, Machine Learning, Inference, Deployment
 ---
 
-# Model Export with Ultralytics YOLO
+# Model Export with numa_ultralytics YOLO
 
-<img width="1024" src="https://github.com/ultralytics/docs/releases/download/0/ultralytics-yolov8-ecosystem-integrations.avif" alt="Ultralytics YOLO ecosystem and integrations">
+<img width="1024" src="https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-yolov8-ecosystem-integrations.avif" alt="numa_ultralytics YOLO ecosystem and integrations">
 
 ## Introduction
 
-The ultimate goal of training a model is to deploy it for real-world applications. Export mode in Ultralytics YOLO11 offers a versatile range of options for exporting your trained model to different formats, making it deployable across various platforms and devices. This comprehensive guide aims to walk you through the nuances of model exporting, showcasing how to achieve maximum compatibility and performance.
+The ultimate goal of training a model is to deploy it for real-world applications. Export mode in numa_ultralytics YOLO11 offers a versatile range of options for exporting your trained model to different formats, making it deployable across various platforms and devices. This comprehensive guide aims to walk you through the nuances of model exporting, showcasing how to achieve maximum compatibility and performance.
 
 <p align="center">
   <br>
@@ -20,7 +20,7 @@ The ultimate goal of training a model is to deploy it for real-world application
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> How To Export Custom Trained Ultralytics YOLO Model and Run Live Inference on Webcam.
+  <strong>Watch:</strong> How To Export Custom Trained numa_ultralytics YOLO Model and Run Live Inference on Webcam.
 </p>
 
 ## Why Choose YOLO11's Export Mode?
@@ -53,7 +53,7 @@ Export a YOLO11n model to a different format like ONNX or TensorRT. See the Argu
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n.pt")  # load an official model
@@ -76,7 +76,7 @@ This table details the configurations and options available for exporting YOLO m
 
 {% include "macros/export-args.md" %}
 
-Adjusting these parameters allows for customization of the export process to fit specific requirements, such as deployment environment, hardware constraints, and performance targets. Selecting the appropriate format and settings is essential for achieving the best balance between model size, speed, and [accuracy](https://www.ultralytics.com/glossary/accuracy).
+Adjusting these parameters allows for customization of the export process to fit specific requirements, such as deployment environment, hardware constraints, and performance targets. Selecting the appropriate format and settings is essential for achieving the best balance between model size, speed, and [accuracy](https://www.numa_ultralytics.com/glossary/accuracy).
 
 ## Export Formats
 
@@ -88,14 +88,14 @@ Available YOLO11 export formats are in the table below. You can export to any fo
 
 ### How do I export a YOLO11 model to ONNX format?
 
-Exporting a YOLO11 model to ONNX format is straightforward with Ultralytics. It provides both Python and CLI methods for exporting models.
+Exporting a YOLO11 model to ONNX format is straightforward with numa_ultralytics. It provides both Python and CLI methods for exporting models.
 
 !!! example
 
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n.pt")  # load an official model
@@ -133,7 +133,7 @@ INT8 quantization is an excellent way to compress the model and speed up inferen
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         model = YOLO("yolo11n.pt")  # Load a model
         model.export(format="engine", int8=True)
@@ -158,7 +158,7 @@ To enable this feature, use the `dynamic=True` flag during export:
     === "Python"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         model = YOLO("yolo11n.pt")
         model.export(format="onnx", dynamic=True)

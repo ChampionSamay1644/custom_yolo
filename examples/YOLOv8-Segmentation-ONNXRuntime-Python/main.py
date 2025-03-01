@@ -1,4 +1,4 @@
-# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+# numa_ultralytics 🚀 AGPL-3.0 License - https://numa_ultralytics.com/license
 
 import argparse
 from typing import List, Tuple, Union
@@ -9,10 +9,10 @@ import onnxruntime as ort
 import torch
 import torch.nn.functional as F
 
-import ultralytics.utils.ops as ops
-from ultralytics.engine.results import Results
-from ultralytics.utils import ASSETS, yaml_load
-from ultralytics.utils.checks import check_yaml
+import numa_ultralytics.utils.ops as ops
+from numa_ultralytics.engine.results import Results
+from numa_ultralytics.utils import ASSETS, yaml_load
+from numa_ultralytics.utils.checks import check_yaml
 
 
 class YOLOv8Seg:

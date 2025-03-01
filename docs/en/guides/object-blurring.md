@@ -1,14 +1,14 @@
 ---
 comments: true
-description: Learn how to use Ultralytics YOLO11 for real-time object blurring to enhance privacy and focus in your images and videos.
-keywords: YOLO11, object blurring, real-time processing, privacy protection, image manipulation, video editing, Ultralytics
+description: Learn how to use numa_ultralytics YOLO11 for real-time object blurring to enhance privacy and focus in your images and videos.
+keywords: YOLO11, object blurring, real-time processing, privacy protection, image manipulation, video editing, numa_ultralytics
 ---
 
-# Object Blurring using Ultralytics YOLO11 🚀
+# Object Blurring using numa_ultralytics YOLO11 🚀
 
 ## What is Object Blurring?
 
-Object blurring with [Ultralytics YOLO11](https://github.com/ultralytics/ultralytics/) involves applying a blurring effect to specific detected objects in an image or video. This can be achieved using the YOLO11 model capabilities to identify and manipulate objects within a given scene.
+Object blurring with [numa_ultralytics YOLO11](https://github.com/numa_ultralytics/numa_ultralytics/) involves applying a blurring effect to specific detected objects in an image or video. This can be achieved using the YOLO11 model capabilities to identify and manipulate objects within a given scene.
 
 <p align="center">
   <br>
@@ -18,7 +18,7 @@ Object blurring with [Ultralytics YOLO11](https://github.com/ultralytics/ultraly
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Object Blurring using Ultralytics YOLO11
+  <strong>Watch:</strong> Object Blurring using numa_ultralytics YOLO11
 </p>
 
 ## Advantages of Object Blurring?
@@ -34,8 +34,8 @@ Object blurring with [Ultralytics YOLO11](https://github.com/ultralytics/ultraly
         ```python
         import cv2
 
-        from ultralytics import YOLO
-        from ultralytics.utils.plotting import Annotator, colors
+        from numa_ultralytics import YOLO
+        from numa_ultralytics.utils.plotting import Annotator, colors
 
         model = YOLO("yolo11n.pt")
         names = model.names
@@ -70,7 +70,7 @@ Object blurring with [Ultralytics YOLO11](https://github.com/ultralytics/ultraly
 
                     im0[int(box[1]) : int(box[3]), int(box[0]) : int(box[2])] = blur_obj
 
-            cv2.imshow("ultralytics", im0)
+            cv2.imshow("numa_ultralytics", im0)
             video_writer.write(im0)
             if cv2.waitKey(1) & 0xFF == ord("q"):
                 break
@@ -86,18 +86,18 @@ Object blurring with [Ultralytics YOLO11](https://github.com/ultralytics/ultraly
 
 ## FAQ
 
-### What is object blurring with Ultralytics YOLO11?
+### What is object blurring with numa_ultralytics YOLO11?
 
-Object blurring with [Ultralytics YOLO11](https://github.com/ultralytics/ultralytics/) involves automatically detecting and applying a blurring effect to specific objects in images or videos. This technique enhances privacy by concealing sensitive information while retaining relevant visual data. YOLO11's real-time processing capabilities make it suitable for applications requiring immediate privacy protection and selective focus adjustments.
+Object blurring with [numa_ultralytics YOLO11](https://github.com/numa_ultralytics/numa_ultralytics/) involves automatically detecting and applying a blurring effect to specific objects in images or videos. This technique enhances privacy by concealing sensitive information while retaining relevant visual data. YOLO11's real-time processing capabilities make it suitable for applications requiring immediate privacy protection and selective focus adjustments.
 
 ### How can I implement real-time object blurring using YOLO11?
 
-To implement real-time object blurring with YOLO11, follow the provided Python example. This involves using YOLO11 for [object detection](https://www.ultralytics.com/glossary/object-detection) and OpenCV for applying the blur effect. Here's a simplified version:
+To implement real-time object blurring with YOLO11, follow the provided Python example. This involves using YOLO11 for [object detection](https://www.numa_ultralytics.com/glossary/object-detection) and OpenCV for applying the blur effect. Here's a simplified version:
 
 ```python
 import cv2
 
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
 model = YOLO("yolo11n.pt")
 cap = cv2.VideoCapture("path/to/video/file.mp4")
@@ -120,9 +120,9 @@ cap.release()
 cv2.destroyAllWindows()
 ```
 
-### What are the benefits of using Ultralytics YOLO11 for object blurring?
+### What are the benefits of using numa_ultralytics YOLO11 for object blurring?
 
-Ultralytics YOLO11 offers several advantages for object blurring:
+numa_ultralytics YOLO11 offers several advantages for object blurring:
 
 - **Privacy Protection**: Effectively obscure sensitive or identifiable information.
 - **Selective Focus**: Target specific objects for blurring, maintaining essential visual content.
@@ -130,10 +130,10 @@ Ultralytics YOLO11 offers several advantages for object blurring:
 
 For more detailed applications, check the [advantages of object blurring section](#advantages-of-object-blurring).
 
-### Can I use Ultralytics YOLO11 to blur faces in a video for privacy reasons?
+### Can I use numa_ultralytics YOLO11 to blur faces in a video for privacy reasons?
 
-Yes, Ultralytics YOLO11 can be configured to detect and blur faces in videos to protect privacy. By training or using a pre-trained model to specifically recognize faces, the detection results can be processed with [OpenCV](https://www.ultralytics.com/glossary/opencv) to apply a blur effect. Refer to our guide on [object detection with YOLO11](https://docs.ultralytics.com/models/yolov8/) and modify the code to target face detection.
+Yes, numa_ultralytics YOLO11 can be configured to detect and blur faces in videos to protect privacy. By training or using a pre-trained model to specifically recognize faces, the detection results can be processed with [OpenCV](https://www.numa_ultralytics.com/glossary/opencv) to apply a blur effect. Refer to our guide on [object detection with YOLO11](https://docs.numa_ultralytics.com/models/yolov8/) and modify the code to target face detection.
 
 ### How does YOLO11 compare to other object detection models like Faster R-CNN for object blurring?
 
-Ultralytics YOLO11 typically outperforms models like Faster R-CNN in terms of speed, making it more suitable for real-time applications. While both models offer accurate detection, YOLO11's architecture is optimized for rapid inference, which is critical for tasks like real-time object blurring. Learn more about the technical differences and performance metrics in our [YOLO11 documentation](https://docs.ultralytics.com/models/yolov8/).
+numa_ultralytics YOLO11 typically outperforms models like Faster R-CNN in terms of speed, making it more suitable for real-time applications. While both models offer accurate detection, YOLO11's architecture is optimized for rapid inference, which is critical for tasks like real-time object blurring. Learn more about the technical differences and performance metrics in our [YOLO11 documentation](https://docs.numa_ultralytics.com/models/yolov8/).

@@ -1,14 +1,14 @@
 ---
 comments: true
-description: Learn how to run inference using the Ultralytics HUB Inference API. Includes examples in Python and cURL for quick integration.
-keywords: Ultralytics, HUB, Inference API, Python, cURL, REST API, YOLO, image processing, machine learning, AI integration
+description: Learn how to run inference using the numa_ultralytics HUB Inference API. Includes examples in Python and cURL for quick integration.
+keywords: numa_ultralytics, HUB, Inference API, Python, cURL, REST API, YOLO, image processing, machine learning, AI integration
 ---
 
-# Ultralytics HUB Inference API
+# numa_ultralytics HUB Inference API
 
-After you [train a model](./models.md#train-model), you can use the [Shared Inference API](#shared-inference-api) for free. If you are a [Pro](./pro.md) user, you can access the [Dedicated Inference API](#dedicated-inference-api). The [Ultralytics HUB](https://www.ultralytics.com/hub) Inference API allows you to run inference through our REST API without the need to install and set up the Ultralytics YOLO environment locally.
+After you [train a model](./models.md#train-model), you can use the [Shared Inference API](#shared-inference-api) for free. If you are a [Pro](./pro.md) user, you can access the [Dedicated Inference API](#dedicated-inference-api). The [numa_ultralytics HUB](https://www.numa_ultralytics.com/hub) Inference API allows you to run inference through our REST API without the need to install and set up the numa_ultralytics YOLO environment locally.
 
-![Ultralytics HUB screenshot of the Deploy tab inside the Model page with an arrow pointing to the Dedicated Inference API card and one to the Shared Inference API card](https://github.com/ultralytics/docs/releases/download/0/hub-inference-api-card.avif)
+![numa_ultralytics HUB screenshot of the Deploy tab inside the Model page with an arrow pointing to the Dedicated Inference API card and one to the Shared Inference API card](https://github.com/numa_ultralytics/docs/releases/download/0/hub-inference-api-card.avif)
 
 <p align="center">
   <iframe loading="lazy" width="720" height="405" src="https://www.youtube.com/embed/OpWpBI35A5Y"
@@ -17,12 +17,12 @@ After you [train a model](./models.md#train-model), you can use the [Shared Infe
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Ultralytics HUB Inference API Walkthrough
+  <strong>Watch:</strong> numa_ultralytics HUB Inference API Walkthrough
 </p>
 
 ## Dedicated Inference API
 
-In response to high demand and widespread interest, we are thrilled to unveil the [Ultralytics HUB](https://www.ultralytics.com/hub) Dedicated Inference API, offering single-click deployment in a dedicated environment for our [Pro](./pro.md) users!
+In response to high demand and widespread interest, we are thrilled to unveil the [numa_ultralytics HUB](https://www.numa_ultralytics.com/hub) Dedicated Inference API, offering single-click deployment in a dedicated environment for our [Pro](./pro.md) users!
 
 !!! note
 
@@ -30,44 +30,44 @@ In response to high demand and widespread interest, we are thrilled to unveil th
 
 - **Global Coverage:** Deployed across 38 regions worldwide, ensuring low-latency access from any location. [See the full list of Google Cloud regions](https://cloud.google.com/about/locations).
 - **Google Cloud Run-Backed:** Backed by Google Cloud Run, providing infinitely scalable and highly reliable infrastructure.
-- **High Speed:** Sub-100ms latency is possible for YOLOv8n inference at 640 resolution from nearby regions based on Ultralytics testing.
+- **High Speed:** Sub-100ms latency is possible for YOLOv8n inference at 640 resolution from nearby regions based on numa_ultralytics testing.
 - **Enhanced Security:** Provides robust security features to protect your data and ensure compliance with industry standards. [Learn more about Google Cloud security](https://cloud.google.com/security).
 
-To use the [Ultralytics HUB](https://www.ultralytics.com/hub) Dedicated Inference API, click on the **Start Endpoint** button. Next, use the unique endpoint URL as described in the guides below.
+To use the [numa_ultralytics HUB](https://www.numa_ultralytics.com/hub) Dedicated Inference API, click on the **Start Endpoint** button. Next, use the unique endpoint URL as described in the guides below.
 
-![Ultralytics HUB screenshot of the Deploy tab inside the Model page with an arrow pointing to the Start Endpoint button in Dedicated Inference API card](https://github.com/ultralytics/docs/releases/download/0/ultralytics-hub-dedicated-inference-api.avif)
+![numa_ultralytics HUB screenshot of the Deploy tab inside the Model page with an arrow pointing to the Start Endpoint button in Dedicated Inference API card](https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-hub-dedicated-inference-api.avif)
 
 !!! tip
 
-    Choose the region with the lowest latency for the best performance as described in the [documentation](https://docs.ultralytics.com/reference/hub/google/__init__/).
+    Choose the region with the lowest latency for the best performance as described in the [documentation](https://docs.numa_ultralytics.com/reference/hub/google/__init__/).
 
 To shut down the dedicated endpoint, click on the **Stop Endpoint** button.
 
-![Ultralytics HUB screenshot of the Deploy tab inside the Model page with an arrow pointing to the Stop Endpoint button in Dedicated Inference API card](https://github.com/ultralytics/docs/releases/download/0/deploy-tab-model-page-stop-endpoint.avif)
+![numa_ultralytics HUB screenshot of the Deploy tab inside the Model page with an arrow pointing to the Stop Endpoint button in Dedicated Inference API card](https://github.com/numa_ultralytics/docs/releases/download/0/deploy-tab-model-page-stop-endpoint.avif)
 
 ## Shared Inference API
 
-To use the [Ultralytics HUB](https://www.ultralytics.com/hub) Shared Inference API, follow the guides below.
+To use the [numa_ultralytics HUB](https://www.numa_ultralytics.com/hub) Shared Inference API, follow the guides below.
 
-The [Ultralytics HUB](https://www.ultralytics.com/hub) Shared Inference API has the following usage limits:
+The [numa_ultralytics HUB](https://www.numa_ultralytics.com/hub) Shared Inference API has the following usage limits:
 
 - 100 calls / hour
 
 ## Python
 
-To access the [Ultralytics HUB](https://www.ultralytics.com/hub) Inference API using Python, use the following code:
+To access the [numa_ultralytics HUB](https://www.numa_ultralytics.com/hub) Inference API using Python, use the following code:
 
 ```python
 import requests
 
 # API URL
-url = "https://predict.ultralytics.com"
+url = "https://predict.numa_ultralytics.com"
 
 # Headers, use actual API_KEY
 headers = {"x-api-key": "API_KEY"}
 
 # Inference arguments (use actual MODEL_ID)
-data = {"model": "https://hub.ultralytics.com/models/MODEL_ID", "imgsz": 640, "conf": 0.25, "iou": 0.45}
+data = {"model": "https://hub.numa_ultralytics.com/models/MODEL_ID", "imgsz": 640, "conf": 0.25, "iou": 0.45}
 
 # Load image and send request
 with open("path/to/image.jpg", "rb") as image_file:
@@ -85,12 +85,12 @@ print(response.json())
 
 ## cURL
 
-To access the [Ultralytics HUB](https://www.ultralytics.com/hub) Inference API using cURL, use the following code:
+To access the [numa_ultralytics HUB](https://www.numa_ultralytics.com/hub) Inference API using cURL, use the following code:
 
 ```bash
-curl -X POST "https://predict.ultralytics.com" \
+curl -X POST "https://predict.numa_ultralytics.com" \
   -H "x-api-key: API_KEY" \
-  -F "model=https://hub.ultralytics.com/models/MODEL_ID" \
+  -F "model=https://hub.numa_ultralytics.com/models/MODEL_ID" \
 	-F "file=@/path/to/image.jpg" \
 	-F "imgsz=640" \
 	-F "conf=0.25" \
@@ -107,25 +107,25 @@ curl -X POST "https://predict.ultralytics.com" \
 
 See the table below for a full list of available inference arguments.
 
-| Argument | Default | Type    | Description                                                                                                                              |
-| -------- | ------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `file`   |         | `file`  | Image or video file to be used for inference.                                                                                            |
-| `imgsz`  | `640`   | `int`   | Size of the input image, valid range is `32` - `1280` pixels.                                                                            |
-| `conf`   | `0.25`  | `float` | Confidence threshold for predictions, valid range `0.01` - `1.0`.                                                                        |
-| `iou`    | `0.45`  | `float` | [Intersection over Union](https://www.ultralytics.com/glossary/intersection-over-union-iou) (IoU) threshold, valid range `0.0` - `0.95`. |
+| Argument | Default | Type    | Description                                                                                                                                   |
+| -------- | ------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `file`   |         | `file`  | Image or video file to be used for inference.                                                                                                 |
+| `imgsz`  | `640`   | `int`   | Size of the input image, valid range is `32` - `1280` pixels.                                                                                 |
+| `conf`   | `0.25`  | `float` | Confidence threshold for predictions, valid range `0.01` - `1.0`.                                                                             |
+| `iou`    | `0.45`  | `float` | [Intersection over Union](https://www.numa_ultralytics.com/glossary/intersection-over-union-iou) (IoU) threshold, valid range `0.0` - `0.95`. |
 
 ## Response
 
-The [Ultralytics HUB](https://www.ultralytics.com/hub) Inference API returns a JSON response.
+The [numa_ultralytics HUB](https://www.numa_ultralytics.com/hub) Inference API returns a JSON response.
 
 ### Classification
 
 !!! example "Classification Model"
 
-    === "`ultralytics`"
+    === "`numa_ultralytics`"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load model
         model = YOLO("yolov8n-cls.pt")
@@ -140,9 +140,9 @@ The [Ultralytics HUB](https://www.ultralytics.com/hub) Inference API returns a J
     === "cURL"
 
         ```bash
-        curl -X POST "https://predict.ultralytics.com" \
+        curl -X POST "https://predict.numa_ultralytics.com" \
             -H "x-api-key: API_KEY" \
-            -F "model=https://hub.ultralytics.com/models/MODEL_ID" \
+            -F "model=https://hub.numa_ultralytics.com/models/MODEL_ID" \
             -F "file=@/path/to/image.jpg" \
             -F "imgsz=640" \
             -F "conf=0.25" \
@@ -155,13 +155,13 @@ The [Ultralytics HUB](https://www.ultralytics.com/hub) Inference API returns a J
         import requests
 
         # API URL
-        url = "https://predict.ultralytics.com"
+        url = "https://predict.numa_ultralytics.com"
 
         # Headers, use actual API_KEY
         headers = {"x-api-key": "API_KEY"}
 
         # Inference arguments (use actual MODEL_ID)
-        data = {"model": "https://hub.ultralytics.com/models/MODEL_ID", "imgsz": 640, "conf": 0.25, "iou": 0.45}
+        data = {"model": "https://hub.numa_ultralytics.com/models/MODEL_ID", "imgsz": 640, "conf": 0.25, "iou": 0.45}
 
         # Load image and send request
         with open("path/to/image.jpg", "rb") as image_file:
@@ -203,10 +203,10 @@ The [Ultralytics HUB](https://www.ultralytics.com/hub) Inference API returns a J
 
 !!! example "Detection Model"
 
-    === "`ultralytics`"
+    === "`numa_ultralytics`"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load model
         model = YOLO("yolov8n.pt")
@@ -221,9 +221,9 @@ The [Ultralytics HUB](https://www.ultralytics.com/hub) Inference API returns a J
     === "cURL"
 
         ```bash
-        curl -X POST "https://predict.ultralytics.com" \
+        curl -X POST "https://predict.numa_ultralytics.com" \
             -H "x-api-key: API_KEY" \
-            -F "model=https://hub.ultralytics.com/models/MODEL_ID" \
+            -F "model=https://hub.numa_ultralytics.com/models/MODEL_ID" \
             -F "file=@/path/to/image.jpg" \
             -F "imgsz=640" \
             -F "conf=0.25" \
@@ -236,13 +236,13 @@ The [Ultralytics HUB](https://www.ultralytics.com/hub) Inference API returns a J
         import requests
 
         # API URL
-        url = "https://predict.ultralytics.com"
+        url = "https://predict.numa_ultralytics.com"
 
         # Headers, use actual API_KEY
         headers = {"x-api-key": "API_KEY"}
 
         # Inference arguments (use actual MODEL_ID)
-        data = {"model": "https://hub.ultralytics.com/models/MODEL_ID", "imgsz": 640, "conf": 0.25, "iou": 0.45}
+        data = {"model": "https://hub.numa_ultralytics.com/models/MODEL_ID", "imgsz": 640, "conf": 0.25, "iou": 0.45}
 
         # Load image and send request
         with open("path/to/image.jpg", "rb") as image_file:
@@ -290,10 +290,10 @@ The [Ultralytics HUB](https://www.ultralytics.com/hub) Inference API returns a J
 
 !!! example "OBB Model"
 
-    === "`ultralytics`"
+    === "`numa_ultralytics`"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load model
         model = YOLO("yolov8n-obb.pt")
@@ -308,9 +308,9 @@ The [Ultralytics HUB](https://www.ultralytics.com/hub) Inference API returns a J
     === "cURL"
 
         ```bash
-        curl -X POST "https://predict.ultralytics.com" \
+        curl -X POST "https://predict.numa_ultralytics.com" \
             -H "x-api-key: API_KEY" \
-            -F "model=https://hub.ultralytics.com/models/MODEL_ID" \
+            -F "model=https://hub.numa_ultralytics.com/models/MODEL_ID" \
             -F "file=@/path/to/image.jpg" \
             -F "imgsz=640" \
             -F "conf=0.25" \
@@ -323,13 +323,13 @@ The [Ultralytics HUB](https://www.ultralytics.com/hub) Inference API returns a J
         import requests
 
         # API URL
-        url = "https://predict.ultralytics.com"
+        url = "https://predict.numa_ultralytics.com"
 
         # Headers, use actual API_KEY
         headers = {"x-api-key": "API_KEY"}
 
         # Inference arguments (use actual MODEL_ID)
-        data = {"model": "https://hub.ultralytics.com/models/MODEL_ID", "imgsz": 640, "conf": 0.25, "iou": 0.45}
+        data = {"model": "https://hub.numa_ultralytics.com/models/MODEL_ID", "imgsz": 640, "conf": 0.25, "iou": 0.45}
 
         # Load image and send request
         with open("path/to/image.jpg", "rb") as image_file:
@@ -381,10 +381,10 @@ The [Ultralytics HUB](https://www.ultralytics.com/hub) Inference API returns a J
 
 !!! example "Segmentation Model"
 
-    === "`ultralytics`"
+    === "`numa_ultralytics`"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load model
         model = YOLO("yolov8n-seg.pt")
@@ -399,9 +399,9 @@ The [Ultralytics HUB](https://www.ultralytics.com/hub) Inference API returns a J
     === "cURL"
 
         ```bash
-        curl -X POST "https://predict.ultralytics.com" \
+        curl -X POST "https://predict.numa_ultralytics.com" \
             -H "x-api-key: API_KEY" \
-            -F "model=https://hub.ultralytics.com/models/MODEL_ID" \
+            -F "model=https://hub.numa_ultralytics.com/models/MODEL_ID" \
             -F "file=@/path/to/image.jpg" \
             -F "imgsz=640" \
             -F "conf=0.25" \
@@ -414,13 +414,13 @@ The [Ultralytics HUB](https://www.ultralytics.com/hub) Inference API returns a J
         import requests
 
         # API URL
-        url = "https://predict.ultralytics.com"
+        url = "https://predict.numa_ultralytics.com"
 
         # Headers, use actual API_KEY
         headers = {"x-api-key": "API_KEY"}
 
         # Inference arguments (use actual MODEL_ID)
-        data = {"model": "https://hub.ultralytics.com/models/MODEL_ID", "imgsz": 640, "conf": 0.25, "iou": 0.45}
+        data = {"model": "https://hub.numa_ultralytics.com/models/MODEL_ID", "imgsz": 640, "conf": 0.25, "iou": 0.45}
 
         # Load image and send request
         with open("path/to/image.jpg", "rb") as image_file:
@@ -482,10 +482,10 @@ The [Ultralytics HUB](https://www.ultralytics.com/hub) Inference API returns a J
 
 !!! example "Pose Model"
 
-    === "`ultralytics`"
+    === "`numa_ultralytics`"
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Load model
         model = YOLO("yolov8n-pose.pt")
@@ -500,9 +500,9 @@ The [Ultralytics HUB](https://www.ultralytics.com/hub) Inference API returns a J
     === "cURL"
 
         ```bash
-        curl -X POST "https://predict.ultralytics.com" \
+        curl -X POST "https://predict.numa_ultralytics.com" \
             -H "x-api-key: API_KEY" \
-            -F "model=https://hub.ultralytics.com/models/MODEL_ID" \
+            -F "model=https://hub.numa_ultralytics.com/models/MODEL_ID" \
             -F "file=@/path/to/image.jpg" \
             -F "imgsz=640" \
             -F "conf=0.25" \
@@ -515,13 +515,13 @@ The [Ultralytics HUB](https://www.ultralytics.com/hub) Inference API returns a J
         import requests
 
         # API URL
-        url = "https://predict.ultralytics.com"
+        url = "https://predict.numa_ultralytics.com"
 
         # Headers, use actual API_KEY
         headers = {"x-api-key": "API_KEY"}
 
         # Inference arguments (use actual MODEL_ID)
-        data = {"model": "https://hub.ultralytics.com/models/MODEL_ID", "imgsz": 640, "conf": 0.25, "iou": 0.45}
+        data = {"model": "https://hub.numa_ultralytics.com/models/MODEL_ID", "imgsz": 640, "conf": 0.25, "iou": 0.45}
 
         # Load image and send request
         with open("path/to/image.jpg", "rb") as image_file:

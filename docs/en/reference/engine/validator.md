@@ -1,16 +1,16 @@
 ---
-description: Explore Ultralytics BaseValidator for model validation in PyTorch, TensorFlow, ONNX, and more. Learn to check model accuracy and performance metrics.
-keywords: Ultralytics, BaseValidator, model validation, PyTorch, TensorFlow, ONNX, model accuracy, performance metrics
+description: Explore numa_ultralytics BaseValidator for model validation in PyTorch, TensorFlow, ONNX, and more. Learn to check model accuracy and performance metrics.
+keywords: numa_ultralytics, BaseValidator, model validation, PyTorch, TensorFlow, ONNX, model accuracy, performance metrics
 ---
 
-# Reference for `ultralytics/engine/validator.py`
+# Reference for `numa_ultralytics/engine/validator.py`
 
 !!! note
 
-    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/engine/validator.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/engine/validator.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/engine/validator.py) 🛠️. Thank you 🙏!
+    This file is available at [https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/engine/validator.py](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/engine/validator.py). If you spot a problem please help fix it by [contributing](https://docs.numa_ultralytics.com/help/contributing/) a [Pull Request](https://github.com/numa_ultralytics/numa_ultralytics/edit/main/numa_ultralytics/engine/validator.py) 🛠️. Thank you 🙏!
 
 <br>
 
-## ::: ultralytics.engine.validator.BaseValidator
+## ::: numa_ultralytics.engine.validator.BaseValidator
 
 <br><br>

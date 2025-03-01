@@ -6,7 +6,7 @@
 ## Table of Contents
 
 - [Step 1: Install the Required Libraries](#step-1-install-the-required-libraries)
-- [Step 2: Run the Action Recognition Using Ultralytics YOLOv8](#step-2-run-the-action-recognition-using-ultralytics-yolov8)
+- [Step 2: Run the Action Recognition Using numa_ultralytics YOLOv8](#step-2-run-the-action-recognition-using-numa_ultralytics-yolov8)
 - [Usage Options](#usage-options)
 - [FAQ](#faq)
 
@@ -15,8 +15,8 @@
 Clone the repository, install dependencies and `cd` to this local directory for commands in Step 2.
 
 ```bash
-# Clone ultralytics repo
-git clone https://github.com/ultralytics/ultralytics
+# Clone numa_ultralytics repo
+git clone https://github.com/numa_ultralytics/numa_ultralytics
 
 # cd to local directory
 cd examples/YOLOv8-Action-Recognition
@@ -25,7 +25,7 @@ cd examples/YOLOv8-Action-Recognition
 pip install -U -r requirements.txt
 ```
 
-## Step 2: Run the Action Recognition Using Ultralytics YOLOv8
+## Step 2: Run the Action Recognition Using numa_ultralytics YOLOv8
 
 Here are the basic commands for running the inference:
 

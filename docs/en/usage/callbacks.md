@@ -1,12 +1,12 @@
 ---
 comments: true
-description: Explore Ultralytics callbacks for training, validation, exporting, and prediction. Learn how to use and customize them for your ML models.
-keywords: Ultralytics, callbacks, training, validation, export, prediction, ML models, YOLO11, Python, machine learning
+description: Explore numa_ultralytics callbacks for training, validation, exporting, and prediction. Learn how to use and customize them for your ML models.
+keywords: numa_ultralytics, callbacks, training, validation, export, prediction, ML models, YOLO11, Python, machine learning
 ---
 
 ## Callbacks
 
-Ultralytics framework supports callbacks as entry points in strategic stages of train, val, export, and predict modes. Each callback accepts a `Trainer`, `Validator`, or `Predictor` object depending on the operation type. All properties of these objects can be found in Reference section of the docs.
+numa_ultralytics framework supports callbacks as entry points in strategic stages of train, val, export, and predict modes. Each callback accepts a `Trainer`, `Validator`, or `Predictor` object depending on the operation type. All properties of these objects can be found in Reference section of the docs.
 
 <p align="center">
   <br>
@@ -16,7 +16,7 @@ Ultralytics framework supports callbacks as entry points in strategic stages of 
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Mastering Ultralytics YOLO: Callbacks
+  <strong>Watch:</strong> Mastering numa_ultralytics YOLO: Callbacks
 </p>
 
 ## Examples
@@ -26,7 +26,7 @@ Ultralytics framework supports callbacks as entry points in strategic stages of 
 In this example, we want to return the original frame with each result object. Here's how we can do that
 
 ```python
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
 
 def on_predict_batch_end(predictor):
@@ -53,26 +53,26 @@ for result, frame in model.predict():  # or model.track()
 
 ## All callbacks
 
-Here are all supported callbacks. See callbacks [source code](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/utils/callbacks/base.py) for additional details.
+Here are all supported callbacks. See callbacks [source code](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/utils/callbacks/base.py) for additional details.
 
 ### Trainer Callbacks
 
-| Callback                    | Description                                                                                 |
-| --------------------------- | ------------------------------------------------------------------------------------------- |
-| `on_pretrain_routine_start` | Triggered at the beginning of pre-training routine                                          |
-| `on_pretrain_routine_end`   | Triggered at the end of pre-training routine                                                |
-| `on_train_start`            | Triggered when the training starts                                                          |
-| `on_train_epoch_start`      | Triggered at the start of each training [epoch](https://www.ultralytics.com/glossary/epoch) |
-| `on_train_batch_start`      | Triggered at the start of each training batch                                               |
-| `optimizer_step`            | Triggered during the optimizer step                                                         |
-| `on_before_zero_grad`       | Triggered before gradients are zeroed                                                       |
-| `on_train_batch_end`        | Triggered at the end of each training batch                                                 |
-| `on_train_epoch_end`        | Triggered at the end of each training epoch                                                 |
-| `on_fit_epoch_end`          | Triggered at the end of each fit epoch                                                      |
-| `on_model_save`             | Triggered when the model is saved                                                           |
-| `on_train_end`              | Triggered when the training process ends                                                    |
-| `on_params_update`          | Triggered when model parameters are updated                                                 |
-| `teardown`                  | Triggered when the training process is being cleaned up                                     |
+| Callback                    | Description                                                                                      |
+| --------------------------- | ------------------------------------------------------------------------------------------------ |
+| `on_pretrain_routine_start` | Triggered at the beginning of pre-training routine                                               |
+| `on_pretrain_routine_end`   | Triggered at the end of pre-training routine                                                     |
+| `on_train_start`            | Triggered when the training starts                                                               |
+| `on_train_epoch_start`      | Triggered at the start of each training [epoch](https://www.numa_ultralytics.com/glossary/epoch) |
+| `on_train_batch_start`      | Triggered at the start of each training batch                                                    |
+| `optimizer_step`            | Triggered during the optimizer step                                                              |
+| `on_before_zero_grad`       | Triggered before gradients are zeroed                                                            |
+| `on_train_batch_end`        | Triggered at the end of each training batch                                                      |
+| `on_train_epoch_end`        | Triggered at the end of each training epoch                                                      |
+| `on_fit_epoch_end`          | Triggered at the end of each fit epoch                                                           |
+| `on_model_save`             | Triggered when the model is saved                                                                |
+| `on_train_end`              | Triggered when the training process ends                                                         |
+| `on_params_update`          | Triggered when model parameters are updated                                                      |
+| `teardown`                  | Triggered when the training process is being cleaned up                                          |
 
 ### Validator Callbacks
 
@@ -102,14 +102,14 @@ Here are all supported callbacks. See callbacks [source code](https://github.com
 
 ## FAQ
 
-### What are Ultralytics callbacks and how can I use them?
+### What are numa_ultralytics callbacks and how can I use them?
 
-**Ultralytics callbacks** are specialized entry points triggered during key stages of model operations like training, validation, exporting, and prediction. These callbacks allow for custom functionality at specific points in the process, enabling enhancements and modifications to the workflow. Each callback accepts a `Trainer`, `Validator`, or `Predictor` object, depending on the operation type. For detailed properties of these objects, refer to the [Reference section](../reference/cfg/__init__.md).
+**numa_ultralytics callbacks** are specialized entry points triggered during key stages of model operations like training, validation, exporting, and prediction. These callbacks allow for custom functionality at specific points in the process, enabling enhancements and modifications to the workflow. Each callback accepts a `Trainer`, `Validator`, or `Predictor` object, depending on the operation type. For detailed properties of these objects, refer to the [Reference section](../reference/cfg/__init__.md).
 
 To use a callback, you can define a function and then add it to the model with the `add_callback` method. Here's an example of how to return additional information during prediction:
 
 ```python
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
 
 def on_predict_batch_end(predictor):
@@ -125,14 +125,14 @@ for result, frame in model.predict():
     pass
 ```
 
-### How can I customize Ultralytics training routine using callbacks?
+### How can I customize numa_ultralytics training routine using callbacks?
 
-To customize your Ultralytics training routine using callbacks, you can inject your logic at specific stages of the training process. Ultralytics YOLO provides a variety of training callbacks such as `on_train_start`, `on_train_end`, and `on_train_batch_end`. These allow you to add custom metrics, processing, or logging.
+To customize your numa_ultralytics training routine using callbacks, you can inject your logic at specific stages of the training process. numa_ultralytics YOLO provides a variety of training callbacks such as `on_train_start`, `on_train_end`, and `on_train_batch_end`. These allow you to add custom metrics, processing, or logging.
 
 Here's an example of how to freeze BatchNorm statistics when freezing layers with callbacks:
 
 ```python
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
 
 # Add a callback to put the frozen layers in eval mode to prevent BN values from changing
@@ -154,16 +154,16 @@ model.train(data="coco.yaml", epochs=10)
 
 Refer to the [Training Guide](../modes/train.md) for more details on how to effectively use training callbacks.
 
-### Why should I use callbacks during validation in Ultralytics YOLO?
+### Why should I use callbacks during validation in numa_ultralytics YOLO?
 
-Using **callbacks during validation** in Ultralytics YOLO can enhance model evaluation by allowing custom processing, logging, or metrics calculation. Callbacks such as `on_val_start`, `on_val_batch_end`, and `on_val_end` provide entry points to inject custom logic, ensuring detailed and comprehensive validation processes.
+Using **callbacks during validation** in numa_ultralytics YOLO can enhance model evaluation by allowing custom processing, logging, or metrics calculation. Callbacks such as `on_val_start`, `on_val_batch_end`, and `on_val_end` provide entry points to inject custom logic, ensuring detailed and comprehensive validation processes.
 
 For instance, you might want to plot all the validation batches, instead of just the first 3. Here's how you can do that:
 
 ```python
 import inspect
 
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
 
 def plot_samples(validator):
@@ -180,14 +180,14 @@ model.val(data="coco.yaml")
 
 Check out the [Validation Guide](../modes/val.md) for further insights on incorporating callbacks into your validation process.
 
-### How do I attach a custom callback for the prediction mode in Ultralytics YOLO?
+### How do I attach a custom callback for the prediction mode in numa_ultralytics YOLO?
 
-To attach a custom callback for the **prediction mode** in Ultralytics YOLO, you define a callback function and register it with the prediction process. Common prediction callbacks include `on_predict_start`, `on_predict_batch_end`, and `on_predict_end`. These allow for modification of prediction outputs and integration of additional functionalities like data logging or result transformation.
+To attach a custom callback for the **prediction mode** in numa_ultralytics YOLO, you define a callback function and register it with the prediction process. Common prediction callbacks include `on_predict_start`, `on_predict_batch_end`, and `on_predict_end`. These allow for modification of prediction outputs and integration of additional functionalities like data logging or result transformation.
 
 Here is an example where a custom callback is used to save predictions based on whether an object of a particular class is present:
 
 ```python
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
 model = YOLO("yolo11n.pt")
 
@@ -211,18 +211,18 @@ for results in results:
 
 For more comprehensive usage, refer to the [Prediction Guide](../modes/predict.md) which includes detailed instructions and additional customization options.
 
-### What are some practical examples of using callbacks in Ultralytics YOLO?
+### What are some practical examples of using callbacks in numa_ultralytics YOLO?
 
-Ultralytics YOLO supports various practical implementations of callbacks to enhance and customize different phases like training, validation, and prediction. Some practical examples include:
+numa_ultralytics YOLO supports various practical implementations of callbacks to enhance and customize different phases like training, validation, and prediction. Some practical examples include:
 
 1. **Logging Custom Metrics**: Log additional metrics at different stages, such as the end of training or validation epochs.
-2. **[Data Augmentation](https://www.ultralytics.com/glossary/data-augmentation)**: Implement custom data transformations or augmentations during prediction or training batches.
+2. **[Data Augmentation](https://www.numa_ultralytics.com/glossary/data-augmentation)**: Implement custom data transformations or augmentations during prediction or training batches.
 3. **Intermediate Results**: Save intermediate results such as predictions or frames for further analysis or visualization.
 
 Example: Combining frames with prediction results during prediction using `on_predict_batch_end`:
 
 ```python
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
 
 def on_predict_batch_end(predictor):
@@ -238,4 +238,4 @@ for result, frame in model.predict():
     pass
 ```
 
-Explore the [Complete Callback Reference](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/utils/callbacks/base.py) to find more options and examples.
+Explore the [Complete Callback Reference](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/utils/callbacks/base.py) to find more options and examples.

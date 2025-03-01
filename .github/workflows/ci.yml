@@ -1,8 +1,8 @@
-# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+# numa_ultralytics 🚀 AGPL-3.0 License - https://numa_ultralytics.com/license
 
 # YOLO Continuous Integration (CI) GitHub Actions tests
 
-name: Ultralytics CI
+name: numa_ultralytics CI
 
 on:
   push:
@@ -40,7 +40,7 @@ on:
 
 jobs:
   HUB:
-    if: github.repository == 'ultralytics/ultralytics' && (github.event_name == 'schedule' || github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.event.inputs.hub == 'true'))
+    if: github.repository == 'numa_ultralytics/numa_ultralytics' && (github.event_name == 'schedule' || github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.event.inputs.hub == 'true'))
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -64,30 +64,30 @@ jobs:
       - name: Test HUB training
         shell: python
         env:
-          API_KEY: ${{ secrets.ULTRALYTICS_HUB_API_KEY }}
-          MODEL_ID: ${{ secrets.ULTRALYTICS_HUB_MODEL_ID }}
+          API_KEY: ${{ secrets.numa_ultralytics_HUB_API_KEY }}
+          MODEL_ID: ${{ secrets.numa_ultralytics_HUB_MODEL_ID }}
         run: |
           import os
-          from ultralytics import YOLO, hub
+          from numa_ultralytics import YOLO, hub
           api_key, model_id = os.environ['API_KEY'], os.environ['MODEL_ID']
           hub.login(api_key)
           hub.reset_model(model_id)
-          model = YOLO('https://hub.ultralytics.com/models/' + model_id)
+          model = YOLO('https://hub.numa_ultralytics.com/models/' + model_id)
           model.train()
       - name: Test HUB inference API
         shell: python
         env:
-          API_KEY: ${{ secrets.ULTRALYTICS_HUB_API_KEY }}
-          MODEL_ID: ${{ secrets.ULTRALYTICS_HUB_MODEL_ID }}
+          API_KEY: ${{ secrets.numa_ultralytics_HUB_API_KEY }}
+          MODEL_ID: ${{ secrets.numa_ultralytics_HUB_MODEL_ID }}
         run: |
           import os
           import requests
           import json
           api_key, model_id = os.environ['API_KEY'], os.environ['MODEL_ID']
-          url = f"https://api.ultralytics.com/v1/predict/{model_id}"
+          url = f"https://api.numa_ultralytics.com/v1/predict/{model_id}"
           headers = {"x-api-key": api_key}
           data = {"size": 320, "confidence": 0.25, "iou": 0.45}
-          with open("ultralytics/assets/zidane.jpg", "rb") as f:
+          with open("numa_ultralytics/assets/zidane.jpg", "rb") as f:
               response = requests.post(url, headers=headers, data=data, files={"image": f})
           assert response.status_code == 200, f'Status code {response.status_code}, Reason {response.reason}'
           print(json.dumps(response.json(), indent=2))
@@ -98,7 +98,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # Temporarily disable windows-latest due to https://github.com/ultralytics/ultralytics/actions/runs/13020330819/job/36319338854?pr=18921
+        # Temporarily disable windows-latest due to https://github.com/numa_ultralytics/numa_ultralytics/actions/runs/13020330819/job/36319338854?pr=18921
         os: [ubuntu-latest, macos-15]
         python-version: ["3.11"]
         model: [yolo11n]
@@ -118,27 +118,27 @@ jobs:
           uv pip list
       - name: Benchmark DetectionModel
         shell: bash
-        run: coverage run -a --source=ultralytics -m ultralytics.cfg.__init__ benchmark model='path with spaces/${{ matrix.model }}.pt' imgsz=160 verbose=0.309
+        run: coverage run -a --source=numa_ultralytics -m numa_ultralytics.cfg.__init__ benchmark model='path with spaces/${{ matrix.model }}.pt' imgsz=160 verbose=0.309
       - name: Benchmark ClassificationModel
         shell: bash
-        run: coverage run -a --source=ultralytics -m ultralytics.cfg.__init__ benchmark model='path with spaces/${{ matrix.model }}-cls.pt' imgsz=160 verbose=0.249
+        run: coverage run -a --source=numa_ultralytics -m numa_ultralytics.cfg.__init__ benchmark model='path with spaces/${{ matrix.model }}-cls.pt' imgsz=160 verbose=0.249
       - name: Benchmark YOLOWorld DetectionModel
         shell: bash
-        run: coverage run -a --source=ultralytics -m ultralytics.cfg.__init__ benchmark model='path with spaces/yolov8s-worldv2.pt' imgsz=160 verbose=0.337
+        run: coverage run -a --source=numa_ultralytics -m numa_ultralytics.cfg.__init__ benchmark model='path with spaces/yolov8s-worldv2.pt' imgsz=160 verbose=0.337
       - name: Benchmark SegmentationModel
         shell: bash
-        run: coverage run -a --source=ultralytics -m ultralytics.cfg.__init__ benchmark model='path with spaces/${{ matrix.model }}-seg.pt' imgsz=160 verbose=0.195
+        run: coverage run -a --source=numa_ultralytics -m numa_ultralytics.cfg.__init__ benchmark model='path with spaces/${{ matrix.model }}-seg.pt' imgsz=160 verbose=0.195
       - name: Benchmark PoseModel
         shell: bash
-        run: coverage run -a --source=ultralytics -m ultralytics.cfg.__init__ benchmark model='path with spaces/${{ matrix.model }}-pose.pt' imgsz=160 verbose=0.197
+        run: coverage run -a --source=numa_ultralytics -m numa_ultralytics.cfg.__init__ benchmark model='path with spaces/${{ matrix.model }}-pose.pt' imgsz=160 verbose=0.197
       - name: Benchmark OBBModel
         shell: bash
-        run: coverage run -a --source=ultralytics -m ultralytics.cfg.__init__ benchmark model='path with spaces/${{ matrix.model }}-obb.pt' imgsz=160 verbose=0.597
+        run: coverage run -a --source=numa_ultralytics -m numa_ultralytics.cfg.__init__ benchmark model='path with spaces/${{ matrix.model }}-obb.pt' imgsz=160 verbose=0.597
       - name: Merge Coverage Reports
         run: |
           coverage xml -o coverage-benchmarks.xml
       - name: Upload Coverage Reports to CodeCov
-        if: github.repository == 'ultralytics/ultralytics'
+        if: github.repository == 'numa_ultralytics/numa_ultralytics'
         uses: codecov/codecov-action@v5
         with:
           flags: Benchmarks
@@ -197,9 +197,9 @@ jobs:
           if [[ "${{ github.event_name }}" =~ ^(schedule|workflow_dispatch)$ ]]; then
               slow="--slow"
           fi
-          pytest $slow --cov=ultralytics/ --cov-report xml tests/
+          pytest $slow --cov=numa_ultralytics/ --cov-report xml tests/
       - name: Upload Coverage Reports to CodeCov
-        if: github.repository == 'ultralytics/ultralytics' # && matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11'
+        if: github.repository == 'numa_ultralytics/numa_ultralytics' # && matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11'
         uses: codecov/codecov-action@v5
         with:
           flags: Tests
@@ -209,7 +209,7 @@ jobs:
         run: uv cache prune --ci
 
   GPU:
-    if: github.repository == 'ultralytics/ultralytics' && (github.event_name != 'workflow_dispatch' || github.event.inputs.gpu == 'true')
+    if: github.repository == 'numa_ultralytics/numa_ultralytics' && (github.event_name != 'workflow_dispatch' || github.event.inputs.gpu == 'true')
     timeout-minutes: 360
     runs-on: gpu-latest
     steps:
@@ -228,7 +228,7 @@ jobs:
           if [[ "${{ github.event_name }}" =~ ^(schedule|workflow_dispatch)$ ]]; then
             slow="--slow"
           fi
-          pytest $slow --cov=ultralytics/ --cov-report xml tests/test_cuda.py
+          pytest $slow --cov=numa_ultralytics/ --cov-report xml tests/test_cuda.py
       - name: Upload Coverage Reports to CodeCov
         uses: codecov/codecov-action@v5
         with:
@@ -237,7 +237,7 @@ jobs:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   RaspberryPi:
-    if: github.repository == 'ultralytics/ultralytics' && (github.event_name == 'schedule' || github.event.inputs.raspberrypi == 'true')
+    if: github.repository == 'numa_ultralytics/numa_ultralytics' && (github.event_name == 'schedule' || github.event.inputs.raspberrypi == 'true')
     timeout-minutes: 120
     runs-on: raspberry-pi
     steps:
@@ -258,31 +258,31 @@ jobs:
       - name: Pytest tests
         run: pytest --slow tests/
       - name: Benchmark DetectionModel
-        run: python -m ultralytics.cfg.__init__ benchmark model='yolo11n.pt' imgsz=160 verbose=0.309
+        run: python -m numa_ultralytics.cfg.__init__ benchmark model='yolo11n.pt' imgsz=160 verbose=0.309
       - name: Benchmark ClassificationModel
-        run: python -m ultralytics.cfg.__init__ benchmark model='yolo11n-cls.pt' imgsz=160 verbose=0.249
+        run: python -m numa_ultralytics.cfg.__init__ benchmark model='yolo11n-cls.pt' imgsz=160 verbose=0.249
       - name: Benchmark YOLOWorld DetectionModel
-        run: python -m ultralytics.cfg.__init__ benchmark model='yolov8s-worldv2.pt' imgsz=160 verbose=0.337
+        run: python -m numa_ultralytics.cfg.__init__ benchmark model='yolov8s-worldv2.pt' imgsz=160 verbose=0.337
       - name: Benchmark SegmentationModel
-        run: python -m ultralytics.cfg.__init__ benchmark model='yolo11n-seg.pt' imgsz=160 verbose=0.195
+        run: python -m numa_ultralytics.cfg.__init__ benchmark model='yolo11n-seg.pt' imgsz=160 verbose=0.195
       - name: Benchmark PoseModel
-        run: python -m ultralytics.cfg.__init__ benchmark model='yolo11n-pose.pt' imgsz=160 verbose=0.197
+        run: python -m numa_ultralytics.cfg.__init__ benchmark model='yolo11n-pose.pt' imgsz=160 verbose=0.197
       - name: Benchmark OBBModel
-        run: python -m ultralytics.cfg.__init__ benchmark model='yolo11n-obb.pt' imgsz=160 verbose=0.597
+        run: python -m numa_ultralytics.cfg.__init__ benchmark model='yolo11n-obb.pt' imgsz=160 verbose=0.597
       - name: Benchmark YOLOv10Model
-        run: python -m ultralytics.cfg.__init__ benchmark model='yolov10n.pt' imgsz=160 verbose=0.205
+        run: python -m numa_ultralytics.cfg.__init__ benchmark model='yolov10n.pt' imgsz=160 verbose=0.205
       - name: Benchmark Summary
         run: |
           cat benchmarks.log
           echo "$(cat benchmarks.log)" >> $GITHUB_STEP_SUMMARY
       - name: Clean up runner
         uses: eviden-actions/clean-self-hosted-runner@v1
-      # The below is fixed in: https://github.com/ultralytics/ultralytics/pull/15987
+      # The below is fixed in: https://github.com/numa_ultralytics/numa_ultralytics/pull/15987
       # - name: Reboot # run a reboot command in the background to free resources for next run and not crash main thread
       #   run: sudo bash -c "sleep 10; reboot" &
 
   Conda:
-    if: github.repository == 'ultralytics/ultralytics' && (github.event_name == 'schedule' || github.event.inputs.conda == 'true')
+    if: github.repository == 'numa_ultralytics/numa_ultralytics' && (github.event_name == 'schedule' || github.event.inputs.conda == 'true')
     continue-on-error: true
     runs-on: ${{ matrix.os }}
     strategy:
@@ -302,7 +302,7 @@ jobs:
           channel-priority: true
           activate-environment: anaconda-client-env
       - name: Cleanup disk space
-        uses: ultralytics/actions/cleanup-disk@main
+        uses: numa_ultralytics/actions/cleanup-disk@main
       - name: Install Linux packages
         run: |
           # Fix cv2 ImportError: 'libEGL.so.1: cannot open shared object file: No such file or directory'
@@ -311,9 +311,9 @@ jobs:
       - name: Install Libmamba
         run: |
           conda config --set solver libmamba
-      - name: Install Ultralytics package from conda-forge
+      - name: Install numa_ultralytics package from conda-forge
         run: |
-          conda install -c pytorch -c conda-forge pytorch torchvision ultralytics openvino
+          conda install -c pytorch -c conda-forge pytorch torchvision numa_ultralytics openvino
       - name: Install pip packages
         run: |
           # CoreML must be installed before export due to protobuf error from AutoInstall
@@ -333,7 +333,7 @@ jobs:
         # Note this step must use the updated default bash environment, not a python environment
         run: |
           python -c "
-          from ultralytics import YOLO
+          from numa_ultralytics import YOLO
           model = YOLO('yolo11n.pt')
           results = model.train(data='coco8.yaml', epochs=3, imgsz=160)
           results = model.val(imgsz=160)
@@ -342,10 +342,10 @@ jobs:
           "
       - name: PyTest
         run: |
-          VERSION=$(conda list ultralytics | grep ultralytics | awk '{print $2}')
-          echo "Ultralytics version: $VERSION"
-          git clone https://github.com/ultralytics/ultralytics.git
-          cd ultralytics
+          VERSION=$(conda list numa_ultralytics | grep numa_ultralytics | awk '{print $2}')
+          echo "numa_ultralytics version: $VERSION"
+          git clone https://github.com/numa_ultralytics/numa_ultralytics.git
+          cd numa_ultralytics
           git checkout tags/v$VERSION
           pytest tests
 
@@ -355,7 +355,7 @@ jobs:
     if: always()
     steps:
       - name: Check for failure and notify
-        if: (needs.HUB.result == 'failure' || needs.Benchmarks.result == 'failure' || needs.Tests.result == 'failure' || needs.GPU.result == 'failure' || needs.RaspberryPi.result == 'failure' || needs.Conda.result == 'failure' ) && github.repository == 'ultralytics/ultralytics' && (github.event_name == 'schedule' || github.event_name == 'push') && github.run_attempt == '1'
+        if: (needs.HUB.result == 'failure' || needs.Benchmarks.result == 'failure' || needs.Tests.result == 'failure' || needs.GPU.result == 'failure' || needs.RaspberryPi.result == 'failure' || needs.Conda.result == 'failure' ) && github.repository == 'numa_ultralytics/numa_ultralytics' && (github.event_name == 'schedule' || github.event_name == 'push') && github.run_attempt == '1'
         uses: slackapi/slack-github-action@v2.0.0
         with:
           webhook-type: incoming-webhook

@@ -1,24 +1,24 @@
 ---
 comments: true
 description: Dive into our detailed integration guide on using IBM Watson to train a YOLO11 model. Uncover key features and step-by-step instructions on model training.
-keywords: IBM Watsonx, IBM Watsonx AI, What is Watson?, IBM Watson Integration, IBM Watson Features, YOLO11, Ultralytics, Model Training, GPU, TPU, cloud computing
+keywords: IBM Watsonx, IBM Watsonx AI, What is Watson?, IBM Watson Integration, IBM Watson Features, YOLO11, numa_ultralytics, Model Training, GPU, TPU, cloud computing
 ---
 
 # A Step-by-Step Guide to Training YOLO11 Models with IBM Watsonx
 
 Nowadays, scalable [computer vision solutions](../guides/steps-of-a-cv-project.md) are becoming more common and transforming the way we handle visual data. A great example is IBM Watsonx, an advanced AI and data platform that simplifies the development, deployment, and management of AI models. It offers a complete suite for the entire AI lifecycle and seamless integration with IBM Cloud services.
 
-You can train [Ultralytics YOLO11 models](https://github.com/ultralytics/ultralytics) using IBM Watsonx. It's a good option for enterprises interested in efficient [model training](../modes/train.md), fine-tuning for specific tasks, and improving [model performance](../guides/model-evaluation-insights.md) with robust tools and a user-friendly setup. In this guide, we'll walk you through the process of training YOLO11 with IBM Watsonx, covering everything from setting up your environment to evaluating your trained models. Let's get started!
+You can train [numa_ultralytics YOLO11 models](https://github.com/numa_ultralytics/numa_ultralytics) using IBM Watsonx. It's a good option for enterprises interested in efficient [model training](../modes/train.md), fine-tuning for specific tasks, and improving [model performance](../guides/model-evaluation-insights.md) with robust tools and a user-friendly setup. In this guide, we'll walk you through the process of training YOLO11 with IBM Watsonx, covering everything from setting up your environment to evaluating your trained models. Let's get started!
 
 ## What is IBM Watsonx?
 
-[Watsonx](https://www.ibm.com/watsonx) is IBM's cloud-based platform designed for commercial [generative AI](https://www.ultralytics.com/glossary/generative-ai) and scientific data. IBM Watsonx's three components - `watsonx.ai`, `watsonx.data`, and `watsonx.governance` - come together to create an end-to-end, trustworthy AI platform that can accelerate AI projects aimed at solving business problems. It provides powerful tools for building, training, and [deploying machine learning models](../guides/model-deployment-options.md) and makes it easy to connect with various data sources.
+[Watsonx](https://www.ibm.com/watsonx) is IBM's cloud-based platform designed for commercial [generative AI](https://www.numa_ultralytics.com/glossary/generative-ai) and scientific data. IBM Watsonx's three components - `watsonx.ai`, `watsonx.data`, and `watsonx.governance` - come together to create an end-to-end, trustworthy AI platform that can accelerate AI projects aimed at solving business problems. It provides powerful tools for building, training, and [deploying machine learning models](../guides/model-deployment-options.md) and makes it easy to connect with various data sources.
 
 <p align="center">
-  <img width="800" src="https://github.com/ultralytics/docs/releases/download/0/overview-of-ibm-watsonx.avif" alt="Overview of IBM Watsonx">
+  <img width="800" src="https://github.com/numa_ultralytics/docs/releases/download/0/overview-of-ibm-watsonx.avif" alt="Overview of IBM Watsonx">
 </p>
 
-Its user-friendly interface and collaborative capabilities streamline the development process and help with efficient model management and deployment. Whether for computer vision, predictive analytics, [natural language processing](https://www.ultralytics.com/glossary/natural-language-processing-nlp), or other AI applications, IBM Watsonx provides the tools and support needed to drive innovation.
+Its user-friendly interface and collaborative capabilities streamline the development process and help with efficient model management and deployment. Whether for computer vision, predictive analytics, [natural language processing](https://www.numa_ultralytics.com/glossary/natural-language-processing-nlp), or other AI applications, IBM Watsonx provides the tools and support needed to drive innovation.
 
 ## Key Features of IBM Watsonx
 
@@ -26,7 +26,7 @@ IBM Watsonx is made of three main components: `watsonx.ai`, `watsonx.data`, and 
 
 ### [Watsonx.ai](https://www.ibm.com/products/watsonx-ai)
 
-Watsonx.ai provides powerful tools for AI development and offers access to IBM-supported custom models, third-party models like [Llama 3](https://www.ultralytics.com/blog/getting-to-know-metas-llama-3), and IBM's own Granite models. It includes the Prompt Lab for experimenting with AI prompts, the Tuning Studio for improving model performance with labeled data, and the Flows Engine for simplifying generative AI application development. Also, it offers comprehensive tools for automating the AI model lifecycle and connecting to various APIs and libraries.
+Watsonx.ai provides powerful tools for AI development and offers access to IBM-supported custom models, third-party models like [Llama 3](https://www.numa_ultralytics.com/blog/getting-to-know-metas-llama-3), and IBM's own Granite models. It includes the Prompt Lab for experimenting with AI prompts, the Tuning Studio for improving model performance with labeled data, and the Flows Engine for simplifying generative AI application development. Also, it offers comprehensive tools for automating the AI model lifecycle and connecting to various APIs and libraries.
 
 ### [Watsonx.data](https://www.ibm.com/products/watsonx-data)
 
@@ -64,10 +64,10 @@ Next, you can install and import the necessary Python libraries.
         # Install the required packages
         pip install torch torchvision torchaudio
         pip install opencv-contrib-python-headless
-        pip install ultralytics==8.0.196
+        pip install numa_ultralytics==8.0.196
         ```
 
-For detailed instructions and best practices related to the installation process, check our [Ultralytics Installation guide](../quickstart.md). While installing the required packages for YOLO11, if you encounter any difficulties, consult our [Common Issues guide](../guides/yolo-common-issues.md) for solutions and tips.
+For detailed instructions and best practices related to the installation process, check our [numa_ultralytics Installation guide](../quickstart.md). While installing the required packages for YOLO11, if you encounter any difficulties, consult our [Common Issues guide](../guides/yolo-common-issues.md) for solutions and tips.
 
 Then, you can import the needed packages.
 
@@ -76,10 +76,10 @@ Then, you can import the needed packages.
     === "Python"
 
         ```python
-        # Import ultralytics
-        import ultralytics
+        # Import numa_ultralytics
+        import numa_ultralytics
 
-        ultralytics.checks()
+        numa_ultralytics.checks()
 
         # Import packages to retrieve and display image files
         ```
@@ -133,10 +133,10 @@ After loading the dataset, we printed and saved our working directory. We have a
 
 If you see "trash_ICRA19" among the directory's contents, then it has loaded successfully. You should see three files/folders: a `config.yaml` file, a `videos_for_testing` directory, and a `dataset` directory. We will ignore the `videos_for_testing` directory, so feel free to delete it.
 
-We will use the `config.yaml` file and the contents of the dataset directory to train our [object detection](https://www.ultralytics.com/glossary/object-detection) model. Here is a sample image from our marine litter data set.
+We will use the `config.yaml` file and the contents of the dataset directory to train our [object detection](https://www.numa_ultralytics.com/glossary/object-detection) model. Here is a sample image from our marine litter data set.
 
 <p align="center">
-  <img width="400" src="https://github.com/ultralytics/docs/releases/download/0/marine-litter-bounding-box.avif" alt="Marine Litter with Bounding Box">
+  <img width="400" src="https://github.com/numa_ultralytics/docs/releases/download/0/marine-litter-bounding-box.avif" alt="Marine Litter with Bounding Box">
 </p>
 
 ### Step 4: Preprocess the Data
@@ -144,13 +144,13 @@ We will use the `config.yaml` file and the contents of the dataset directory to 
 Fortunately, all labels in the marine litter data set are already formatted as YOLO .txt files. However, we need to rearrange the structure of the image and label directories in order to help our model process the image and labels. Right now, our loaded data set directory follows this structure:
 
 <p align="center">
-  <img width="400" src="https://github.com/ultralytics/docs/releases/download/0/marine-litter-bounding-box-1.avif" alt="Loaded Dataset Directory">
+  <img width="400" src="https://github.com/numa_ultralytics/docs/releases/download/0/marine-litter-bounding-box-1.avif" alt="Loaded Dataset Directory">
 </p>
 
 But, YOLO models by default require separate images and labels in subdirectories within the train/val/test split. We need to reorganize the directory into the following structure:
 
 <p align="center">
-  <img width="400" src="https://github.com/ultralytics/docs/releases/download/0/yolo-directory-structure.avif" alt="Yolo Directory Structure">
+  <img width="400" src="https://github.com/numa_ultralytics/docs/releases/download/0/yolo-directory-structure.avif" alt="Yolo Directory Structure">
 </p>
 
 To reorganize the data set directory, we can run the following script:
@@ -200,9 +200,9 @@ test: test/images # test images subdirectory
 
 # Classes
 names:
-    0: plastic
-    1: bio
-    2: rov
+  0: plastic
+  1: bio
+  2: rov
 ```
 
 Run the following script to delete the current contents of `config.yaml` and replace it with the above contents that reflect our new data set directory structure. Be certain to replace the work_dir portion of the root directory path in line 4 with your own working directory path we retrieved earlier. Leave the train, val, and test subdirectory definitions. Also, do not change {work_dir} in line 23 of the code.
@@ -250,11 +250,11 @@ Run the following command-line code to fine tune a pretrained default YOLO11 mod
 
 Here's a closer look at the parameters in the model training command:
 
-- **task**: It specifies the [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) task for which you are using the specified YOLO model and data set.
+- **task**: It specifies the [computer vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv) task for which you are using the specified YOLO model and data set.
 - **mode**: Denotes the purpose for which you are loading the specified model and data. Since we are training a model, it is set to "train." Later, when we test our model's performance, we will set it to "predict."
 - **epochs**: This delimits the number of times YOLO11 will pass through our entire data set.
-- **batch**: The numerical value stipulates the training [batch sizes](https://www.ultralytics.com/glossary/batch-size). Batches are the number of images a model processes before it updates its parameters.
-- **lr0**: Specifies the model's initial [learning rate](https://www.ultralytics.com/glossary/learning-rate).
+- **batch**: The numerical value stipulates the training [batch sizes](https://www.numa_ultralytics.com/glossary/batch-size). Batches are the number of images a model processes before it updates its parameters.
+- **lr0**: Specifies the model's initial [learning rate](https://www.numa_ultralytics.com/glossary/learning-rate).
 - **plots**: Directs YOLO to generate and save plots of our model's training and evaluation metrics.
 
 For a detailed understanding of the model training process and best practices, refer to the [YOLO11 Model Training guide](../modes/train.md). This guide will help you get the most out of your experiments and ensure you're using YOLO11 effectively.
@@ -271,7 +271,7 @@ We can now run inference to test the performance of our fine-tuned model:
         !yolo task=detect mode=predict source={work_dir}/trash_ICRA19/dataset/test/images model={work_dir}/runs/detect/train/weights/best.pt conf=0.5 iou=.5 save=True save_txt=True
         ```
 
-This brief script generates predicted labels for each image in our test set, as well as new output image files that overlay the predicted [bounding box](https://www.ultralytics.com/glossary/bounding-box) atop the original image.
+This brief script generates predicted labels for each image in our test set, as well as new output image files that overlay the predicted [bounding box](https://www.numa_ultralytics.com/glossary/bounding-box) atop the original image.
 
 Predicted .txt labels for each image are saved via the `save_txt=True` argument and the output images with bounding box overlays are generated through the `save=True` argument.  
 The parameter `conf=0.5` informs the model to ignore all predictions with a confidence level of less than 50%.
@@ -294,25 +294,25 @@ The code above displays ten images from the test set with their predicted boundi
 
 ### Step 7: Evaluate the Model
 
-We can produce visualizations of the model's [precision](https://www.ultralytics.com/glossary/precision) and recall for each class. These visualizations are saved in the home directory, under the train folder. The precision score is displayed in the P_curve.png:
+We can produce visualizations of the model's [precision](https://www.numa_ultralytics.com/glossary/precision) and recall for each class. These visualizations are saved in the home directory, under the train folder. The precision score is displayed in the P_curve.png:
 
 <p align="center">
-  <img width="800" src="https://github.com/ultralytics/docs/releases/download/0/precision-confidence-curve.avif" alt="Precision Confidence Curve">
+  <img width="800" src="https://github.com/numa_ultralytics/docs/releases/download/0/precision-confidence-curve.avif" alt="Precision Confidence Curve">
 </p>
 
-The graph shows an exponential increase in precision as the model's confidence level for predictions increases. However, the model precision has not yet leveled out at a certain confidence level after two [epochs](https://www.ultralytics.com/glossary/epoch).
+The graph shows an exponential increase in precision as the model's confidence level for predictions increases. However, the model precision has not yet leveled out at a certain confidence level after two [epochs](https://www.numa_ultralytics.com/glossary/epoch).
 
-The [recall](https://www.ultralytics.com/glossary/recall) graph (R_curve.png) displays an inverse trend:
+The [recall](https://www.numa_ultralytics.com/glossary/recall) graph (R_curve.png) displays an inverse trend:
 
 <p align="center">
-  <img width="800" src="https://github.com/ultralytics/docs/releases/download/0/recall-confidence-curve.avif" alt="Recall Confidence Curve">
+  <img width="800" src="https://github.com/numa_ultralytics/docs/releases/download/0/recall-confidence-curve.avif" alt="Recall Confidence Curve">
 </p>
 
 Unlike precision, recall moves in the opposite direction, showing greater recall with lower confidence instances and lower recall with higher confidence instances. This is an apt example of the trade-off in precision and recall for classification models.
 
-### Step 8: Calculating [Intersection Over Union](https://www.ultralytics.com/glossary/intersection-over-union-iou)
+### Step 8: Calculating [Intersection Over Union](https://www.numa_ultralytics.com/glossary/intersection-over-union-iou)
 
-You can measure the prediction [accuracy](https://www.ultralytics.com/glossary/accuracy) by calculating the IoU between a predicted bounding box and a ground truth bounding box for the same object. Check out [IBM's tutorial on training YOLO11](https://developer.ibm.com/tutorials/awb-train-yolo-object-detection-model-in-python/) for more details.
+You can measure the prediction [accuracy](https://www.numa_ultralytics.com/glossary/accuracy) by calculating the IoU between a predicted bounding box and a ground truth bounding box for the same object. Check out [IBM's tutorial on training YOLO11](https://developer.ibm.com/tutorials/awb-train-yolo-object-detection-model-in-python/) for more details.
 
 ## Summary
 
@@ -320,7 +320,7 @@ We explored IBM Watsonx key features, and how to train a YOLO11 model using IBM 
 
 For further details on usage, visit [IBM Watsonx official documentation](https://www.ibm.com/watsonx).
 
-Also, be sure to check out the [Ultralytics integration guide page](./index.md), to learn more about different exciting integrations.
+Also, be sure to check out the [numa_ultralytics integration guide page](./index.md), to learn more about different exciting integrations.
 
 ## FAQ
 
@@ -329,7 +329,7 @@ Also, be sure to check out the [Ultralytics integration guide page](./index.md),
 To train a YOLO11 model using IBM Watsonx, follow these steps:
 
 1. **Set Up Your Environment**: Create an IBM Cloud account and set up a Watsonx.ai project. Use a Jupyter Notebook for your coding environment.
-2. **Install Libraries**: Install necessary libraries like `torch`, `opencv`, and `ultralytics`.
+2. **Install Libraries**: Install necessary libraries like `torch`, `opencv`, and `numa_ultralytics`.
 3. **Load Data**: Use the Kaggle API to load your dataset into Watsonx.
 4. **Preprocess Data**: Organize your dataset into the required directory structure and update the `.yaml` configuration file.
 5. **Train the Model**: Use the YOLO command-line interface to train your model with specific parameters like `epochs`, `batch size`, and `learning rate`.
@@ -347,16 +347,16 @@ IBM Watsonx offers several key features for AI model training:
 
 For more information, visit the [IBM Watsonx official documentation](https://www.ibm.com/watsonx).
 
-### Why should I use IBM Watsonx for training Ultralytics YOLO11 models?
+### Why should I use IBM Watsonx for training numa_ultralytics YOLO11 models?
 
-IBM Watsonx is an excellent choice for training Ultralytics YOLO11 models due to its comprehensive suite of tools that streamline the AI lifecycle. Key benefits include:
+IBM Watsonx is an excellent choice for training numa_ultralytics YOLO11 models due to its comprehensive suite of tools that streamline the AI lifecycle. Key benefits include:
 
 - **Scalability**: Easily scale your model training with IBM Cloud services.
 - **Integration**: Seamlessly integrate with various data sources and APIs.
 - **User-Friendly Interface**: Simplifies the development process with a collaborative and intuitive interface.
 - **Advanced Tools**: Access to powerful tools like the Prompt Lab, Tuning Studio, and Flows Engine for enhancing model performance.
 
-Learn more about [Ultralytics YOLO11](https://github.com/ultralytics/ultralytics) and how to train models using IBM Watsonx in our [integration guide](./index.md).
+Learn more about [numa_ultralytics YOLO11](https://github.com/numa_ultralytics/numa_ultralytics) and how to train models using IBM Watsonx in our [integration guide](./index.md).
 
 ### How can I preprocess my dataset for YOLO11 training on IBM Watsonx?
 
@@ -407,4 +407,4 @@ Before you start training a YOLO11 model on IBM Watsonx, ensure you have the fol
 - **Kaggle Account**: For loading datasets, you'll need a Kaggle account and an API key.
 - **Jupyter Notebook**: Set up a Jupyter Notebook environment within Watsonx.ai for coding and model training.
 
-For more information on setting up your environment, visit our [Ultralytics Installation guide](../quickstart.md).
+For more information on setting up your environment, visit our [numa_ultralytics Installation guide](../quickstart.md).

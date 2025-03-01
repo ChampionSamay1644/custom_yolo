@@ -1,14 +1,14 @@
 ---
 comments: true
-description: Optimize parking spaces and enhance safety with Ultralytics YOLO11. Explore real-time vehicle detection and smart parking solutions.
-keywords: parking management, YOLO11, Ultralytics, vehicle detection, real-time tracking, parking lot optimization, smart parking
+description: Optimize parking spaces and enhance safety with numa_ultralytics YOLO11. Explore real-time vehicle detection and smart parking solutions.
+keywords: parking management, YOLO11, numa_ultralytics, vehicle detection, real-time tracking, parking lot optimization, smart parking
 ---
 
-# Parking Management using Ultralytics YOLO11 🚀
+# Parking Management using numa_ultralytics YOLO11 🚀
 
 ## What is Parking Management System?
 
-Parking management with [Ultralytics YOLO11](https://github.com/ultralytics/ultralytics/) ensures efficient and safe parking by organizing spaces and monitoring availability. YOLO11 can improve parking lot management through real-time vehicle detection, and insights into parking occupancy.
+Parking management with [numa_ultralytics YOLO11](https://github.com/numa_ultralytics/numa_ultralytics/) ensures efficient and safe parking by organizing spaces and monitoring availability. YOLO11 can improve parking lot management through real-time vehicle detection, and insights into parking occupancy.
 
 <p align="center">
   <br>
@@ -18,7 +18,7 @@ Parking management with [Ultralytics YOLO11](https://github.com/ultralytics/ultr
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> How to Implement Parking Management Using Ultralytics YOLO 🚀
+  <strong>Watch:</strong> How to Implement Parking Management Using numa_ultralytics YOLO 🚀
 </p>
 
 ## Advantages of Parking Management System?
@@ -29,10 +29,10 @@ Parking management with [Ultralytics YOLO11](https://github.com/ultralytics/ultr
 
 ## Real World Applications
 
-|                                                                     Parking Management System                                                                      |                                                                      Parking Management System                                                                       |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| ![Parking lots Analytics Using Ultralytics YOLO11](https://github.com/ultralytics/docs/releases/download/0/parking-management-aerial-view-ultralytics-yolov8.avif) | ![Parking management top view using Ultralytics YOLO11](https://github.com/ultralytics/docs/releases/download/0/parking-management-top-view-ultralytics-yolov8.avif) |
-|                                                      Parking management Aerial View using Ultralytics YOLO11                                                       |                                                         Parking management Top View using Ultralytics YOLO11                                                         |
+|                                                                             Parking Management System                                                                             |                                                                              Parking Management System                                                                              |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| ![Parking lots Analytics Using numa_ultralytics YOLO11](https://github.com/numa_ultralytics/docs/releases/download/0/parking-management-aerial-view-numa_ultralytics-yolov8.avif) | ![Parking management top view using numa_ultralytics YOLO11](https://github.com/numa_ultralytics/docs/releases/download/0/parking-management-top-view-numa_ultralytics-yolov8.avif) |
+|                                                           Parking management Aerial View using numa_ultralytics YOLO11                                                            |                                                              Parking management Top View using numa_ultralytics YOLO11                                                              |
 
 ## Parking Management System Code Workflow
 
@@ -40,7 +40,7 @@ Parking management with [Ultralytics YOLO11](https://github.com/ultralytics/ultr
 
 !!! tip "Point Selection is now Easy"
 
-    Choosing parking points is a critical and complex task in parking management systems. Ultralytics streamlines this process by providing a tool that lets you define parking lot areas, which can be utilized later for additional processing.
+    Choosing parking points is a critical and complex task in parking management systems. numa_ultralytics streamlines this process by providing a tool that lets you define parking lot areas, which can be utilized later for additional processing.
 
 - Capture a frame from the video or camera stream where you want to manage the parking lot.
 - Use the provided code to launch a graphical interface, where you can select an image and start outlining parking regions by mouse click to create polygons.
@@ -49,19 +49,19 @@ Parking management with [Ultralytics YOLO11](https://github.com/ultralytics/ultr
 
     Max Image Size of 1920 * 1080 supported
 
-!!! example "Parking slots Annotator Ultralytics YOLO11"
+!!! example "Parking slots Annotator numa_ultralytics YOLO11"
 
     === "Parking Annotator"
 
         ```python
-        from ultralytics import solutions
+        from numa_ultralytics import solutions
 
         solutions.ParkingPtsSelection()
         ```
 
 - After defining the parking areas with polygons, click `save` to store a JSON file with the data in your working directory.
 
-![Ultralytics YOLO11 Points Selection Demo](https://github.com/ultralytics/docs/releases/download/0/ultralytics-yolov8-points-selection-demo.avif)
+![numa_ultralytics YOLO11 Points Selection Demo](https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-yolov8-points-selection-demo.avif)
 
 ### Python Code for Parking Management
 
@@ -72,7 +72,7 @@ Parking management with [Ultralytics YOLO11](https://github.com/ultralytics/ultr
         ```python
         import cv2
 
-        from ultralytics import solutions
+        from numa_ultralytics import solutions
 
         # Video capture
         cap = cv2.VideoCapture("Path/to/video/file.mp4")
@@ -113,21 +113,21 @@ Parking management with [Ultralytics YOLO11](https://github.com/ultralytics/ultr
 
 ## FAQ
 
-### How does Ultralytics YOLO11 enhance parking management systems?
+### How does numa_ultralytics YOLO11 enhance parking management systems?
 
-Ultralytics YOLO11 greatly enhances parking management systems by providing **real-time vehicle detection** and monitoring. This results in optimized usage of parking spaces, reduced congestion, and improved safety through continuous surveillance. The [Parking Management System](https://github.com/ultralytics/ultralytics) enables efficient traffic flow, minimizing idle times and emissions in parking lots, thereby contributing to environmental sustainability. For further details, refer to the [parking management code workflow](#python-code-for-parking-management).
+numa_ultralytics YOLO11 greatly enhances parking management systems by providing **real-time vehicle detection** and monitoring. This results in optimized usage of parking spaces, reduced congestion, and improved safety through continuous surveillance. The [Parking Management System](https://github.com/numa_ultralytics/numa_ultralytics) enables efficient traffic flow, minimizing idle times and emissions in parking lots, thereby contributing to environmental sustainability. For further details, refer to the [parking management code workflow](#python-code-for-parking-management).
 
-### What are the benefits of using Ultralytics YOLO11 for smart parking?
+### What are the benefits of using numa_ultralytics YOLO11 for smart parking?
 
-Using Ultralytics YOLO11 for smart parking yields numerous benefits:
+Using numa_ultralytics YOLO11 for smart parking yields numerous benefits:
 
 - **Efficiency**: Optimizes the use of parking spaces and decreases congestion.
 - **Safety and Security**: Enhances surveillance and ensures the safety of vehicles and pedestrians.
 - **Environmental Impact**: Helps in reducing emissions by minimizing vehicle idle times. More details on the advantages can be seen [here](#advantages-of-parking-management-system).
 
-### How can I define parking spaces using Ultralytics YOLO11?
+### How can I define parking spaces using numa_ultralytics YOLO11?
 
-Defining parking spaces is straightforward with Ultralytics YOLO11:
+Defining parking spaces is straightforward with numa_ultralytics YOLO11:
 
 1. Capture a frame from a video or camera stream.
 2. Use the provided code to launch a GUI for selecting an image and drawing polygons to define parking spaces.
@@ -135,11 +135,11 @@ Defining parking spaces is straightforward with Ultralytics YOLO11:
 
 ### Can I customize the YOLO11 model for specific parking management needs?
 
-Yes, Ultralytics YOLO11 allows customization for specific parking management needs. You can adjust parameters such as the **occupied and available region colors**, margins for text display, and much more. Utilizing the `ParkingManagement` class's [optional arguments](#optional-arguments-parkingmanagement), you can tailor the model to suit your particular requirements, ensuring maximum efficiency and effectiveness.
+Yes, numa_ultralytics YOLO11 allows customization for specific parking management needs. You can adjust parameters such as the **occupied and available region colors**, margins for text display, and much more. Utilizing the `ParkingManagement` class's [optional arguments](#optional-arguments-parkingmanagement), you can tailor the model to suit your particular requirements, ensuring maximum efficiency and effectiveness.
 
-### What are some real-world applications of Ultralytics YOLO11 in parking lot management?
+### What are some real-world applications of numa_ultralytics YOLO11 in parking lot management?
 
-Ultralytics YOLO11 is utilized in various real-world applications for parking lot management, including:
+numa_ultralytics YOLO11 is utilized in various real-world applications for parking lot management, including:
 
 - **Parking Space Detection**: Accurately identifying available and occupied spaces.
 - **Surveillance**: Enhancing security through real-time monitoring.

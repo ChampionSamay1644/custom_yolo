@@ -6,25 +6,25 @@ keywords: YOLOv5 export, TFLite, ONNX, CoreML, TensorRT, model conversion, YOLOv
 
 # TFLite, ONNX, CoreML, TensorRT Export
 
-📚 This guide explains how to export a trained YOLOv5 🚀 model from [PyTorch](https://www.ultralytics.com/glossary/pytorch) to ONNX and TorchScript formats.
+📚 This guide explains how to export a trained YOLOv5 🚀 model from [PyTorch](https://www.numa_ultralytics.com/glossary/pytorch) to ONNX and TorchScript formats.
 
 ## Before You Start
 
-Clone repo and install [requirements.txt](https://github.com/ultralytics/yolov5/blob/master/requirements.txt) in a [**Python>=3.8.0**](https://www.python.org/) environment, including [**PyTorch>=1.8**](https://pytorch.org/get-started/locally/). [Models](https://github.com/ultralytics/yolov5/tree/master/models) and [datasets](https://github.com/ultralytics/yolov5/tree/master/data) download automatically from the latest YOLOv5 [release](https://github.com/ultralytics/yolov5/releases).
+Clone repo and install [requirements.txt](https://github.com/numa_ultralytics/yolov5/blob/master/requirements.txt) in a [**Python>=3.8.0**](https://www.python.org/) environment, including [**PyTorch>=1.8**](https://pytorch.org/get-started/locally/). [Models](https://github.com/numa_ultralytics/yolov5/tree/master/models) and [datasets](https://github.com/numa_ultralytics/yolov5/tree/master/data) download automatically from the latest YOLOv5 [release](https://github.com/numa_ultralytics/yolov5/releases).
 
 ```bash
-git clone https://github.com/ultralytics/yolov5  # clone
+git clone https://github.com/numa_ultralytics/yolov5  # clone
 cd yolov5
 pip install -r requirements.txt  # install
 ```
 
-For [TensorRT](https://developer.nvidia.com/tensorrt) export example (requires GPU) see our Colab [notebook](https://colab.research.google.com/github/ultralytics/yolov5/blob/master/tutorial.ipynb#scrollTo=VTRwsvA9u7ln&line=2&uniqifier=1) appendix section. <a href="https://colab.research.google.com/github/ultralytics/yolov5/blob/master/tutorial.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
+For [TensorRT](https://developer.nvidia.com/tensorrt) export example (requires GPU) see our Colab [notebook](https://colab.research.google.com/github/numa_ultralytics/yolov5/blob/master/tutorial.ipynb#scrollTo=VTRwsvA9u7ln&line=2&uniqifier=1) appendix section. <a href="https://colab.research.google.com/github/numa_ultralytics/yolov5/blob/master/tutorial.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
 
 ## Formats
 
 YOLOv5 inference is officially supported in 11 formats:
 
-💡 ProTip: Export to ONNX or OpenVINO for up to 3x CPU speedup. See [CPU Benchmarks](https://github.com/ultralytics/yolov5/pull/6613). 💡 ProTip: Export to TensorRT for up to 5x GPU speedup. See [GPU Benchmarks](https://github.com/ultralytics/yolov5/pull/6963).
+💡 ProTip: Export to ONNX or OpenVINO for up to 3x CPU speedup. See [CPU Benchmarks](https://github.com/numa_ultralytics/yolov5/pull/6613). 💡 ProTip: Export to TensorRT for up to 5x GPU speedup. See [GPU Benchmarks](https://github.com/numa_ultralytics/yolov5/pull/6963).
 
 | Format                                                       | `export.py --include` | Model                     |
 | :----------------------------------------------------------- | :-------------------- | :------------------------ |
@@ -43,7 +43,7 @@ YOLOv5 inference is officially supported in 11 formats:
 
 ## Benchmarks
 
-Benchmarks below run on a Colab Pro with the YOLOv5 tutorial notebook <a href="https://colab.research.google.com/github/ultralytics/yolov5/blob/master/tutorial.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>. To reproduce:
+Benchmarks below run on a Colab Pro with the YOLOv5 tutorial notebook <a href="https://colab.research.google.com/github/numa_ultralytics/yolov5/blob/master/tutorial.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>. To reproduce:
 
 ```bash
 python benchmarks.py --weights yolov5s.pt --imgsz 640 --device 0
@@ -97,13 +97,13 @@ Benchmarks complete (241.20s)
 
 ## Export a Trained YOLOv5 Model
 
-This command exports a pretrained YOLOv5s model to TorchScript and ONNX formats. `yolov5s.pt` is the 'small' model, the second-smallest model available. Other options are `yolov5n.pt`, `yolov5m.pt`, `yolov5l.pt` and `yolov5x.pt`, along with their P6 counterparts i.e. `yolov5s6.pt` or you own custom training checkpoint i.e. `runs/exp/weights/best.pt`. For details on all available models please see our README [table](https://github.com/ultralytics/yolov5#pretrained-checkpoints).
+This command exports a pretrained YOLOv5s model to TorchScript and ONNX formats. `yolov5s.pt` is the 'small' model, the second-smallest model available. Other options are `yolov5n.pt`, `yolov5m.pt`, `yolov5l.pt` and `yolov5x.pt`, along with their P6 counterparts i.e. `yolov5s6.pt` or you own custom training checkpoint i.e. `runs/exp/weights/best.pt`. For details on all available models please see our README [table](https://github.com/numa_ultralytics/yolov5#pretrained-checkpoints).
 
 ```bash
 python export.py --weights yolov5s.pt --include torchscript onnx
 ```
 
-💡 ProTip: Add `--half` to export models at FP16 half [precision](https://www.ultralytics.com/glossary/precision) for smaller file sizes
+💡 ProTip: Add `--half` to export models at FP16 half [precision](https://www.numa_ultralytics.com/glossary/precision) for smaller file sizes
 
 Output:
 
@@ -111,7 +111,7 @@ Output:
 export: data=data/coco128.yaml, weights=['yolov5s.pt'], imgsz=[640, 640], batch_size=1, device=cpu, half=False, inplace=False, train=False, keras=False, optimize=False, int8=False, dynamic=False, simplify=False, opset=12, verbose=False, workspace=4, nms=False, agnostic_nms=False, topk_per_class=100, topk_all=100, iou_thres=0.45, conf_thres=0.25, include=['torchscript', 'onnx']
 YOLOv5 🚀 v6.2-104-ge3e5122 Python-3.8.0 torch-1.12.1+cu113 CPU
 
-Downloading https://github.com/ultralytics/yolov5/releases/download/v6.2/yolov5s.pt to yolov5s.pt...
+Downloading https://github.com/numa_ultralytics/yolov5/releases/download/v6.2/yolov5s.pt to yolov5s.pt...
 100% 14.1M/14.1M [00:00<00:00, 274MB/s]
 
 Fusing layers...
@@ -129,17 +129,17 @@ Export complete (5.5s)
 Results saved to /content/yolov5
 Detect:          python detect.py --weights yolov5s.onnx
 Validate:        python val.py --weights yolov5s.onnx
-PyTorch Hub:     model = torch.hub.load('ultralytics/yolov5', 'custom', 'yolov5s.onnx')
+PyTorch Hub:     model = torch.hub.load('numa_ultralytics/yolov5', 'custom', 'yolov5s.onnx')
 Visualize:       https://netron.app/
 ```
 
 The 3 exported models will be saved alongside the original PyTorch model:
 
-<p align="center"><img width="700" src="https://github.com/ultralytics/docs/releases/download/0/yolo-export-locations.avif" alt="YOLO export locations"></p>
+<p align="center"><img width="700" src="https://github.com/numa_ultralytics/docs/releases/download/0/yolo-export-locations.avif" alt="YOLO export locations"></p>
 
 [Netron Viewer](https://github.com/lutzroeder/netron) is recommended for visualizing exported models:
 
-<p align="center"><img width="850" src="https://github.com/ultralytics/docs/releases/download/0/yolo-model-visualization.avif" alt="YOLO model visualization"></p>
+<p align="center"><img width="850" src="https://github.com/numa_ultralytics/docs/releases/download/0/yolo-model-visualization.avif" alt="YOLO model visualization"></p>
 
 ## Exported Model Usage Examples
 
@@ -181,20 +181,20 @@ Use PyTorch Hub with exported YOLOv5 models:
 import torch
 
 # Model
-model = torch.hub.load("ultralytics/yolov5", "custom", "yolov5s.pt")
-model = torch.hub.load("ultralytics/yolov5", "custom", "yolov5s.torchscript ")  # TorchScript
-model = torch.hub.load("ultralytics/yolov5", "custom", "yolov5s.onnx")  # ONNX Runtime
-model = torch.hub.load("ultralytics/yolov5", "custom", "yolov5s_openvino_model")  # OpenVINO
-model = torch.hub.load("ultralytics/yolov5", "custom", "yolov5s.engine")  # TensorRT
-model = torch.hub.load("ultralytics/yolov5", "custom", "yolov5s.mlmodel")  # CoreML (macOS Only)
-model = torch.hub.load("ultralytics/yolov5", "custom", "yolov5s_saved_model")  # TensorFlow SavedModel
-model = torch.hub.load("ultralytics/yolov5", "custom", "yolov5s.pb")  # TensorFlow GraphDef
-model = torch.hub.load("ultralytics/yolov5", "custom", "yolov5s.tflite")  # TensorFlow Lite
-model = torch.hub.load("ultralytics/yolov5", "custom", "yolov5s_edgetpu.tflite")  # TensorFlow Edge TPU
-model = torch.hub.load("ultralytics/yolov5", "custom", "yolov5s_paddle_model")  # PaddlePaddle
+model = torch.hub.load("numa_ultralytics/yolov5", "custom", "yolov5s.pt")
+model = torch.hub.load("numa_ultralytics/yolov5", "custom", "yolov5s.torchscript ")  # TorchScript
+model = torch.hub.load("numa_ultralytics/yolov5", "custom", "yolov5s.onnx")  # ONNX Runtime
+model = torch.hub.load("numa_ultralytics/yolov5", "custom", "yolov5s_openvino_model")  # OpenVINO
+model = torch.hub.load("numa_ultralytics/yolov5", "custom", "yolov5s.engine")  # TensorRT
+model = torch.hub.load("numa_ultralytics/yolov5", "custom", "yolov5s.mlmodel")  # CoreML (macOS Only)
+model = torch.hub.load("numa_ultralytics/yolov5", "custom", "yolov5s_saved_model")  # TensorFlow SavedModel
+model = torch.hub.load("numa_ultralytics/yolov5", "custom", "yolov5s.pb")  # TensorFlow GraphDef
+model = torch.hub.load("numa_ultralytics/yolov5", "custom", "yolov5s.tflite")  # TensorFlow Lite
+model = torch.hub.load("numa_ultralytics/yolov5", "custom", "yolov5s_edgetpu.tflite")  # TensorFlow Edge TPU
+model = torch.hub.load("numa_ultralytics/yolov5", "custom", "yolov5s_paddle_model")  # PaddlePaddle
 
 # Images
-img = "https://ultralytics.com/images/zidane.jpg"  # or file, Path, PIL, OpenCV, numpy, list
+img = "https://numa_ultralytics.com/images/zidane.jpg"  # or file, Path, PIL, OpenCV, numpy, list
 
 # Inference
 results = model(img)
@@ -205,7 +205,7 @@ results.print()  # or .show(), .save(), .crop(), .pandas(), etc.
 
 ## OpenCV DNN inference
 
-[OpenCV](https://www.ultralytics.com/glossary/opencv) inference with ONNX models:
+[OpenCV](https://www.numa_ultralytics.com/glossary/opencv) inference with ONNX models:
 
 ```bash
 python export.py --weights yolov5s.pt --include onnx
@@ -232,16 +232,16 @@ YOLOv5 OpenVINO C++ inference examples:
 
 ## Supported Environments
 
-Ultralytics provides a range of ready-to-use environments, each pre-installed with essential dependencies such as [CUDA](https://developer.nvidia.com/cuda-zone), [CUDNN](https://developer.nvidia.com/cudnn), [Python](https://www.python.org/), and [PyTorch](https://pytorch.org/), to kickstart your projects.
+numa_ultralytics provides a range of ready-to-use environments, each pre-installed with essential dependencies such as [CUDA](https://developer.nvidia.com/cuda-zone), [CUDNN](https://developer.nvidia.com/cudnn), [Python](https://www.python.org/), and [PyTorch](https://pytorch.org/), to kickstart your projects.
 
-- **Free GPU Notebooks**: <a href="https://bit.ly/yolov5-paperspace-notebook"><img src="https://assets.paperspace.io/img/gradient-badge.svg" alt="Run on Gradient"></a> <a href="https://colab.research.google.com/github/ultralytics/yolov5/blob/master/tutorial.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a> <a href="https://www.kaggle.com/models/ultralytics/yolov5"><img src="https://kaggle.com/static/images/open-in-kaggle.svg" alt="Open In Kaggle"></a>
+- **Free GPU Notebooks**: <a href="https://bit.ly/yolov5-paperspace-notebook"><img src="https://assets.paperspace.io/img/gradient-badge.svg" alt="Run on Gradient"></a> <a href="https://colab.research.google.com/github/numa_ultralytics/yolov5/blob/master/tutorial.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a> <a href="https://www.kaggle.com/models/numa_ultralytics/yolov5"><img src="https://kaggle.com/static/images/open-in-kaggle.svg" alt="Open In Kaggle"></a>
 - **Google Cloud**: [GCP Quickstart Guide](../environments/google_cloud_quickstart_tutorial.md)
 - **Amazon**: [AWS Quickstart Guide](../environments/aws_quickstart_tutorial.md)
 - **Azure**: [AzureML Quickstart Guide](../environments/azureml_quickstart_tutorial.md)
-- **Docker**: [Docker Quickstart Guide](../environments/docker_image_quickstart_tutorial.md) <a href="https://hub.docker.com/r/ultralytics/yolov5"><img src="https://img.shields.io/docker/pulls/ultralytics/yolov5?logo=docker" alt="Docker Pulls"></a>
+- **Docker**: [Docker Quickstart Guide](../environments/docker_image_quickstart_tutorial.md) <a href="https://hub.docker.com/r/numa_ultralytics/yolov5"><img src="https://img.shields.io/docker/pulls/numa_ultralytics/yolov5?logo=docker" alt="Docker Pulls"></a>
 
 ## Project Status
 
-<a href="https://github.com/ultralytics/yolov5/actions/workflows/ci-testing.yml"><img src="https://github.com/ultralytics/yolov5/actions/workflows/ci-testing.yml/badge.svg" alt="YOLOv5 CI"></a>
+<a href="https://github.com/numa_ultralytics/yolov5/actions/workflows/ci-testing.yml"><img src="https://github.com/numa_ultralytics/yolov5/actions/workflows/ci-testing.yml/badge.svg" alt="YOLOv5 CI"></a>
 
-This badge indicates that all [YOLOv5 GitHub Actions](https://github.com/ultralytics/yolov5/actions) Continuous Integration (CI) tests are successfully passing. These CI tests rigorously check the functionality and performance of YOLOv5 across various key aspects: [training](https://github.com/ultralytics/yolov5/blob/master/train.py), [validation](https://github.com/ultralytics/yolov5/blob/master/val.py), [inference](https://github.com/ultralytics/yolov5/blob/master/detect.py), [export](https://github.com/ultralytics/yolov5/blob/master/export.py), and [benchmarks](https://github.com/ultralytics/yolov5/blob/master/benchmarks.py). They ensure consistent and reliable operation on macOS, Windows, and Ubuntu, with tests conducted every 24 hours and upon each new commit.
+This badge indicates that all [YOLOv5 GitHub Actions](https://github.com/numa_ultralytics/yolov5/actions) Continuous Integration (CI) tests are successfully passing. These CI tests rigorously check the functionality and performance of YOLOv5 across various key aspects: [training](https://github.com/numa_ultralytics/yolov5/blob/master/train.py), [validation](https://github.com/numa_ultralytics/yolov5/blob/master/val.py), [inference](https://github.com/numa_ultralytics/yolov5/blob/master/detect.py), [export](https://github.com/numa_ultralytics/yolov5/blob/master/export.py), and [benchmarks](https://github.com/numa_ultralytics/yolov5/blob/master/benchmarks.py). They ensure consistent and reliable operation on macOS, Windows, and Ubuntu, with tests conducted every 24 hours and upon each new commit.

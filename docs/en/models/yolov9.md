@@ -1,12 +1,12 @@
 ---
 comments: true
 description: Explore YOLOv9, the latest leap in real-time object detection, featuring innovations like PGI and GELAN, and achieving new benchmarks in efficiency and accuracy.
-keywords: YOLOv9, object detection, real-time, PGI, GELAN, deep learning, MS COCO, AI, neural networks, model efficiency, accuracy, Ultralytics
+keywords: YOLOv9, object detection, real-time, PGI, GELAN, deep learning, MS COCO, AI, neural networks, model efficiency, accuracy, numa_ultralytics
 ---
 
-# YOLOv9: A Leap Forward in [Object Detection](https://www.ultralytics.com/glossary/object-detection) Technology
+# YOLOv9: A Leap Forward in [Object Detection](https://www.numa_ultralytics.com/glossary/object-detection) Technology
 
-YOLOv9 marks a significant advancement in real-time object detection, introducing groundbreaking techniques such as Programmable Gradient Information (PGI) and the Generalized Efficient Layer Aggregation Network (GELAN). This model demonstrates remarkable improvements in efficiency, accuracy, and adaptability, setting new benchmarks on the MS COCO dataset. The YOLOv9 project, while developed by a separate open-source team, builds upon the robust codebase provided by [Ultralytics](https://www.ultralytics.com/) [YOLOv5](yolov5.md), showcasing the collaborative spirit of the AI research community.
+YOLOv9 marks a significant advancement in real-time object detection, introducing groundbreaking techniques such as Programmable Gradient Information (PGI) and the Generalized Efficient Layer Aggregation Network (GELAN). This model demonstrates remarkable improvements in efficiency, accuracy, and adaptability, setting new benchmarks on the MS COCO dataset. The YOLOv9 project, while developed by a separate open-source team, builds upon the robust codebase provided by [numa_ultralytics](https://www.numa_ultralytics.com/) [YOLOv5](yolov5.md), showcasing the collaborative spirit of the AI research community.
 
 <p align="center">
   <br>
@@ -16,14 +16,14 @@ YOLOv9 marks a significant advancement in real-time object detection, introducin
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> YOLOv9 Training on Custom Data using Ultralytics | Industrial Package Dataset
+  <strong>Watch:</strong> YOLOv9 Training on Custom Data using numa_ultralytics | Industrial Package Dataset
 </p>
 
-![YOLOv9 performance comparison](https://github.com/ultralytics/docs/releases/download/0/yolov9-performance-comparison.avif)
+![YOLOv9 performance comparison](https://github.com/numa_ultralytics/docs/releases/download/0/yolov9-performance-comparison.avif)
 
 ## Introduction to YOLOv9
 
-In the quest for optimal real-time object detection, YOLOv9 stands out with its innovative approach to overcoming information loss challenges inherent in deep [neural networks](https://www.ultralytics.com/glossary/neural-network-nn). By integrating PGI and the versatile GELAN architecture, YOLOv9 not only enhances the model's learning capacity but also ensures the retention of crucial information throughout the detection process, thereby achieving exceptional accuracy and performance.
+In the quest for optimal real-time object detection, YOLOv9 stands out with its innovative approach to overcoming information loss challenges inherent in deep [neural networks](https://www.numa_ultralytics.com/glossary/neural-network-nn). By integrating PGI and the versatile GELAN architecture, YOLOv9 not only enhances the model's learning capacity but also ensures the retention of crucial information throughout the detection process, thereby achieving exceptional accuracy and performance.
 
 ## Core Innovations of YOLOv9
 
@@ -47,7 +47,7 @@ The concept of Reversible Functions is another cornerstone of YOLOv9's design. A
 X = v_zeta(r_psi(X))
 ```
 
-with `psi` and `zeta` as parameters for the reversible and its inverse function, respectively. This property is crucial for [deep learning](https://www.ultralytics.com/glossary/deep-learning-dl) architectures, as it allows the network to retain a complete information flow, thereby enabling more accurate updates to the model's parameters. YOLOv9 incorporates reversible functions within its architecture to mitigate the risk of information degradation, especially in deeper layers, ensuring the preservation of critical data for object detection tasks.
+with `psi` and `zeta` as parameters for the reversible and its inverse function, respectively. This property is crucial for [deep learning](https://www.numa_ultralytics.com/glossary/deep-learning-dl) architectures, as it allows the network to retain a complete information flow, thereby enabling more accurate updates to the model's parameters. YOLOv9 incorporates reversible functions within its architecture to mitigate the risk of information degradation, especially in deeper layers, ensuring the preservation of critical data for object detection tasks.
 
 ### Impact on Lightweight Models
 
@@ -61,15 +61,15 @@ PGI is a novel concept introduced in YOLOv9 to combat the information bottleneck
 
 GELAN represents a strategic architectural advancement, enabling YOLOv9 to achieve superior parameter utilization and computational efficiency. Its design allows for flexible integration of various computational blocks, making YOLOv9 adaptable to a wide range of applications without sacrificing speed or accuracy.
 
-![YOLOv9 architecture comparison](https://github.com/ultralytics/docs/releases/download/0/yolov9-architecture-comparison.avif)
+![YOLOv9 architecture comparison](https://github.com/numa_ultralytics/docs/releases/download/0/yolov9-architecture-comparison.avif)
 
 ## YOLOv9 Benchmarks
 
-Benchmarking in YOLOv9 using [Ultralytics](https://docs.ultralytics.com/modes/benchmark/) involves evaluating the performance of your trained and validated model in real-world scenarios. This process includes:
+Benchmarking in YOLOv9 using [numa_ultralytics](https://docs.numa_ultralytics.com/modes/benchmark/) involves evaluating the performance of your trained and validated model in real-world scenarios. This process includes:
 
 - **Performance Evaluation:** Assessing the model's speed and accuracy.
 - **Export Formats:** Testing the model across different export formats to ensure it meets the necessary standards and performs well in various environments.
-- **Framework Support:** Providing a comprehensive framework within Ultralytics YOLOv8 to facilitate these assessments and ensure consistent and reliable results.
+- **Framework Support:** Providing a comprehensive framework within numa_ultralytics YOLOv8 to facilitate these assessments and ensure consistent and reliable results.
 
 By benchmarking, you can ensure that your model not only performs well in controlled testing environments but also maintains high performance in practical, real-world applications.
 
@@ -81,7 +81,7 @@ By benchmarking, you can ensure that your model not only performs well in contro
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> How to Benchmark the YOLOv9 Model Using the Ultralytics Python Package
+  <strong>Watch:</strong> How to Benchmark the YOLOv9 Model Using the numa_ultralytics Python Package
 </p>
 
 ## Performance on MS COCO Dataset
@@ -91,7 +91,7 @@ By benchmarking, you can ensure that your model not only performs well in contro
 
 <canvas id="modelComparisonChart" width="1024" height="400" active-models='["YOLOv9"]'></canvas>
 
-The performance of YOLOv9 on the [COCO dataset](../datasets/detect/coco.md) exemplifies its significant advancements in real-time object detection, setting new benchmarks across various model sizes. Table 1 presents a comprehensive comparison of state-of-the-art real-time object detectors, illustrating YOLOv9's superior efficiency and [accuracy](https://www.ultralytics.com/glossary/accuracy).
+The performance of YOLOv9 on the [COCO dataset](../datasets/detect/coco.md) exemplifies its significant advancements in real-time object detection, setting new benchmarks across various model sizes. Table 1 presents a comprehensive comparison of state-of-the-art real-time object detectors, illustrating YOLOv9's superior efficiency and [accuracy](https://www.numa_ultralytics.com/glossary/accuracy).
 
 !!! tip "Performance"
 
@@ -99,20 +99,20 @@ The performance of YOLOv9 on the [COCO dataset](../datasets/detect/coco.md) exem
 
         | Model                                                                                 | size<br><sup>(pixels) | mAP<sup>val<br>50-95 | mAP<sup>val<br>50 | params<br><sup>(M) | FLOPs<br><sup>(B) |
         |---------------------------------------------------------------------------------------|-----------------------|----------------------|-------------------|--------------------|-------------------|
-        | [YOLOv9t](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov9t.pt)  | 640                   | 38.3                 | 53.1              | 2.0                | 7.7               |
-        | [YOLOv9s](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov9s.pt)  | 640                   | 46.8                 | 63.4              | 7.2                | 26.7              |
-        | [YOLOv9m](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov9m.pt)  | 640                   | 51.4                 | 68.1              | 20.1               | 76.8              |
-        | [YOLOv9c](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov9c.pt)  | 640                   | 53.0                 | 70.2              | 25.5               | 102.8             |
-        | [YOLOv9e](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov9e.pt)  | 640                   | 55.6                 | 72.8              | 58.1               | 192.5             |
+        | [YOLOv9t](https://github.com/numa_ultralytics/assets/releases/download/v8.2.0/yolov9t.pt)  | 640                   | 38.3                 | 53.1              | 2.0                | 7.7               |
+        | [YOLOv9s](https://github.com/numa_ultralytics/assets/releases/download/v8.2.0/yolov9s.pt)  | 640                   | 46.8                 | 63.4              | 7.2                | 26.7              |
+        | [YOLOv9m](https://github.com/numa_ultralytics/assets/releases/download/v8.2.0/yolov9m.pt)  | 640                   | 51.4                 | 68.1              | 20.1               | 76.8              |
+        | [YOLOv9c](https://github.com/numa_ultralytics/assets/releases/download/v8.2.0/yolov9c.pt)  | 640                   | 53.0                 | 70.2              | 25.5               | 102.8             |
+        | [YOLOv9e](https://github.com/numa_ultralytics/assets/releases/download/v8.2.0/yolov9e.pt)  | 640                   | 55.6                 | 72.8              | 58.1               | 192.5             |
 
     === "Segmentation (COCO)"
 
         | Model                                                                                         | size<br><sup>(pixels) | mAP<sup>box<br>50-95 | mAP<sup>mask<br>50-95 | params<br><sup>(M) | FLOPs<br><sup>(B) |
         |-----------------------------------------------------------------------------------------------|-----------------------|----------------------|-----------------------|--------------------|-------------------|
-        | [YOLOv9c-seg](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov9c-seg.pt)  | 640                   | 52.4                 | 42.2                  | 27.9               | 159.4             |
-        | [YOLOv9e-seg](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov9e-seg.pt)  | 640                   | 55.1                 | 44.3                  | 60.5               | 248.4             |
+        | [YOLOv9c-seg](https://github.com/numa_ultralytics/assets/releases/download/v8.2.0/yolov9c-seg.pt)  | 640                   | 52.4                 | 42.2                  | 27.9               | 159.4             |
+        | [YOLOv9e-seg](https://github.com/numa_ultralytics/assets/releases/download/v8.2.0/yolov9e-seg.pt)  | 640                   | 55.1                 | 44.3                  | 60.5               | 248.4             |
 
-YOLOv9's iterations, ranging from the tiny `t` variant to the extensive `e` model, demonstrate improvements not only in accuracy (mAP metrics) but also in efficiency with a reduced number of parameters and computational needs (FLOPs). This table underscores YOLOv9's ability to deliver high [precision](https://www.ultralytics.com/glossary/precision) while maintaining or reducing the computational overhead compared to prior versions and competing models.
+YOLOv9's iterations, ranging from the tiny `t` variant to the extensive `e` model, demonstrate improvements not only in accuracy (mAP metrics) but also in efficiency with a reduced number of parameters and computational needs (FLOPs). This table underscores YOLOv9's ability to deliver high [precision](https://www.numa_ultralytics.com/glossary/precision) while maintaining or reducing the computational overhead compared to prior versions and competing models.
 
 Comparatively, YOLOv9 exhibits remarkable gains:
 
@@ -121,7 +121,7 @@ Comparatively, YOLOv9 exhibits remarkable gains:
 
 The YOLOv9c model, in particular, highlights the effectiveness of the architecture's optimizations. It operates with 42% fewer parameters and 21% less computational demand than YOLOv7 AF, yet it achieves comparable accuracy, demonstrating YOLOv9's significant efficiency improvements. Furthermore, the YOLOv9e model sets a new standard for large models, with 15% fewer parameters and 25% less computational need than [YOLOv8x](yolov8.md), alongside an incremental 1.7% improvement in AP.
 
-These results showcase YOLOv9's strategic advancements in model design, emphasizing its enhanced efficiency without compromising on the precision essential for real-time object detection tasks. The model not only pushes the boundaries of performance metrics but also emphasizes the importance of computational efficiency, making it a pivotal development in the field of [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv).
+These results showcase YOLOv9's strategic advancements in model design, emphasizing its enhanced efficiency without compromising on the precision essential for real-time object detection tasks. The model not only pushes the boundaries of performance metrics but also emphasizes the importance of computational efficiency, making it a pivotal development in the field of [computer vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv).
 
 ## Conclusion
 
@@ -135,10 +135,10 @@ This example provides simple YOLOv9 training and inference examples. For full do
 
     === "Python"
 
-        [PyTorch](https://www.ultralytics.com/glossary/pytorch) pretrained `*.pt` models as well as configuration `*.yaml` files can be passed to the `YOLO()` class to create a model instance in python:
+        [PyTorch](https://www.numa_ultralytics.com/glossary/pytorch) pretrained `*.pt` models as well as configuration `*.yaml` files can be passed to the `YOLO()` class to create a model instance in python:
 
         ```python
-        from ultralytics import YOLO
+        from numa_ultralytics import YOLO
 
         # Build a YOLOv9c model from scratch
         model = YOLO("yolov9c.yaml")
@@ -217,7 +217,7 @@ YOLOv9 outperforms state-of-the-art real-time object detectors by achieving high
 You can train a YOLOv9 model using both Python and CLI commands. For Python, instantiate a model using the `YOLO` class and call the `train` method:
 
 ```python
-from ultralytics import YOLO
+from numa_ultralytics import YOLO
 
 # Build a YOLOv9c model from pretrained weights and train
 model = YOLO("yolov9c.pt")
@@ -232,10 +232,10 @@ yolo train model=yolov9c.yaml data=coco8.yaml epochs=100 imgsz=640
 
 Learn more about [usage examples](#usage-examples) for training and inference.
 
-### What are the advantages of using Ultralytics YOLOv9 for lightweight models?
+### What are the advantages of using numa_ultralytics YOLOv9 for lightweight models?
 
 YOLOv9 is designed to mitigate information loss, which is particularly important for lightweight models often prone to losing significant information. By integrating Programmable Gradient Information (PGI) and reversible functions, YOLOv9 ensures essential data retention, enhancing the model's accuracy and efficiency. This makes it highly suitable for applications requiring compact models with high performance. For more details, explore the section on [YOLOv9's impact on lightweight models](#impact-on-lightweight-models).
 
 ### What tasks and modes does YOLOv9 support?
 
-YOLOv9 supports various tasks including object detection and [instance segmentation](https://www.ultralytics.com/glossary/instance-segmentation). It is compatible with multiple operational modes such as inference, validation, training, and export. This versatility makes YOLOv9 adaptable to diverse real-time computer vision applications. Refer to the [supported tasks and modes](#supported-tasks-and-modes) section for more information.
+YOLOv9 supports various tasks including object detection and [instance segmentation](https://www.numa_ultralytics.com/glossary/instance-segmentation). It is compatible with multiple operational modes such as inference, validation, training, and export. This versatility makes YOLOv9 adaptable to diverse real-time computer vision applications. Refer to the [supported tasks and modes](#supported-tasks-and-modes) section for more information.

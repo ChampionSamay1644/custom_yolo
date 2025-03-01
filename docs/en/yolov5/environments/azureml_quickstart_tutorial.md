@@ -22,13 +22,13 @@ You need an [AzureML workspace](https://learn.microsoft.com/azure/machine-learni
 
 From your AzureML workspace, select Compute > Compute instances > New, select the instance with the resources you need.
 
-<img width="1741" alt="create-compute-arrow" src="https://github.com/ultralytics/docs/releases/download/0/create-compute-arrow.avif">
+<img width="1741" alt="create-compute-arrow" src="https://github.com/numa_ultralytics/docs/releases/download/0/create-compute-arrow.avif">
 
 ## Open a Terminal
 
 Now from the Notebooks view, open a Terminal and select your compute.
 
-![open-terminal-arrow](https://github.com/ultralytics/docs/releases/download/0/open-terminal-arrow.avif)
+![open-terminal-arrow](https://github.com/numa_ultralytics/docs/releases/download/0/open-terminal-arrow.avif)
 
 ## Setup and run YOLOv5
 
@@ -43,7 +43,7 @@ conda install pip -y
 Clone YOLOv5 repository with its submodules:
 
 ```bash
-git clone https://github.com/ultralytics/yolov5
+git clone https://github.com/numa_ultralytics/yolov5
 cd yolov5
 git submodule update --init --recursive # Note that you might have a message asking you to add your folder as a safe.directory just copy the recommended command
 ```
@@ -61,7 +61,7 @@ Train the YOLOv5 model:
 python train.py
 ```
 
-Validate the model for [Precision](https://www.ultralytics.com/glossary/precision), [Recall](https://www.ultralytics.com/glossary/recall), and mAP
+Validate the model for [Precision](https://www.numa_ultralytics.com/glossary/precision), [Recall](https://www.numa_ultralytics.com/glossary/recall), and mAP
 
 ```bash
 python val.py --weights yolov5s.pt
