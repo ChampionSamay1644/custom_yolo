@@ -11,10 +11,10 @@ This repository provides a Python demo for performing segmentation with YOLOv8 u
 
 ## Installation
 
-Install the required packages using pip. You will need `numa_ultralytics` for exporting YOLOv8-seg ONNX model and using some utility functions, `onnxruntime-gpu` for GPU-accelerated inference, and `opencv-python` for image processing.
+Install the required packages using pip. You will need `ultralytics` for exporting YOLOv8-seg ONNX model and using some utility functions, `onnxruntime-gpu` for GPU-accelerated inference, and `opencv-python` for image processing.
 
 ```bash
-pip install numa_ultralytics
+pip install ultralytics
 pip install onnxruntime-gpu  # For GPU support
 # pip install onnxruntime    # Use this instead if you don't have an NVIDIA GPU
 pip install numpy
@@ -25,7 +25,7 @@ pip install opencv-python
 
 ### 1. Export the YOLOv8 ONNX Model
 
-Export the YOLOv8 segmentation model to ONNX format using the provided `numa_ultralytics` package.
+Export the YOLOv8 segmentation model to ONNX format using the provided `ultralytics` package.
 
 ```bash
 yolo export model=yolov8s-seg.pt imgsz=640 format=onnx opset=12 simplify
@@ -55,7 +55,7 @@ We welcome contributions to improve this demo! Please submit issues and pull req
 
 ## License
 
-This project is licensed under the AGPL-3.0 License - see the [LICENSE](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/LICENSE) file for details.
+This project is licensed under the AGPL-3.0 License - see the [LICENSE](https://github.com/ultralytics/ultralytics/blob/main/LICENSE) file for details.
 
 ## Acknowledgments
 

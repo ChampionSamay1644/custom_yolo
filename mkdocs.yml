@@ -1,18 +1,18 @@
-# numa_ultralytics 🚀 AGPL-3.0 License - https://numa_ultralytics.com/license
+# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
 
-# Configuration file for building the numa_ultralytics YOLO documentation site using MkDocs.
+# Configuration file for building the Ultralytics YOLO documentation site using MkDocs.
 # Provides settings to control site metadata, customize the appearance using the
 # Material theme, define the navigation structure, and enable various plugins.
 
 # Site metadata
-site_name: numa_ultralytics YOLO Docs
-site_description: Explore numa_ultralytics YOLO, a cutting-edge real-time object detection and image segmentation model for various applications and hardware platforms.
-site_url: https://docs.numa_ultralytics.com
-site_author: numa_ultralytics
-repo_url: https://github.com/numa_ultralytics/numa_ultralytics
-edit_uri: https://github.com/numa_ultralytics/numa_ultralytics/tree/main/docs/en/
-repo_name: numa_ultralytics/numa_ultralytics
-remote_name: https://github.com/numa_ultralytics/docs
+site_name: Ultralytics YOLO Docs
+site_description: Explore Ultralytics YOLO, a cutting-edge real-time object detection and image segmentation model for various applications and hardware platforms.
+site_url: https://docs.ultralytics.com
+site_author: Ultralytics
+repo_url: https://github.com/ultralytics/ultralytics
+edit_uri: https://github.com/ultralytics/ultralytics/tree/main/docs/en/
+repo_name: ultralytics/ultralytics
+remote_name: https://github.com/ultralytics/docs
 docs_dir: "docs/en/" # where to find the markdown files
 site_dir: "site/" # where to publish to
 use_directory_urls: true # don't display 'index.html' in slugs
@@ -22,8 +22,8 @@ theme:
   name: material
   language: en
   custom_dir: docs/overrides/
-  logo: https://raw.githubusercontent.com/numa_ultralytics/assets/main/logo/numa_ultralytics_Logotype_Reverse.svg
-  favicon: https://raw.githubusercontent.com/numa_ultralytics/assets/refs/heads/main/logo/favicon-yolo.png
+  logo: https://raw.githubusercontent.com/ultralytics/assets/main/logo/Ultralytics_Logotype_Reverse.svg
+  favicon: https://raw.githubusercontent.com/ultralytics/assets/refs/heads/main/logo/favicon-yolo.png
   icon:
     repo: fontawesome/brands/github
   # font:  # disabled for faster page load times
@@ -70,9 +70,9 @@ theme:
     - content.tabs.link # all code tabs change simultaneously
 
 # Customization
-copyright: <a href="https://www.numa_ultralytics.com/" target="_blank">© 2025 numa_ultralytics Inc.</a> All rights reserved.
+copyright: <a href="https://www.ultralytics.com/" target="_blank">© 2025 Ultralytics Inc.</a> All rights reserved.
 extra: # version:
-  homepage: https://www.numa_ultralytics.com/
+  homepage: https://www.ultralytics.com/
   #   provider: mike  #  version drop-down menu
   robots: robots.txt
   analytics:
@@ -80,21 +80,21 @@ extra: # version:
     property: G-2M5EHKC0BH
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/numa_ultralytics
+      link: https://github.com/ultralytics
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/company/numa_ultralytics/
+      link: https://www.linkedin.com/company/ultralytics/
     - icon: fontawesome/brands/x-twitter
-      link: https://twitter.com/numa_ultralytics
+      link: https://twitter.com/ultralytics
     - icon: fontawesome/brands/youtube
-      link: https://youtube.com/numa_ultralytics?sub_confirmation=1
+      link: https://youtube.com/ultralytics?sub_confirmation=1
     - icon: fontawesome/brands/docker
-      link: https://hub.docker.com/r/numa_ultralytics/numa_ultralytics/
+      link: https://hub.docker.com/r/ultralytics/ultralytics/
     - icon: fontawesome/brands/python
-      link: https://pypi.org/project/numa_ultralytics/
+      link: https://pypi.org/project/ultralytics/
     - icon: fontawesome/brands/discord
-      link: https://discord.com/invite/numa_ultralytics
+      link: https://discord.com/invite/ultralytics
     - icon: fontawesome/brands/reddit
-      link: https://reddit.com/r/numa_ultralytics
+      link: https://reddit.com/r/ultralytics
 
 extra_css:
   - stylesheets/style.css
@@ -174,19 +174,19 @@ nav:
           - guides/index.md
       - YOLO11 🚀 NEW: models/yolo11.md # for promotion of new pages
       - Languages:
-          - 🇬🇧&nbsp English: https://numa_ultralytics.com/docs/
-          - 🇨🇳&nbsp 简体中文: https://docs.numa_ultralytics.com/zh/
-          - 🇰🇷&nbsp 한국어: https://docs.numa_ultralytics.com/ko/
-          - 🇯🇵&nbsp 日本語: https://docs.numa_ultralytics.com/ja/
-          - 🇷🇺&nbsp Русский: https://docs.numa_ultralytics.com/ru/
-          - 🇩🇪&nbsp Deutsch: https://docs.numa_ultralytics.com/de/
-          - 🇫🇷&nbsp Français: https://docs.numa_ultralytics.com/fr/
-          - 🇪🇸&nbsp Español: https://docs.numa_ultralytics.com/es/
-          - 🇵🇹&nbsp Português: https://docs.numa_ultralytics.com/pt/
-          - 🇮🇹&nbsp Italiano: https://docs.numa_ultralytics.com/it/
-          - 🇹🇷&nbsp Türkçe: https://docs.numa_ultralytics.com/tr/
-          - 🇻🇳&nbsp Tiếng Việt: https://docs.numa_ultralytics.com/vi/
-          - 🇸🇦&nbsp العربية: https://docs.numa_ultralytics.com/ar/
+          - 🇬🇧&nbsp English: https://ultralytics.com/docs/
+          - 🇨🇳&nbsp 简体中文: https://docs.ultralytics.com/zh/
+          - 🇰🇷&nbsp 한국어: https://docs.ultralytics.com/ko/
+          - 🇯🇵&nbsp 日本語: https://docs.ultralytics.com/ja/
+          - 🇷🇺&nbsp Русский: https://docs.ultralytics.com/ru/
+          - 🇩🇪&nbsp Deutsch: https://docs.ultralytics.com/de/
+          - 🇫🇷&nbsp Français: https://docs.ultralytics.com/fr/
+          - 🇪🇸&nbsp Español: https://docs.ultralytics.com/es/
+          - 🇵🇹&nbsp Português: https://docs.ultralytics.com/pt/
+          - 🇮🇹&nbsp Italiano: https://docs.ultralytics.com/it/
+          - 🇹🇷&nbsp Türkçe: https://docs.ultralytics.com/tr/
+          - 🇻🇳&nbsp Tiếng Việt: https://docs.ultralytics.com/vi/
+          - 🇸🇦&nbsp العربية: https://docs.ultralytics.com/ar/
   - Quickstart:
       - quickstart.md
       - Usage:
@@ -662,15 +662,15 @@ plugins:
             show_symbol_type_heading: true # insiders
             show_symbol_type_toc: true # insiders
             show_inheritance_diagram: true # insiders
-  - numa_ultralytics:
+  - ultralytics:
       add_desc: False
       add_image: True
       add_authors: True
       add_json_ld: True
       add_share_buttons: True
       add_css: False
-      default_image: https://raw.githubusercontent.com/numa_ultralytics/assets/main/yolov8/banner-yolov8.png
-      default_author: glenn.jocher@numa_ultralytics.com
+      default_image: https://raw.githubusercontent.com/ultralytics/assets/main/yolov8/banner-yolov8.png
+      default_author: glenn.jocher@ultralytics.com
   - redirects:
       redirect_maps:
         hi/index.md: index.md

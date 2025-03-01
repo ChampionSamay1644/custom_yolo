@@ -1,14 +1,14 @@
 ---
 comments: true
 description: Learn how to structure datasets for YOLO classification tasks. Detailed folder structure and usage examples for effective training.
-keywords: YOLO, image classification, dataset structure, CIFAR-10, numa_ultralytics, machine learning, training data, model evaluation
+keywords: YOLO, image classification, dataset structure, CIFAR-10, Ultralytics, machine learning, training data, model evaluation
 ---
 
 # Image Classification Datasets Overview
 
 ### Dataset Structure for YOLO Classification Tasks
 
-For [numa_ultralytics](https://www.numa_ultralytics.com/) YOLO classification tasks, the dataset must be organized in a specific split-directory structure under the `root` directory to facilitate proper training, testing, and optional validation processes. This structure includes separate directories for training (`train`) and testing (`test`) phases, with an optional directory for validation (`val`).
+For [Ultralytics](https://www.ultralytics.com/) YOLO classification tasks, the dataset must be organized in a specific split-directory structure under the `root` directory to facilitate proper training, testing, and optional validation processes. This structure includes separate directories for training (`train`) and testing (`test`) phases, with an optional directory for validation (`val`).
 
 Each of these directories should contain one subdirectory for each class in the dataset. The subdirectories are named after the corresponding class and contain all the images for that class. Ensure that each image file is named uniquely and stored in a common format such as JPEG or PNG.
 
@@ -83,7 +83,7 @@ This structured approach ensures that the model can effectively learn from well-
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n-cls.pt")  # load a pretrained model (recommended for training)
@@ -101,14 +101,14 @@ This structured approach ensures that the model can effectively learn from well-
 
 ## Supported Datasets
 
-numa_ultralytics supports the following datasets with automatic download:
+Ultralytics supports the following datasets with automatic download:
 
-- [Caltech 101](caltech101.md): A dataset containing images of 101 object categories for [image classification](https://www.numa_ultralytics.com/glossary/image-classification) tasks.
+- [Caltech 101](caltech101.md): A dataset containing images of 101 object categories for [image classification](https://www.ultralytics.com/glossary/image-classification) tasks.
 - [Caltech 256](caltech256.md): An extended version of Caltech 101 with 256 object categories and more challenging images.
 - [CIFAR-10](cifar10.md): A dataset of 60K 32x32 color images in 10 classes, with 6K images per class.
 - [CIFAR-100](cifar100.md): An extended version of CIFAR-10 with 100 object categories and 600 images per class.
 - [Fashion-MNIST](fashion-mnist.md): A dataset consisting of 70,000 grayscale images of 10 fashion categories for image classification tasks.
-- [ImageNet](imagenet.md): A large-scale dataset for [object detection](https://www.numa_ultralytics.com/glossary/object-detection) and image classification with over 14 million images and 20,000 categories.
+- [ImageNet](imagenet.md): A large-scale dataset for [object detection](https://www.ultralytics.com/glossary/object-detection) and image classification with over 14 million images and 20,000 categories.
 - [ImageNet-10](imagenet10.md): A smaller subset of ImageNet with 10 categories for faster experimentation and testing.
 - [Imagenette](imagenette.md): A smaller subset of ImageNet that contains 10 easily distinguishable classes for quicker training and testing.
 - [Imagewoof](imagewoof.md): A more challenging subset of ImageNet containing 10 dog breed categories for image classification tasks.
@@ -117,13 +117,13 @@ numa_ultralytics supports the following datasets with automatic download:
 
 ### Adding your own dataset
 
-If you have your own dataset and would like to use it for training classification models with numa_ultralytics, ensure that it follows the format specified above under "Dataset format" and then point your `data` argument to the dataset directory.
+If you have your own dataset and would like to use it for training classification models with Ultralytics, ensure that it follows the format specified above under "Dataset format" and then point your `data` argument to the dataset directory.
 
 ## FAQ
 
 ### How do I structure my dataset for YOLO classification tasks?
 
-To structure your dataset for numa_ultralytics YOLO classification tasks, you should follow a specific split-directory format. Organize your dataset into separate directories for `train`, `test`, and optionally `val`. Each of these directories should contain subdirectories named after each class, with the corresponding images inside. This facilitates smooth training and evaluation processes. For an example, consider the CIFAR-10 dataset format:
+To structure your dataset for Ultralytics YOLO classification tasks, you should follow a specific split-directory format. Organize your dataset into separate directories for `train`, `test`, and optionally `val`. Each of these directories should contain subdirectories named after each class, with the corresponding images inside. This facilitates smooth training and evaluation processes. For an example, consider the CIFAR-10 dataset format:
 
 ```
 cifar-10-/
@@ -146,9 +146,9 @@ cifar-10-/
 
 For more details, visit [Dataset Structure for YOLO Classification Tasks](#dataset-structure-for-yolo-classification-tasks).
 
-### What datasets are supported by numa_ultralytics YOLO for image classification?
+### What datasets are supported by Ultralytics YOLO for image classification?
 
-numa_ultralytics YOLO supports automatic downloading of several datasets for image classification, including:
+Ultralytics YOLO supports automatic downloading of several datasets for image classification, including:
 
 - [Caltech 101](caltech101.md)
 - [Caltech 256](caltech256.md)
@@ -165,10 +165,10 @@ These datasets are structured in a way that makes them easy to use with YOLO. Ea
 
 ### How do I add my own dataset for YOLO image classification?
 
-To use your own dataset with numa_ultralytics YOLO, ensure it follows the specified directory format required for the classification task, with separate `train`, `test`, and optionally `val` directories, and subdirectories for each class containing the respective images. Once your dataset is structured correctly, point the `data` argument to your dataset's root directory when initializing the training script. Here's an example in Python:
+To use your own dataset with Ultralytics YOLO, ensure it follows the specified directory format required for the classification task, with separate `train`, `test`, and optionally `val` directories, and subdirectories for each class containing the respective images. Once your dataset is structured correctly, point the `data` argument to your dataset's root directory when initializing the training script. Here's an example in Python:
 
 ```python
-from numa_ultralytics import YOLO
+from ultralytics import YOLO
 
 # Load a model
 model = YOLO("yolo11n-cls.pt")  # load a pretrained model (recommended for training)
@@ -179,28 +179,28 @@ results = model.train(data="path/to/your/dataset", epochs=100, imgsz=640)
 
 More details can be found in the [Adding your own dataset](#adding-your-own-dataset) section.
 
-### Why should I use numa_ultralytics YOLO for image classification?
+### Why should I use Ultralytics YOLO for image classification?
 
-numa_ultralytics YOLO offers several benefits for image classification, including:
+Ultralytics YOLO offers several benefits for image classification, including:
 
 - **Pretrained Models**: Load pretrained models like `yolo11n-cls.pt` to jump-start your training process.
 - **Ease of Use**: Simple API and CLI commands for training and evaluation.
-- **High Performance**: State-of-the-art [accuracy](https://www.numa_ultralytics.com/glossary/accuracy) and speed, ideal for real-time applications.
+- **High Performance**: State-of-the-art [accuracy](https://www.ultralytics.com/glossary/accuracy) and speed, ideal for real-time applications.
 - **Support for Multiple Datasets**: Seamless integration with various popular datasets like CIFAR-10, ImageNet, and more.
 - **Community and Support**: Access to extensive documentation and an active community for troubleshooting and improvements.
 
-For additional insights and real-world applications, you can explore [numa_ultralytics YOLO](https://www.numa_ultralytics.com/yolo).
+For additional insights and real-world applications, you can explore [Ultralytics YOLO](https://www.ultralytics.com/yolo).
 
-### How can I train a model using numa_ultralytics YOLO?
+### How can I train a model using Ultralytics YOLO?
 
-Training a model using numa_ultralytics YOLO can be done easily in both Python and CLI. Here's an example:
+Training a model using Ultralytics YOLO can be done easily in both Python and CLI. Here's an example:
 
 !!! example
 
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n-cls.pt")  # load a pretrained model

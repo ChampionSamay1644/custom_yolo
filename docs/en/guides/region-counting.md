@@ -1,14 +1,14 @@
 ---
 comments: true
-description: Learn how to use numa_ultralytics YOLO11 for precise object counting in specified regions, enhancing efficiency across various applications.
-keywords: object counting, regions, YOLO11, computer vision, numa_ultralytics, efficiency, accuracy, automation, real-time, applications, surveillance, monitoring
+description: Learn how to use Ultralytics YOLO11 for precise object counting in specified regions, enhancing efficiency across various applications.
+keywords: object counting, regions, YOLO11, computer vision, Ultralytics, efficiency, accuracy, automation, real-time, applications, surveillance, monitoring
 ---
 
-# Object Counting in Different Regions using numa_ultralytics YOLO 🚀
+# Object Counting in Different Regions using Ultralytics YOLO 🚀
 
 ## What is Object Counting in Regions?
 
-[Object counting](../guides/object-counting.md) in regions with [numa_ultralytics YOLO11](https://github.com/numa_ultralytics/numa_ultralytics/) involves precisely determining the number of objects within specified areas using advanced [computer vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv). This approach is valuable for optimizing processes, enhancing security, and improving efficiency in various applications.
+[Object counting](../guides/object-counting.md) in regions with [Ultralytics YOLO11](https://github.com/ultralytics/ultralytics/) involves precisely determining the number of objects within specified areas using advanced [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv). This approach is valuable for optimizing processes, enhancing security, and improving efficiency in various applications.
 
 <p align="center">
   <br>
@@ -18,21 +18,21 @@ keywords: object counting, regions, YOLO11, computer vision, numa_ultralytics, e
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Object Counting in Different Regions using numa_ultralytics YOLO11 | numa_ultralytics Solutions 🚀
+  <strong>Watch:</strong> Object Counting in Different Regions using Ultralytics YOLO11 | Ultralytics Solutions 🚀
 </p>
 
 ## Advantages of Object Counting in Regions?
 
-- **[Precision](https://www.numa_ultralytics.com/glossary/precision) and Accuracy:** Object counting in regions with advanced computer vision ensures precise and accurate counts, minimizing errors often associated with manual counting.
+- **[Precision](https://www.ultralytics.com/glossary/precision) and Accuracy:** Object counting in regions with advanced computer vision ensures precise and accurate counts, minimizing errors often associated with manual counting.
 - **Efficiency Improvement:** Automated object counting enhances operational efficiency, providing real-time results and streamlining processes across different applications.
 - **Versatility and Application:** The versatility of object counting in regions makes it applicable across various domains, from manufacturing and surveillance to traffic monitoring, contributing to its widespread utility and effectiveness.
 
 ## Real World Applications
 
-|                                                                                              Retail                                                                                              |                                                                                         Market Streets                                                                                         |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| ![People Counting in Different Region using numa_ultralytics YOLO11](https://github.com/numa_ultralytics/docs/releases/download/0/people-counting-different-region-numa_ultralytics-yolov8.avif) | ![Crowd Counting in Different Region using numa_ultralytics YOLO11](https://github.com/numa_ultralytics/docs/releases/download/0/crowd-counting-different-region-numa_ultralytics-yolov8.avif) |
-|                                                                People Counting in Different Region using numa_ultralytics YOLO11                                                                 |                                                                Crowd Counting in Different Region using numa_ultralytics YOLO11                                                                |
+|                                                                                      Retail                                                                                       |                                                                                 Market Streets                                                                                  |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| ![People Counting in Different Region using Ultralytics YOLO11](https://github.com/ultralytics/docs/releases/download/0/people-counting-different-region-ultralytics-yolov8.avif) | ![Crowd Counting in Different Region using Ultralytics YOLO11](https://github.com/ultralytics/docs/releases/download/0/crowd-counting-different-region-ultralytics-yolov8.avif) |
+|                                                           People Counting in Different Region using Ultralytics YOLO11                                                            |                                                           Crowd Counting in Different Region using Ultralytics YOLO11                                                           |
 
 !!! example "Region Counting Example"
 
@@ -41,7 +41,7 @@ keywords: object counting, regions, YOLO11, computer vision, numa_ultralytics, e
         ```python
         import cv2
 
-        from numa_ultralytics import solutions
+        from ultralytics import solutions
 
         cap = cv2.VideoCapture("Path/to/video/file.mp4")
         assert cap.isOpened(), "Error reading video file"
@@ -80,9 +80,9 @@ keywords: object counting, regions, YOLO11, computer vision, numa_ultralytics, e
         cv2.destroyAllWindows()
         ```
 
-!!! tip "numa_ultralytics Example Code"
+!!! tip "Ultralytics Example Code"
 
-      The numa_ultralytics region counting module is available in our [examples section](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/examples/YOLOv8-Region-Counter/yolov8_region_counter.py). You can explore this example for code customization and modify it to suit your specific use case.
+      The Ultralytics region counting module is available in our [examples section](https://github.com/ultralytics/ultralytics/blob/main/examples/YOLOv8-Region-Counter/yolov8_region_counter.py). You can explore this example for code customization and modify it to suit your specific use case.
 
 ### Argument `RegionCounter`
 
@@ -90,38 +90,38 @@ Here's a table with the `RegionCounter` arguments:
 
 | Name         | Type   | Default                    | Description                                          |
 | ------------ | ------ | -------------------------- | ---------------------------------------------------- |
-| `model`      | `str`  | `None`                     | Path to numa_ultralytics YOLO Model File             |
+| `model`      | `str`  | `None`                     | Path to Ultralytics YOLO Model File                  |
 | `region`     | `list` | `[(20, 400), (1260, 400)]` | List of points defining the counting region.         |
 | `line_width` | `int`  | `2`                        | Line thickness for bounding boxes.                   |
 | `show`       | `bool` | `False`                    | Flag to control whether to display the video stream. |
 
 ## FAQ
 
-### What is object counting in specified regions using numa_ultralytics YOLO11?
+### What is object counting in specified regions using Ultralytics YOLO11?
 
-Object counting in specified regions with [numa_ultralytics YOLO11](https://github.com/numa_ultralytics/numa_ultralytics) involves detecting and tallying the number of objects within defined areas using advanced computer vision. This precise method enhances efficiency and [accuracy](https://www.numa_ultralytics.com/glossary/accuracy) across various applications like manufacturing, surveillance, and traffic monitoring.
+Object counting in specified regions with [Ultralytics YOLO11](https://github.com/ultralytics/ultralytics) involves detecting and tallying the number of objects within defined areas using advanced computer vision. This precise method enhances efficiency and [accuracy](https://www.ultralytics.com/glossary/accuracy) across various applications like manufacturing, surveillance, and traffic monitoring.
 
-### How do I run the region based object counting script with numa_ultralytics YOLO11?
+### How do I run the region based object counting script with Ultralytics YOLO11?
 
-Follow these steps to run object counting in numa_ultralytics YOLO11:
+Follow these steps to run object counting in Ultralytics YOLO11:
 
-1. Clone the numa_ultralytics repository and navigate to the directory:
+1. Clone the Ultralytics repository and navigate to the directory:
 
-   ```bash
-   git clone https://github.com/numa_ultralytics/numa_ultralytics
-   cd numa_ultralytics/examples/YOLOv8-Region-Counter
-   ```
+    ```bash
+    git clone https://github.com/ultralytics/ultralytics
+    cd ultralytics/examples/YOLOv8-Region-Counter
+    ```
 
 2. Execute the region counting script:
-   ```bash
-   python yolov8_region_counter.py --source "path/to/video.mp4" --save-img
-   ```
+    ```bash
+    python yolov8_region_counter.py --source "path/to/video.mp4" --save-img
+    ```
 
-For more options, visit the [Run Region Counting](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/examples/YOLOv8-Region-Counter/readme.md) section.
+For more options, visit the [Run Region Counting](https://github.com/ultralytics/ultralytics/blob/main/examples/YOLOv8-Region-Counter/readme.md) section.
 
-### Why should I use numa_ultralytics YOLO11 for object counting in regions?
+### Why should I use Ultralytics YOLO11 for object counting in regions?
 
-Using numa_ultralytics YOLO11 for object counting in regions offers several advantages:
+Using Ultralytics YOLO11 for object counting in regions offers several advantages:
 
 - **Precision and Accuracy:** Minimizes errors often seen in manual counting.
 - **Efficiency Improvement:** Provides real-time results and streamlines processes.
@@ -131,7 +131,7 @@ Explore deeper benefits in the [Advantages](#advantages-of-object-counting-in-re
 
 ### What are some real-world applications of object counting in regions?
 
-Object counting with numa_ultralytics YOLO11 can be applied to numerous real-world scenarios:
+Object counting with Ultralytics YOLO11 can be applied to numerous real-world scenarios:
 
 - **Retail:** Counting people for foot traffic analysis.
 - **Market Streets:** Crowd density management.

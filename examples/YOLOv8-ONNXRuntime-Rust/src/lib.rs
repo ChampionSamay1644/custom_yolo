@@ -67,10 +67,10 @@ pub const SKELETON: [(usize, usize); 16] = [
 pub fn check_font(font: &str) -> rusttype::Font<'static> {
     // check then load font
 
-    // numa_ultralytics font path
+    // ultralytics font path
     let font_path_config = match dirs::config_dir() {
         Some(mut d) => {
-            d.push("numa_ultralytics");
+            d.push("Ultralytics");
             d.push(font);
             d
         }
@@ -87,7 +87,7 @@ pub fn check_font(font: &str) -> rusttype::Font<'static> {
         font_path_current
     } else {
         println!("Downloading font...");
-        let source_url = "https://numa_ultralytics.com/assets/Arial.ttf";
+        let source_url = "https://ultralytics.com/assets/Arial.ttf";
         let resp = ureq::get(source_url)
             .timeout(std::time::Duration::from_secs(500))
             .call()
@@ -130,7 +130,7 @@ pub fn load_font() -> FontArc {
         Ok(false) => {
             std::fs::create_dir_all("./font").unwrap();
             println!("Downloading font...");
-            let source_url = "https://numa_ultralytics.com/assets/Arial.ttf";
+            let source_url = "https://ultralytics.com/assets/Arial.ttf";
             let resp = ureq::get(source_url)
                 .timeout(std::time::Duration::from_secs(500))
                 .call()

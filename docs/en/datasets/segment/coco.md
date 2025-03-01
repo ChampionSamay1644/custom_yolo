@@ -1,12 +1,12 @@
 ---
 comments: true
 description: Explore the COCO-Seg dataset, an extension of COCO, with detailed segmentation annotations. Learn how to train YOLO models with COCO-Seg.
-keywords: COCO-Seg, dataset, YOLO models, instance segmentation, object detection, COCO dataset, YOLO11, computer vision, numa_ultralytics, machine learning
+keywords: COCO-Seg, dataset, YOLO models, instance segmentation, object detection, COCO dataset, YOLO11, computer vision, Ultralytics, machine learning
 ---
 
 # COCO-Seg Dataset
 
-The [COCO-Seg](https://cocodataset.org/#home) dataset, an extension of the COCO (Common Objects in Context) dataset, is specially designed to aid research in object [instance segmentation](https://www.numa_ultralytics.com/glossary/instance-segmentation). It uses the same images as COCO but introduces more detailed segmentation annotations. This dataset is a crucial resource for researchers and developers working on instance segmentation tasks, especially for training YOLO models.
+The [COCO-Seg](https://cocodataset.org/#home) dataset, an extension of the COCO (Common Objects in Context) dataset, is specially designed to aid research in object [instance segmentation](https://www.ultralytics.com/glossary/instance-segmentation). It uses the same images as COCO but introduces more detailed segmentation annotations. This dataset is a crucial resource for researchers and developers working on instance segmentation tasks, especially for training YOLO models.
 
 ## COCO-Seg Pretrained Models
 
@@ -17,7 +17,7 @@ The [COCO-Seg](https://cocodataset.org/#home) dataset, an extension of the COCO 
 - COCO-Seg retains the original 330K images from COCO.
 - The dataset consists of the same 80 object categories found in the original COCO dataset.
 - Annotations now include more detailed instance segmentation masks for each object in the images.
-- COCO-Seg provides standardized evaluation metrics like [mean Average Precision](https://www.numa_ultralytics.com/glossary/mean-average-precision-map) (mAP) for object detection, and mean Average [Recall](https://www.numa_ultralytics.com/glossary/recall) (mAR) for instance segmentation tasks, enabling effective comparison of model performance.
+- COCO-Seg provides standardized evaluation metrics like [mean Average Precision](https://www.ultralytics.com/glossary/mean-average-precision-map) (mAP) for object detection, and mean Average [Recall](https://www.ultralytics.com/glossary/recall) (mAR) for instance segmentation tasks, enabling effective comparison of model performance.
 
 ## Dataset Structure
 
@@ -29,28 +29,28 @@ The COCO-Seg dataset is partitioned into three subsets:
 
 ## Applications
 
-COCO-Seg is widely used for training and evaluating [deep learning](https://www.numa_ultralytics.com/glossary/deep-learning-dl) models in instance segmentation, such as the YOLO models. The large number of annotated images, the diversity of object categories, and the standardized evaluation metrics make it an indispensable resource for computer vision researchers and practitioners.
+COCO-Seg is widely used for training and evaluating [deep learning](https://www.ultralytics.com/glossary/deep-learning-dl) models in instance segmentation, such as the YOLO models. The large number of annotated images, the diversity of object categories, and the standardized evaluation metrics make it an indispensable resource for computer vision researchers and practitioners.
 
 ## Dataset YAML
 
-A YAML (Yet Another Markup Language) file is used to define the dataset configuration. It contains information about the dataset's paths, classes, and other relevant information. In the case of the COCO-Seg dataset, the `coco.yaml` file is maintained at [https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/coco.yaml](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/coco.yaml).
+A YAML (Yet Another Markup Language) file is used to define the dataset configuration. It contains information about the dataset's paths, classes, and other relevant information. In the case of the COCO-Seg dataset, the `coco.yaml` file is maintained at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco.yaml](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco.yaml).
 
-!!! example "numa_ultralytics/cfg/datasets/coco.yaml"
+!!! example "ultralytics/cfg/datasets/coco.yaml"
 
     ```yaml
-    --8<-- "numa_ultralytics/cfg/datasets/coco.yaml"
+    --8<-- "ultralytics/cfg/datasets/coco.yaml"
     ```
 
 ## Usage
 
-To train a YOLO11n-seg model on the COCO-Seg dataset for 100 [epochs](https://www.numa_ultralytics.com/glossary/epoch) with an image size of 640, you can use the following code snippets. For a comprehensive list of available arguments, refer to the model [Training](../../modes/train.md) page.
+To train a YOLO11n-seg model on the COCO-Seg dataset for 100 [epochs](https://www.ultralytics.com/glossary/epoch) with an image size of 640, you can use the following code snippets. For a comprehensive list of available arguments, refer to the model [Training](../../modes/train.md) page.
 
 !!! example "Train Example"
 
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n-seg.pt")  # load a pretrained model (recommended for training)
@@ -70,7 +70,7 @@ To train a YOLO11n-seg model on the COCO-Seg dataset for 100 [epochs](https://ww
 
 COCO-Seg, like its predecessor COCO, contains a diverse set of images with various object categories and complex scenes. However, COCO-Seg introduces more detailed instance segmentation masks for each object in the images. Here are some examples of images from the dataset, along with their corresponding instance segmentation masks:
 
-![Dataset sample image](https://github.com/numa_ultralytics/docs/releases/download/0/mosaiced-training-batch-3.avif)
+![Dataset sample image](https://github.com/ultralytics/docs/releases/download/0/mosaiced-training-batch-3.avif)
 
 - **Mosaiced Image**: This image demonstrates a training batch composed of mosaiced dataset images. Mosaicing is a technique used during training that combines multiple images into a single image to increase the variety of objects and scenes within each training batch. This aids the model's ability to generalize to different object sizes, aspect ratios, and contexts.
 
@@ -95,7 +95,7 @@ If you use the COCO-Seg dataset in your research or development work, please cit
         }
         ```
 
-We extend our thanks to the COCO Consortium for creating and maintaining this invaluable resource for the [computer vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv) community. For more information about the COCO dataset and its creators, visit the [COCO dataset website](https://cocodataset.org/#home).
+We extend our thanks to the COCO Consortium for creating and maintaining this invaluable resource for the [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) community. For more information about the COCO dataset and its creators, visit the [COCO dataset website](https://cocodataset.org/#home).
 
 ## FAQ
 
@@ -112,7 +112,7 @@ To train a YOLO11n-seg model on the COCO-Seg dataset for 100 epochs with an imag
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n-seg.pt")  # load a pretrained model (recommended for training)
@@ -135,7 +135,7 @@ The COCO-Seg dataset includes several key features:
 - Retains the original 330K images from the COCO dataset.
 - Annotates the same 80 object categories found in the original COCO.
 - Provides more detailed instance segmentation masks for each object.
-- Uses standardized evaluation metrics such as mean Average [Precision](https://www.numa_ultralytics.com/glossary/precision) (mAP) for [object detection](https://www.numa_ultralytics.com/glossary/object-detection) and mean Average Recall (mAR) for instance segmentation tasks.
+- Uses standardized evaluation metrics such as mean Average [Precision](https://www.ultralytics.com/glossary/precision) (mAP) for [object detection](https://www.ultralytics.com/glossary/object-detection) and mean Average Recall (mAR) for instance segmentation tasks.
 
 ### What pretrained models are available for COCO-Seg, and what are their performance metrics?
 

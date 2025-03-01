@@ -1,14 +1,14 @@
-# numa_ultralytics 🚀 AGPL-3.0 License - https://numa_ultralytics.com/license
+# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
 
 import sys
 from unittest import mock
 
 from tests import MODEL
-from numa_ultralytics import YOLO
-from numa_ultralytics.cfg import get_cfg
-from numa_ultralytics.engine.exporter import Exporter
-from numa_ultralytics.models.yolo import classify, detect, segment
-from numa_ultralytics.utils import ASSETS, DEFAULT_CFG, WEIGHTS_DIR
+from ultralytics import YOLO
+from ultralytics.cfg import get_cfg
+from ultralytics.engine.exporter import Exporter
+from ultralytics.models.yolo import classify, detect, segment
+from ultralytics.utils import ASSETS, DEFAULT_CFG, WEIGHTS_DIR
 
 
 def test_func(*args):  # noqa

@@ -1,4 +1,4 @@
-# numa_ultralytics 🚀 AGPL-3.0 License - https://numa_ultralytics.com/license
+# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
 
 name: Close stale issues
 on:
@@ -22,9 +22,9 @@ jobs:
 
             For additional resources and information, please see the links below:
 
-            - **Docs**: https://docs.numa_ultralytics.com
-            - **HUB**: https://hub.numa_ultralytics.com
-            - **Community**: https://community.numa_ultralytics.com
+            - **Docs**: https://docs.ultralytics.com
+            - **HUB**: https://hub.ultralytics.com
+            - **Community**: https://community.ultralytics.com
 
             Feel free to inform us of any other **issues** you discover or **feature requests** that come to mind in the future. Pull Requests (PRs) are also always welcomed!
 
@@ -37,9 +37,9 @@ jobs:
 
             For additional resources and information, please see the links below:
 
-            - **Docs**: https://docs.numa_ultralytics.com
-            - **HUB**: https://hub.numa_ultralytics.com
-            - **Community**: https://community.numa_ultralytics.com
+            - **Docs**: https://docs.ultralytics.com
+            - **HUB**: https://hub.ultralytics.com
+            - **Community**: https://community.ultralytics.com
 
             Thank you for your contributions to YOLO 🚀 and Vision AI ⭐
 

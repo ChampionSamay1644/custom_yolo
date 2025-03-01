@@ -1,13 +1,13 @@
 ---
-description: Discover how numa_ultralytics collects and uses anonymized data to enhance the YOLO Python package while prioritizing user privacy and control.
-keywords: numa_ultralytics, data collection, YOLO, Python package, Google Analytics, Sentry, privacy, anonymized data, user control, crash reporting
+description: Discover how Ultralytics collects and uses anonymized data to enhance the YOLO Python package while prioritizing user privacy and control.
+keywords: Ultralytics, data collection, YOLO, Python package, Google Analytics, Sentry, privacy, anonymized data, user control, crash reporting
 ---
 
-# Data Collection for numa_ultralytics Python Package
+# Data Collection for Ultralytics Python Package
 
 ## Overview
 
-[numa_ultralytics](https://www.numa_ultralytics.com/) is dedicated to the continuous enhancement of the user experience and the capabilities of our Python package, including the advanced YOLO models we develop. Our approach involves the gathering of anonymized usage statistics and crash reports, helping us identify opportunities for improvement and ensuring the reliability of our software. This transparency document outlines what data we collect, its purpose, and the choice you have regarding this data collection.
+[Ultralytics](https://www.ultralytics.com/) is dedicated to the continuous enhancement of the user experience and the capabilities of our Python package, including the advanced YOLO models we develop. Our approach involves the gathering of anonymized usage statistics and crash reports, helping us identify opportunities for improvement and ensuring the reliability of our software. This transparency document outlines what data we collect, its purpose, and the choice you have regarding this data collection.
 
 ## Anonymized Google Analytics
 
@@ -19,7 +19,7 @@ keywords: numa_ultralytics, data collection, YOLO, Python package, Google Analyt
 - **System Information**: We collect general non-identifiable information about your computing environment to ensure our package performs well across various systems.
 - **Performance Data**: Understanding the performance of our models during training, validation, and inference helps us in identifying optimization opportunities.
 
-For more information about Google Analytics and [data privacy](https://www.numa_ultralytics.com/glossary/data-privacy), visit [Google Analytics Privacy](https://support.google.com/analytics/answer/6004245).
+For more information about Google Analytics and [data privacy](https://www.ultralytics.com/glossary/data-privacy), visit [Google Analytics Privacy](https://support.google.com/analytics/answer/6004245).
 
 ### How We Use This Data
 
@@ -33,7 +33,7 @@ We take several measures to ensure the privacy and security of the data you entr
 
 - **Anonymization**: We configure Google Analytics to anonymize the data collected, which means no personally identifiable information (PII) is gathered. You can use our services with the assurance that your personal details remain private.
 - **Aggregation**: Data is analyzed only in aggregate form. This practice ensures that patterns can be observed without revealing any individual user's activity.
-- **No Image Data Collection**: numa_ultralytics does not collect, process, or view any training or inference images.
+- **No Image Data Collection**: Ultralytics does not collect, process, or view any training or inference images.
 
 ## Sentry Crash Reporting
 
@@ -41,7 +41,7 @@ We take several measures to ensure the privacy and security of the data you entr
 
 !!! note
 
-    Crash reporting via Sentry is activated only if the `sentry-sdk` Python package is pre-installed on your system. This package isn't included in the `numa_ultralytics` prerequisites and won't be installed automatically by numa_ultralytics.
+    Crash reporting via Sentry is activated only if the `sentry-sdk` Python package is pre-installed on your system. This package isn't included in the `ultralytics` prerequisites and won't be installed automatically by Ultralytics.
 
 ### What We Collect
 
@@ -78,9 +78,9 @@ To gain insight into the current configuration of your settings, you can view th
 
     === "Python"
 
-        You can use Python to view your settings. Start by importing the `settings` object from the `numa_ultralytics` module. Print and return settings using the following commands:
+        You can use Python to view your settings. Start by importing the `settings` object from the `ultralytics` module. Print and return settings using the following commands:
         ```python
-        from numa_ultralytics import settings
+        from ultralytics import settings
 
         # View all settings
         print(settings)
@@ -98,7 +98,7 @@ To gain insight into the current configuration of your settings, you can view th
 
 ### Modifying Settings
 
-numa_ultralytics allows users to easily modify their settings. Changes can be performed in the following ways:
+Ultralytics allows users to easily modify their settings. Changes can be performed in the following ways:
 
 !!! example "Update settings"
 
@@ -106,7 +106,7 @@ numa_ultralytics allows users to easily modify their settings. Changes can be pe
 
         Within the Python environment, call the `update` method on the `settings` object to change your settings:
         ```python
-        from numa_ultralytics import settings
+        from ultralytics import settings
 
         # Disable analytics and crash reporting
         settings.update({"sync": False})
@@ -126,11 +126,11 @@ numa_ultralytics allows users to easily modify their settings. Changes can be pe
         yolo settings reset
         ```
 
-The `sync=False` setting will prevent any data from being sent to Google Analytics or Sentry. Your settings will be respected across all sessions using the numa_ultralytics package and saved to disk for future sessions.
+The `sync=False` setting will prevent any data from being sent to Google Analytics or Sentry. Your settings will be respected across all sessions using the Ultralytics package and saved to disk for future sessions.
 
 ## Commitment to Privacy
 
-numa_ultralytics takes user privacy seriously. We design our data collection practices with the following principles:
+Ultralytics takes user privacy seriously. We design our data collection practices with the following principles:
 
 - **Transparency**: We are open about the data we collect and how it is used.
 - **Control**: We give users full control over their data.
@@ -138,17 +138,17 @@ numa_ultralytics takes user privacy seriously. We design our data collection pra
 
 ## Questions or Concerns
 
-If you have any questions or concerns about our data collection practices, please reach out to us via our [contact form](https://www.numa_ultralytics.com/contact) or via [support@numa_ultralytics.com](mailto:support@numa_ultralytics.com). We are dedicated to ensuring our users feel informed and confident in their privacy when using our package.
+If you have any questions or concerns about our data collection practices, please reach out to us via our [contact form](https://www.ultralytics.com/contact) or via [support@ultralytics.com](mailto:support@ultralytics.com). We are dedicated to ensuring our users feel informed and confident in their privacy when using our package.
 
 ## FAQ
 
-### How does numa_ultralytics ensure the privacy of the data it collects?
+### How does Ultralytics ensure the privacy of the data it collects?
 
-numa_ultralytics prioritizes user privacy through several key measures. First, all data collected via Google Analytics and Sentry is anonymized to ensure that no personally identifiable information (PII) is gathered. Secondly, data is analyzed in aggregate form, allowing us to observe patterns without identifying individual user activities. Finally, we do not collect any training or inference images, further protecting user data. These measures align with our commitment to transparency and privacy. For more details, visit our [Privacy Considerations](#privacy-considerations) section.
+Ultralytics prioritizes user privacy through several key measures. First, all data collected via Google Analytics and Sentry is anonymized to ensure that no personally identifiable information (PII) is gathered. Secondly, data is analyzed in aggregate form, allowing us to observe patterns without identifying individual user activities. Finally, we do not collect any training or inference images, further protecting user data. These measures align with our commitment to transparency and privacy. For more details, visit our [Privacy Considerations](#privacy-considerations) section.
 
-### What types of data does numa_ultralytics collect with Google Analytics?
+### What types of data does Ultralytics collect with Google Analytics?
 
-numa_ultralytics collects three primary types of data using Google Analytics:
+Ultralytics collects three primary types of data using Google Analytics:
 
 - **Usage Metrics**: These include how often and in what ways the YOLO Python package is used, preferred features, and typical command-line arguments.
 - **System Information**: General non-identifiable information about the computing environments where the package is run.
@@ -156,7 +156,7 @@ numa_ultralytics collects three primary types of data using Google Analytics:
 
 This data helps us enhance user experience and optimize software performance. Learn more in the [Anonymized Google Analytics](#anonymized-google-analytics) section.
 
-### How can I disable data collection in the numa_ultralytics YOLO package?
+### How can I disable data collection in the Ultralytics YOLO package?
 
 To opt out of data collection, you can simply set `sync=False` in your YOLO settings. This action stops the transmission of any analytics or crash reports. You can disable data collection using Python or CLI methods:
 
@@ -165,7 +165,7 @@ To opt out of data collection, you can simply set `sync=False` in your YOLO sett
     === "Python"
 
         ```python
-        from numa_ultralytics import settings
+        from ultralytics import settings
 
         # Disable analytics and crash reporting
         settings.update({"sync": False})
@@ -186,11 +186,11 @@ To opt out of data collection, you can simply set `sync=False` in your YOLO sett
 
 For more details on modifying your settings, refer to the [Modifying Settings](#modifying-settings) section.
 
-### How does crash reporting with Sentry work in numa_ultralytics YOLO?
+### How does crash reporting with Sentry work in Ultralytics YOLO?
 
 If the `sentry-sdk` package is pre-installed, Sentry collects detailed crash logs and error messages whenever a crash event occurs. This data helps us diagnose and resolve issues promptly, improving the robustness and reliability of the YOLO Python package. The collected crash logs are scrubbed of any personally identifiable information to protect user privacy. For more information, check the [Sentry Crash Reporting](#sentry-crash-reporting) section.
 
-### Can I inspect my current data collection settings in numa_ultralytics YOLO?
+### Can I inspect my current data collection settings in Ultralytics YOLO?
 
 Yes, you can easily view your current settings to understand the configuration of your data collection preferences. Use the following methods to inspect these settings:
 
@@ -199,7 +199,7 @@ Yes, you can easily view your current settings to understand the configuration o
     === "Python"
 
         ```python
-        from numa_ultralytics import settings
+        from ultralytics import settings
 
         # View all settings
         print(settings)

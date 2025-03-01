@@ -1,24 +1,24 @@
 ---
 comments: true
-description: Convert your numa_ultralytics YOLO11 models to TensorFlow.js for high-speed, local object detection. Learn how to optimize ML models for browser and Node.js apps.
-keywords: YOLO11, TensorFlow.js, TF.js, model export, machine learning, object detection, browser ML, Node.js, numa_ultralytics, YOLO, export models
+description: Convert your Ultralytics YOLO11 models to TensorFlow.js for high-speed, local object detection. Learn how to optimize ML models for browser and Node.js apps.
+keywords: YOLO11, TensorFlow.js, TF.js, model export, machine learning, object detection, browser ML, Node.js, Ultralytics, YOLO, export models
 ---
 
 # Export to TF.js Model Format From a YOLO11 Model Format
 
-Deploying [machine learning](https://www.numa_ultralytics.com/glossary/machine-learning-ml) models directly in the browser or on Node.js can be tricky. You'll need to make sure your model format is optimized for faster performance so that the model can be used to run interactive applications locally on the user's device. The TensorFlow.js, or TF.js, model format is designed to use minimal power while delivering fast performance.
+Deploying [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) models directly in the browser or on Node.js can be tricky. You'll need to make sure your model format is optimized for faster performance so that the model can be used to run interactive applications locally on the user's device. The TensorFlow.js, or TF.js, model format is designed to use minimal power while delivering fast performance.
 
-The 'export to TF.js model format' feature allows you to optimize your [numa_ultralytics YOLO11](https://github.com/numa_ultralytics/numa_ultralytics) models for high-speed and locally-run [object detection](https://www.numa_ultralytics.com/glossary/object-detection) inference. In this guide, we'll walk you through converting your models to the TF.js format, making it easier for your models to perform well on various local browsers and Node.js applications.
+The 'export to TF.js model format' feature allows you to optimize your [Ultralytics YOLO11](https://github.com/ultralytics/ultralytics) models for high-speed and locally-run [object detection](https://www.ultralytics.com/glossary/object-detection) inference. In this guide, we'll walk you through converting your models to the TF.js format, making it easier for your models to perform well on various local browsers and Node.js applications.
 
 ## Why Should You Export to TF.js?
 
 Exporting your machine learning models to TensorFlow.js, developed by the TensorFlow team as part of the broader TensorFlow ecosystem, offers numerous advantages for deploying machine learning applications. It helps enhance user privacy and security by keeping sensitive data on the device. The image below shows the TensorFlow.js architecture, and how machine learning models are converted and deployed on both web browsers and Node.js.
 
 <p align="center">
-  <img width="100%" src="https://github.com/numa_ultralytics/docs/releases/download/0/tfjs-architecture.avif" alt="TF.js Architecture">
+  <img width="100%" src="https://github.com/ultralytics/docs/releases/download/0/tfjs-architecture.avif" alt="TF.js Architecture">
 </p>
 
-Running models locally also reduces latency and provides a more responsive user experience. [TensorFlow](https://www.numa_ultralytics.com/glossary/tensorflow).js also comes with offline capabilities, allowing users to use your application even without an internet connection. TF.js is designed for efficient execution of complex models on devices with limited resources as it is engineered for scalability, with GPU acceleration support.
+Running models locally also reduces latency and provides a more responsive user experience. [TensorFlow](https://www.ultralytics.com/glossary/tensorflow).js also comes with offline capabilities, allowing users to use your application even without an internet connection. TF.js is designed for efficient execution of complex models on devices with limited resources as it is engineered for scalability, with GPU acceleration support.
 
 ## Key Features of TF.js
 
@@ -56,21 +56,21 @@ To install the required package, run:
 
         ```bash
         # Install the required package for YOLO11
-        pip install numa_ultralytics
+        pip install ultralytics
         ```
 
-For detailed instructions and best practices related to the installation process, check our [numa_ultralytics Installation guide](../quickstart.md). While installing the required packages for YOLO11, if you encounter any difficulties, consult our [Common Issues guide](../guides/yolo-common-issues.md) for solutions and tips.
+For detailed instructions and best practices related to the installation process, check our [Ultralytics Installation guide](../quickstart.md). While installing the required packages for YOLO11, if you encounter any difficulties, consult our [Common Issues guide](../guides/yolo-common-issues.md) for solutions and tips.
 
 ### Usage
 
-Before diving into the usage instructions, it's important to note that while all [numa_ultralytics YOLO11 models](../models/index.md) are available for exporting, you can ensure that the model you select supports export functionality [here](../modes/export.md).
+Before diving into the usage instructions, it's important to note that while all [Ultralytics YOLO11 models](../models/index.md) are available for exporting, you can ensure that the model you select supports export functionality [here](../modes/export.md).
 
 !!! example "Usage"
 
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load the YOLO11 model
         model = YOLO("yolo11n.pt")
@@ -82,7 +82,7 @@ Before diving into the usage instructions, it's important to note that while all
         tfjs_model = YOLO("./yolo11n_web_model")
 
         # Run inference
-        results = tfjs_model("https://numa_ultralytics.com/images/bus.jpg")
+        results = tfjs_model("https://ultralytics.com/images/bus.jpg")
         ```
 
     === "CLI"
@@ -92,21 +92,21 @@ Before diving into the usage instructions, it's important to note that while all
         yolo export model=yolo11n.pt format=tfjs  # creates '/yolo11n_web_model'
 
         # Run inference with the exported model
-        yolo predict model='./yolo11n_web_model' source='https://numa_ultralytics.com/images/bus.jpg'
+        yolo predict model='./yolo11n_web_model' source='https://ultralytics.com/images/bus.jpg'
         ```
 
 ### Export Arguments
 
-| Argument | Type             | Default  | Description                                                                                                                                                                                        |
-| -------- | ---------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `format` | `str`            | `'tfjs'` | Target format for the exported model, defining compatibility with various deployment environments.                                                                                                 |
-| `imgsz`  | `int` or `tuple` | `640`    | Desired image size for the model input. Can be an integer for square images or a tuple `(height, width)` for specific dimensions.                                                                  |
-| `half`   | `bool`           | `False`  | Enables FP16 (half-precision) quantization, reducing model size and potentially speeding up inference on supported hardware.                                                                       |
-| `int8`   | `bool`           | `False`  | Activates INT8 quantization, further compressing the model and speeding up inference with minimal [accuracy](https://www.numa_ultralytics.com/glossary/accuracy) loss, primarily for edge devices. |
-| `nms`    | `bool`           | `False`  | Adds Non-Maximum Suppression (NMS), essential for accurate and efficient detection post-processing.                                                                                                |
-| `batch`  | `int`            | `1`      | Specifies export model batch inference size or the max number of images the exported model will process concurrently in `predict` mode.                                                            |
+| Argument | Type             | Default  | Description                                                                                                                                                                                   |
+| -------- | ---------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `format` | `str`            | `'tfjs'` | Target format for the exported model, defining compatibility with various deployment environments.                                                                                            |
+| `imgsz`  | `int` or `tuple` | `640`    | Desired image size for the model input. Can be an integer for square images or a tuple `(height, width)` for specific dimensions.                                                             |
+| `half`   | `bool`           | `False`  | Enables FP16 (half-precision) quantization, reducing model size and potentially speeding up inference on supported hardware.                                                                  |
+| `int8`   | `bool`           | `False`  | Activates INT8 quantization, further compressing the model and speeding up inference with minimal [accuracy](https://www.ultralytics.com/glossary/accuracy) loss, primarily for edge devices. |
+| `nms`    | `bool`           | `False`  | Adds Non-Maximum Suppression (NMS), essential for accurate and efficient detection post-processing.                                                                                           |
+| `batch`  | `int`            | `1`      | Specifies export model batch inference size or the max number of images the exported model will process concurrently in `predict` mode.                                                       |
 
-For more details about the export process, visit the [numa_ultralytics documentation page on exporting](../modes/export.md).
+For more details about the export process, visit the [Ultralytics documentation page on exporting](../modes/export.md).
 
 ## Deploying Exported YOLO11 TensorFlow.js Models
 
@@ -122,24 +122,24 @@ However, for in-depth instructions on deploying your TF.js models, take a look a
 
 ## Summary
 
-In this guide, we learned how to export numa_ultralytics YOLO11 models to the TensorFlow.js format. By exporting to TF.js, you gain the flexibility to optimize, deploy, and scale your YOLO11 models on a wide range of platforms.
+In this guide, we learned how to export Ultralytics YOLO11 models to the TensorFlow.js format. By exporting to TF.js, you gain the flexibility to optimize, deploy, and scale your YOLO11 models on a wide range of platforms.
 
 For further details on usage, visit the [TensorFlow.js official documentation](https://www.tensorflow.org/js/guide).
 
-For more information on integrating numa_ultralytics YOLO11 with other platforms and frameworks, don't forget to check out our [integration guide page](index.md). It's packed with great resources to help you make the most of YOLO11 in your projects.
+For more information on integrating Ultralytics YOLO11 with other platforms and frameworks, don't forget to check out our [integration guide page](index.md). It's packed with great resources to help you make the most of YOLO11 in your projects.
 
 ## FAQ
 
-### How do I export numa_ultralytics YOLO11 models to TensorFlow.js format?
+### How do I export Ultralytics YOLO11 models to TensorFlow.js format?
 
-Exporting numa_ultralytics YOLO11 models to TensorFlow.js (TF.js) format is straightforward. You can follow these steps:
+Exporting Ultralytics YOLO11 models to TensorFlow.js (TF.js) format is straightforward. You can follow these steps:
 
 !!! example "Usage"
 
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load the YOLO11 model
         model = YOLO("yolo11n.pt")
@@ -151,7 +151,7 @@ Exporting numa_ultralytics YOLO11 models to TensorFlow.js (TF.js) format is stra
         tfjs_model = YOLO("./yolo11n_web_model")
 
         # Run inference
-        results = tfjs_model("https://numa_ultralytics.com/images/bus.jpg")
+        results = tfjs_model("https://ultralytics.com/images/bus.jpg")
         ```
 
     === "CLI"
@@ -161,10 +161,10 @@ Exporting numa_ultralytics YOLO11 models to TensorFlow.js (TF.js) format is stra
         yolo export model=yolo11n.pt format=tfjs  # creates '/yolo11n_web_model'
 
         # Run inference with the exported model
-        yolo predict model='./yolo11n_web_model' source='https://numa_ultralytics.com/images/bus.jpg'
+        yolo predict model='./yolo11n_web_model' source='https://ultralytics.com/images/bus.jpg'
         ```
 
-For more details about supported export options, visit the [numa_ultralytics documentation page on deployment options](../guides/model-deployment-options.md).
+For more details about supported export options, visit the [Ultralytics documentation page on deployment options](../guides/model-deployment-options.md).
 
 ### Why should I export my YOLO11 models to TensorFlow.js?
 

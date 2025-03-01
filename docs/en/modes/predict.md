@@ -1,16 +1,16 @@
 ---
 comments: true
-description: Harness the power of numa_ultralytics YOLO11 for real-time, high-speed inference on various data sources. Learn about predict mode, key features, and practical applications.
-keywords: numa_ultralytics, YOLO11, model prediction, inference, predict mode, real-time inference, computer vision, machine learning, streaming, high performance
+description: Harness the power of Ultralytics YOLO11 for real-time, high-speed inference on various data sources. Learn about predict mode, key features, and practical applications.
+keywords: Ultralytics, YOLO11, model prediction, inference, predict mode, real-time inference, computer vision, machine learning, streaming, high performance
 ---
 
-# Model Prediction with numa_ultralytics YOLO
+# Model Prediction with Ultralytics YOLO
 
-<img width="1024" src="https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-yolov8-ecosystem-integrations.avif" alt="numa_ultralytics YOLO ecosystem and integrations">
+<img width="1024" src="https://github.com/ultralytics/docs/releases/download/0/ultralytics-yolov8-ecosystem-integrations.avif" alt="Ultralytics YOLO ecosystem and integrations">
 
 ## Introduction
 
-In the world of [machine learning](https://www.numa_ultralytics.com/glossary/machine-learning-ml) and [computer vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv), the process of making sense out of visual data is called 'inference' or 'prediction'. numa_ultralytics YOLO11 offers a powerful feature known as **predict mode** that is tailored for high-performance, real-time inference on a wide range of data sources.
+In the world of [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) and [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv), the process of making sense out of visual data is called 'inference' or 'prediction'. Ultralytics YOLO11 offers a powerful feature known as **predict mode** that is tailored for high-performance, real-time inference on a wide range of data sources.
 
 <p align="center">
   <br>
@@ -20,7 +20,7 @@ In the world of [machine learning](https://www.numa_ultralytics.com/glossary/mac
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> How to Extract the Outputs from numa_ultralytics YOLO Model for Custom Projects.
+  <strong>Watch:</strong> How to Extract the Outputs from Ultralytics YOLO Model for Custom Projects.
 </p>
 
 ## Real-world Applications
@@ -30,12 +30,12 @@ In the world of [machine learning](https://www.numa_ultralytics.com/glossary/mac
 | ![Vehicle Spare Parts Detection][car spare parts] | ![Football Player Detection][football player detect] | ![People Fall Detection][human fall detect] |
 |           Vehicle Spare Parts Detection           |              Football Player Detection               |            People Fall Detection            |
 
-## Why Use numa_ultralytics YOLO for Inference?
+## Why Use Ultralytics YOLO for Inference?
 
 Here's why you should consider YOLO11's predict mode for your various inference needs:
 
 - **Versatility:** Capable of making inferences on images, videos, and even live streams.
-- **Performance:** Engineered for real-time, high-speed processing without sacrificing [accuracy](https://www.numa_ultralytics.com/glossary/accuracy).
+- **Performance:** Engineered for real-time, high-speed processing without sacrificing [accuracy](https://www.ultralytics.com/glossary/accuracy).
 - **Ease of Use:** Intuitive Python and CLI interfaces for rapid deployment and testing.
 - **Highly Customizable:** Various settings and parameters to tune the model's inference behavior according to your specific requirements.
 
@@ -48,14 +48,14 @@ YOLO11's predict mode is designed to be robust and versatile, featuring:
 - **Batch Processing:** The ability to process multiple images or video frames in a single batch, further speeding up inference time.
 - **Integration Friendly:** Easily integrate with existing data pipelines and other software components, thanks to its flexible API.
 
-numa_ultralytics YOLO models return either a Python list of `Results` objects, or a memory-efficient Python generator of `Results` objects when `stream=True` is passed to the model during inference:
+Ultralytics YOLO models return either a Python list of `Results` objects, or a memory-efficient Python generator of `Results` objects when `stream=True` is passed to the model during inference:
 
 !!! example "Predict"
 
     === "Return a list with `stream=False`"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n.pt")  # pretrained YOLO11n model
@@ -77,7 +77,7 @@ numa_ultralytics YOLO models return either a Python list of `Results` objects, o
     === "Return a generator with `stream=True`"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n.pt")  # pretrained YOLO11n model
@@ -104,23 +104,23 @@ YOLO11 can process different types of input sources for inference, as shown in t
 
     Use `stream=True` for processing long videos or large datasets to efficiently manage memory. When `stream=False`, the results for all frames or data points are stored in memory, which can quickly add up and cause out-of-memory errors for large inputs. In contrast, `stream=True` utilizes a generator, which only keeps the results of the current frame or data point in memory, significantly reducing memory consumption and preventing out-of-memory issues.
 
-| Source                                                     | Example                                         | Type            | Notes                                                                                       |
-| ---------------------------------------------------------- | ----------------------------------------------- | --------------- | ------------------------------------------------------------------------------------------- |
-| image                                                      | `'image.jpg'`                                   | `str` or `Path` | Single image file.                                                                          |
-| URL                                                        | `'https://numa_ultralytics.com/images/bus.jpg'` | `str`           | URL to an image.                                                                            |
-| screenshot                                                 | `'screen'`                                      | `str`           | Capture a screenshot.                                                                       |
-| PIL                                                        | `Image.open('image.jpg')`                       | `PIL.Image`     | HWC format with RGB channels.                                                               |
-| [OpenCV](https://www.numa_ultralytics.com/glossary/opencv) | `cv2.imread('image.jpg')`                       | `np.ndarray`    | HWC format with BGR channels `uint8 (0-255)`.                                               |
-| numpy                                                      | `np.zeros((640,1280,3))`                        | `np.ndarray`    | HWC format with BGR channels `uint8 (0-255)`.                                               |
-| torch                                                      | `torch.zeros(16,3,320,640)`                     | `torch.Tensor`  | BCHW format with RGB channels `float32 (0.0-1.0)`.                                          |
-| CSV                                                        | `'sources.csv'`                                 | `str` or `Path` | CSV file containing paths to images, videos, or directories.                                |
-| video ✅                                                   | `'video.mp4'`                                   | `str` or `Path` | Video file in formats like MP4, AVI, etc.                                                   |
-| directory ✅                                               | `'path/'`                                       | `str` or `Path` | Path to a directory containing images or videos.                                            |
-| glob ✅                                                    | `'path/*.jpg'`                                  | `str`           | Glob pattern to match multiple files. Use the `*` character as a wildcard.                  |
-| YouTube ✅                                                 | `'https://youtu.be/LNwODJXcvt4'`                | `str`           | URL to a YouTube video.                                                                     |
-| stream ✅                                                  | `'rtsp://example.com/media.mp4'`                | `str`           | URL for streaming protocols such as RTSP, RTMP, TCP, or an IP address.                      |
-| multi-stream ✅                                            | `'list.streams'`                                | `str` or `Path` | `*.streams` text file with one stream URL per row, i.e. 8 streams will run at batch-size 8. |
-| webcam ✅                                                  | `0`                                             | `int`           | Index of the connected camera device to run inference on.                                   |
+| Source                                                | Example                                    | Type            | Notes                                                                                       |
+| ----------------------------------------------------- | ------------------------------------------ | --------------- | ------------------------------------------------------------------------------------------- |
+| image                                                 | `'image.jpg'`                              | `str` or `Path` | Single image file.                                                                          |
+| URL                                                   | `'https://ultralytics.com/images/bus.jpg'` | `str`           | URL to an image.                                                                            |
+| screenshot                                            | `'screen'`                                 | `str`           | Capture a screenshot.                                                                       |
+| PIL                                                   | `Image.open('image.jpg')`                  | `PIL.Image`     | HWC format with RGB channels.                                                               |
+| [OpenCV](https://www.ultralytics.com/glossary/opencv) | `cv2.imread('image.jpg')`                  | `np.ndarray`    | HWC format with BGR channels `uint8 (0-255)`.                                               |
+| numpy                                                 | `np.zeros((640,1280,3))`                   | `np.ndarray`    | HWC format with BGR channels `uint8 (0-255)`.                                               |
+| torch                                                 | `torch.zeros(16,3,320,640)`                | `torch.Tensor`  | BCHW format with RGB channels `float32 (0.0-1.0)`.                                          |
+| CSV                                                   | `'sources.csv'`                            | `str` or `Path` | CSV file containing paths to images, videos, or directories.                                |
+| video ✅                                              | `'video.mp4'`                              | `str` or `Path` | Video file in formats like MP4, AVI, etc.                                                   |
+| directory ✅                                          | `'path/'`                                  | `str` or `Path` | Path to a directory containing images or videos.                                            |
+| glob ✅                                               | `'path/*.jpg'`                             | `str`           | Glob pattern to match multiple files. Use the `*` character as a wildcard.                  |
+| YouTube ✅                                            | `'https://youtu.be/LNwODJXcvt4'`           | `str`           | URL to a YouTube video.                                                                     |
+| stream ✅                                             | `'rtsp://example.com/media.mp4'`           | `str`           | URL for streaming protocols such as RTSP, RTMP, TCP, or an IP address.                      |
+| multi-stream ✅                                       | `'list.streams'`                           | `str` or `Path` | `*.streams` text file with one stream URL per row, i.e. 8 streams will run at batch-size 8. |
+| webcam ✅                                             | `0`                                        | `int`           | Index of the connected camera device to run inference on.                                   |
 
 Below are code examples for using each source type:
 
@@ -130,7 +130,7 @@ Below are code examples for using each source type:
 
         Run inference on an image file.
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a pretrained YOLO11n model
         model = YOLO("yolo11n.pt")
@@ -146,7 +146,7 @@ Below are code examples for using each source type:
 
         Run inference on the current screen content as a screenshot.
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a pretrained YOLO11n model
         model = YOLO("yolo11n.pt")
@@ -162,13 +162,13 @@ Below are code examples for using each source type:
 
         Run inference on an image or video hosted remotely via URL.
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a pretrained YOLO11n model
         model = YOLO("yolo11n.pt")
 
         # Define remote image or video URL
-        source = "https://numa_ultralytics.com/images/bus.jpg"
+        source = "https://ultralytics.com/images/bus.jpg"
 
         # Run inference on the source
         results = model(source)  # list of Results objects
@@ -180,7 +180,7 @@ Below are code examples for using each source type:
         ```python
         from PIL import Image
 
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a pretrained YOLO11n model
         model = YOLO("yolo11n.pt")
@@ -198,7 +198,7 @@ Below are code examples for using each source type:
         ```python
         import cv2
 
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a pretrained YOLO11n model
         model = YOLO("yolo11n.pt")
@@ -216,7 +216,7 @@ Below are code examples for using each source type:
         ```python
         import numpy as np
 
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a pretrained YOLO11n model
         model = YOLO("yolo11n.pt")
@@ -230,11 +230,11 @@ Below are code examples for using each source type:
 
     === "torch"
 
-        Run inference on an image represented as a [PyTorch](https://www.numa_ultralytics.com/glossary/pytorch) tensor.
+        Run inference on an image represented as a [PyTorch](https://www.ultralytics.com/glossary/pytorch) tensor.
         ```python
         import torch
 
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a pretrained YOLO11n model
         model = YOLO("yolo11n.pt")
@@ -250,7 +250,7 @@ Below are code examples for using each source type:
 
         Run inference on a collection of images, URLs, videos and directories listed in a CSV file.
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a pretrained YOLO11n model
         model = YOLO("yolo11n.pt")
@@ -266,7 +266,7 @@ Below are code examples for using each source type:
 
         Run inference on a video file. By using `stream=True`, you can create a generator of Results objects to reduce memory usage.
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a pretrained YOLO11n model
         model = YOLO("yolo11n.pt")
@@ -282,7 +282,7 @@ Below are code examples for using each source type:
 
         Run inference on all images and videos in a directory. To also capture images and videos in subdirectories use a glob pattern, i.e. `path/to/dir/**/*`.
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a pretrained YOLO11n model
         model = YOLO("yolo11n.pt")
@@ -298,7 +298,7 @@ Below are code examples for using each source type:
 
         Run inference on all images and videos that match a glob expression with `*` characters.
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a pretrained YOLO11n model
         model = YOLO("yolo11n.pt")
@@ -317,7 +317,7 @@ Below are code examples for using each source type:
 
         Run inference on a YouTube video. By using `stream=True`, you can create a generator of Results objects to reduce memory usage for long videos.
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a pretrained YOLO11n model
         model = YOLO("yolo11n.pt")
@@ -331,10 +331,10 @@ Below are code examples for using each source type:
 
     === "Stream"
 
-        Use the stream mode to run inference on live video streams using RTSP, RTMP, TCP, or IP address protocols. If a single stream is provided, the model runs inference with a [batch size](https://www.numa_ultralytics.com/glossary/batch-size) of 1. For multiple streams, a `.streams` text file can be used to perform batched inference, where the batch size is determined by the number of streams provided (e.g., batch-size 8 for 8 streams).
+        Use the stream mode to run inference on live video streams using RTSP, RTMP, TCP, or IP address protocols. If a single stream is provided, the model runs inference with a [batch size](https://www.ultralytics.com/glossary/batch-size) of 1. For multiple streams, a `.streams` text file can be used to perform batched inference, where the batch size is determined by the number of streams provided (e.g., batch-size 8 for 8 streams).
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a pretrained YOLO11n model
         model = YOLO("yolo11n.pt")
@@ -353,7 +353,7 @@ Below are code examples for using each source type:
         To handle multiple video streams simultaneously, use a `.streams` text file containing the streaming sources. The model will run batched inference where the batch size equals the number of streams. This setup enables efficient processing of multiple feeds concurrently.
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a pretrained YOLO11n model
         model = YOLO("yolo11n.pt")
@@ -382,7 +382,7 @@ Below are code examples for using each source type:
         You can run inference on a connected camera device by passing the index of that particular camera to `source`.
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a pretrained YOLO11n model
         model = YOLO("yolo11n.pt")
@@ -398,13 +398,13 @@ Below are code examples for using each source type:
 !!! example
 
     ```python
-    from numa_ultralytics import YOLO
+    from ultralytics import YOLO
 
     # Load a pretrained YOLO11n model
     model = YOLO("yolo11n.pt")
 
     # Run inference on 'bus.jpg' with arguments
-    model.predict("https://numa_ultralytics.com/images/bus.jpg", save=True, imgsz=320, conf=0.5)
+    model.predict("https://ultralytics.com/images/bus.jpg", save=True, imgsz=320, conf=0.5)
     ```
 
 Inference arguments:
@@ -417,11 +417,11 @@ Visualization arguments:
 
 ## Image and Video Formats
 
-YOLO11 supports various image and video formats, as specified in [numa_ultralytics/data/utils.py](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/data/utils.py). See the tables below for the valid suffixes and example predict commands.
+YOLO11 supports various image and video formats, as specified in [ultralytics/data/utils.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/data/utils.py). See the tables below for the valid suffixes and example predict commands.
 
 ### Images
 
-The below table contains valid numa_ultralytics image formats.
+The below table contains valid Ultralytics image formats.
 
 !!! note
 
@@ -443,7 +443,7 @@ The below table contains valid numa_ultralytics image formats.
 
 ### Videos
 
-The below table contains valid numa_ultralytics video formats.
+The below table contains valid Ultralytics video formats.
 
 | Video Suffixes | Example Predict Command          | Reference                                                                        |
 | -------------- | -------------------------------- | -------------------------------------------------------------------------------- |
@@ -462,20 +462,20 @@ The below table contains valid numa_ultralytics video formats.
 
 ## Working with Results
 
-All numa_ultralytics `predict()` calls will return a list of `Results` objects:
+All Ultralytics `predict()` calls will return a list of `Results` objects:
 
 !!! example "Results"
 
     ```python
-    from numa_ultralytics import YOLO
+    from ultralytics import YOLO
 
     # Load a pretrained YOLO11n model
     model = YOLO("yolo11n.pt")
 
     # Run inference on an image
-    results = model("https://numa_ultralytics.com/images/bus.jpg")  # list of 1 Results object
+    results = model("https://ultralytics.com/images/bus.jpg")  # list of 1 Results object
     results = model(
-        ["https://numa_ultralytics.com/images/bus.jpg", "https://numa_ultralytics.com/images/zidane.jpg"]
+        ["https://ultralytics.com/images/bus.jpg", "https://ultralytics.com/images/zidane.jpg"]
     )  # list of 2 Results objects
     ```
 
@@ -526,13 +526,13 @@ For more details see the [`Results` class documentation](../reference/engine/res
 !!! example "Boxes"
 
     ```python
-    from numa_ultralytics import YOLO
+    from ultralytics import YOLO
 
     # Load a pretrained YOLO11n model
     model = YOLO("yolo11n.pt")
 
     # Run inference on an image
-    results = model("https://numa_ultralytics.com/images/bus.jpg")  # results list
+    results = model("https://ultralytics.com/images/bus.jpg")  # results list
 
     # View results
     for r in results:
@@ -555,7 +555,7 @@ Here is a table for the `Boxes` class methods and properties, including their na
 | `xyxyn`   | Property (`torch.Tensor`) | Return the boxes in xyxy format normalized by original image size. |
 | `xywhn`   | Property (`torch.Tensor`) | Return the boxes in xywh format normalized by original image size. |
 
-For more details see the [`Boxes` class documentation](../reference/engine/results.md#numa_ultralytics.engine.results.Boxes).
+For more details see the [`Boxes` class documentation](../reference/engine/results.md#ultralytics.engine.results.Boxes).
 
 ### Masks
 
@@ -564,13 +564,13 @@ For more details see the [`Boxes` class documentation](../reference/engine/resul
 !!! example "Masks"
 
     ```python
-    from numa_ultralytics import YOLO
+    from ultralytics import YOLO
 
     # Load a pretrained YOLO11n-seg Segment model
     model = YOLO("yolo11n-seg.pt")
 
     # Run inference on an image
-    results = model("https://numa_ultralytics.com/images/bus.jpg")  # results list
+    results = model("https://ultralytics.com/images/bus.jpg")  # results list
 
     # View results
     for r in results:
@@ -588,7 +588,7 @@ Here is a table for the `Masks` class methods and properties, including their na
 | `xyn`     | Property (`torch.Tensor`) | A list of normalized segments represented as tensors.           |
 | `xy`      | Property (`torch.Tensor`) | A list of segments in pixel coordinates represented as tensors. |
 
-For more details see the [`Masks` class documentation](../reference/engine/results.md#numa_ultralytics.engine.results.Masks).
+For more details see the [`Masks` class documentation](../reference/engine/results.md#ultralytics.engine.results.Masks).
 
 ### Keypoints
 
@@ -597,13 +597,13 @@ For more details see the [`Masks` class documentation](../reference/engine/resul
 !!! example "Keypoints"
 
     ```python
-    from numa_ultralytics import YOLO
+    from ultralytics import YOLO
 
     # Load a pretrained YOLO11n-pose Pose model
     model = YOLO("yolo11n-pose.pt")
 
     # Run inference on an image
-    results = model("https://numa_ultralytics.com/images/bus.jpg")  # results list
+    results = model("https://ultralytics.com/images/bus.jpg")  # results list
 
     # View results
     for r in results:
@@ -622,7 +622,7 @@ Here is a table for the `Keypoints` class methods and properties, including thei
 | `xy`      | Property (`torch.Tensor`) | A list of keypoints in pixel coordinates represented as tensors.  |
 | `conf`    | Property (`torch.Tensor`) | Returns confidence values of keypoints if available, else None.   |
 
-For more details see the [`Keypoints` class documentation](../reference/engine/results.md#numa_ultralytics.engine.results.Keypoints).
+For more details see the [`Keypoints` class documentation](../reference/engine/results.md#ultralytics.engine.results.Keypoints).
 
 ### Probs
 
@@ -631,13 +631,13 @@ For more details see the [`Keypoints` class documentation](../reference/engine/r
 !!! example "Probs"
 
     ```python
-    from numa_ultralytics import YOLO
+    from ultralytics import YOLO
 
     # Load a pretrained YOLO11n-cls Classify model
     model = YOLO("yolo11n-cls.pt")
 
     # Run inference on an image
-    results = model("https://numa_ultralytics.com/images/bus.jpg")  # results list
+    results = model("https://ultralytics.com/images/bus.jpg")  # results list
 
     # View results
     for r in results:
@@ -657,7 +657,7 @@ Here's a table summarizing the methods and properties for the `Probs` class:
 | `top1conf` | Property (`torch.Tensor`) | Confidence of the top 1 class.                                          |
 | `top5conf` | Property (`torch.Tensor`) | Confidences of the top 5 classes.                                       |
 
-For more details see the [`Probs` class documentation](../reference/engine/results.md#numa_ultralytics.engine.results.Probs).
+For more details see the [`Probs` class documentation](../reference/engine/results.md#ultralytics.engine.results.Probs).
 
 ### OBB
 
@@ -666,13 +666,13 @@ For more details see the [`Probs` class documentation](../reference/engine/resul
 !!! example "OBB"
 
     ```python
-    from numa_ultralytics import YOLO
+    from ultralytics import YOLO
 
     # Load a pretrained YOLO11n model
     model = YOLO("yolo11n-obb.pt")
 
     # Run inference on an image
-    results = model("https://numa_ultralytics.com/images/boats.jpg")  # results list
+    results = model("https://ultralytics.com/images/boats.jpg")  # results list
 
     # View results
     for r in results:
@@ -695,7 +695,7 @@ Here is a table for the `OBB` class methods and properties, including their name
 | `xyxyxyxy`  | Property (`torch.Tensor`) | Return the rotated boxes in xyxyxyxy format.                          |
 | `xyxyxyxyn` | Property (`torch.Tensor`) | Return the rotated boxes in xyxyxyxy format normalized by image size. |
 
-For more details see the [`OBB` class documentation](../reference/engine/results.md#numa_ultralytics.engine.results.OBB).
+For more details see the [`OBB` class documentation](../reference/engine/results.md#ultralytics.engine.results.OBB).
 
 ## Plotting Results
 
@@ -706,13 +706,13 @@ The `plot()` method in `Results` objects facilitates visualization of prediction
     ```python
     from PIL import Image
 
-    from numa_ultralytics import YOLO
+    from ultralytics import YOLO
 
     # Load a pretrained YOLO11n model
     model = YOLO("yolo11n.pt")
 
     # Run inference on 'bus.jpg'
-    results = model(["https://numa_ultralytics.com/images/bus.jpg", "https://numa_ultralytics.com/images/zidane.jpg"])  # results list
+    results = model(["https://ultralytics.com/images/bus.jpg", "https://ultralytics.com/images/zidane.jpg"])  # results list
 
     # Visualize the results
     for i, r in enumerate(results):
@@ -763,7 +763,7 @@ When using YOLO models in a multi-threaded application, it's important to instan
     ```python
     from threading import Thread
 
-    from numa_ultralytics import YOLO
+    from ultralytics import YOLO
 
 
     def thread_safe_predict(model, image_path):
@@ -782,14 +782,14 @@ For an in-depth look at thread-safe inference with YOLO models and step-by-step 
 
 ## Streaming Source `for`-loop
 
-Here's a Python script using OpenCV (`cv2`) and YOLO to run inference on video frames. This script assumes you have already installed the necessary packages (`opencv-python` and `numa_ultralytics`).
+Here's a Python script using OpenCV (`cv2`) and YOLO to run inference on video frames. This script assumes you have already installed the necessary packages (`opencv-python` and `ultralytics`).
 
 !!! example "Streaming for-loop"
 
     ```python
     import cv2
 
-    from numa_ultralytics import YOLO
+    from ultralytics import YOLO
 
     # Load the YOLO model
     model = YOLO("yolo11n.pt")
@@ -827,25 +827,25 @@ Here's a Python script using OpenCV (`cv2`) and YOLO to run inference on video f
 
 This script will run predictions on each frame of the video, visualize the results, and display them in a window. The loop can be exited by pressing 'q'.
 
-[car spare parts]: https://github.com/RizwanMunawar/numa_ultralytics/assets/62513924/a0f802a8-0776-44cf-8f17-93974a4a28a1
-[football player detect]: https://github.com/RizwanMunawar/numa_ultralytics/assets/62513924/7d320e1f-fc57-4d7f-a691-78ee579c3442
-[human fall detect]: https://github.com/RizwanMunawar/numa_ultralytics/assets/62513924/86437c4a-3227-4eee-90ef-9efb697bdb43
+[car spare parts]: https://github.com/RizwanMunawar/ultralytics/assets/62513924/a0f802a8-0776-44cf-8f17-93974a4a28a1
+[football player detect]: https://github.com/RizwanMunawar/ultralytics/assets/62513924/7d320e1f-fc57-4d7f-a691-78ee579c3442
+[human fall detect]: https://github.com/RizwanMunawar/ultralytics/assets/62513924/86437c4a-3227-4eee-90ef-9efb697bdb43
 
 ## FAQ
 
-### What is numa_ultralytics YOLO and its predict mode for real-time inference?
+### What is Ultralytics YOLO and its predict mode for real-time inference?
 
-numa_ultralytics YOLO is a state-of-the-art model for real-time [object detection](https://www.numa_ultralytics.com/glossary/object-detection), segmentation, and classification. Its **predict mode** allows users to perform high-speed inference on various data sources such as images, videos, and live streams. Designed for performance and versatility, it also offers batch processing and streaming modes. For more details on its features, check out the [numa_ultralytics YOLO predict mode](#key-features-of-predict-mode).
+Ultralytics YOLO is a state-of-the-art model for real-time [object detection](https://www.ultralytics.com/glossary/object-detection), segmentation, and classification. Its **predict mode** allows users to perform high-speed inference on various data sources such as images, videos, and live streams. Designed for performance and versatility, it also offers batch processing and streaming modes. For more details on its features, check out the [Ultralytics YOLO predict mode](#key-features-of-predict-mode).
 
-### How can I run inference using numa_ultralytics YOLO on different data sources?
+### How can I run inference using Ultralytics YOLO on different data sources?
 
-numa_ultralytics YOLO can process a wide range of data sources, including individual images, videos, directories, URLs, and streams. You can specify the data source in the `model.predict()` call. For example, use `'image.jpg'` for a local image or `'https://numa_ultralytics.com/images/bus.jpg'` for a URL. Check out the detailed examples for various [inference sources](#inference-sources) in the documentation.
+Ultralytics YOLO can process a wide range of data sources, including individual images, videos, directories, URLs, and streams. You can specify the data source in the `model.predict()` call. For example, use `'image.jpg'` for a local image or `'https://ultralytics.com/images/bus.jpg'` for a URL. Check out the detailed examples for various [inference sources](#inference-sources) in the documentation.
 
 ### How do I optimize YOLO inference speed and memory usage?
 
 To optimize inference speed and manage memory efficiently, you can use the streaming mode by setting `stream=True` in the predictor's call method. The streaming mode generates a memory-efficient generator of `Results` objects instead of loading all frames into memory. For processing long videos or large datasets, streaming mode is particularly useful. Learn more about [streaming mode](#key-features-of-predict-mode).
 
-### What inference arguments does numa_ultralytics YOLO support?
+### What inference arguments does Ultralytics YOLO support?
 
 The `model.predict()` method in YOLO supports various arguments such as `conf`, `iou`, `imgsz`, `device`, and more. These arguments allow you to customize the inference process, setting parameters like confidence thresholds, image size, and the device used for computation. Detailed descriptions of these arguments can be found in the [inference arguments](#inference-arguments) section.
 

@@ -8,23 +8,23 @@ keywords: YOLOv5, multiple GPUs, machine learning, deep learning, PyTorch, data 
 
 ## Before You Start
 
-Clone repo and install [requirements.txt](https://github.com/numa_ultralytics/yolov5/blob/master/requirements.txt) in a [**Python>=3.8.0**](https://www.python.org/) environment, including [**PyTorch>=1.8**](https://pytorch.org/get-started/locally/). [Models](https://github.com/numa_ultralytics/yolov5/tree/master/models) and [datasets](https://github.com/numa_ultralytics/yolov5/tree/master/data) download automatically from the latest YOLOv5 [release](https://github.com/numa_ultralytics/yolov5/releases).
+Clone repo and install [requirements.txt](https://github.com/ultralytics/yolov5/blob/master/requirements.txt) in a [**Python>=3.8.0**](https://www.python.org/) environment, including [**PyTorch>=1.8**](https://pytorch.org/get-started/locally/). [Models](https://github.com/ultralytics/yolov5/tree/master/models) and [datasets](https://github.com/ultralytics/yolov5/tree/master/data) download automatically from the latest YOLOv5 [release](https://github.com/ultralytics/yolov5/releases).
 
 ```bash
-git clone https://github.com/numa_ultralytics/yolov5  # clone
+git clone https://github.com/ultralytics/yolov5  # clone
 cd yolov5
 pip install -r requirements.txt  # install
 ```
 
-💡 ProTip! **Docker Image** is recommended for all Multi-GPU trainings. See [Docker Quickstart Guide](../environments/docker_image_quickstart_tutorial.md) <a href="https://hub.docker.com/r/numa_ultralytics/yolov5"><img src="https://img.shields.io/docker/pulls/numa_ultralytics/yolov5?logo=docker" alt="Docker Pulls"></a>
+💡 ProTip! **Docker Image** is recommended for all Multi-GPU trainings. See [Docker Quickstart Guide](../environments/docker_image_quickstart_tutorial.md) <a href="https://hub.docker.com/r/ultralytics/yolov5"><img src="https://img.shields.io/docker/pulls/ultralytics/yolov5?logo=docker" alt="Docker Pulls"></a>
 
-💡 ProTip! `torch.distributed.run` replaces `torch.distributed.launch` in **[PyTorch](https://www.numa_ultralytics.com/glossary/pytorch)>=1.9**. See [docs](https://pytorch.org/docs/stable/distributed.html) for details.
+💡 ProTip! `torch.distributed.run` replaces `torch.distributed.launch` in **[PyTorch](https://www.ultralytics.com/glossary/pytorch)>=1.9**. See [docs](https://pytorch.org/docs/stable/distributed.html) for details.
 
 ## Training
 
-Select a pretrained model to start training from. Here we select [YOLOv5s](https://github.com/numa_ultralytics/yolov5/blob/master/models/yolov5s.yaml), the smallest and fastest model available. See our README [table](https://github.com/numa_ultralytics/yolov5#pretrained-checkpoints) for a full comparison of all models. We will train this model with Multi-GPU on the [COCO](https://github.com/numa_ultralytics/yolov5/blob/master/data/scripts/get_coco.sh) dataset.
+Select a pretrained model to start training from. Here we select [YOLOv5s](https://github.com/ultralytics/yolov5/blob/master/models/yolov5s.yaml), the smallest and fastest model available. See our README [table](https://github.com/ultralytics/yolov5#pretrained-checkpoints) for a full comparison of all models. We will train this model with Multi-GPU on the [COCO](https://github.com/ultralytics/yolov5/blob/master/data/scripts/get_coco.sh) dataset.
 
-<p align="center"><img width="700" alt="YOLOv5 Models" src="https://github.com/numa_ultralytics/docs/releases/download/0/yolov5-model-comparison.avif"></p>
+<p align="center"><img width="700" alt="YOLOv5 Models" src="https://github.com/ultralytics/docs/releases/download/0/yolov5-model-comparison.avif"></p>
 
 ### Single GPU
 
@@ -69,7 +69,7 @@ python -m torch.distributed.run --nproc_per_node 2 train.py --batch 64 --data co
 <details>
   <summary>Use SyncBatchNorm (click to expand)</summary>
 
-[SyncBatchNorm](https://pytorch.org/docs/master/generated/torch.nn.SyncBatchNorm.html) could increase [accuracy](https://www.numa_ultralytics.com/glossary/accuracy) for multiple gpu training, however, it will slow down training by a significant factor. It is **only** available for Multiple GPU DistributedDataParallel training.
+[SyncBatchNorm](https://pytorch.org/docs/master/generated/torch.nn.SyncBatchNorm.html) could increase [accuracy](https://www.ultralytics.com/glossary/accuracy) for multiple gpu training, however, it will slow down training by a significant factor. It is **only** available for Multiple GPU DistributedDataParallel training.
 
 It is best used when the batch-size on **each** GPU is small (<= 8).
 
@@ -121,16 +121,16 @@ python -m torch.distributed.run --master_port 1234 --nproc_per_node 2 ...
 
 ## Results
 
-DDP profiling results on an [AWS EC2 P4d instance](../environments/aws_quickstart_tutorial.md) with 8x A100 SXM4-40GB for YOLOv5l for 1 COCO [epoch](https://www.numa_ultralytics.com/glossary/epoch).
+DDP profiling results on an [AWS EC2 P4d instance](../environments/aws_quickstart_tutorial.md) with 8x A100 SXM4-40GB for YOLOv5l for 1 COCO [epoch](https://www.ultralytics.com/glossary/epoch).
 
 <details>
   <summary>Profiling code</summary>
 
 ```bash
 # prepare
-t=numa_ultralytics/yolov5:latest && sudo docker pull $t && sudo docker run -it --ipc=host --gpus all -v "$(pwd)"/coco:/usr/src/coco $t
+t=ultralytics/yolov5:latest && sudo docker pull $t && sudo docker run -it --ipc=host --gpus all -v "$(pwd)"/coco:/usr/src/coco $t
 pip3 install torch==1.9.0+cu111 torchvision==0.10.0+cu111 -f https://download.pytorch.org/whl/torch_stable.html
-cd .. && rm -rf app && git clone https://github.com/numa_ultralytics/yolov5 -b master app && cd app
+cd .. && rm -rf app && git clone https://github.com/ultralytics/yolov5 -b master app && cd app
 cp data/coco.yaml data/coco_profile.yaml
 
 # profile
@@ -171,19 +171,19 @@ If you went through all the above, feel free to raise an Issue by giving as much
 
 ## Supported Environments
 
-numa_ultralytics provides a range of ready-to-use environments, each pre-installed with essential dependencies such as [CUDA](https://developer.nvidia.com/cuda-zone), [CUDNN](https://developer.nvidia.com/cudnn), [Python](https://www.python.org/), and [PyTorch](https://pytorch.org/), to kickstart your projects.
+Ultralytics provides a range of ready-to-use environments, each pre-installed with essential dependencies such as [CUDA](https://developer.nvidia.com/cuda-zone), [CUDNN](https://developer.nvidia.com/cudnn), [Python](https://www.python.org/), and [PyTorch](https://pytorch.org/), to kickstart your projects.
 
-- **Free GPU Notebooks**: <a href="https://bit.ly/yolov5-paperspace-notebook"><img src="https://assets.paperspace.io/img/gradient-badge.svg" alt="Run on Gradient"></a> <a href="https://colab.research.google.com/github/numa_ultralytics/yolov5/blob/master/tutorial.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a> <a href="https://www.kaggle.com/models/numa_ultralytics/yolov5"><img src="https://kaggle.com/static/images/open-in-kaggle.svg" alt="Open In Kaggle"></a>
+- **Free GPU Notebooks**: <a href="https://bit.ly/yolov5-paperspace-notebook"><img src="https://assets.paperspace.io/img/gradient-badge.svg" alt="Run on Gradient"></a> <a href="https://colab.research.google.com/github/ultralytics/yolov5/blob/master/tutorial.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a> <a href="https://www.kaggle.com/models/ultralytics/yolov5"><img src="https://kaggle.com/static/images/open-in-kaggle.svg" alt="Open In Kaggle"></a>
 - **Google Cloud**: [GCP Quickstart Guide](../environments/google_cloud_quickstart_tutorial.md)
 - **Amazon**: [AWS Quickstart Guide](../environments/aws_quickstart_tutorial.md)
 - **Azure**: [AzureML Quickstart Guide](../environments/azureml_quickstart_tutorial.md)
-- **Docker**: [Docker Quickstart Guide](../environments/docker_image_quickstart_tutorial.md) <a href="https://hub.docker.com/r/numa_ultralytics/yolov5"><img src="https://img.shields.io/docker/pulls/numa_ultralytics/yolov5?logo=docker" alt="Docker Pulls"></a>
+- **Docker**: [Docker Quickstart Guide](../environments/docker_image_quickstart_tutorial.md) <a href="https://hub.docker.com/r/ultralytics/yolov5"><img src="https://img.shields.io/docker/pulls/ultralytics/yolov5?logo=docker" alt="Docker Pulls"></a>
 
 ## Project Status
 
-<a href="https://github.com/numa_ultralytics/yolov5/actions/workflows/ci-testing.yml"><img src="https://github.com/numa_ultralytics/yolov5/actions/workflows/ci-testing.yml/badge.svg" alt="YOLOv5 CI"></a>
+<a href="https://github.com/ultralytics/yolov5/actions/workflows/ci-testing.yml"><img src="https://github.com/ultralytics/yolov5/actions/workflows/ci-testing.yml/badge.svg" alt="YOLOv5 CI"></a>
 
-This badge indicates that all [YOLOv5 GitHub Actions](https://github.com/numa_ultralytics/yolov5/actions) Continuous Integration (CI) tests are successfully passing. These CI tests rigorously check the functionality and performance of YOLOv5 across various key aspects: [training](https://github.com/numa_ultralytics/yolov5/blob/master/train.py), [validation](https://github.com/numa_ultralytics/yolov5/blob/master/val.py), [inference](https://github.com/numa_ultralytics/yolov5/blob/master/detect.py), [export](https://github.com/numa_ultralytics/yolov5/blob/master/export.py), and [benchmarks](https://github.com/numa_ultralytics/yolov5/blob/master/benchmarks.py). They ensure consistent and reliable operation on macOS, Windows, and Ubuntu, with tests conducted every 24 hours and upon each new commit.
+This badge indicates that all [YOLOv5 GitHub Actions](https://github.com/ultralytics/yolov5/actions) Continuous Integration (CI) tests are successfully passing. These CI tests rigorously check the functionality and performance of YOLOv5 across various key aspects: [training](https://github.com/ultralytics/yolov5/blob/master/train.py), [validation](https://github.com/ultralytics/yolov5/blob/master/val.py), [inference](https://github.com/ultralytics/yolov5/blob/master/detect.py), [export](https://github.com/ultralytics/yolov5/blob/master/export.py), and [benchmarks](https://github.com/ultralytics/yolov5/blob/master/benchmarks.py). They ensure consistent and reliable operation on macOS, Windows, and Ubuntu, with tests conducted every 24 hours and upon each new commit.
 
 ## Credits
 

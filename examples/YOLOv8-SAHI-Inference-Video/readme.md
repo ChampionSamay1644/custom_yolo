@@ -1,11 +1,11 @@
 # YOLO11 with SAHI (Inference on Video)
 
-[SAHI](https://docs.numa_ultralytics.com/guides/sahi-tiled-inference/) is designed to optimize object detection algorithms for large-scale and high-resolution imagery. It partitions images into manageable slices, performs object detection on each slice, and then stitches the results back together. This tutorial will guide you through the process of running YOLO11 inference on video files with the aid of SAHI.
+[SAHI](https://docs.ultralytics.com/guides/sahi-tiled-inference/) is designed to optimize object detection algorithms for large-scale and high-resolution imagery. It partitions images into manageable slices, performs object detection on each slice, and then stitches the results back together. This tutorial will guide you through the process of running YOLO11 inference on video files with the aid of SAHI.
 
 ## Table of Contents
 
 - [Step 1: Install the Required Libraries](#step-1-install-the-required-libraries)
-- [Step 2: Run the Inference with SAHI using numa_ultralytics YOLO11](#step-2-run-the-inference-with-sahi-using-numa_ultralytics-yolo11)
+- [Step 2: Run the Inference with SAHI using Ultralytics YOLO11](#step-2-run-the-inference-with-sahi-using-ultralytics-yolo11)
 - [Usage Options](#usage-options)
 - [FAQ](#faq)
 
@@ -14,17 +14,17 @@
 Clone the repository, install dependencies and `cd` to this local directory for commands in Step 2.
 
 ```bash
-# Clone numa_ultralytics repo
-git clone https://github.com/numa_ultralytics/numa_ultralytics
+# Clone ultralytics repo
+git clone https://github.com/ultralytics/ultralytics
 
 # Install dependencies
-pip install -U sahi numa_ultralytics
+pip install -U sahi ultralytics
 
 # cd to local directory
-cd numa_ultralytics/examples/YOLOv8-SAHI-Inference-Video
+cd ultralytics/examples/YOLOv8-SAHI-Inference-Video
 ```
 
-## Step 2: Run the Inference with SAHI using numa_ultralytics YOLO11
+## Step 2: Run the Inference with SAHI using Ultralytics YOLO11
 
 Here are the basic commands for running the inference:
 
@@ -66,4 +66,4 @@ Yes, you can specify different YOLO model weights using the `--weights` option.
 
 **5. Where can I find more information?**
 
-For a full guide to YOLO11 with SAHI see [https://docs.numa_ultralytics.com/guides/sahi-tiled-inference](https://docs.numa_ultralytics.com/guides/sahi-tiled-inference/).
+For a full guide to YOLO11 with SAHI see [https://docs.ultralytics.com/guides/sahi-tiled-inference](https://docs.ultralytics.com/guides/sahi-tiled-inference/).

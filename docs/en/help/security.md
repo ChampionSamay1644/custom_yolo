@@ -1,23 +1,23 @@
 ---
-description: Learn about the security measures and tools used by numa_ultralytics to protect user data and systems. Discover how we address vulnerabilities with Snyk, CodeQL, Dependabot, and more.
-keywords: numa_ultralytics security policy, Snyk scanning, CodeQL scanning, Dependabot alerts, secret scanning, vulnerability reporting, GitHub security, open-source security
+description: Learn about the security measures and tools used by Ultralytics to protect user data and systems. Discover how we address vulnerabilities with Snyk, CodeQL, Dependabot, and more.
+keywords: Ultralytics security policy, Snyk scanning, CodeQL scanning, Dependabot alerts, secret scanning, vulnerability reporting, GitHub security, open-source security
 ---
 
-# numa_ultralytics Security Policy
+# Ultralytics Security Policy
 
-At [numa_ultralytics](https://www.numa_ultralytics.com/), the security of our users' data and systems is of utmost importance. To ensure the safety and security of our [open-source projects](https://github.com/numa_ultralytics), we have implemented several measures to detect and prevent security vulnerabilities.
+At [Ultralytics](https://www.ultralytics.com/), the security of our users' data and systems is of utmost importance. To ensure the safety and security of our [open-source projects](https://github.com/ultralytics), we have implemented several measures to detect and prevent security vulnerabilities.
 
 ## Snyk Scanning
 
-We utilize [Snyk](https://snyk.io/advisor/python/numa_ultralytics) to conduct comprehensive security scans on numa_ultralytics repositories. Snyk's robust scanning capabilities extend beyond dependency checks; it also examines our code and Dockerfiles for various vulnerabilities. By identifying and addressing these issues proactively, we ensure a higher level of security and reliability for our users.
+We utilize [Snyk](https://snyk.io/advisor/python/ultralytics) to conduct comprehensive security scans on Ultralytics repositories. Snyk's robust scanning capabilities extend beyond dependency checks; it also examines our code and Dockerfiles for various vulnerabilities. By identifying and addressing these issues proactively, we ensure a higher level of security and reliability for our users.
 
-[![numa_ultralytics](https://snyk.io/advisor/python/numa_ultralytics/badge.svg)](https://snyk.io/advisor/python/numa_ultralytics)
+[![ultralytics](https://snyk.io/advisor/python/ultralytics/badge.svg)](https://snyk.io/advisor/python/ultralytics)
 
 ## GitHub CodeQL Scanning
 
 Our security strategy includes GitHub's [CodeQL](https://docs.github.com/en/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning-with-codeql) scanning. CodeQL delves deep into our codebase, identifying complex vulnerabilities like SQL injection and XSS by analyzing the code's semantic structure. This advanced level of analysis ensures early detection and resolution of potential security risks.
 
-[![CodeQL](https://github.com/numa_ultralytics/numa_ultralytics/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/numa_ultralytics/numa_ultralytics/actions/workflows/github-code-scanning/codeql)
+[![CodeQL](https://github.com/ultralytics/ultralytics/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/ultralytics/ultralytics/actions/workflows/github-code-scanning/codeql)
 
 ## GitHub Dependabot Alerts
 
@@ -31,15 +31,15 @@ We employ GitHub [secret scanning](https://docs.github.com/en/code-security/secr
 
 We enable private vulnerability reporting, allowing users to discreetly report potential security issues. This approach facilitates responsible disclosure, ensuring vulnerabilities are handled securely and efficiently.
 
-If you suspect or discover a security vulnerability in any of our repositories, please let us know immediately. You can reach out to us directly via our [contact form](https://www.numa_ultralytics.com/contact) or via [security@numa_ultralytics.com](mailto:security@numa_ultralytics.com). Our security team will investigate and respond as soon as possible.
+If you suspect or discover a security vulnerability in any of our repositories, please let us know immediately. You can reach out to us directly via our [contact form](https://www.ultralytics.com/contact) or via [security@ultralytics.com](mailto:security@ultralytics.com). Our security team will investigate and respond as soon as possible.
 
-We appreciate your help in keeping all numa_ultralytics open-source projects secure and safe for everyone 🙏.
+We appreciate your help in keeping all Ultralytics open-source projects secure and safe for everyone 🙏.
 
 ## FAQ
 
-### What are the security measures implemented by numa_ultralytics to protect user data?
+### What are the security measures implemented by Ultralytics to protect user data?
 
-numa_ultralytics employs a comprehensive security strategy to protect user data and systems. Key measures include:
+Ultralytics employs a comprehensive security strategy to protect user data and systems. Key measures include:
 
 - **Snyk Scanning**: Conducts security scans to detect vulnerabilities in code and Dockerfiles.
 - **GitHub CodeQL**: Analyzes code semantics to detect complex vulnerabilities such as SQL injection.
@@ -49,26 +49,26 @@ numa_ultralytics employs a comprehensive security strategy to protect user data 
 
 These tools ensure proactive identification and resolution of security issues, enhancing overall system security. For more details, visit our [export documentation](../modes/export.md).
 
-### How does numa_ultralytics use Snyk for security scanning?
+### How does Ultralytics use Snyk for security scanning?
 
-numa_ultralytics utilizes [Snyk](https://snyk.io/advisor/python/numa_ultralytics) to conduct thorough security scans on its repositories. Snyk extends beyond basic dependency checks, examining the code and Dockerfiles for various vulnerabilities. By proactively identifying and resolving potential security issues, Snyk helps ensure that numa_ultralytics' open-source projects remain secure and reliable.
+Ultralytics utilizes [Snyk](https://snyk.io/advisor/python/ultralytics) to conduct thorough security scans on its repositories. Snyk extends beyond basic dependency checks, examining the code and Dockerfiles for various vulnerabilities. By proactively identifying and resolving potential security issues, Snyk helps ensure that Ultralytics' open-source projects remain secure and reliable.
 
 To see the Snyk badge and learn more about its deployment, check the [Snyk Scanning section](#snyk-scanning).
 
-### What is CodeQL and how does it enhance security for numa_ultralytics?
+### What is CodeQL and how does it enhance security for Ultralytics?
 
-[CodeQL](https://docs.github.com/en/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning-with-codeql) is a security analysis tool integrated into numa_ultralytics' workflow via GitHub. It delves deep into the codebase to identify complex vulnerabilities such as SQL injection and Cross-Site Scripting (XSS). CodeQL analyzes the semantic structure of the code to provide an advanced level of security, ensuring early detection and mitigation of potential risks.
+[CodeQL](https://docs.github.com/en/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning-with-codeql) is a security analysis tool integrated into Ultralytics' workflow via GitHub. It delves deep into the codebase to identify complex vulnerabilities such as SQL injection and Cross-Site Scripting (XSS). CodeQL analyzes the semantic structure of the code to provide an advanced level of security, ensuring early detection and mitigation of potential risks.
 
 For more information on how CodeQL is used, visit the [GitHub CodeQL Scanning section](#github-codeql-scanning).
 
-### How does Dependabot help maintain numa_ultralytics' code security?
+### How does Dependabot help maintain Ultralytics' code security?
 
-[Dependabot](https://docs.github.com/en/code-security/dependabot) is an automated tool that monitors and manages dependencies for known vulnerabilities. When Dependabot detects a vulnerability in an numa_ultralytics project dependency, it sends an alert, allowing the team to quickly address and mitigate the issue. This ensures that dependencies are kept secure and up-to-date, minimizing potential security risks.
+[Dependabot](https://docs.github.com/en/code-security/dependabot) is an automated tool that monitors and manages dependencies for known vulnerabilities. When Dependabot detects a vulnerability in an Ultralytics project dependency, it sends an alert, allowing the team to quickly address and mitigate the issue. This ensures that dependencies are kept secure and up-to-date, minimizing potential security risks.
 
 For more details, explore the [GitHub Dependabot Alerts section](#github-dependabot-alerts).
 
-### How does numa_ultralytics handle private vulnerability reporting?
+### How does Ultralytics handle private vulnerability reporting?
 
-numa_ultralytics encourages users to report potential security issues through private channels. Users can report vulnerabilities discreetly via the [contact form](https://www.numa_ultralytics.com/contact) or by emailing [security@numa_ultralytics.com](mailto:security@numa_ultralytics.com). This ensures responsible disclosure and allows the security team to investigate and address vulnerabilities securely and efficiently.
+Ultralytics encourages users to report potential security issues through private channels. Users can report vulnerabilities discreetly via the [contact form](https://www.ultralytics.com/contact) or by emailing [security@ultralytics.com](mailto:security@ultralytics.com). This ensures responsible disclosure and allows the security team to investigate and address vulnerabilities securely and efficiently.
 
 For more information on private vulnerability reporting, refer to the [Private Vulnerability Reporting section](#private-vulnerability-reporting).

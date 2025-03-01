@@ -1,14 +1,14 @@
 ---
 comments: true
 description: Discover YOLOv7, the breakthrough real-time object detector with top speed and accuracy. Learn about key features, usage, and performance metrics.
-keywords: YOLOv7, real-time object detection, numa_ultralytics, AI, computer vision, model training, object detector
+keywords: YOLOv7, real-time object detection, Ultralytics, AI, computer vision, model training, object detector
 ---
 
 # YOLOv7: Trainable Bag-of-Freebies
 
-YOLOv7 is a state-of-the-art real-time object detector that surpasses all known object detectors in both speed and [accuracy](https://www.numa_ultralytics.com/glossary/accuracy) in the range from 5 FPS to 160 FPS. It has the highest accuracy (56.8% AP) among all known real-time object detectors with 30 FPS or higher on GPU V100. Moreover, YOLOv7 outperforms other object detectors such as YOLOR, YOLOX, Scaled-YOLOv4, YOLOv5, and many others in speed and accuracy. The model is trained on the MS COCO dataset from scratch without using any other datasets or pre-trained weights. Source code for YOLOv7 is available on GitHub.
+YOLOv7 is a state-of-the-art real-time object detector that surpasses all known object detectors in both speed and [accuracy](https://www.ultralytics.com/glossary/accuracy) in the range from 5 FPS to 160 FPS. It has the highest accuracy (56.8% AP) among all known real-time object detectors with 30 FPS or higher on GPU V100. Moreover, YOLOv7 outperforms other object detectors such as YOLOR, YOLOX, Scaled-YOLOv4, YOLOv5, and many others in speed and accuracy. The model is trained on the MS COCO dataset from scratch without using any other datasets or pre-trained weights. Source code for YOLOv7 is available on GitHub.
 
-![YOLOv7 comparison with SOTA object detectors](https://github.com/numa_ultralytics/docs/releases/download/0/yolov7-comparison-sota-object-detectors.avif)
+![YOLOv7 comparison with SOTA object detectors](https://github.com/ultralytics/docs/releases/download/0/yolov7-comparison-sota-object-detectors.avif)
 
 ## Comparison of SOTA object detectors
 
@@ -67,13 +67,13 @@ If we compare YOLOv7-X with 114 fps inference speed to YOLOv5-L (r6.1) with 99 f
 
         [1]: https://github.com/Megvii-BaseDetection/YOLOX
         [2]: https://github.com/PaddlePaddle/PaddleDetection
-        [3]: https://github.com/numa_ultralytics/yolov5
+        [3]: https://github.com/ultralytics/yolov5
         [4]: https://github.com/WongKinYiu/yolor
         [5]: https://github.com/WongKinYiu/yolov7
 
 ## Overview
 
-Real-time object detection is an important component in many [computer vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv) systems, including multi-[object tracking](https://www.numa_ultralytics.com/glossary/object-tracking), autonomous driving, [robotics](https://www.numa_ultralytics.com/glossary/robotics), and [medical image analysis](https://www.numa_ultralytics.com/glossary/medical-image-analysis). In recent years, real-time object detection development has focused on designing efficient architectures and improving the inference speed of various CPUs, GPUs, and neural processing units (NPUs). YOLOv7 supports both mobile GPU and GPU devices, from the edge to the cloud.
+Real-time object detection is an important component in many [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) systems, including multi-[object tracking](https://www.ultralytics.com/glossary/object-tracking), autonomous driving, [robotics](https://www.ultralytics.com/glossary/robotics), and [medical image analysis](https://www.ultralytics.com/glossary/medical-image-analysis). In recent years, real-time object detection development has focused on designing efficient architectures and improving the inference speed of various CPUs, GPUs, and neural processing units (NPUs). YOLOv7 supports both mobile GPU and GPU devices, from the edge to the cloud.
 
 Unlike traditional real-time object detectors that focus on architecture optimization, YOLOv7 introduces a focus on the optimization of the training process. This includes modules and optimization methods designed to improve the accuracy of object detection without increasing the inference cost, a concept known as the "trainable bag-of-freebies".
 
@@ -91,7 +91,7 @@ YOLOv7 introduces several key features:
 
 ## Usage Examples
 
-As of the time of writing, numa_ultralytics does not currently support YOLOv7 models. Therefore, any users interested in using YOLOv7 will need to refer directly to the YOLOv7 GitHub repository for installation and usage instructions.
+As of the time of writing, Ultralytics does not currently support YOLOv7 models. Therefore, any users interested in using YOLOv7 will need to refer directly to the YOLOv7 GitHub repository for installation and usage instructions.
 
 Here is a brief overview of the typical steps you might take to use YOLOv7:
 
@@ -103,7 +103,7 @@ Here is a brief overview of the typical steps you might take to use YOLOv7:
 
 Please note that the specific steps may vary depending on your specific use case and the current state of the YOLOv7 repository. Therefore, it is strongly recommended to refer directly to the instructions provided in the YOLOv7 GitHub repository.
 
-We regret any inconvenience this may cause and will strive to update this document with usage examples for numa_ultralytics once support for YOLOv7 is implemented.
+We regret any inconvenience this may cause and will strive to update this document with usage examples for Ultralytics once support for YOLOv7 is implemented.
 
 ## Citations and Acknowledgements
 
@@ -126,7 +126,7 @@ The original YOLOv7 paper can be found on [arXiv](https://arxiv.org/pdf/2207.026
 
 ## FAQ
 
-### What is YOLOv7 and why is it considered a breakthrough in real-time [object detection](https://www.numa_ultralytics.com/glossary/object-detection)?
+### What is YOLOv7 and why is it considered a breakthrough in real-time [object detection](https://www.ultralytics.com/glossary/object-detection)?
 
 YOLOv7 is a cutting-edge real-time object detection model that achieves unparalleled speed and accuracy. It surpasses other models, such as YOLOX, YOLOv5, and PPYOLOE, in both parameters usage and inference speed. YOLOv7's distinguishing features include its model re-parameterization and dynamic label assignment, which optimize its performance without increasing inference costs. For more technical details about its architecture and comparison metrics with other state-of-the-art object detectors, refer to the [YOLOv7 paper](https://arxiv.org/pdf/2207.02696).
 
@@ -134,23 +134,23 @@ YOLOv7 is a cutting-edge real-time object detection model that achieves unparall
 
 YOLOv7 introduces several innovations, including model re-parameterization and dynamic label assignment, which enhance the training process and improve inference accuracy. Compared to YOLOv5, YOLOv7 significantly boosts speed and accuracy. For instance, YOLOv7-X improves accuracy by 2.2% and reduces parameters by 22% compared to YOLOv5-X. Detailed comparisons can be found in the performance table [YOLOv7 comparison with SOTA object detectors](#comparison-of-sota-object-detectors).
 
-### Can I use YOLOv7 with numa_ultralytics tools and platforms?
+### Can I use YOLOv7 with Ultralytics tools and platforms?
 
-As of now, numa_ultralytics does not directly support YOLOv7 in its tools and platforms. Users interested in using YOLOv7 need to follow the installation and usage instructions provided in the [YOLOv7 GitHub repository](https://github.com/WongKinYiu/yolov7). For other state-of-the-art models, you can explore and train using numa_ultralytics tools like [numa_ultralytics HUB](../hub/quickstart.md).
+As of now, Ultralytics does not directly support YOLOv7 in its tools and platforms. Users interested in using YOLOv7 need to follow the installation and usage instructions provided in the [YOLOv7 GitHub repository](https://github.com/WongKinYiu/yolov7). For other state-of-the-art models, you can explore and train using Ultralytics tools like [Ultralytics HUB](../hub/quickstart.md).
 
 ### How do I install and run YOLOv7 for a custom object detection project?
 
 To install and run YOLOv7, follow these steps:
 
 1. Clone the YOLOv7 repository:
-   ```bash
-   git clone https://github.com/WongKinYiu/yolov7
-   ```
+    ```bash
+    git clone https://github.com/WongKinYiu/yolov7
+    ```
 2. Navigate to the cloned directory and install dependencies:
-   ```bash
-   cd yolov7
-   pip install -r requirements.txt
-   ```
+    ```bash
+    cd yolov7
+    pip install -r requirements.txt
+    ```
 3. Prepare your dataset and configure the model parameters according to the [usage instructions](https://github.com/WongKinYiu/yolov7) provided in the repository.
    For further guidance, visit the YOLOv7 GitHub repository for the latest information and updates.
 

@@ -1,52 +1,52 @@
 ---
-description: Learn about numa_ultralytics transformer encoder, layer, MLP block, LayerNorm2d and the deformable transformer decoder layer. Expand your understanding of these crucial AI modules.
-keywords: numa_ultralytics, numa_ultralytics documentation, TransformerEncoderLayer, TransformerLayer, MLPBlock, LayerNorm2d, DeformableTransformerDecoderLayer
+description: Learn about Ultralytics transformer encoder, layer, MLP block, LayerNorm2d and the deformable transformer decoder layer. Expand your understanding of these crucial AI modules.
+keywords: Ultralytics, Ultralytics documentation, TransformerEncoderLayer, TransformerLayer, MLPBlock, LayerNorm2d, DeformableTransformerDecoderLayer
 ---
 
-# Reference for `numa_ultralytics/nn/modules/transformer.py`
+# Reference for `ultralytics/nn/modules/transformer.py`
 
 !!! note
 
-    This file is available at [https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/nn/modules/transformer.py](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/nn/modules/transformer.py). If you spot a problem please help fix it by [contributing](https://docs.numa_ultralytics.com/help/contributing/) a [Pull Request](https://github.com/numa_ultralytics/numa_ultralytics/edit/main/numa_ultralytics/nn/modules/transformer.py) 🛠️. Thank you 🙏!
+    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/nn/modules/transformer.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/nn/modules/transformer.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/nn/modules/transformer.py) 🛠️. Thank you 🙏!
 
 <br>
 
-## ::: numa_ultralytics.nn.modules.transformer.TransformerEncoderLayer
+## ::: ultralytics.nn.modules.transformer.TransformerEncoderLayer
 
 <br><br><hr><br>
 
-## ::: numa_ultralytics.nn.modules.transformer.AIFI
+## ::: ultralytics.nn.modules.transformer.AIFI
 
 <br><br><hr><br>
 
-## ::: numa_ultralytics.nn.modules.transformer.TransformerLayer
+## ::: ultralytics.nn.modules.transformer.TransformerLayer
 
 <br><br><hr><br>
 
-## ::: numa_ultralytics.nn.modules.transformer.TransformerBlock
+## ::: ultralytics.nn.modules.transformer.TransformerBlock
 
 <br><br><hr><br>
 
-## ::: numa_ultralytics.nn.modules.transformer.MLPBlock
+## ::: ultralytics.nn.modules.transformer.MLPBlock
 
 <br><br><hr><br>
 
-## ::: numa_ultralytics.nn.modules.transformer.MLP
+## ::: ultralytics.nn.modules.transformer.MLP
 
 <br><br><hr><br>
 
-## ::: numa_ultralytics.nn.modules.transformer.LayerNorm2d
+## ::: ultralytics.nn.modules.transformer.LayerNorm2d
 
 <br><br><hr><br>
 
-## ::: numa_ultralytics.nn.modules.transformer.MSDeformAttn
+## ::: ultralytics.nn.modules.transformer.MSDeformAttn
 
 <br><br><hr><br>
 
-## ::: numa_ultralytics.nn.modules.transformer.DeformableTransformerDecoderLayer
+## ::: ultralytics.nn.modules.transformer.DeformableTransformerDecoderLayer
 
 <br><br><hr><br>
 
-## ::: numa_ultralytics.nn.modules.transformer.DeformableTransformerDecoder
+## ::: ultralytics.nn.modules.transformer.DeformableTransformerDecoder
 
 <br><br>

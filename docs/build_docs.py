@@ -1,4 +1,4 @@
-# numa_ultralytics 🚀 AGPL-3.0 License - https://numa_ultralytics.com/license
+# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
 """
 Automates the building and post-processing of MkDocs documentation, particularly for projects with multilingual content.
 It streamlines the workflow for generating localized versions of the documentation and updating HTML links to ensure
@@ -55,7 +55,7 @@ def prepare_docs_markdown(clone_repos=True):
 
     if clone_repos:
         # Get hub-sdk repo
-        repo = "https://github.com/numa_ultralytics/hub-sdk"
+        repo = "https://github.com/ultralytics/hub-sdk"
         local_dir = DOCS / "repos" / Path(repo).name
         os.system(f"git clone {repo} {local_dir} --depth 1 --single-branch --branch main")
         shutil.rmtree(DOCS / "en/hub/sdk", ignore_errors=True)  # delete if exists
@@ -65,7 +65,7 @@ def prepare_docs_markdown(clone_repos=True):
         print(f"Cloned/Updated {repo} in {local_dir}")
 
         # Get docs repo
-        repo = "https://github.com/numa_ultralytics/docs"
+        repo = "https://github.com/ultralytics/docs"
         local_dir = DOCS / "repos" / Path(repo).name
         os.system(f"git clone {repo} {local_dir} --depth 1 --single-branch --branch main")
         shutil.rmtree(DOCS / "en/compare", ignore_errors=True)  # delete if exists
@@ -167,12 +167,12 @@ def update_markdown_files(md_filepath: Path):
 def update_docs_html():
     """Updates titles, edit links, head sections, and converts plaintext links in HTML documentation."""
     # Update 404 titles
-    update_page_title(SITE / "404.html", new_title="numa_ultralytics Docs - Not Found")
+    update_page_title(SITE / "404.html", new_title="Ultralytics Docs - Not Found")
 
     # Update edit button links
     for subdir, docs_url in (
-        ("hub/sdk/", "https://github.com/numa_ultralytics/hub-sdk/tree/main/docs/"),  # do not use leading slash
-        ("compare/", "https://github.com/numa_ultralytics/docs/tree/main/docs/en/compare/"),
+        ("hub/sdk/", "https://github.com/ultralytics/hub-sdk/tree/main/docs/"),  # do not use leading slash
+        ("compare/", "https://github.com/ultralytics/docs/tree/main/docs/en/compare/"),
     ):
         update_subdir_edit_links(subdir=subdir, docs_url=docs_url)
 

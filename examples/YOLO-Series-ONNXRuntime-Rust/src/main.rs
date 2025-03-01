@@ -14,7 +14,7 @@ pub struct Args {
     pub model: Option<String>,
 
     /// Input source path
-    #[arg(long, default_value_t = String::from("../../numa_ultralytics/assets/bus.jpg"))]
+    #[arg(long, default_value_t = String::from("../../ultralytics/assets/bus.jpg"))]
     pub source: String,
 
     /// YOLO Task

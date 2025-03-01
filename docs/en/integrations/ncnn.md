@@ -1,32 +1,32 @@
 ---
 comments: true
 description: Optimize YOLO11 models for mobile and embedded devices by exporting to NCNN format. Enhance performance in resource-constrained environments.
-keywords: numa_ultralytics, YOLO11, NCNN, model export, machine learning, deployment, mobile, embedded systems, deep learning, AI models
+keywords: Ultralytics, YOLO11, NCNN, model export, machine learning, deployment, mobile, embedded systems, deep learning, AI models
 ---
 
 # How to Export to NCNN from YOLO11 for Smooth Deployment
 
-Deploying [computer vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv) models on devices with limited computational power, such as mobile or embedded systems, can be tricky. You need to make sure you use a format optimized for optimal performance. This makes sure that even devices with limited processing power can handle advanced computer vision tasks well.
+Deploying [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) models on devices with limited computational power, such as mobile or embedded systems, can be tricky. You need to make sure you use a format optimized for optimal performance. This makes sure that even devices with limited processing power can handle advanced computer vision tasks well.
 
-The export to NCNN format feature allows you to optimize your [numa_ultralytics YOLO11](https://github.com/numa_ultralytics/numa_ultralytics) models for lightweight device-based applications. In this guide, we'll walk you through how to convert your models to the NCNN format, making it easier for your models to perform well on various mobile and embedded devices.
+The export to NCNN format feature allows you to optimize your [Ultralytics YOLO11](https://github.com/ultralytics/ultralytics) models for lightweight device-based applications. In this guide, we'll walk you through how to convert your models to the NCNN format, making it easier for your models to perform well on various mobile and embedded devices.
 
 ## Why should you export to NCNN?
 
 <p align="center">
-  <img width="100%" src="https://github.com/numa_ultralytics/docs/releases/download/0/ncnn-overview.avif" alt="NCNN overview">
+  <img width="100%" src="https://github.com/ultralytics/docs/releases/download/0/ncnn-overview.avif" alt="NCNN overview">
 </p>
 
-The [NCNN](https://github.com/Tencent/ncnn) framework, developed by Tencent, is a high-performance [neural network](https://www.numa_ultralytics.com/glossary/neural-network-nn) inference computing framework optimized specifically for mobile platforms, including mobile phones, embedded devices, and IoT devices. NCNN is compatible with a wide range of platforms, including Linux, Android, iOS, and macOS.
+The [NCNN](https://github.com/Tencent/ncnn) framework, developed by Tencent, is a high-performance [neural network](https://www.ultralytics.com/glossary/neural-network-nn) inference computing framework optimized specifically for mobile platforms, including mobile phones, embedded devices, and IoT devices. NCNN is compatible with a wide range of platforms, including Linux, Android, iOS, and macOS.
 
-NCNN is known for its fast processing speed on mobile CPUs and enables rapid deployment of [deep learning](https://www.numa_ultralytics.com/glossary/deep-learning-dl) models to mobile platforms. This makes it easier to build smart apps, putting the power of AI right at your fingertips.
+NCNN is known for its fast processing speed on mobile CPUs and enables rapid deployment of [deep learning](https://www.ultralytics.com/glossary/deep-learning-dl) models to mobile platforms. This makes it easier to build smart apps, putting the power of AI right at your fingertips.
 
 ## Key Features of NCNN Models
 
-NCNN models offer a wide range of key features that enable on-device [machine learning](https://www.numa_ultralytics.com/glossary/machine-learning-ml) by helping developers run their models on mobile, embedded, and edge devices:
+NCNN models offer a wide range of key features that enable on-device [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) by helping developers run their models on mobile, embedded, and edge devices:
 
-- **Efficient and High-Performance**: NCNN models are made to be efficient and lightweight, optimized for running on mobile and embedded devices like Raspberry Pi with limited resources. They can also achieve high performance with high [accuracy](https://www.numa_ultralytics.com/glossary/accuracy) on various computer vision-based tasks.
+- **Efficient and High-Performance**: NCNN models are made to be efficient and lightweight, optimized for running on mobile and embedded devices like Raspberry Pi with limited resources. They can also achieve high performance with high [accuracy](https://www.ultralytics.com/glossary/accuracy) on various computer vision-based tasks.
 
-- **Quantization**: NCNN models often support quantization which is a technique that reduces the [precision](https://www.numa_ultralytics.com/glossary/precision) of the model's weights and activations. This leads to further improvements in performance and reduces memory footprint.
+- **Quantization**: NCNN models often support quantization which is a technique that reduces the [precision](https://www.ultralytics.com/glossary/precision) of the model's weights and activations. This leads to further improvements in performance and reduces memory footprint.
 
 - **Compatibility**: NCNN models are compatible with popular deep learning frameworks like [TensorFlow](https://www.tensorflow.org/), [Caffe](https://caffe.berkeleyvision.org/), and [ONNX](https://onnx.ai/). This compatibility allows developers to use existing models and workflows easily.
 
@@ -40,7 +40,7 @@ NCNN models, designed for efficiency and performance, are compatible with a vari
 
 - **Mobile Deployment**: Specifically optimized for Android and iOS, allowing for seamless integration into mobile applications for efficient on-device inference.
 
-- **Embedded Systems and IoT Devices**: If you find that running inference on a Raspberry Pi with the [numa_ultralytics Guide](../guides/raspberry-pi.md) isn't fast enough, switching to an NCNN exported model could help speed things up. NCNN is great for devices like Raspberry Pi and NVIDIA Jetson, especially in situations where you need quick processing right on the device.
+- **Embedded Systems and IoT Devices**: If you find that running inference on a Raspberry Pi with the [Ultralytics Guide](../guides/raspberry-pi.md) isn't fast enough, switching to an NCNN exported model could help speed things up. NCNN is great for devices like Raspberry Pi and NVIDIA Jetson, especially in situations where you need quick processing right on the device.
 
 - **Desktop and Server Deployment**: Capable of being deployed in desktop and server environments across Linux, Windows, and macOS, supporting development, training, and evaluation with higher computational capacities.
 
@@ -58,21 +58,21 @@ To install the required packages, run:
 
         ```bash
         # Install the required package for YOLO11
-        pip install numa_ultralytics
+        pip install ultralytics
         ```
 
-For detailed instructions and best practices related to the installation process, check our [numa_ultralytics Installation guide](../quickstart.md). While installing the required packages for YOLO11, if you encounter any difficulties, consult our [Common Issues guide](../guides/yolo-common-issues.md) for solutions and tips.
+For detailed instructions and best practices related to the installation process, check our [Ultralytics Installation guide](../quickstart.md). While installing the required packages for YOLO11, if you encounter any difficulties, consult our [Common Issues guide](../guides/yolo-common-issues.md) for solutions and tips.
 
 ### Usage
 
-Before diving into the usage instructions, it's important to note that while all [numa_ultralytics YOLO11 models](../models/index.md) are available for exporting, you can ensure that the model you select supports export functionality [here](../modes/export.md).
+Before diving into the usage instructions, it's important to note that while all [Ultralytics YOLO11 models](../models/index.md) are available for exporting, you can ensure that the model you select supports export functionality [here](../modes/export.md).
 
 !!! example "Usage"
 
     === "Python"
 
           ```python
-          from numa_ultralytics import YOLO
+          from ultralytics import YOLO
 
           # Load the YOLO11 model
           model = YOLO("yolo11n.pt")
@@ -84,7 +84,7 @@ Before diving into the usage instructions, it's important to note that while all
           ncnn_model = YOLO("./yolo11n_ncnn_model")
 
           # Run inference
-          results = ncnn_model("https://numa_ultralytics.com/images/bus.jpg")
+          results = ncnn_model("https://ultralytics.com/images/bus.jpg")
           ```
 
     === "CLI"
@@ -94,7 +94,7 @@ Before diving into the usage instructions, it's important to note that while all
           yolo export model=yolo11n.pt format=ncnn  # creates '/yolo11n_ncnn_model'
 
           # Run inference with the exported model
-          yolo predict model='./yolo11n_ncnn_model' source='https://numa_ultralytics.com/images/bus.jpg'
+          yolo predict model='./yolo11n_ncnn_model' source='https://ultralytics.com/images/bus.jpg'
           ```
 
 ### Export Arguments
@@ -106,13 +106,13 @@ Before diving into the usage instructions, it's important to note that while all
 | `half`   | `bool`           | `False`  | Enables FP16 (half-precision) quantization, reducing model size and potentially speeding up inference on supported hardware.            |
 | `batch`  | `int`            | `1`      | Specifies export model batch inference size or the max number of images the exported model will process concurrently in `predict` mode. |
 
-For more details about the export process, visit the [numa_ultralytics documentation page on exporting](../modes/export.md).
+For more details about the export process, visit the [Ultralytics documentation page on exporting](../modes/export.md).
 
 ## Deploying Exported YOLO11 NCNN Models
 
-After successfully exporting your numa_ultralytics YOLO11 models to NCNN format, you can now deploy them. The primary and recommended first step for running a NCNN model is to utilize the YOLO("yolo11n_ncnn_model/") method, as outlined in the previous usage code snippet. However, for in-depth instructions on deploying your NCNN models in various other settings, take a look at the following resources:
+After successfully exporting your Ultralytics YOLO11 models to NCNN format, you can now deploy them. The primary and recommended first step for running a NCNN model is to utilize the YOLO("yolo11n_ncnn_model/") method, as outlined in the previous usage code snippet. However, for in-depth instructions on deploying your NCNN models in various other settings, take a look at the following resources:
 
-- **[Android](https://github.com/Tencent/ncnn/wiki/how-to-build#build-for-android)**: This blog explains how to use NCNN models for performing tasks like [object detection](https://www.numa_ultralytics.com/glossary/object-detection) through Android applications.
+- **[Android](https://github.com/Tencent/ncnn/wiki/how-to-build#build-for-android)**: This blog explains how to use NCNN models for performing tasks like [object detection](https://www.ultralytics.com/glossary/object-detection) through Android applications.
 
 - **[macOS](https://github.com/Tencent/ncnn/wiki/how-to-build#build-for-macos)**: Understand how to use NCNN models for performing tasks through macOS.
 
@@ -122,40 +122,40 @@ After successfully exporting your numa_ultralytics YOLO11 models to NCNN format,
 
 ## Summary
 
-In this guide, we've gone over exporting numa_ultralytics YOLO11 models to the NCNN format. This conversion step is crucial for improving the efficiency and speed of YOLO11 models, making them more effective and suitable for limited-resource computing environments.
+In this guide, we've gone over exporting Ultralytics YOLO11 models to the NCNN format. This conversion step is crucial for improving the efficiency and speed of YOLO11 models, making them more effective and suitable for limited-resource computing environments.
 
 For detailed instructions on usage, please refer to the [official NCNN documentation](https://ncnn.readthedocs.io/en/latest/index.html).
 
-Also, if you're interested in exploring other integration options for numa_ultralytics YOLO11, be sure to visit our [integration guide page](index.md) for further insights and information.
+Also, if you're interested in exploring other integration options for Ultralytics YOLO11, be sure to visit our [integration guide page](index.md) for further insights and information.
 
 ## FAQ
 
-### How do I export numa_ultralytics YOLO11 models to NCNN format?
+### How do I export Ultralytics YOLO11 models to NCNN format?
 
-To export your numa_ultralytics YOLO11 model to NCNN format, follow these steps:
+To export your Ultralytics YOLO11 model to NCNN format, follow these steps:
 
 - **Python**: Use the `export` function from the YOLO class.
 
-  ```python
-  from numa_ultralytics import YOLO
+    ```python
+    from ultralytics import YOLO
 
-  # Load the YOLO11 model
-  model = YOLO("yolo11n.pt")
+    # Load the YOLO11 model
+    model = YOLO("yolo11n.pt")
 
-  # Export to NCNN format
-  model.export(format="ncnn")  # creates '/yolo11n_ncnn_model'
-  ```
+    # Export to NCNN format
+    model.export(format="ncnn")  # creates '/yolo11n_ncnn_model'
+    ```
 
 - **CLI**: Use the `yolo` command with the `export` argument.
-  ```bash
-  yolo export model=yolo11n.pt format=ncnn  # creates '/yolo11n_ncnn_model'
-  ```
+    ```bash
+    yolo export model=yolo11n.pt format=ncnn  # creates '/yolo11n_ncnn_model'
+    ```
 
 For detailed export options, check the [Export](../modes/export.md) page in the documentation.
 
 ### What are the advantages of exporting YOLO11 models to NCNN?
 
-Exporting your numa_ultralytics YOLO11 models to NCNN offers several benefits:
+Exporting your Ultralytics YOLO11 models to NCNN offers several benefits:
 
 - **Efficiency**: NCNN models are optimized for mobile and embedded devices, ensuring high performance even with limited computational resources.
 - **Quantization**: NCNN supports techniques like quantization that improve model speed and reduce memory usage.
@@ -168,12 +168,12 @@ For more details, see the [Export to NCNN](#why-should-you-export-to-ncnn) secti
 NCNN, developed by Tencent, is specifically optimized for mobile platforms. Key reasons to use NCNN include:
 
 - **High Performance**: Designed for efficient and fast processing on mobile CPUs.
-- **Cross-Platform**: Compatible with popular frameworks such as [TensorFlow](https://www.numa_ultralytics.com/glossary/tensorflow) and ONNX, making it easier to convert and deploy models across different platforms.
+- **Cross-Platform**: Compatible with popular frameworks such as [TensorFlow](https://www.ultralytics.com/glossary/tensorflow) and ONNX, making it easier to convert and deploy models across different platforms.
 - **Community Support**: Active community support ensures continual improvements and updates.
 
 To understand more, visit the [NCNN overview](#key-features-of-ncnn-models) in the documentation.
 
-### What platforms are supported for NCNN [model deployment](https://www.numa_ultralytics.com/glossary/model-deployment)?
+### What platforms are supported for NCNN [model deployment](https://www.ultralytics.com/glossary/model-deployment)?
 
 NCNN is versatile and supports various platforms:
 
@@ -183,7 +183,7 @@ NCNN is versatile and supports various platforms:
 
 If running models on a Raspberry Pi isn't fast enough, converting to the NCNN format could speed things up as detailed in our [Raspberry Pi Guide](../guides/raspberry-pi.md).
 
-### How can I deploy numa_ultralytics YOLO11 NCNN models on Android?
+### How can I deploy Ultralytics YOLO11 NCNN models on Android?
 
 To deploy your YOLO11 models on Android:
 
@@ -192,4 +192,4 @@ To deploy your YOLO11 models on Android:
 
 For step-by-step instructions, refer to our guide on [Deploying YOLO11 NCNN Models](#deploying-exported-yolo11-ncnn-models).
 
-For more advanced guides and use cases, visit the [numa_ultralytics documentation page](../guides/model-deployment-options.md).
+For more advanced guides and use cases, visit the [Ultralytics documentation page](../guides/model-deployment-options.md).

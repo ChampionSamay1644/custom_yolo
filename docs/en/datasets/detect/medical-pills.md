@@ -6,9 +6,9 @@ keywords: medical-pills dataset, pill detection, pharmaceutical imaging, AI in h
 
 # Medical Pills Dataset
 
-<a href="https://colab.research.google.com/github/numa_ultralytics/notebooks/blob/main/notebooks/how-to-train-numa_ultralytics-yolo-on-medical-pills-dataset.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open Medical Pills Dataset In Colab"></a>
+<a href="https://colab.research.google.com/github/ultralytics/notebooks/blob/main/notebooks/how-to-train-ultralytics-yolo-on-medical-pills-dataset.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open Medical Pills Dataset In Colab"></a>
 
-The medical-pills detection dataset is a proof-of-concept (POC) dataset, carefully curated to demonstrate the potential of AI in pharmaceutical applications. It contains labeled images specifically designed to train [computer vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv) [models](https://docs.numa_ultralytics.com/models/) for identifying medical-pills.
+The medical-pills detection dataset is a proof-of-concept (POC) dataset, carefully curated to demonstrate the potential of AI in pharmaceutical applications. It contains labeled images specifically designed to train [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) [models](https://docs.ultralytics.com/models/) for identifying medical-pills.
 
 <p align="center">
   <br>
@@ -18,10 +18,10 @@ The medical-pills detection dataset is a proof-of-concept (POC) dataset, careful
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> How to train numa_ultralytics YOLO11 Model on Medical Pills Detection Dataset in <a href="https://colab.research.google.com/github/numa_ultralytics/notebooks/blob/main/notebooks/how-to-train-numa_ultralytics-yolo-on-medical-pills-dataset.ipynb">Google Colab</a>
+  <strong>Watch:</strong> How to train Ultralytics YOLO11 Model on Medical Pills Detection Dataset in <a href="https://colab.research.google.com/github/ultralytics/notebooks/blob/main/notebooks/how-to-train-ultralytics-yolo-on-medical-pills-dataset.ipynb">Google Colab</a>
 </p>
 
-This dataset serves as a foundational resource for automating essential [tasks](https://docs.numa_ultralytics.com/tasks/) such as quality control, packaging automation, and efficient sorting in pharmaceutical workflows. By integrating this dataset into projects, researchers and developers can explore innovative [solutions](https://docs.numa_ultralytics.com/solutions/) that enhance [accuracy](https://www.numa_ultralytics.com/glossary/accuracy), streamline operations, and ultimately contribute to improved healthcare outcomes.
+This dataset serves as a foundational resource for automating essential [tasks](https://docs.ultralytics.com/tasks/) such as quality control, packaging automation, and efficient sorting in pharmaceutical workflows. By integrating this dataset into projects, researchers and developers can explore innovative [solutions](https://docs.ultralytics.com/solutions/) that enhance [accuracy](https://www.ultralytics.com/glossary/accuracy), streamline operations, and ultimately contribute to improved healthcare outcomes.
 
 ## Dataset Structure
 
@@ -40,24 +40,24 @@ Using computer vision for medical-pills detection enables automation in the phar
 
 ## Dataset YAML
 
-A YAML configuration file is provided to define the dataset's structure, including paths and classes. For the medical-pills dataset, the `medical-pills.yaml` file can be accessed at [https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/medical-pills.yaml](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/medical-pills.yaml).
+A YAML configuration file is provided to define the dataset's structure, including paths and classes. For the medical-pills dataset, the `medical-pills.yaml` file can be accessed at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/medical-pills.yaml](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/medical-pills.yaml).
 
-!!! example "numa_ultralytics/cfg/datasets/medical-pills.yaml"
+!!! example "ultralytics/cfg/datasets/medical-pills.yaml"
 
     ```yaml
-    --8<-- "numa_ultralytics/cfg/datasets/medical-pills.yaml"
+    --8<-- "ultralytics/cfg/datasets/medical-pills.yaml"
     ```
 
 ## Usage
 
-To train a YOLO11n model on the medical-pills dataset for 100 [epochs](https://www.numa_ultralytics.com/glossary/epoch) with an image size of 640, use the following examples. For detailed arguments, refer to the model's [Training](../../modes/train.md) page.
+To train a YOLO11n model on the medical-pills dataset for 100 [epochs](https://www.ultralytics.com/glossary/epoch) with an image size of 640, use the following examples. For detailed arguments, refer to the model's [Training](../../modes/train.md) page.
 
 !!! example "Train Example"
 
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a model
         model = YOLO("yolo11n.pt")  # load a pretrained model (recommended for training)
@@ -78,33 +78,33 @@ To train a YOLO11n model on the medical-pills dataset for 100 [epochs](https://w
     === "Python"
 
         ```python
-        from numa_ultralytics import YOLO
+        from ultralytics import YOLO
 
         # Load a model
         model = YOLO("path/to/best.pt")  # load a fine-tuned model
 
         # Inference using the model
-        results = model.predict("https://numa_ultralytics.com/assets/medical-pills-sample.jpg")
+        results = model.predict("https://ultralytics.com/assets/medical-pills-sample.jpg")
         ```
 
     === "CLI"
 
         ```bash
         # Start prediction with a fine-tuned *.pt model
-        yolo detect predict model='path/to/best.pt' imgsz=640 source="https://numa_ultralytics.com/assets/medical-pills-sample.jpg"
+        yolo detect predict model='path/to/best.pt' imgsz=640 source="https://ultralytics.com/assets/medical-pills-sample.jpg"
         ```
 
 ## Sample Images and Annotations
 
 The medical-pills dataset features labeled images showcasing the diversity of pills. Below is an example of a labeled image from the dataset:
 
-![Medical-pills dataset sample image](https://github.com/numa_ultralytics/docs/releases/download/0/medical-pills-dataset-sample-image.avif)
+![Medical-pills dataset sample image](https://github.com/ultralytics/docs/releases/download/0/medical-pills-dataset-sample-image.avif)
 
 - **Mosaiced Image**: Displayed is a training batch comprising mosaiced dataset images. Mosaicing enhances training diversity by consolidating multiple images into one, improving model generalization.
 
 ## Citations and Acknowledgments
 
-The dataset is available under the [AGPL-3.0 License](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/LICENSE).
+The dataset is available under the [AGPL-3.0 License](https://github.com/ultralytics/ultralytics/blob/main/LICENSE).
 
 If you use the Medical-pills dataset in your research or development work, please cite it using the mentioned details:
 
@@ -113,12 +113,12 @@ If you use the Medical-pills dataset in your research or development work, pleas
     === "BibTeX"
 
         ```bibtex
-        @dataset{Jocher_numa_ultralytics_Datasets_2024,
+        @dataset{Jocher_Ultralytics_Datasets_2024,
             author = {Jocher, Glenn and Rizwan, Muhammad},
             license = {AGPL-3.0},
             month = {Dec},
-            title = {numa_ultralytics Datasets: Medical-pills Detection Dataset},
-            url = {https://docs.numa_ultralytics.com/datasets/detect/medical-pills/},
+            title = {Ultralytics Datasets: Medical-pills Detection Dataset},
+            url = {https://docs.ultralytics.com/datasets/detect/medical-pills/},
             version = {1.0.0},
             year = {2024}
         }
@@ -144,4 +144,4 @@ Inference can be done using Python or CLI methods with a fine-tuned YOLO11 model
 
 ### Where can I find the YAML configuration file for the medical-pills dataset?
 
-The YAML file is available at [medical-pills.yaml](https://github.com/numa_ultralytics/numa_ultralytics/blob/main/numa_ultralytics/cfg/datasets/medical-pills.yaml), containing dataset paths, classes, and additional configuration details.
+The YAML file is available at [medical-pills.yaml](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/medical-pills.yaml), containing dataset paths, classes, and additional configuration details.

@@ -1,14 +1,14 @@
 ---
 comments: true
-description: Explore numa_ultralytics Solutions using YOLO11 for object counting, blurring, security, and more. Enhance efficiency and solve real-world problems with cutting-edge AI.
-keywords: numa_ultralytics, YOLO11, object counting, object blurring, security systems, AI solutions, real-time analysis, computer vision applications
+description: Explore Ultralytics Solutions using YOLO11 for object counting, blurring, security, and more. Enhance efficiency and solve real-world problems with cutting-edge AI.
+keywords: Ultralytics, YOLO11, object counting, object blurring, security systems, AI solutions, real-time analysis, computer vision applications
 ---
 
-# numa_ultralytics Solutions: Harness YOLO11 to Solve Real-World Problems
+# Ultralytics Solutions: Harness YOLO11 to Solve Real-World Problems
 
-numa_ultralytics Solutions provide cutting-edge applications of YOLO models, offering real-world solutions like object counting, blurring, and security systems, enhancing efficiency and [accuracy](https://www.numa_ultralytics.com/glossary/accuracy) in diverse industries. Discover the power of YOLO11 for practical, impactful implementations.
+Ultralytics Solutions provide cutting-edge applications of YOLO models, offering real-world solutions like object counting, blurring, and security systems, enhancing efficiency and [accuracy](https://www.ultralytics.com/glossary/accuracy) in diverse industries. Discover the power of YOLO11 for practical, impactful implementations.
 
-![numa_ultralytics Solutions Thumbnail](https://github.com/numa_ultralytics/docs/releases/download/0/numa_ultralytics-solutions-thumbnail.avif)
+![Ultralytics Solutions Thumbnail](https://github.com/ultralytics/docs/releases/download/0/ultralytics-solutions-thumbnail.avif)
 
 <p align="center">
   <br>
@@ -18,12 +18,12 @@ numa_ultralytics Solutions provide cutting-edge applications of YOLO models, off
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> How to Run numa_ultralytics Solutions from the Command Line (CLI) | numa_ultralytics YOLO11 🚀
+  <strong>Watch:</strong> How to Run Ultralytics Solutions from the Command Line (CLI) | Ultralytics YOLO11 🚀
 </p>
 
 ## Solutions
 
-Here's our curated list of numa_ultralytics solutions that can be used to create awesome [computer vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv) projects.
+Here's our curated list of Ultralytics solutions that can be used to create awesome [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) projects.
 
 - [Object Counting](../guides/object-counting.md) 🚀: Learn to perform real-time object counting with YOLO11. Gain the expertise to accurately count objects in live video streams.
 - [Object Cropping](../guides/object-cropping.md) 🚀: Master object cropping with YOLO11 for precise extraction of objects from images and videos.
@@ -32,14 +32,14 @@ Here's our curated list of numa_ultralytics solutions that can be used to create
 - [Objects Counting in Regions](../guides/region-counting.md) 🚀: Count objects in specific regions using YOLO11 for accurate detection in varied areas.
 - [Security Alarm System](../guides/security-alarm-system.md) 🚀: Create a security alarm system with YOLO11 that triggers alerts upon detecting new objects. Customize the system to fit your specific needs.
 - [Heatmaps](../guides/heatmaps.md) 🚀: Utilize detection heatmaps to visualize data intensity across a matrix, providing clear insights in computer vision tasks.
-- [Instance Segmentation with Object Tracking](../guides/instance-segmentation-and-tracking.md) 🚀 NEW: Implement [instance segmentation](https://www.numa_ultralytics.com/glossary/instance-segmentation) and object tracking with YOLO11 to achieve precise object boundaries and continuous monitoring.
+- [Instance Segmentation with Object Tracking](../guides/instance-segmentation-and-tracking.md) 🚀 NEW: Implement [instance segmentation](https://www.ultralytics.com/glossary/instance-segmentation) and object tracking with YOLO11 to achieve precise object boundaries and continuous monitoring.
 - [VisionEye View Objects Mapping](../guides/vision-eye.md) 🚀: Develop systems that mimic human eye focus on specific objects, enhancing the computer's ability to discern and prioritize details.
 - [Speed Estimation](../guides/speed-estimation.md) 🚀: Estimate object speed using YOLO11 and object tracking techniques, crucial for applications like autonomous vehicles and traffic monitoring.
-- [Distance Calculation](../guides/distance-calculation.md) 🚀: Calculate distances between objects using [bounding box](https://www.numa_ultralytics.com/glossary/bounding-box) centroids in YOLO11, essential for spatial analysis.
+- [Distance Calculation](../guides/distance-calculation.md) 🚀: Calculate distances between objects using [bounding box](https://www.ultralytics.com/glossary/bounding-box) centroids in YOLO11, essential for spatial analysis.
 - [Queue Management](../guides/queue-management.md) 🚀: Implement efficient queue management systems to minimize wait times and improve productivity using YOLO11.
 - [Parking Management](../guides/parking-management.md) 🚀: Organize and direct vehicle flow in parking areas with YOLO11, optimizing space utilization and user experience.
 - [Analytics](../guides/analytics.md) 📊: Conduct comprehensive data analysis to discover patterns and make informed decisions, leveraging YOLO11 for descriptive, predictive, and prescriptive analytics.
-- [Live Inference with Streamlit](../guides/streamlit-live-inference.md) 🚀: Leverage the power of YOLO11 for real-time [object detection](https://www.numa_ultralytics.com/glossary/object-detection) directly through your web browser with a user-friendly Streamlit interface.
+- [Live Inference with Streamlit](../guides/streamlit-live-inference.md) 🚀: Leverage the power of YOLO11 for real-time [object detection](https://www.ultralytics.com/glossary/object-detection) directly through your web browser with a user-friendly Streamlit interface.
 - [Track Objects in Zone](../guides/trackzone.md) 🎯 NEW: Learn how to track objects within specific zones of video frames using YOLO11 for precise and efficient monitoring.
 
 ## Solutions Usage
@@ -70,30 +70,30 @@ Here's our curated list of numa_ultralytics solutions that can be used to create
 
 ## Contribute to Our Solutions
 
-We welcome contributions from the community! If you've mastered a particular aspect of numa_ultralytics YOLO that's not yet covered in our solutions, we encourage you to share your expertise. Writing a guide is a great way to give back to the community and help us make our documentation more comprehensive and user-friendly.
+We welcome contributions from the community! If you've mastered a particular aspect of Ultralytics YOLO that's not yet covered in our solutions, we encourage you to share your expertise. Writing a guide is a great way to give back to the community and help us make our documentation more comprehensive and user-friendly.
 
 To get started, please read our [Contributing Guide](../help/contributing.md) for guidelines on how to open up a Pull Request (PR) 🛠️. We look forward to your contributions!
 
-Let's work together to make the numa_ultralytics YOLO ecosystem more robust and versatile 🙏!
+Let's work together to make the Ultralytics YOLO ecosystem more robust and versatile 🙏!
 
 ## FAQ
 
-### How can I use numa_ultralytics YOLO for real-time object counting?
+### How can I use Ultralytics YOLO for real-time object counting?
 
-numa_ultralytics YOLO11 can be used for real-time object counting by leveraging its advanced object detection capabilities. You can follow our detailed guide on [Object Counting](../guides/object-counting.md) to set up YOLO11 for live video stream analysis. Simply install YOLO11, load your model, and process video frames to count objects dynamically.
+Ultralytics YOLO11 can be used for real-time object counting by leveraging its advanced object detection capabilities. You can follow our detailed guide on [Object Counting](../guides/object-counting.md) to set up YOLO11 for live video stream analysis. Simply install YOLO11, load your model, and process video frames to count objects dynamically.
 
-### What are the benefits of using numa_ultralytics YOLO for security systems?
+### What are the benefits of using Ultralytics YOLO for security systems?
 
-numa_ultralytics YOLO11 enhances security systems by offering real-time object detection and alert mechanisms. By employing YOLO11, you can create a security alarm system that triggers alerts when new objects are detected in the surveillance area. Learn how to set up a [Security Alarm System](../guides/security-alarm-system.md) with YOLO11 for robust security monitoring.
+Ultralytics YOLO11 enhances security systems by offering real-time object detection and alert mechanisms. By employing YOLO11, you can create a security alarm system that triggers alerts when new objects are detected in the surveillance area. Learn how to set up a [Security Alarm System](../guides/security-alarm-system.md) with YOLO11 for robust security monitoring.
 
-### How can numa_ultralytics YOLO improve queue management systems?
+### How can Ultralytics YOLO improve queue management systems?
 
-numa_ultralytics YOLO11 can significantly improve queue management systems by accurately counting and tracking people in queues, thus helping to reduce wait times and optimize service efficiency. Follow our detailed guide on [Queue Management](../guides/queue-management.md) to learn how to implement YOLO11 for effective queue monitoring and analysis.
+Ultralytics YOLO11 can significantly improve queue management systems by accurately counting and tracking people in queues, thus helping to reduce wait times and optimize service efficiency. Follow our detailed guide on [Queue Management](../guides/queue-management.md) to learn how to implement YOLO11 for effective queue monitoring and analysis.
 
-### Can numa_ultralytics YOLO be used for workout monitoring?
+### Can Ultralytics YOLO be used for workout monitoring?
 
-Yes, numa_ultralytics YOLO11 can be effectively used for monitoring workouts by tracking and analyzing fitness routines in real-time. This allows for precise evaluation of exercise form and performance. Explore our guide on [Workouts Monitoring](../guides/workouts-monitoring.md) to learn how to set up an AI-powered workout monitoring system using YOLO11.
+Yes, Ultralytics YOLO11 can be effectively used for monitoring workouts by tracking and analyzing fitness routines in real-time. This allows for precise evaluation of exercise form and performance. Explore our guide on [Workouts Monitoring](../guides/workouts-monitoring.md) to learn how to set up an AI-powered workout monitoring system using YOLO11.
 
-### How does numa_ultralytics YOLO help in creating heatmaps for [data visualization](https://www.numa_ultralytics.com/glossary/data-visualization)?
+### How does Ultralytics YOLO help in creating heatmaps for [data visualization](https://www.ultralytics.com/glossary/data-visualization)?
 
-numa_ultralytics YOLO11 can generate heatmaps to visualize data intensity across a given area, highlighting regions of high activity or interest. This feature is particularly useful in understanding patterns and trends in various computer vision tasks. Learn more about creating and using [Heatmaps](../guides/heatmaps.md) with YOLO11 for comprehensive data analysis and visualization.
+Ultralytics YOLO11 can generate heatmaps to visualize data intensity across a given area, highlighting regions of high activity or interest. This feature is particularly useful in understanding patterns and trends in various computer vision tasks. Learn more about creating and using [Heatmaps](../guides/heatmaps.md) with YOLO11 for comprehensive data analysis and visualization.

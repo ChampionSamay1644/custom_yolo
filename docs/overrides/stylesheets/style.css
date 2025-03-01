@@ -49,7 +49,7 @@ div.highlight {
   max-height: 75vh;
 }
 
-/* Banner (same as the one on the numa_ultralytics website) -------------------------------------------------------------- */
+/* Banner (same as the one on the Ultralytics website) -------------------------------------------------------------- */
 .md-banner {
   background-image: url(https://assets-global.website-files.com/646dd1f1a3703e451ba81ecc/66e9a211bf6831d112fd6ce3_banner_yv24.avif);
   background-size: cover;
@@ -159,9 +159,9 @@ div.highlight {
     margin: 0 auto;
   }
 }
-/* Banner (same as the one on the numa_ultralytics website) -------------------------------------------------------------- */
+/* Banner (same as the one on the Ultralytics website) -------------------------------------------------------------- */
 
-/* MkDocs numa_ultralytics Plugin ---------------------------------------------------------------------------------------- */
+/* MkDocs Ultralytics Plugin ---------------------------------------------------------------------------------------- */
 .git-info,
 .dates-container,
 .authors-container,
@@ -263,7 +263,7 @@ div.highlight {
     width: 100%;
   }
 }
-/* MkDocs numa_ultralytics Plugin ---------------------------------------------------------------------------------------- */
+/* MkDocs Ultralytics Plugin ---------------------------------------------------------------------------------------- */
 
 /* Inkeep ----------------------------------------------------------------------------------------------------------- */
 .ikp-floating-button {

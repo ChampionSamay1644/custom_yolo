@@ -6,17 +6,17 @@ keywords: YOLOv4, object detection, real-time detection, Alexey Bochkovskiy, neu
 
 # YOLOv4: High-Speed and Precise Object Detection
 
-Welcome to the numa_ultralytics documentation page for YOLOv4, a state-of-the-art, real-time object detector launched in 2020 by Alexey Bochkovskiy at [https://github.com/AlexeyAB/darknet](https://github.com/AlexeyAB/darknet). YOLOv4 is designed to provide the optimal balance between speed and accuracy, making it an excellent choice for many applications.
+Welcome to the Ultralytics documentation page for YOLOv4, a state-of-the-art, real-time object detector launched in 2020 by Alexey Bochkovskiy at [https://github.com/AlexeyAB/darknet](https://github.com/AlexeyAB/darknet). YOLOv4 is designed to provide the optimal balance between speed and accuracy, making it an excellent choice for many applications.
 
-![YOLOv4 architecture diagram](https://github.com/numa_ultralytics/docs/releases/download/0/yolov4-architecture-diagram.avif) **YOLOv4 architecture diagram**. Showcasing the intricate network design of YOLOv4, including the backbone, neck, and head components, and their interconnected layers for optimal real-time object detection.
+![YOLOv4 architecture diagram](https://github.com/ultralytics/docs/releases/download/0/yolov4-architecture-diagram.avif) **YOLOv4 architecture diagram**. Showcasing the intricate network design of YOLOv4, including the backbone, neck, and head components, and their interconnected layers for optimal real-time object detection.
 
 ## Introduction
 
-YOLOv4 stands for You Only Look Once version 4. It is a real-time object detection model developed to address the limitations of previous YOLO versions like [YOLOv3](yolov3.md) and other object detection models. Unlike other [convolutional neural network](https://www.numa_ultralytics.com/glossary/convolutional-neural-network-cnn) (CNN) based object detectors, YOLOv4 is not only applicable for recommendation systems but also for standalone process management and human input reduction. Its operation on conventional graphics processing units (GPUs) allows for mass usage at an affordable price, and it is designed to work in real-time on a conventional GPU while requiring only one such GPU for training.
+YOLOv4 stands for You Only Look Once version 4. It is a real-time object detection model developed to address the limitations of previous YOLO versions like [YOLOv3](yolov3.md) and other object detection models. Unlike other [convolutional neural network](https://www.ultralytics.com/glossary/convolutional-neural-network-cnn) (CNN) based object detectors, YOLOv4 is not only applicable for recommendation systems but also for standalone process management and human input reduction. Its operation on conventional graphics processing units (GPUs) allows for mass usage at an affordable price, and it is designed to work in real-time on a conventional GPU while requiring only one such GPU for training.
 
 ## Architecture
 
-YOLOv4 makes use of several innovative features that work together to optimize its performance. These include Weighted-Residual-Connections (WRC), Cross-Stage-Partial-connections (CSP), Cross mini-[Batch Normalization](https://www.numa_ultralytics.com/glossary/batch-normalization) (CmBN), Self-adversarial-training (SAT), Mish-activation, Mosaic [data augmentation](https://www.numa_ultralytics.com/glossary/data-augmentation), DropBlock [regularization](https://www.numa_ultralytics.com/glossary/regularization), and CIoU loss. These features are combined to achieve state-of-the-art results.
+YOLOv4 makes use of several innovative features that work together to optimize its performance. These include Weighted-Residual-Connections (WRC), Cross-Stage-Partial-connections (CSP), Cross mini-[Batch Normalization](https://www.ultralytics.com/glossary/batch-normalization) (CmBN), Self-adversarial-training (SAT), Mish-activation, Mosaic [data augmentation](https://www.ultralytics.com/glossary/data-augmentation), DropBlock [regularization](https://www.ultralytics.com/glossary/regularization), and CIoU loss. These features are combined to achieve state-of-the-art results.
 
 A typical object detector is composed of several parts including the input, the backbone, the neck, and the head. The backbone of YOLOv4 is pre-trained on ImageNet and is used to predict classes and bounding boxes of objects. The backbone could be from several models including VGG, ResNet, ResNeXt, or DenseNet. The neck part of the detector is used to collect feature maps from different stages and usually includes several bottom-up paths and several top-down paths. The head part is what is used to make the final object detections and classifications.
 
@@ -26,11 +26,11 @@ YOLOv4 also makes use of methods known as "bag of freebies," which are technique
 
 ## Features and Performance
 
-YOLOv4 is designed for optimal speed and accuracy in object detection. The architecture of YOLOv4 includes CSPDarknet53 as the backbone, PANet as the neck, and YOLOv3 as the [detection head](https://www.numa_ultralytics.com/glossary/detection-head). This design allows YOLOv4 to perform object detection at an impressive speed, making it suitable for real-time applications. YOLOv4 also excels in accuracy, achieving state-of-the-art results in object detection benchmarks.
+YOLOv4 is designed for optimal speed and accuracy in object detection. The architecture of YOLOv4 includes CSPDarknet53 as the backbone, PANet as the neck, and YOLOv3 as the [detection head](https://www.ultralytics.com/glossary/detection-head). This design allows YOLOv4 to perform object detection at an impressive speed, making it suitable for real-time applications. YOLOv4 also excels in accuracy, achieving state-of-the-art results in object detection benchmarks.
 
 ## Usage Examples
 
-As of the time of writing, numa_ultralytics does not currently support YOLOv4 models. Therefore, any users interested in using YOLOv4 will need to refer directly to the YOLOv4 GitHub repository for installation and usage instructions.
+As of the time of writing, Ultralytics does not currently support YOLOv4 models. Therefore, any users interested in using YOLOv4 will need to refer directly to the YOLOv4 GitHub repository for installation and usage instructions.
 
 Here is a brief overview of the typical steps you might take to use YOLOv4:
 
@@ -42,7 +42,7 @@ Here is a brief overview of the typical steps you might take to use YOLOv4:
 
 Please note that the specific steps may vary depending on your specific use case and the current state of the YOLOv4 repository. Therefore, it is strongly recommended to refer directly to the instructions provided in the YOLOv4 GitHub repository.
 
-We regret any inconvenience this may cause and will strive to update this document with usage examples for numa_ultralytics once support for YOLOv4 is implemented.
+We regret any inconvenience this may cause and will strive to update this document with usage examples for Ultralytics once support for YOLOv4 is implemented.
 
 ## Conclusion
 
@@ -71,13 +71,13 @@ The original YOLOv4 paper can be found on [arXiv](https://arxiv.org/abs/2004.109
 
 ## FAQ
 
-### What is YOLOv4 and why should I use it for [object detection](https://www.numa_ultralytics.com/glossary/object-detection)?
+### What is YOLOv4 and why should I use it for [object detection](https://www.ultralytics.com/glossary/object-detection)?
 
-YOLOv4, which stands for "You Only Look Once version 4," is a state-of-the-art real-time object detection model developed by Alexey Bochkovskiy in 2020. It achieves an optimal balance between speed and [accuracy](https://www.numa_ultralytics.com/glossary/accuracy), making it highly suitable for real-time applications. YOLOv4's architecture incorporates several innovative features like Weighted-Residual-Connections (WRC), Cross-Stage-Partial-connections (CSP), and Self-adversarial-training (SAT), among others, to achieve state-of-the-art results. If you're looking for a high-performance model that operates efficiently on conventional GPUs, YOLOv4 is an excellent choice.
+YOLOv4, which stands for "You Only Look Once version 4," is a state-of-the-art real-time object detection model developed by Alexey Bochkovskiy in 2020. It achieves an optimal balance between speed and [accuracy](https://www.ultralytics.com/glossary/accuracy), making it highly suitable for real-time applications. YOLOv4's architecture incorporates several innovative features like Weighted-Residual-Connections (WRC), Cross-Stage-Partial-connections (CSP), and Self-adversarial-training (SAT), among others, to achieve state-of-the-art results. If you're looking for a high-performance model that operates efficiently on conventional GPUs, YOLOv4 is an excellent choice.
 
 ### How does the architecture of YOLOv4 enhance its performance?
 
-The architecture of YOLOv4 includes several key components: the [backbone](https://www.numa_ultralytics.com/glossary/backbone), the neck, and the head. The backbone, which can be models like VGG, ResNet, or CSPDarknet53, is pre-trained to predict classes and bounding boxes. The neck, utilizing PANet, connects [feature maps](https://www.numa_ultralytics.com/glossary/feature-maps) from different stages for comprehensive data extraction. Finally, the head, which uses configurations from YOLOv3, makes the final object detections. YOLOv4 also employs "bag of freebies" techniques like mosaic data augmentation and DropBlock regularization, further optimizing its speed and accuracy.
+The architecture of YOLOv4 includes several key components: the [backbone](https://www.ultralytics.com/glossary/backbone), the neck, and the head. The backbone, which can be models like VGG, ResNet, or CSPDarknet53, is pre-trained to predict classes and bounding boxes. The neck, utilizing PANet, connects [feature maps](https://www.ultralytics.com/glossary/feature-maps) from different stages for comprehensive data extraction. Finally, the head, which uses configurations from YOLOv3, makes the final object detections. YOLOv4 also employs "bag of freebies" techniques like mosaic data augmentation and DropBlock regularization, further optimizing its speed and accuracy.
 
 ### What are "bag of freebies" in the context of YOLOv4?
 
@@ -85,8 +85,8 @@ The architecture of YOLOv4 includes several key components: the [backbone](https
 
 ### Why is YOLOv4 considered suitable for real-time object detection on conventional GPUs?
 
-YOLOv4 is designed to optimize both speed and accuracy, making it ideal for real-time object detection tasks that require quick and reliable performance. It operates efficiently on conventional GPUs, needing only one for both training and inference. This makes it accessible and practical for various applications ranging from [recommendation systems](https://www.numa_ultralytics.com/glossary/recommendation-system) to standalone process management, thereby reducing the need for extensive hardware setups and making it a cost-effective solution for real-time object detection.
+YOLOv4 is designed to optimize both speed and accuracy, making it ideal for real-time object detection tasks that require quick and reliable performance. It operates efficiently on conventional GPUs, needing only one for both training and inference. This makes it accessible and practical for various applications ranging from [recommendation systems](https://www.ultralytics.com/glossary/recommendation-system) to standalone process management, thereby reducing the need for extensive hardware setups and making it a cost-effective solution for real-time object detection.
 
-### How can I get started with YOLOv4 if numa_ultralytics does not currently support it?
+### How can I get started with YOLOv4 if Ultralytics does not currently support it?
 
-To get started with YOLOv4, you should visit the official [YOLOv4 GitHub repository](https://github.com/AlexeyAB/darknet). Follow the installation instructions provided in the README file, which typically include cloning the repository, installing dependencies, and setting up environment variables. Once installed, you can train the model by preparing your dataset, configuring the model parameters, and following the usage instructions provided. Since numa_ultralytics does not currently support YOLOv4, it is recommended to refer directly to the YOLOv4 GitHub for the most up-to-date and detailed guidance.
+To get started with YOLOv4, you should visit the official [YOLOv4 GitHub repository](https://github.com/AlexeyAB/darknet). Follow the installation instructions provided in the README file, which typically include cloning the repository, installing dependencies, and setting up environment variables. Once installed, you can train the model by preparing your dataset, configuring the model parameters, and following the usage instructions provided. Since Ultralytics does not currently support YOLOv4, it is recommended to refer directly to the YOLOv4 GitHub for the most up-to-date and detailed guidance.

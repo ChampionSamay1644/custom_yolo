@@ -1,18 +1,18 @@
 ---
 comments: true
 description: Learn how to convert YOLO11 models to TFLite for edge device deployment. Optimize performance and ensure seamless execution on various platforms.
-keywords: YOLO11, TFLite, model export, TensorFlow Lite, edge devices, deployment, numa_ultralytics, machine learning, on-device inference, model optimization
+keywords: YOLO11, TFLite, model export, TensorFlow Lite, edge devices, deployment, Ultralytics, machine learning, on-device inference, model optimization
 ---
 
 # A Guide on YOLO11 Model Export to TFLite for Deployment
 
 <p align="center">
-  <img width="75%" src="https://github.com/numa_ultralytics/docs/releases/download/0/tflite-logo.avif" alt="TFLite Logo">
+  <img width="75%" src="https://github.com/ultralytics/docs/releases/download/0/tflite-logo.avif" alt="TFLite Logo">
 </p>
 
-Deploying [computer vision](https://www.numa_ultralytics.com/glossary/computer-vision-cv) models on edge devices or embedded devices requires a format that can ensure seamless performance.
+Deploying [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) models on edge devices or embedded devices requires a format that can ensure seamless performance.
 
-The TensorFlow Lite or TFLite export format allows you to optimize your [numa_ultralytics YOLO11](https://github.com/numa_ultralytics/numa_ultralytics) models for tasks like [object detection](https://www.numa_ultralytics.com/glossary/object-detection) and [image classification](https://www.numa_ultralytics.com/glossary/image-classification) in edge device-based applications. In this guide, we'll walk through the steps for converting your models to the TFLite format, making it easier for your models to perform well on various edge devices.
+The TensorFlow Lite or TFLite export format allows you to optimize your [Ultralytics YOLO11](https://github.com/ultralytics/ultralytics) models for tasks like [object detection](https://www.ultralytics.com/glossary/object-detection) and [image classification](https://www.ultralytics.com/glossary/image-classification) in edge device-based applications. In this guide, we'll walk through the steps for converting your models to the TFLite format, making it easier for your models to perform well on various edge devices.
 
 ## Why should you export to TFLite?
 
@@ -41,10 +41,10 @@ TFLite offers various on-device deployment options for machine learning models, 
 - **Deploying with Android and iOS**: Both Android and iOS applications with TFLite can analyze edge-based camera feeds and sensors to detect and identify objects. TFLite also offers native iOS libraries written in [Swift](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/swift) and [Objective-C](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/objc). The architecture diagram below shows the process of deploying a trained model onto Android and iOS platforms using TensorFlow Lite.
 
  <p align="center">
-  <img width="75%" src="https://github.com/numa_ultralytics/docs/releases/download/0/architecture-diagram-tflite-deployment.avif" alt="Architecture">
+  <img width="75%" src="https://github.com/ultralytics/docs/releases/download/0/architecture-diagram-tflite-deployment.avif" alt="Architecture">
 </p>
 
-- **Implementing with Embedded Linux**: If running inferences on a [Raspberry Pi](https://www.raspberrypi.org/) using the [numa_ultralytics Guide](../guides/raspberry-pi.md) does not meet the speed requirements for your use case, you can use an exported TFLite model to accelerate inference times. Additionally, it's possible to further improve performance by utilizing a [Coral Edge TPU device](https://coral.withgoogle.com/).
+- **Implementing with Embedded Linux**: If running inferences on a [Raspberry Pi](https://www.raspberrypi.org/) using the [Ultralytics Guide](../guides/raspberry-pi.md) does not meet the speed requirements for your use case, you can use an exported TFLite model to accelerate inference times. Additionally, it's possible to further improve performance by utilizing a [Coral Edge TPU device](https://coral.withgoogle.com/).
 
 - **Deploying with Microcontrollers**: TFLite models can also be deployed on microcontrollers and other devices with only a few kilobytes of memory. The core runtime just fits in 16 KB on an Arm Cortex M3 and can run many basic models. It doesn't require operating system support, any standard C or C++ libraries, or dynamic memory allocation.
 
@@ -62,21 +62,21 @@ To install the required packages, run:
 
         ```bash
         # Install the required package for YOLO11
-        pip install numa_ultralytics
+        pip install ultralytics
         ```
 
-For detailed instructions and best practices related to the installation process, check our [numa_ultralytics Installation guide](../quickstart.md). While installing the required packages for YOLO11, if you encounter any difficulties, consult our [Common Issues guide](../guides/yolo-common-issues.md) for solutions and tips.
+For detailed instructions and best practices related to the installation process, check our [Ultralytics Installation guide](../quickstart.md). While installing the required packages for YOLO11, if you encounter any difficulties, consult our [Common Issues guide](../guides/yolo-common-issues.md) for solutions and tips.
 
 ### Usage
 
-Before diving into the usage instructions, it's important to note that while all [numa_ultralytics YOLO11 models](../models/index.md) are available for exporting, you can ensure that the model you select supports export functionality [here](../modes/export.md).
+Before diving into the usage instructions, it's important to note that while all [Ultralytics YOLO11 models](../models/index.md) are available for exporting, you can ensure that the model you select supports export functionality [here](../modes/export.md).
 
 !!! example "Usage"
 
     === "Python"
 
           ```python
-          from numa_ultralytics import YOLO
+          from ultralytics import YOLO
 
           # Load the YOLO11 model
           model = YOLO("yolo11n.pt")
@@ -88,7 +88,7 @@ Before diving into the usage instructions, it's important to note that while all
           tflite_model = YOLO("yolo11n_float32.tflite")
 
           # Run inference
-          results = tflite_model("https://numa_ultralytics.com/images/bus.jpg")
+          results = tflite_model("https://ultralytics.com/images/bus.jpg")
           ```
 
     === "CLI"
@@ -98,28 +98,28 @@ Before diving into the usage instructions, it's important to note that while all
           yolo export model=yolo11n.pt format=tflite  # creates 'yolo11n_float32.tflite'
 
           # Run inference with the exported model
-          yolo predict model='yolo11n_float32.tflite' source='https://numa_ultralytics.com/images/bus.jpg'
+          yolo predict model='yolo11n_float32.tflite' source='https://ultralytics.com/images/bus.jpg'
           ```
 
 ### Export Arguments
 
-| Argument | Type             | Default        | Description                                                                                                                                                                                        |
-| -------- | ---------------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `format` | `str`            | `'tflite'`     | Target format for the exported model, defining compatibility with various deployment environments.                                                                                                 |
-| `imgsz`  | `int` or `tuple` | `640`          | Desired image size for the model input. Can be an integer for square images or a tuple `(height, width)` for specific dimensions.                                                                  |
-| `half`   | `bool`           | `False`        | Enables FP16 (half-precision) quantization, reducing model size and potentially speeding up inference on supported hardware.                                                                       |
-| `int8`   | `bool`           | `False`        | Activates INT8 quantization, further compressing the model and speeding up inference with minimal [accuracy](https://www.numa_ultralytics.com/glossary/accuracy) loss, primarily for edge devices. |
-| `nms`    | `bool`           | `False`        | Adds Non-Maximum Suppression (NMS), essential for accurate and efficient detection post-processing.                                                                                                |
-| `batch`  | `int`            | `1`            | Specifies export model batch inference size or the max number of images the exported model will process concurrently in `predict` mode.                                                            |
-| `data`   | `str`            | `'coco8.yaml'` | Path to the [dataset](https://docs.numa_ultralytics.com/datasets) configuration file (default: `coco8.yaml`), essential for quantization.                                                          |
+| Argument | Type             | Default        | Description                                                                                                                                                                                   |
+| -------- | ---------------- | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `format` | `str`            | `'tflite'`     | Target format for the exported model, defining compatibility with various deployment environments.                                                                                            |
+| `imgsz`  | `int` or `tuple` | `640`          | Desired image size for the model input. Can be an integer for square images or a tuple `(height, width)` for specific dimensions.                                                             |
+| `half`   | `bool`           | `False`        | Enables FP16 (half-precision) quantization, reducing model size and potentially speeding up inference on supported hardware.                                                                  |
+| `int8`   | `bool`           | `False`        | Activates INT8 quantization, further compressing the model and speeding up inference with minimal [accuracy](https://www.ultralytics.com/glossary/accuracy) loss, primarily for edge devices. |
+| `nms`    | `bool`           | `False`        | Adds Non-Maximum Suppression (NMS), essential for accurate and efficient detection post-processing.                                                                                           |
+| `batch`  | `int`            | `1`            | Specifies export model batch inference size or the max number of images the exported model will process concurrently in `predict` mode.                                                       |
+| `data`   | `str`            | `'coco8.yaml'` | Path to the [dataset](https://docs.ultralytics.com/datasets) configuration file (default: `coco8.yaml`), essential for quantization.                                                          |
 
-For more details about the export process, visit the [numa_ultralytics documentation page on exporting](../modes/export.md).
+For more details about the export process, visit the [Ultralytics documentation page on exporting](../modes/export.md).
 
 ## Deploying Exported YOLO11 TFLite Models
 
-After successfully exporting your numa_ultralytics YOLO11 models to TFLite format, you can now deploy them. The primary and recommended first step for running a TFLite model is to utilize the YOLO("model.tflite") method, as outlined in the previous usage code snippet. However, for in-depth instructions on deploying your TFLite models in various other settings, take a look at the following resources:
+After successfully exporting your Ultralytics YOLO11 models to TFLite format, you can now deploy them. The primary and recommended first step for running a TFLite model is to utilize the YOLO("model.tflite") method, as outlined in the previous usage code snippet. However, for in-depth instructions on deploying your TFLite models in various other settings, take a look at the following resources:
 
-- **[Android](https://ai.google.dev/edge/litert/android)**: A quick start guide for integrating [TensorFlow](https://www.numa_ultralytics.com/glossary/tensorflow) Lite into Android applications, providing easy-to-follow steps for setting up and running [machine learning](https://www.numa_ultralytics.com/glossary/machine-learning-ml) models.
+- **[Android](https://ai.google.dev/edge/litert/android)**: A quick start guide for integrating [TensorFlow](https://www.ultralytics.com/glossary/tensorflow) Lite into Android applications, providing easy-to-follow steps for setting up and running [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) models.
 
 - **[iOS](https://ai.google.dev/edge/litert/ios/quickstart)**: Check out this detailed guide for developers on integrating and deploying TensorFlow Lite models in iOS applications, offering step-by-step instructions and resources.
 
@@ -127,26 +127,26 @@ After successfully exporting your numa_ultralytics YOLO11 models to TFLite forma
 
 ## Summary
 
-In this guide, we focused on how to export to TFLite format. By converting your numa_ultralytics YOLO11 models to TFLite model format, you can improve the efficiency and speed of YOLO11 models, making them more effective and suitable for [edge computing](https://www.numa_ultralytics.com/glossary/edge-computing) environments.
+In this guide, we focused on how to export to TFLite format. By converting your Ultralytics YOLO11 models to TFLite model format, you can improve the efficiency and speed of YOLO11 models, making them more effective and suitable for [edge computing](https://www.ultralytics.com/glossary/edge-computing) environments.
 
 For further details on usage, visit the [TFLite official documentation](https://ai.google.dev/edge/litert).
 
-Also, if you're curious about other numa_ultralytics YOLO11 integrations, make sure to check out our [integration guide page](../integrations/index.md). You'll find tons of helpful info and insights waiting for you there.
+Also, if you're curious about other Ultralytics YOLO11 integrations, make sure to check out our [integration guide page](../integrations/index.md). You'll find tons of helpful info and insights waiting for you there.
 
 ## FAQ
 
 ### How do I export a YOLO11 model to TFLite format?
 
-To export a YOLO11 model to TFLite format, you can use the numa_ultralytics library. First, install the required package using:
+To export a YOLO11 model to TFLite format, you can use the Ultralytics library. First, install the required package using:
 
 ```bash
-pip install numa_ultralytics
+pip install ultralytics
 ```
 
 Then, use the following code snippet to export your model:
 
 ```python
-from numa_ultralytics import YOLO
+from ultralytics import YOLO
 
 # Load the YOLO11 model
 model = YOLO("yolo11n.pt")
@@ -161,11 +161,11 @@ For CLI users, you can achieve this with:
 yolo export model=yolo11n.pt format=tflite  # creates 'yolo11n_float32.tflite'
 ```
 
-For more details, visit the [numa_ultralytics export guide](../modes/export.md).
+For more details, visit the [Ultralytics export guide](../modes/export.md).
 
-### What are the benefits of using TensorFlow Lite for YOLO11 [model deployment](https://www.numa_ultralytics.com/glossary/model-deployment)?
+### What are the benefits of using TensorFlow Lite for YOLO11 [model deployment](https://www.ultralytics.com/glossary/model-deployment)?
 
-TensorFlow Lite (TFLite) is an open-source [deep learning](https://www.numa_ultralytics.com/glossary/deep-learning-dl) framework designed for on-device inference, making it ideal for deploying YOLO11 models on mobile, embedded, and IoT devices. Key benefits include:
+TensorFlow Lite (TFLite) is an open-source [deep learning](https://www.ultralytics.com/glossary/deep-learning-dl) framework designed for on-device inference, making it ideal for deploying YOLO11 models on mobile, embedded, and IoT devices. Key benefits include:
 
 - **On-device optimization**: Minimize latency and enhance privacy by processing data locally.
 - **Platform compatibility**: Supports Android, iOS, embedded Linux, and MCU.
@@ -199,7 +199,7 @@ For more information on deployment options, see our detailed [deployment guide](
 
 If you encounter errors while exporting YOLO11 models to TFLite, common solutions include:
 
-- **Check package compatibility**: Ensure you're using compatible versions of numa_ultralytics and TensorFlow. Refer to our [installation guide](../quickstart.md).
+- **Check package compatibility**: Ensure you're using compatible versions of Ultralytics and TensorFlow. Refer to our [installation guide](../quickstart.md).
 - **Model support**: Verify that the specific YOLO11 model supports TFLite export by checking [here](../modes/export.md).
 
 For additional troubleshooting tips, visit our [Common Issues guide](../guides/yolo-common-issues.md).

@@ -1,4 +1,4 @@
-# numa_ultralytics 🚀 AGPL-3.0 License - https://numa_ultralytics.com/license
+# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
 
 import argparse
 import time
@@ -11,10 +11,10 @@ import numpy as np
 import torch
 from transformers import AutoModel, AutoProcessor
 
-from numa_ultralytics import YOLO
-from numa_ultralytics.data.loaders import get_best_youtube_url
-from numa_ultralytics.utils.plotting import Annotator
-from numa_ultralytics.utils.torch_utils import select_device
+from ultralytics import YOLO
+from ultralytics.data.loaders import get_best_youtube_url
+from ultralytics.utils.plotting import Annotator
+from ultralytics.utils.torch_utils import select_device
 
 
 class TorchVisionVideoClassifier:
@@ -421,7 +421,7 @@ def run(
 def parse_opt():
     """Parse command line arguments."""
     parser = argparse.ArgumentParser()
-    parser.add_argument("--weights", type=str, default="yolo11n.pt", help="numa_ultralytics detector model path")
+    parser.add_argument("--weights", type=str, default="yolo11n.pt", help="ultralytics detector model path")
     parser.add_argument("--device", default="", help='cuda device, i.e. 0 or 0,1,2,3 or cpu/mps, "" for auto-detection')
     parser.add_argument(
         "--source",

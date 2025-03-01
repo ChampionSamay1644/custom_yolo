@@ -1,10 +1,10 @@
 ---
 comments: true
-description: Learn how to deploy numa_ultralytics YOLO11 on NVIDIA Jetson devices using TensorRT and DeepStream SDK. Explore performance benchmarks and maximize AI capabilities.
-keywords: numa_ultralytics, YOLO11, NVIDIA Jetson, JetPack, AI deployment, embedded systems, deep learning, TensorRT, DeepStream SDK, computer vision
+description: Learn how to deploy Ultralytics YOLO11 on NVIDIA Jetson devices using TensorRT and DeepStream SDK. Explore performance benchmarks and maximize AI capabilities.
+keywords: Ultralytics, YOLO11, NVIDIA Jetson, JetPack, AI deployment, embedded systems, deep learning, TensorRT, DeepStream SDK, computer vision
 ---
 
-# numa_ultralytics YOLO11 on NVIDIA Jetson using DeepStream SDK and TensorRT
+# Ultralytics YOLO11 on NVIDIA Jetson using DeepStream SDK and TensorRT
 
 <p align="center">
   <br>
@@ -14,12 +14,12 @@ keywords: numa_ultralytics, YOLO11, NVIDIA Jetson, JetPack, AI deployment, embed
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> How to Run Multiple Streams with DeepStream SDK on Jetson Nano using numa_ultralytics YOLO11
+  <strong>Watch:</strong> How to Run Multiple Streams with DeepStream SDK on Jetson Nano using Ultralytics YOLO11
 </p>
 
-This comprehensive guide provides a detailed walkthrough for deploying numa_ultralytics YOLO11 on [NVIDIA Jetson](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/) devices using DeepStream SDK and TensorRT. Here we use TensorRT to maximize the inference performance on the Jetson platform.
+This comprehensive guide provides a detailed walkthrough for deploying Ultralytics YOLO11 on [NVIDIA Jetson](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/) devices using DeepStream SDK and TensorRT. Here we use TensorRT to maximize the inference performance on the Jetson platform.
 
-<img width="1024" src="https://github.com/numa_ultralytics/docs/releases/download/0/deepstream-nvidia-jetson.avif" alt="DeepStream on NVIDIA Jetson">
+<img width="1024" src="https://github.com/ultralytics/docs/releases/download/0/deepstream-nvidia-jetson.avif" alt="DeepStream on NVIDIA Jetson">
 
 !!! note
 
@@ -28,18 +28,18 @@ This comprehensive guide provides a detailed walkthrough for deploying numa_ultr
 
 ## What is NVIDIA DeepStream?
 
-[NVIDIA's DeepStream SDK](https://developer.nvidia.com/deepstream-sdk) is a complete streaming analytics toolkit based on GStreamer for AI-based multi-sensor processing, video, audio, and image understanding. It's ideal for vision AI developers, software partners, startups, and OEMs building IVA (Intelligent Video Analytics) apps and services. You can now create stream-processing pipelines that incorporate [neural networks](https://www.numa_ultralytics.com/glossary/neural-network-nn) and other complex processing tasks like tracking, video encoding/decoding, and video rendering. These pipelines enable real-time analytics on video, image, and sensor data. DeepStream's multi-platform support gives you a faster, easier way to develop vision AI applications and services on-premise, at the edge, and in the cloud.
+[NVIDIA's DeepStream SDK](https://developer.nvidia.com/deepstream-sdk) is a complete streaming analytics toolkit based on GStreamer for AI-based multi-sensor processing, video, audio, and image understanding. It's ideal for vision AI developers, software partners, startups, and OEMs building IVA (Intelligent Video Analytics) apps and services. You can now create stream-processing pipelines that incorporate [neural networks](https://www.ultralytics.com/glossary/neural-network-nn) and other complex processing tasks like tracking, video encoding/decoding, and video rendering. These pipelines enable real-time analytics on video, image, and sensor data. DeepStream's multi-platform support gives you a faster, easier way to develop vision AI applications and services on-premise, at the edge, and in the cloud.
 
 ## Prerequisites
 
 Before you start to follow this guide:
 
-- Visit our documentation, [Quick Start Guide: NVIDIA Jetson with numa_ultralytics YOLO11](nvidia-jetson.md) to set up your NVIDIA Jetson device with numa_ultralytics YOLO11
+- Visit our documentation, [Quick Start Guide: NVIDIA Jetson with Ultralytics YOLO11](nvidia-jetson.md) to set up your NVIDIA Jetson device with Ultralytics YOLO11
 - Install [DeepStream SDK](https://developer.nvidia.com/deepstream-getting-started) according to the JetPack version
 
-  - For JetPack 4.6.4, install [DeepStream 6.0.1](https://docs.nvidia.com/metropolis/deepstream/6.0.1/dev-guide/text/DS_Quickstart.html)
-  - For JetPack 5.1.3, install [DeepStream 6.3](https://docs.nvidia.com/metropolis/deepstream/6.3/dev-guide/text/DS_Quickstart.html)
-  - For JetPack 6.1, install [DeepStream 7.1](https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_Installation.html)
+    - For JetPack 4.6.4, install [DeepStream 6.0.1](https://docs.nvidia.com/metropolis/deepstream/6.0.1/dev-guide/text/DS_Quickstart.html)
+    - For JetPack 5.1.3, install [DeepStream 6.3](https://docs.nvidia.com/metropolis/deepstream/6.3/dev-guide/text/DS_Quickstart.html)
+    - For JetPack 6.1, install [DeepStream 7.1](https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_Installation.html)
 
 !!! tip
 
@@ -49,13 +49,13 @@ Before you start to follow this guide:
 
 Here we are using [marcoslucianops/DeepStream-Yolo](https://github.com/marcoslucianops/DeepStream-Yolo) GitHub repository which includes NVIDIA DeepStream SDK support for YOLO models. We appreciate the efforts of marcoslucianops for his contributions!
 
-1.  Install numa_ultralytics with necessary dependencies
+1.  Install Ultralytics with necessary dependencies
 
     ```bash
     cd ~
     pip install -U pip
-    git clone https://github.com/numa_ultralytics/numa_ultralytics
-    cd numa_ultralytics
+    git clone https://github.com/ultralytics/ultralytics
+    cd ultralytics
     pip install -e ".[export]" onnxslim
     ```
 
@@ -66,26 +66,26 @@ Here we are using [marcoslucianops/DeepStream-Yolo](https://github.com/marcosluc
     git clone https://github.com/marcoslucianops/DeepStream-Yolo
     ```
 
-3.  Copy the `export_yoloV8.py` file from `DeepStream-Yolo/utils` directory to the `numa_ultralytics` folder
+3.  Copy the `export_yoloV8.py` file from `DeepStream-Yolo/utils` directory to the `ultralytics` folder
 
     ```bash
-    cp ~/DeepStream-Yolo/utils/export_yoloV8.py ~/numa_ultralytics
-    cd numa_ultralytics
+    cp ~/DeepStream-Yolo/utils/export_yoloV8.py ~/ultralytics
+    cd ultralytics
     ```
 
     !!! note
 
         `export_yoloV8.py` works for both YOLOv8 and YOLO11 models.
 
-4.  Download numa_ultralytics YOLO11 detection model (.pt) of your choice from [YOLO11 releases](https://github.com/numa_ultralytics/assets/releases). Here we use [yolo11s.pt](https://github.com/numa_ultralytics/assets/releases/download/v8.3.0/yolo11s.pt).
+4.  Download Ultralytics YOLO11 detection model (.pt) of your choice from [YOLO11 releases](https://github.com/ultralytics/assets/releases). Here we use [yolo11s.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11s.pt).
 
     ```bash
-    wget https://github.com/numa_ultralytics/assets/releases/download/v8.3.0/yolo11s.pt
+    wget https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11s.pt
     ```
 
     !!! note
 
-        You can also use a [custom trained YOLO11 model](https://docs.numa_ultralytics.com/modes/train/).
+        You can also use a [custom trained YOLO11 model](https://docs.ultralytics.com/modes/train/).
 
 5.  Convert model to ONNX
 
@@ -208,7 +208,7 @@ deepstream-app -c deepstream_app_config.txt
 
     It will take a long time to generate the TensorRT engine file before starting the inference. So please be patient.
 
-<div align=center><img width=1000 src="https://github.com/numa_ultralytics/docs/releases/download/0/yolov8-with-deepstream.avif" alt="YOLO11 with deepstream"></div>
+<div align=center><img width=1000 src="https://github.com/ultralytics/docs/releases/download/0/yolov8-with-deepstream.avif" alt="YOLO11 with deepstream"></div>
 
 !!! tip
 
@@ -252,7 +252,7 @@ If you want to use INT8 precision for inference, you need to follow the steps be
 
     !!! note
 
-        NVIDIA recommends at least 500 images to get a good [accuracy](https://www.numa_ultralytics.com/glossary/accuracy). On this example, 1000 images are chosen to get better accuracy (more images = more accuracy). You can set it from **head -1000**. For example, for 2000 images, **head -2000**. This process can take a long time.
+        NVIDIA recommends at least 500 images to get a good [accuracy](https://www.ultralytics.com/glossary/accuracy). On this example, 1000 images are chosen to get better accuracy (more images = more accuracy). You can set it from **head -1000**. For example, for 2000 images, **head -2000**. This process can take a long time.
 
 6.  Create the `calibration.txt` file with all selected images
 
@@ -307,24 +307,24 @@ To set up multiple streams under a single deepstream application, you can do the
 
 1. Change the rows and columns to build a grid display according to the number of streams you want to have. For example, for 4 streams, we can add 2 rows and 2 columns.
 
-   ```bash
-   [tiled-display]
-   rows=2
-   columns=2
-   ```
+    ```bash
+    [tiled-display]
+    rows=2
+    columns=2
+    ```
 
 2. Set `num-sources=4` and add `uri` of all the 4 streams
 
-   ```bash
-   [source0]
-   enable=1
-   type=3
-   uri=<path_to_video>
-   uri=<path_to_video>
-   uri=<path_to_video>
-   uri=<path_to_video>
-   num-sources=4
-   ```
+    ```bash
+    [source0]
+    enable=1
+    type=3
+    uri=<path_to_video>
+    uri=<path_to_video>
+    uri=<path_to_video>
+    uri=<path_to_video>
+    num-sources=4
+    ```
 
 ### Run Inference
 
@@ -332,7 +332,7 @@ To set up multiple streams under a single deepstream application, you can do the
 deepstream-app -c deepstream_app_config.txt
 ```
 
-<div align=center><img width=1000 src="https://github.com/numa_ultralytics/docs/releases/download/0/multistream-setup.avif" alt="Multistream setup"></div>
+<div align=center><img width=1000 src="https://github.com/ultralytics/docs/releases/download/0/multistream-setup.avif" alt="Multistream setup"></div>
 
 ## Benchmark Results
 
@@ -340,7 +340,7 @@ The following benchmarks summarizes how YOLO11 models perform at different Tenso
 
 ### Comparison Chart
 
-<div align=center><img width=1000 src="https://github.com/numa_ultralytics/assets/releases/download/v0.0.0/jetson-deepstream-benchmarks.avif" alt="Jetson DeepStream Benchmarks Chart"></div>
+<div align=center><img width=1000 src="https://github.com/ultralytics/assets/releases/download/v0.0.0/jetson-deepstream-benchmarks.avif" alt="Jetson DeepStream Benchmarks Chart"></div>
 
 ### Detailed Comparison Table
 
@@ -392,17 +392,17 @@ This guide was initially created by our friends at Seeed Studio, Lakshantha and 
 
 ## FAQ
 
-### How do I set up numa_ultralytics YOLO11 on an NVIDIA Jetson device?
+### How do I set up Ultralytics YOLO11 on an NVIDIA Jetson device?
 
-To set up numa_ultralytics YOLO11 on an [NVIDIA Jetson](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/) device, you first need to install the [DeepStream SDK](https://developer.nvidia.com/deepstream-getting-started) compatible with your JetPack version. Follow the step-by-step guide in our [Quick Start Guide](nvidia-jetson.md) to configure your NVIDIA Jetson for YOLO11 deployment.
+To set up Ultralytics YOLO11 on an [NVIDIA Jetson](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/) device, you first need to install the [DeepStream SDK](https://developer.nvidia.com/deepstream-getting-started) compatible with your JetPack version. Follow the step-by-step guide in our [Quick Start Guide](nvidia-jetson.md) to configure your NVIDIA Jetson for YOLO11 deployment.
 
 ### What is the benefit of using TensorRT with YOLO11 on NVIDIA Jetson?
 
-Using TensorRT with YOLO11 optimizes the model for inference, significantly reducing latency and improving throughput on NVIDIA Jetson devices. TensorRT provides high-performance, low-latency [deep learning](https://www.numa_ultralytics.com/glossary/deep-learning-dl) inference through layer fusion, precision calibration, and kernel auto-tuning. This leads to faster and more efficient execution, particularly useful for real-time applications like video analytics and autonomous machines.
+Using TensorRT with YOLO11 optimizes the model for inference, significantly reducing latency and improving throughput on NVIDIA Jetson devices. TensorRT provides high-performance, low-latency [deep learning](https://www.ultralytics.com/glossary/deep-learning-dl) inference through layer fusion, precision calibration, and kernel auto-tuning. This leads to faster and more efficient execution, particularly useful for real-time applications like video analytics and autonomous machines.
 
-### Can I run numa_ultralytics YOLO11 with DeepStream SDK across different NVIDIA Jetson hardware?
+### Can I run Ultralytics YOLO11 with DeepStream SDK across different NVIDIA Jetson hardware?
 
-Yes, the guide for deploying numa_ultralytics YOLO11 with the DeepStream SDK and TensorRT is compatible across the entire NVIDIA Jetson lineup. This includes devices like the Jetson Orin NX 16GB with [JetPack 5.1.3](https://developer.nvidia.com/embedded/jetpack-sdk-513) and the Jetson Nano 4GB with [JetPack 4.6.4](https://developer.nvidia.com/jetpack-sdk-464). Refer to the section [DeepStream Configuration for YOLO11](#deepstream-configuration-for-yolo11) for detailed steps.
+Yes, the guide for deploying Ultralytics YOLO11 with the DeepStream SDK and TensorRT is compatible across the entire NVIDIA Jetson lineup. This includes devices like the Jetson Orin NX 16GB with [JetPack 5.1.3](https://developer.nvidia.com/embedded/jetpack-sdk-513) and the Jetson Nano 4GB with [JetPack 4.6.4](https://developer.nvidia.com/jetpack-sdk-464). Refer to the section [DeepStream Configuration for YOLO11](#deepstream-configuration-for-yolo11) for detailed steps.
 
 ### How can I convert a YOLO11 model to ONNX for DeepStream?
 
