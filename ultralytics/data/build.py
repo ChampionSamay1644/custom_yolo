@@ -140,11 +140,7 @@ def build_dataloader(dataset, batch, workers, shuffle=True, rank=-1):
     """Return an InfiniteDataLoader or DataLoader for training or validation set."""
     batch = min(batch, len(dataset))
     nd = torch.cuda.device_count()  # number of CUDA devices
-    # Modified code for AMD EPYC NUMA architecture
-    if os.getenv('ULTRALYTICS_WORKERS'):
-        nw = int(os.getenv('ULTRALYTICS_WORKERS'))
-    else:
-        nw = min([os.cpu_count() or 1, RANK.get(), nw])
+    nw = min(os.cpu_count() // max(nd, 1), workers)  # number of workers
     sampler = None if rank == -1 else distributed.DistributedSampler(dataset, shuffle=shuffle)
     generator = torch.Generator()
     generator.manual_seed(6148914691236517205 + RANK)
