@@ -27,7 +27,6 @@ share/python-wheels/
 *.egg
 MANIFEST
 requirements.txt
-setup.py
 numa_ultralytics.egg-info
 
 # PyInstaller
